@@ -1,0 +1,4 @@
+ [data-react-beautiful-dnd-drag-handle="1"] { 
+      cursor: -webkit-grab;
+      cursor: grab;
+     }  

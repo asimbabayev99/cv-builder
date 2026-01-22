@@ -1,0 +1,112 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;background:#FFF;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-lca1 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-lca1 span.paddedline{display:block}
+        .skn-lca1 .logo,.skn-lca1 .nodisplay{display:none}
+        .skn-lca1 .sectiontitle{text-transform:uppercase}
+        .skn-lca1 .jobtitle,.skn-lca1 .degree,.skn-lca1 .txtBold{font-weight:bold}
+        .skn-lca1 .grayTxt{color:#787C85}
+        .skn-lca1 .jobdates{text-transform:uppercase}
+        .skn-lca1 .sprtr{margin:0 5px}
+        .skn-lca1 .flt-right{float:right}
+		.skn-lca1 .dispInBlk{display:inline-block}
+		.skn-lca1 .maxWidth{max-width:100%}
+		.skn-lca1 .brk-all{word-break:break-all}
+        .skn-lca1 .txt-bold{font-weight:bold}
+
+        .skn-lca1 ul,.skn-lca1 li{list-style-type:disc;margin:0 0 0 10px;padding:0}
+        .skn-lca1 ul li{margin:0 0 0 13px}
+
+        .skn-lca1{color:#000;background-color:#FFF;word-wrap:break-word;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;min-height:792px}
+        .skn-lca1 .address:last-child{padding-bottom:10px;border-bottom:5px solid #fcc74a}
+        .skn-lca1 .name{font-size:15px;line-height:17px;font-weight:bold;padding:0;text-transform:uppercase;text-align:left;color:#000}
+        .skn-lca1 .resumeTitle{color:#4a4a4a}
+        .skn-lca1 .paragraph{position:relative}
+        .skn-lca1 .heading{clear:both;font-weight:bold}
+        .skn-lca1 .address,.skn-lca1 .adnlLnks{position:relative;text-align:left;font-size:0.917em;line-height:1.25em;margin:0;color:#787C85;text-transform:uppercase}
+        .skn-lca1 .address2{position:relative;text-align:left;font-size:0.917em;line-height:1.25em}
+		.skn-lca1 .section:not(.lang-sec):not(.skli-sec):after{content: '';display:block;height:0;clear:both}
+        .skn-lca1 .table_wrapper{margin-top:0}
+		.skn-lca1 .skill{display:table;width:100%;table-layout:fixed}
+        .skn-lca1 table.twocol td{width:50%;display:table-cell}
+        .skn-lca1 table.skills th,.skn-lca1 table.skills td{width:20%;text-align:center}
+        .skn-lca1 table.skills th{text-decoration:underline}
+        .skn-lca1 table.skills .skillname,.skn-lca1 table.skills .skillrating{text-align:left;width:35%}
+        .skn-lca1 table.skills .skillrating{width:20%}
+        .skn-lca1 table.skills .skillyears,.skn-lca1 table.skills .skilllast{width:19%}
+        .skn-lca1 table.skills .pad1{width:5%}
+        .skn-lca1 table.skills .pad2,.skn-lca1 table.skills .pad3{width:1%}
+        .skn-lca1 .section{clear:both}
+        .skn-lca1 .heading{float:left;word-wrap:break-word}
+        .skn-lca1 .SortableItem .wrapper{display:block}
+        .skn-lca1 .SortableItem .wrapper .heading{margin-bottom:7px}
+        .skn-lca1 .sortableInner > .SortableItem .wrapper{margin-top:0}
+         
+        .skn-lca1 .totl-expr{display:inline-block;padding:0 6px;color:#fff;font-weight:700;vertical-align:top;float:right}
+        .skn-lca1.texp-curved .totl-expr{border-radius:10px}
+
+        /*Personal details section*/
+        .skn-lca1 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-lca1 .details-wrap{width:49%}
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-lca1 .sectionCL .paragraph{margin-top:0}
+
+        /*MES address order code*/
+        .skn-lca1 .zipprefix,.skn-lca1.MES .zipsuffix,.skn-lca1.MFR .zipsuffix{display:none}
+        .skn-lca1 .zipsuffix,.skn-lca1.MES .zipprefix,.skn-lca1.MFR .zipprefix{display:inline}
+        .skn-lca1.MDE .hide-de{display:none}
+
+        /*Infographic*/
+        .skn-lca1 .langSec{box-sizing: border-box}
+        .skn-lca1 .lang-sec,.skn-lca1 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between;position:relative}
+        .skn-lca1 .lang-sec .field *,.skn-lca1 .lang-sec .nativeLangPara .field,.skn-lca1 .skli-sec .field *{display:inline}
+        .skn-lca1 .lang-sec .paragraph,.skn-lca1 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-lca1 .lang-sec .singlecolumn,.skn-lca1 .skli-sec .singlecolumn{margin-left:0;position:relative}
+        .skn-lca1 .lang-sec .heading,.skn-lca1 .skli-sec .heading{position:absolute;left:auto} 
+        .skn-lca1 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+        .skn-lca1 .lang-sec .nativeLangPara{width:100%!important}
+        .skn-lca1 .inner-rating{background-color:#576d7b;height:4px;width:60%}
+        .skn-lca1 .lang-sec > .paragraph:nth-last-child(1),.skn-lca1 .lang-sec > .paragraph:nth-last-child(2),
+        .skn-lca1 .skli-sec > .paragraph:nth-last-child(1),.skn-lca1 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-lca1 .hide-bar .rating-bar,.skn-lca1 .hide-colon .colon,.skn-lca1 .hide-only-bar .rating-bar{display:none}
+		.skn-lca1 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-lca1 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+
+        /*HILT multi para/section*/
+        .skn-lca1 .multi-para-hilt{position:relative}
+        .skn-lca1 .multi-para-hilt:after{content: "";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-lca1 .multi-para-hilt .paragraph{margin-bottom:10px;margin-top:0;width:49%;float:left}
+        .skn-lca1 .multi-para-hilt .paragraph:last-child,.skn-lca1 .multi-para-hilt .paragraph:nth-last-child(2):nth-child(2n){margin-bottom:0}
+        .skn-lca1 .multi-para-hilt .paragraph:nth-child(2n+1){margin-left:2%}
+        .skn-lca1 .multi-para-hilt .paragraph:nth-child(2n){clear:left}
+        .skn-lca1 .multi-para-hilt .singlecolumn{margin:0}
+        .skn-lca1 .multi-para-hilt .heading{position:absolute;left:0}
+        .skn-lca1 .multi-section-hilt .multi-para-opt,.skn-lca1 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-lca1 .multi-para-hilt .twocol.skill{display:none}
+
+        /* GRYR */
+        .skn-lca1 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+        .skn-lca1 .section.sign{padding-top:50px!important}
+
+        /*For Extra Space Before Colon*/
+        .skn-lca1 .beforecolonspace{display:none!important}
+        .skn-lca1.MFR .beforecolonspace{display:inline!important}
+                
+        /* Style for Signature */
+        .skn-lca1 .disclaim .singlecolumn,.skn-lca1 .disclaim .singlecolumn li,.skn-lca1 .disclaim .singlecolumn p,.skn-lca1 .disclaim .singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-lca1 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-lca1 .txtleft + .field_sign{text-align:left}
+        .skn-lca1 .txtcenter + .field_sign{text-align:center}
+        .skn-lca1 .txtright + .field_sign{text-align:right}
+        .skn-lca1 .signPic img{max-width:100%}
+
+         /* Text alignment bullet */
+       .skn-lca1 .ttc-align-left ul{text-align:left}
+       .skn-lca1 .ttc-align-right ul{text-align:right}
+       .skn-lca1 .ttc-align-center ul{text-align:center}
+       .skn-lca1 .ttc-align-justify ul{text-align:justify}
+       .skn-lca1 .ttc-align-right li,.skn-lca1 .ttc-align-center li{position:relative;list-style-position:inside;margin-left:0}
+       .skn-lca1:not(.for-pdf) .ttc-align-right li:first-letter,.skn-lca1:not(.for-pdf) .ttc-align-center li:first-letter{margin-left:-6px}
+
+    

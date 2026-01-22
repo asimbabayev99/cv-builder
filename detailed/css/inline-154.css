@@ -1,0 +1,144 @@
+
+      html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+      body{line-height:1;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+      .skn-mta3 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+      .skn-mta3 span.jobtitle,.skn-mta3 span.degree,.skn-mta3 span.companyname_educ,.skn-mta3 span.programline,.skn-mta3 span.excComp,.skn-mta3 .txtBold{font-weight:bold}
+      .skn-mta3 span.paddedline{display:block;clear:both}
+      .skn-mta3 span.cdesc{font-style:italic}
+      .skn-mta3 .nodisplay,.skn-mta3 .logo{display:none}
+      .skn-mta3 .fltRight{float:right}
+      .skn-mta3 .brk-all{word-break:break-all}
+
+      .skn-mta3 ul{list-style-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNJREFUeNpiYCAAtIB4OxDfAOIoZIm9QPwfiv8AMT8TVOIvLqMMgPgqEL8F4ky8lgIEGAC+Fgk0YKVkbwAAAABJRU5ErkJggg==")}
+      .skn-mta3 ul,.skn-mta3 li{margin:0 0 0 13px;padding:0}
+      .skn-mta3 ul li{margin:0 0 0 16px;padding:0 0 0 3px}
+      .skn-mta3 .adnlLnks ul,.skn-mta3 .adnlLnks li{list-style:none;margin:0}
+      .skn-mta3 .adnlLnks li{display:inline}
+      .skn-mta3 .adnlLnks li:before{content:'\2022';margin:0 5px 0 0;font-size:1.25em;position:relative;top:.1em}
+      .skn-mta3 .adnlLnks li:first-child{padding:0}
+      .skn-mta3 .adnlLnks li:first-child:before{content:'';margin:0}
+
+      .skn-mta3{color:#000;word-wrap:break-word;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;min-height:792px}
+      .skn-mta3 .lowerborder{padding-top:1px}
+      .skn-mta3 .name{font-size:inherit;line-height:inherit;font-weight:bold;text-align:left;text-transform:uppercase}
+      .skn-mta3 .name span.fname{text-transform:capitalize}
+      .skn-mta3 .resumeTitle{text-transform:lowercase;color:#666}
+      .skn-mta3 .paragraph{position:relative}
+      .skn-mta3 .heading{clear:both;font-weight:bold}
+      .skn-mta3 .address,.skn-mta3 .address2{position:relative;text-align:left;font-size:inherit;line-height:inherit;overflow:hidden}
+      .skn-mta3 .address{padding-bottom:5px}
+      .skn-mta3 .adnlLnks{text-align:center;padding:5px 0 10px}
+      .skn-mta3 .table_wrapper{width:100%;margin-top:0}
+	    .skn-mta3 .skill{display:table;width:100%;table-layout:fixed}
+      .skn-mta3 table.twocol td{width:50%;display:table-cell}
+      .skn-mta3 table.skills th,.skn-mta3 table.skills td{width:20%;text-align:center}
+      .skn-mta3 table.skills th{text-decoration:underline}
+      .skn-mta3 table.skills .skillname,.skn-mta3 table.skills .skillrating{text-align:left;width:35%}
+      .skn-mta3 table.skills .skillrating{width:20%}
+      .skn-mta3 table.skills .skillyears,.skn-mta3 table.skills .skilllast{width:19%}
+      .skn-mta3 table.skills .pad1{width:5%}
+      .skn-mta3 table.skills .pad2,.skn-mta3 table.skills .pad3{width:1%}
+      .skn-mta3 .execRsmTitle{font-weight:bold;text-align:center}
+      .skn-mta3 .prflPic{float:right}
+      .skn-mta3 .prflPic img{vertical-align:top;width:99px;height:128px;object-fit:cover}
+      .skn-mta3 .nmCntc{margin-right:99px}
+      .skn-mta3 .prflSection,.skn-mta3 .prflWrapper{overflow:hidden}
+      .skn-mta3 .prflSection{padding:1px 0}
+      .skn-mta3 .prflSection,.skn-mta3 .prflWrapper{border-bottom:1px solid;border-top:1px solid}
+      .skn-mta3 .iconRow{display:table;table-layout:fixed;margin-bottom:5px;width:100%}
+      .skn-mta3 .iconSvg{display:table-cell;text-align:center;vertical-align:middle}
+      .skn-mta3 .iconSvg.icondni{transform:scale(1.2)}
+      .skn-mta3 .icoTxt{display:table-cell;padding-left:10px}
+      .skn-mta3 .iconSvg svg,.skn-mli1 .iconSvg{vertical-align:middle}
+      .skn-mta3 .iconRow path.dnibgClr{fill:#fff}
+      .skn-mta3 .social svg{transform: scale(1.6)}
+	    .skn-mta3 .social svg .svg-inricon .sml-face,.skn-mta3 .social svg .svg-inricon .sml-face > path,.skn-mta3 .social svg .svg-inricon .big-face,.skn-mta3 .social svg .svg-inricon .big-face path{fill:#a4a4a4}
+      .skn-mta3 .social svg .svg-inricon .big-face + g > circle,.skn-mta3 .social svg .svg-inricon .big-face + g > path{fill:#000}
+
+      .skn-mta3 .totl-expr{display:inline-block;padding:0 6px;color:#fff;font-weight:700;vertical-align:top;float:right}
+      .skn-mta3.texp-curved .totl-expr{border-radius:10px}
+
+      /*Personal details section*/
+      .skn-mta3 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+      .skn-mta3 .details-wrap{width:49%}
+
+
+      /*FIX for FORCEFULLY making left margin ZERO for CL*/
+      .skn-mta3 .sectionCL .paragraph{margin-top:0}
+
+      .skn-mta3 .cl-prfl-sec .nmCntc{margin:0}
+      .skn-mta3 .cl-prfl-sec .name{text-align:center}
+      .skn-mta3 .cl-prfl-sec .adrs-left,.skn-mta3 .cl-prfl-sec .adrs-right{width:50%;float:left}
+      .skn-mta3 .cl-prfl-sec .adrs-right{text-align:right}
+
+      /* Style for Signature */
+      .skn-mta3 .disclaim .singlecolumn,.skn-mta3 .signPic > .field_sign{margin-left:0}
+      .skn-mta3 .disclaim .singlecolumn,.skn-mta3 .disclaim .singlecolumn li,.skn-mta3 .disclaim .singlecolumn p,.skn-mta3 .disclaim .singlecolumn span{font-size:9px;color:#8a8a8a}
+      .skn-mta3 .field_sign{font-size:7px;color:#8a8a8a}
+      .skn-mta3 .txtleft + .field_sign{text-align:left}
+      .skn-mta3 .txtcenter + .field_sign{text-align:center}
+      .skn-mta3 .txtright + .field_sign{text-align:right}
+      .skn-mta3 .signPic span:first-child{padding-right:6px}
+      .skn-mta3 .signPic img{padding-top:5px;max-width:100%}
+
+      /*MES and MFR address order code*/
+      .skn-mta3 .zipprefix,.skn-mta3.MES .zipsuffix,.skn-mta3.MFR .zipsuffix{display:none}
+      .skn-mta3 .zipsuffix,.skn-mta3.MES .zipprefix,.skn-mta3.MFR .zipprefix{display:block}
+
+      /*Infographic*/
+      .skn-mta3 .lang-sec,.skn-mta3 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+      .skn-mta3 .lang-sec .heading,.skn-mta3 .skli-sec .heading{width:100%;flex-grow:1}
+      .skn-mta3 .lang-sec .paragraph, .skn-mta3 .skli-sec .paragraph{width:48.5%}
+      .skn-mta3 .lang-sec .field *,.skn-mta3 .lang-sec .nativeLangPara .field,.skn-mta3 .skli-sec .field *{display:inline}
+      .skn-mta3 .lang-sec .paragraph,.skn-mta3 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+      .skn-mta3 .lang-sec .singlecolumn,.skn-mta3 .skli-sec .singlecolumn{margin-left:0;position:relative}
+      .skn-mta3 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+      .skn-mta3 .lang-sec .paragraph.nativeLangPara{width:100%}
+      .skn-mta3 .inner-rating{background-color:#000;height:4px;width:60%}
+      .skn-mta3 .lang-sec > .paragraph:nth-last-child(1),.skn-mta3 .lang-sec > .paragraph:nth-last-child(2),
+      .skn-mta3 .skli-sec > .paragraph:nth-last-child(1),.skn-mta3 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+      .skn-mta3 .hide-bar .rating-bar,.skn-mta3 .hide-colon .colon,.skn-mta3 .hide-only-bar .rating-bar{display:none}
+	    .skn-mta3 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-mta3 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+      /*HILT multi para/section*/   
+      .skn-mta3 .multi-para-hilt:after{content: "";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/     
+      .skn-mta3 .multi-para-hilt .paragraph{margin-bottom:10px;margin-top:0;width:49%;float:left;clear:none}
+      .skn-mta3 .multi-para-hilt .paragraph:last-child,.skn-mta3 .multi-para-hilt .paragraph:nth-last-child(2):nth-child(2n){margin-bottom:0}
+      .skn-mta3 .multi-para-hilt .paragraph:nth-child(2n+1){margin-left:2%}
+      .skn-mta3 .multi-para-hilt .paragraph:nth-child(2n){clear:left;margin-left:0}
+      .skn-mta3 .multi-para-hilt .singlecolumn{margin:0}
+      .skn-mta3 .multi-section-hilt .multi-para-opt,.skn-mta3 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-mta3 .multi-para-hilt .twocol.skill{display:none}   
+
+      /*For Extra Space Before Colon*/
+      .skn-mta3 .beforecolonspace{display:none!important}
+      .skn-mta3.MFR .beforecolonspace{display:inline!important}
+
+      /* GRYR */
+      .skn-mta3 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+
+       /* Text alignment bullet */
+       .skn-mta3 .ttc-align-left ul{text-align:left}
+       .skn-mta3 .ttc-align-right ul{text-align:right}
+       .skn-mta3 .ttc-align-center ul{text-align:center}
+       .skn-mta3 .ttc-align-justify ul{text-align:justify}
+       .skn-mta3 .ttc-align-right li,.skn-mta3 .ttc-align-center li{position:relative;list-style-position:inside;margin-left:0}
+       .skn-mta3 .ttc-align-right li:first-letter,.skn-mta3 .ttc-align-center li:first-letter{padding-left:3px}
+       
+       /*PICT support*/
+       .skn-mta3.pict-pcpf-none .prflPic{display:none}
+       .skn-mta3.pict-pcpf-none .nmCntc{margin-right:0}
+
+       
+        /*Photo Layout styles*/
+        .skn-mta3.pict-pcsh-circle .paragraph .prflPic img{border-radius:50%;border:1px solid #000;box-sizing:border-box}
+        .skn-mta3.pict-pcsh-square .paragraph .prflPic img{border-radius:unset;border:1px solid #000;box-sizing:border-box}
+        .skn-mta3.pict-pcsh-bottomleft .paragraph .prflPic img{border-radius:50%;border-bottom-left-radius:8px;border:1px solid #000;box-sizing:border-box}
+        .skn-mta3.pict-pcsh-bottomright .paragraph .prflPic img{border-radius:50%;border-bottom-right-radius:8px;border:1px solid #000;box-sizing:border-box}
+        .skn-mta3.pict-pcsh-radius .paragraph .prflPic img{border-radius:10px;border:1px solid #000;box-sizing:border-box}
+        .skn-mta3 .prflPic, .skn-mta3 .prflPic .field{text-align:center}
+
+        /*Hyphen Handling*/
+        .skn-mta3 .hyphen:before{content:' - '}
+        .skn-mta3.hyphen-en-dash .hyphen:before{content:' – '}
+
+  

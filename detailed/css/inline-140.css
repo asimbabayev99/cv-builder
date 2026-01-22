@@ -1,0 +1,177 @@
+
+        @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700');
+        @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-mli4 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        /*START content disc style for LI*/
+        .skn-mli4 ul,.skn-mli4 li{list-style:none;margin:0 0 0 8px;padding:0}
+        .skn-mli4 ul li{position:relative;margin:3px 0 0 0}
+        .skn-mli4 ul li:before{content:'\2022';position:absolute;left:-8px;top:0}
+        .skn-mli4 .skli-sec ul li:before,.skn-mli4 .lang-sec ul li:before{left:-9px}
+        /*END content disc style for LI*/
+
+        .skn-mli4 .txt-bold{font-weight:bold}
+        .skn-mli4 .skli-name-normalwgt .txt-bold{font-weight:400}
+        .skn-mli4 .dispBlock{display:block}
+        .skn-mli4 .flt-right{float:right}
+        .skn-mli4 .pb5{padding-bottom:5px}
+        .skn-mli4 .brk-all{word-break:break-all}
+
+        /*Document*/
+        .skn-mli4{color:#46464e;line-height:13px;word-wrap:break-word}
+        .skn-mli4 .name{color:#eef0f1;font-weight:300;padding:0 0 12px 0;text-align:center;text-transform:uppercase;font-family:'Oswald'}
+        .skn-mli4 .resumeTitle{color:#eef0f1;font-weight:bold;text-align:center;text-transform:uppercase;letter-spacing:1px}
+
+        /* common left-right container */
+        .skn-mli4 .section{position:relative}
+        .skn-mli4 .left-box,.skn-mli4 .right-box,.skn-mli4 .top-box{box-sizing:border-box;position:relative;padding:25px;display:table-cell;vertical-align:top}
+        .skn-mli4 .section:empty{display:none}
+
+        /* Common Heading style */
+        .skn-mli4 .heading{padding-bottom:5px}
+        .skn-mli4 .sectiontitle{text-transform:uppercase;color:#000;font-weight:700;letter-spacing:.5px}
+
+        /* Top section */
+        .skn-mli4 .topsection{background:#576d7b;position:relative}
+        .skn-mli4 .topsection .section{border:none;margin-bottom:0;padding:0}
+        .skn-mli4 .topsection .top-box{display:block;width:100%;position:relative}
+        .skn-mli4 .topsection .top-box:before{content:'';border-bottom:3px solid #fff;height:5px;width: 100%;position:absolute;left:0;bottom:0}
+        .skn-mli4 .address{color:#000}
+        .skn-mli4 .address .dispBlock:last-child{padding-bottom:0}
+
+        /* Icon style */
+        .skn-mli4 .icon-section{position:absolute;top:0;bottom:3px;margin:auto}
+        .skn-mli4 .icon-section .paragraph{padding-left:0;height:100%}
+        .skn-mli4 .icon-section .paragraph > div{display:flex;align-items:center;height:100%}
+        .skn-mli4 .icon-section + .section .name{padding-bottom:5px}
+        .skn-mli4 .icon-section img{vertical-align:middle}
+
+        /*parentContainer*/
+        .skn-mli4 .parentContainer{display:table;table-layout:fixed;width:100%}
+        .skn-mli4 .paragraph{padding-left:15px}
+        .skn-mli4 .parentContainer .left-box:before{position:absolute;width:100%} /* Used for PDF processing. Do not modify */
+        .skn-mli4 .parentContainer .left-box:before{content:'';background:#576d7b;opacity:.15;left:0;top:0;height:100%}
+        .skn-mli4 .parentContainer .left-box,.skn-mli4 .parentContainer .right-box{padding-top:40px;padding-left:30px;padding-right:30px;position:relative}
+        .skn-mli4 .parentContainer .right-box .section{border-color:#4a4a4a}
+        .skn-mli4 .parentContainer .right-box:before{content:'';background:#576d7b;opacity:.15;position:absolute;left:0;top:0;height:10px;width:100%}
+        .skn-mli4 .jobline{display:block}
+        .skn-mli4 .social .field a{color:#0000EE;text-decoration:underline}
+        .skn-mli4 .social .field a:hover{text-decoration:underline}
+
+        /* SVG Icon Style */
+        .skn-mli4 .iconRow{clear:both;display:table;margin-bottom:10px}
+        .skn-mli4 .iconRow:last-child{padding-bottom:0}
+        .skn-mli4 .iconSvg{width:16px;height:15px;display:table-cell;text-align:center;margin-top:0}
+        .skn-mli4 .icoTxt{display:table-cell;padding-left:10px;vertical-align:top}
+
+        /*New logic for infographic*/
+        .skn-mli4 .lang-sec .singlecolumn{display:none}
+        .skn-mli4 .lang-sec.infobarsec .infobarpara,.skn-mli4 .lang-sec.infotilesec .infotilepara{display:block}
+
+        /*Infographic*/
+        .skn-mli4 .lang-sec.infobarsec .field *,.skn-mli4 .lang-sec.infobarsec .nativeLangPara .field{display:inline}
+        .skn-mli4 .lang-sec.infobarsec .paragraph{clear:both;margin-top:0}
+        .skn-mli4 .rating-bar{background:#fff;width:100%;clear:both;margin-top:3px;page-break-inside:avoid}
+        .skn-mli4 .right-box .rating-bar{background:#d5d6d6}
+        .skn-mli4 .inner-rating{background-color:#576d7b;height:4px;width:60%}
+        .skn-mli4 .topsection{z-index:2}   /*For PDF logic*/
+        .skn-mli4 .compfont,.skn-mli4 .pdet-sec .txt-bold{color:#000}
+
+        /*Infographic Tiles*/
+        .skn-mli4 .lang-sec.infotilesec .paragraph,.skn-mli4 .skli-sec .paragraph{width:100%;display:inline-block;vertical-align:top;margin-top:0;clear:both;box-sizing:border-box}
+        .skn-mli4 .lang-sec.infotilesec > .paragraph:nth-last-child(1),.skn-mli4 .skli-sec > .paragraph:nth-last-child(1){padding-bottom:0!important}
+        .skn-mli4 .lang-sec.infotilesec .nativeLangPara .field,.skn-mli4 .lang-sec.infotilesec .field p,.skn-mli4 .skli-sec .field p{display:inline}
+        .skn-mli4 .lang-sec.infotilesec .sliced-rect,.skn-mli4 .skli-sec .sliced-rect{height:6px;width:100%;line-height:0px;margin-top:3px;clear:both}
+        .skn-mli4 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli4 .skli-sec .sliced-rect .sliced-rect-tile{height:100%;background-color:#d5d6d6;float:left;margin-right:3px}
+        .skn-mli4 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mli4 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
+        .skn-mli4 .left-box .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli4 .left-box .skli-sec .sliced-rect .sliced-rect-tile{background-color:#fff}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli4 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#576d7b}
+        .skn-mli4 .hide-bar .rating-bar,.skn-mli4 .hide-bar .sliced-rect,.skn-mli4 .hide-colon .no-colon,.skn-mli4 .lang-sec.hide-only-bar .rating-bar,.skn-mli4 .lang-sec.hide-only-bar.infotilesec .sliced-rect{display:none!important}
+        .skn-mli4 .hide-bar .field-ratt,.skn-mli4 .hide-only-bar .rating-bar{display:none}
+
+        .skn-mli4 .nativeLangPara .field:first-child{font-weight:bold}
+
+        /*MFR address*/
+        .skn-mli4 .zipsuffix,.skn-mli4.MFR .zipprefix,.skn-mli4.MES .zipprefix{display:block}
+        .skn-mli4 .zipprefix,.skn-mli4.MFR .zipsuffix,.skn-mli4.MES .zipsuffix{display:none}
+
+        /*MUK colon*/
+        .skn-mli4 .mukcolon{display:none}
+        .skn-mli4.MUK .mukcolon{display:inline!important}
+        .skn-mli4.MUK .colon{display:none!important}
+
+        /*Builder fix*/
+        .skn-mli4 .parentContainer .right-box .sortable-item:first-child .section{border:none;padding-top:0}
+
+        /* GRYR */
+        .skn-mli4 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+		
+		/*HILT multi para/section*/
+        .skn-mli4 .multi-para-hilt:after,.skn-mli4 .multi-para-hilt .singlecolumn::after{content: "";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-mli4 .right-box .multi-para-hilt .singlecolumn .paragraph{margin-top:0;width:49%;float:left;margin-left:0;padding-top:0;padding-left:0!important}
+        .skn-mli4 .right-box .multi-para-hilt .singlecolumn{margin:0;padding-left:15px}
+        .skn-mli4 .right-box .multi-para-hilt .singlecolumn .paragraph:nth-child(2n){margin-left:2%}
+        .skn-mli4 .right-box .multi-para-hilt .singlecolumn .paragraph:nth-child(2n+1){clear:left}        
+        .skn-mli4 .multi-section-hilt .multi-para-opt,.skn-mli4 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-mli4 .multi-para-hilt .skill{display:none}
+        .skn-mli4 .right-box .multi-para-hilt .singlecolumn .paragraph:nth-child(n+3){margin-top:12px}
+
+        /*HILT multi para/section - For PDF*/
+        .skn-mli4.for-pdf .right-box .multi-para-hilt .pdfparawrapper:after{content:'';clear:both;display:table}
+        .skn-mli4.for-pdf .right-box .multi-para-hilt .pdfparawrapper .paragraph:first-child{float:left;margin-left:0}
+        .skn-mli4.for-pdf .right-box .multi-para-hilt .pdfparawrapper .paragraph:nth-child(2){float:right;margin-left:2%}
+        .skn-mli4.for-pdf .right-box .multi-para-hilt .pdfparawrapper .paragraph{margin-bottom:12px}
+        .skn-mli4.for-pdf .multi-para-hilt .pdfparawrapper:last-child .paragraph:last-child,.skn-mli4.for-pdf .right-box .multi-para-hilt .pdfparawrapper:last-child .paragraph{margin-bottom:0}
+		
+				/*For Extra Space Before Colon*/
+        .skn-mli4 .beforecolonspace{display:none !important}
+        .skn-mli4.show-colon-space .beforecolonspace{display:inline!important}
+        
+        /* Duration tag */
+        .skn-mli4 .totl-expr{display:inline-block;float:right; padding:0 6px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap;margin-left:5px}
+        .skn-mli4.texp-curved .totl-expr{border-radius:10px}
+        .skn-mli4 .dflex{display:flex;justify-content:space-between}
+        .skn-mli4 .left-box .totl-expr{display: none}
+
+        /*MFR - Temp Code to change WEB1 Label*/
+        .skn-mli4 .address .web1-mfr-lbl,.skn-mli4.MFR .address .web1-lbl{display:none}
+        .skn-mli4.MFR .address .web1-mfr-lbl{display:inline}
+        
+        /* Builder css for mobile device */
+        .android .skn-mli4, .ios .skn-mli4{box-sizing:content-box}
+
+        /*builder fixes */
+        .skn-mli4 .cert-sec .singlecolumn p{display:inline}
+
+        /*For Paginated HTML*/
+        .skn-mli4.for-paginated-pdf .lang-sec.infotilesec .paragraph,.skn-mli4.for-paginated-pdf .skli-sec .paragraph{display:block!important}
+
+        /*Pagination Parameters*/
+        .skn-mli4{data-noofpasses:2}
+
+        /*Paginated - Common BG*/
+        .skn-mli4.for-paginated-pdf.pdf-template .topsection,.skn-mli4.for-paginated-pdf.pdf-template .parentContainer .section{display:none!important}
+        .skn-mli4.for-paginated-pdf.pdf-template .parentContainer{min-height:1000px!important;height:1000px!important}
+
+        /*Paginated - First Page*/
+        .skn-mli4.for-paginated-pdf.pdf-first-page-template .parentContainer{display:none!important}
+        .skn-mli4.for-paginated-pdf.pdf-first-page-template{margin-top:0!important}
+
+        /*Paginated - First pass CSS*/
+        .skn-mli4.for-paginated-pdf.pdf-pass-1 .topsection{visibility:hidden}
+        .skn-mli4.for-paginated-pdf.pdf-pass-1 .right-box{visibility:hidden}
+        .skn-mli4.for-paginated-pdf.pdf-pass-1 .parentContainer .left-box:before{content:none!important}
+
+        /*Paginated - Second pass CSS*/
+        .skn-mli4.for-paginated-pdf.pdf-pass-2 .topsection{visibility:hidden}
+        .skn-mli4.for-paginated-pdf.pdf-pass-2{data-rectleft:234}
+        .skn-mli4.for-paginated-pdf.pdf-pass-2 .left-box{visibility:hidden}
+        .skn-mli4.for-paginated-pdf.pdf-pass-2 .parentContainer .left-box:before{content:none!important}
+
+        .skn-mli4{position:relative}
+        .skn-mli4 .left-box{background:#fff}
+        .skn-mli4:before{content:'';position:absolute;background:#576d7b;opacity:.15;left:0;top:0;height:100%}
+    

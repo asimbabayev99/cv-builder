@@ -1,0 +1,80 @@
+
+        .skn-tma3,.skn-tma3 table{line-height:14px}
+        .skn-tma3.pagesize{width:535px}
+        .skn-tma3.fontsize,.skn-tma3 .lang-sec .paragraph *,.skn-tma3 .skli-sec .paragraph *{font-size:11px}
+        .skn-tma3.fontface{font-family:Verdana}
+        .skn-tma3.vmargins{padding-top:30px;padding-bottom:30px}
+        .skn-tma3.hmargins{padding-left:30px;padding-right:30px}
+        .skn-tma3 .section{padding-top:20px;border-color:#343b40}
+        .skn-tma3 .section.firstsection,.skn-tma3 .section.SECTION_CNTC{margin-top:0;padding-top:0}
+        .skn-tma3 .paragraph{margin-top:10px}
+        .skn-tma3 .firstparagraph{margin-top:0}
+        .skn-tma3 .singlecolumn,.skn-tma3 .maincolumn{margin-left:0px}
+        .skn-tma3 .sectiontitle{font-size:11px;line-height:20px}
+        .skn-tma3 .heading{padding-bottom:5px}
+        .skn-tma3 table.skills td{padding-top:5px}
+        .skn-tma3 .name{font-size:28px;line-height:31px}
+        .skn-tma3 .resumeTitle{font-size:15px;line-height:15px;padding:6px 0}
+        .skn-tma3 .address{font-size:11px;line-height:14px}
+        .skn-tma3 .heading{color:#343b40}
+		.skn-tma3 .skli-sec .singlecolumn .field:last-child{min-height:14px}
+        .skn-tma3 .paragraph.firstparagraph .texp-cell{padding-top:0}
+        .skn-tma3 .paragraph .texp-cell{padding-top:6px}
+        .skn-tma3 .texp-cell{margin-bottom:8px}
+        .skn-tma3 .totl-expr{background-color:#343b40;font-size:8px;line-height:13px;padding:0 6px}
+
+        /*FIX for Re-calculating width of singlecolumn for CL*/
+        .skn-tma3 .sectionCL .singlecolumn{margin-left:0;width:100%}
+        .skn-tma3 .address2{font-size:11px;line-height:14px}
+
+        /*Builder team Fix for finalise page*/
+        .skn-tma3 .SortableItem:nth-of-type(2) .section:before{height:30px}
+
+        /*Timeline*/
+        .skn-tma3 .heading:before{border-color:#343b40;top:5px}
+        .skn-tma3 .SECTION_CNTC+.section:before,.skn-tma3 .SECTION_ALNK+.section:before,.skn-tma3 .SECTION_PRFL+.section:before{height:30px}
+
+        /*Infographic*/
+        .skn-tma3 .lang-sec,.skn-tma3 .skli-sec{padding-left:20px} 
+        .skn-tma3 .lang-sec .heading,.skn-tma3 .skli-sec .heading{margin-left:-0px}
+        .skn-tma3 .inner-rating{background-color:#343b40}
+
+        /* Multi para hilt */
+        .skn-tma3 .multi-para-hilt{padding-left:20px}
+        .skn-tma3 .multi-para-hilt .heading{margin-left:-0px}
+            
+        /*Finalize Fixes*/
+        .skn-tma3 .lang-sec .sortableInner .sortable-item:not(:first-child) .paragraph,.skn-tma3 .skli-sec .sortableInner .sortable-item:not(:first-child) .paragraph{vertical-align:top}
+        .skn-tma3 .lang-sec .sortable-item,.skn-tma3 .skli-sec .sortable-item{display:inline-block;vertical-align:top}
+        .page-finalize .skn-tma3 .sortableInner .paragraph-container+.paragraph-container,.page-finalize .sortable-drag-item.skn-tma3 .section{margin-top:0!important}
+        .skn-tma3 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+		.TMA3.skn-tma3 .section-container.active:before{border-color:#343b40}
+        .TMA3.skn-tma3 .sortable-item:nth-of-type(1):not(.name-contact) .section:before{height:30px}
+        .skn-tma3 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
+        .skn-tma3 .data-LNGG .doc-item,.skn-tma3 .data-SKLI .doc-item,.skn-tma3 .lang-sec .doc-item,.skn-tma3 .skli-sec .doc-item{width:100%}
+        .skn-tma3 .data-LNGG .sortableInner,.skn-tma3 .data-SKLI .sortableInner,.skn-tma3 .SECTION_LNGG .sortableInner,.skn-tma3 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-tma3 .data-LNGG .sortable-item,.skn-tma3 .data-SKLI .sortable-item{width:48.5%}
+        .skn-tma3 .data-LNGG .sortable-item .paragraph,.skn-tma3 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+
+		
+		/*Fixes for builder for skill*/
+        .skn-tma3 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:14px}	
+        .skn-tma3 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-tma3 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+       .skn-tma3 .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-tma3 .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-tma3  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-tma3  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0}
+	   
+	   /*PDF Flex Handling Code - Personal Information*/
+		.skn-tma3.for-pdf .pdet-sec .singlecolumn{display:block}
+		.skn-tma3.for-pdf .pdfpdwrapper{display:block}
+		.skn-tma3.for-pdf .pdfpdwrapper:after{content:'';clear:both;display:table}
+		.skn-tma3.for-pdf .pdfpdwrapper .details-wrap:first-child{float:left;padding-right:5px}
+		.skn-tma3.for-pdf .pdfpdwrapper .details-wrap:nth-child(2){float:right}
+		.skn-tma3.for-pdf .pdfpdwrapper .details-wrap{width:245px!important;}
+
+    /*Infographic Containers*/
+    .skn-tma3.for-pdf .lang-sec,.skn-tma3.for-pdf .skli-sec{display:block}
+    .skn-tma3.for-pdf .pdfinfwrapper{display:block}
+    .skn-tma3.for-pdf .pdfinfwrapper:after{content:'';clear:both;display:table}
+    .skn-tma3.for-pdf .pdfinfwrapper .paragraph:first-child{float:left}
+    .skn-tma3.for-pdf .pdfinfwrapper .paragraph:nth-child(2){float:right}
+    .skn-tma3.for-pdf .pdfinfwrapper:last-child .paragraph{margin-bottom:0;padding-bottom:0}
+    

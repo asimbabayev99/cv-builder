@@ -1,0 +1,30 @@
+
+        .skn-mlu7,.skn-mlu7 table{line-height:15px}
+        .skn-mlu7.pagesize{width:595px}
+        .skn-mlu7.fontsize,.skn-mlu7 ul li:before,.skn-mlu7 .septr:before{font-size:11px}
+        .skn-mlu7.fontface{font-family:Arial}
+        .skn-mlu7 .section{padding-top:20px}
+        .skn-mlu7 .firstparagraph{margin-top:0!important}
+        .skn-mlu7 .paragraph{margin-top:10px}
+        .skn-mlu7 .singlecolumn,.skn-mlu7 .maincolumn{margin-left:0px}
+        .skn-mlu7 .parentContainer .left-box .singlecolumn,.skn-mlu7 .parentContainer .left-box .maincolumn{margin-left:0}
+        /*.skn-mlu7 .parentContainer .left-box .singlecolumn{width:{$PGIN}px}*/
+        .skn-mlu7 table.skills td{padding-top:5px}
+        .skn-mlu7 .name{font-size:32px;line-height:32px}
+        .skn-mlu7 .resumeTitle{font-size:17px;line-height:17px;margin:0 0 15px 0}/*PPDT*/
+        .skn-mlu7 .disclaim{margin:0;padding:0;padding-top:50px!important}
+        .skn-mlu7 .totl-expr{background-color:#4a4a4a;font-size:8px;line-height:12px}
+
+        .skn-mlu7 .address2{font-size:11px;line-height:{$CILH}px}
+        .skn-mlu7 .sectiontitle{font-size:13px;line-height:14px}
+        .skn-mlu7 .left-box{width:164px}
+        .skn-mlu7 .PICTPic{height:140px;width:140px}
+        .skn-mlu7 .jobdates{font-size:10px}
+        .skn-mlu7 .name,.skn-mlu7 .sectiontitle{color:#4a4a4a}
+		
+		/*Infographic*/
+        .skn-mlu7 .langSec .paragraph,.skn-mlu7 .infoSec .paragraph{margin-top:5px}
+        .skn-mlu7 .langSec .firstparagraph,.skn-mlu7 .infoSec .firstparagraph{padding-top:0}
+        .skn-mlu7 .innerRating{background-color:#4a4a4a}
+        .skn-mlu7.pict-pcsh-rectangle .paragraph .PICTPic{width:110px}
+    

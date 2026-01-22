@@ -1,0 +1,133 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;background:#FFF;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-mna4 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-mna4 span.paddedline{display:block;padding-bottom:5px;}
+        .skn-mna4 .nodisplay,.skn-mna4 .logo{display:none}
+        .skn-mna4 .jobtitle,.skn-mna4 .degree,.skn-mna4 .txtBold{font-weight:bold}
+        .skn-mna4 .jobdates{text-transform:uppercase}
+        .skn-mna4 .sprtr{margin:0 5px}
+        .skn-mna4 .flt-right{float:right}
+		.skn-mna4 .dispInBlk{display:inline-block}
+		.skn-mna4 .maxWidth{max-width:100%}
+        .skn-mna4 .brk-all{word-break:break-all}
+
+        .skn-mna4 ul,.skn-mna4 li{list-style-type:disc;margin:0 0 0 10px;padding:0}
+        .skn-mna4 ul li{margin:0 0 0 15px;padding-left:8px}
+
+        .skn-mna4{color:#494c4e;background-color:#FFF;word-wrap:break-word;min-height:792px}
+        .skn-mna4 .name{font-size:15px;line-height:17px;font-weight:bold;padding:0;text-transform:uppercase;text-align:left;color:#4a4a4a;letter-spacing:1px;top:5px;position:relative}
+        .skn-mna4 .resumeTitle{color:#4a4a4a;text-transform:lowercase}
+        .skn-mna4 .resumeTitle:first-letter{text-transform:uppercase}/*To make sentence case*/
+        .skn-mna4 .paragraph{position:relative}
+        .skn-mna4 .heading{clear:both;font-weight:bold;text-align:right;float:left;}
+        .skn-mna4 .address,.skn-mna4 .adnlLnks{position:relative;text-align:left;font-size:0.917em;line-height:1.25em;color:#4a4a4a}
+        .skn-mna4 .address2{position:relative;text-align:left;font-size:0.917em;line-height:1.25em}
+        .skn-mna4 .datesWrapper{float:right;padding-left:20px}
+        .skn-mna4 .table_wrapper{width:100%;margin-top:0}
+		.skn-mna4 .skill{display:table;width:100%;table-layout:fixed}
+        .skn-mna4 table.twocol td{width:50%;display:table-cell}
+        .skn-mna4 table.skills th,.skn-mna4 table.skills td{width:20%;text-align:center}
+        .skn-mna4 table.skills th{text-decoration:underline}
+        .skn-mna4 table.skills .skillname,.skn-mna4 table.skills .skillrating{text-align:left;width:35%}
+        .skn-mna4 table.skills .skillrating{width:20%}
+        .skn-mna4 table.skills .skillyears,.skn-mna4 table.skills .skilllast{width:19%}
+        .skn-mna4 table.skills .pad1{width:5%}
+        .skn-mna4 table.skills .pad2,.skn-mna4 table.skills .pad3{width:1%}
+        .skn-mna4 .section{clear:both}
+        .skn-mna4 .section.prfl-sec{padding-top:8px}
+        .skn-mna4 .section:not(.lang-sec):not(.skli-sec):after{content: "";display: block;clear:both}
+        .skn-mna4 .section.firstsection:after,.skn-mna4 .section.SECTION_CNTC:after{content: "";display: block;clear:none;}
+        .skn-mna4 .sectiontitle{padding:0;letter-spacing: 0.52px;text-transform:uppercase;margin-right:30px;color:#4a4a4a;word-wrap:break-word;}
+        .skn-mna4 .monogram{float:left;margin-left:30px;margin-top:17px}
+        .skn-mna4 .monogram svg{overflow:visible !important}
+        .skn-mna4 .monogram svg rect{stroke:#979797}
+        .skn-mna4 .monogram text{text-transform:uppercase}
+        .skn-mna4 .section.SECTION_CNTC,.skn-mna4 div.firstsection.section{clear:inherit;overflow:inherit}
+        .skn-mna4 .name,.skn-mna4 .address,.skn-mna4 .resumeTitle{margin-left:140px!important}
+        .skn-mna4 .adnlLnks{text-align:center;margin-left:0!important}
+        .skn-mna4 .social-link .sprtr{padding:0 2px}
+        .skn-mna4 .social-link:last-child .sprtr{display:none}
+        
+        /* Experience Duration */
+        .skn-mna4 .texp-cell{display:block;text-align:right;margin-bottom:8px;}
+        .skn-mna4 .totl-expr{display:inline-block;padding:1px 6px;vertical-align:top;color:#fff;font-weight:700;text-wrap:nowrap}
+        .skn-mna4.texp-curved .totl-expr{border-radius:10px;}
+        .skn-mna4 .dflex{display:flex;justify-content:space-between;}
+        .skn-mna4 .paragraph:not(.firstparagraph) .texp-cell{padding-top:1px}
+
+
+
+        .skn-mna4 .monogram + .monogram{display:none}
+        .skn-mna4 .dynamicIcon{height:81px;width:78px;margin:auto;margin-left:30px}
+        .skn-mna4 .dynamicIcon svg,.skn-mna4 .dynamicIcon img{fill:#fff;height:calc(100% - 10%);width:calc(100% - 10%);margin:auto;vertical-align:middle}
+        .skn-mna4 .dynamicIcon > div{height:78px}
+        .skn-mna4 .dynamicIcon img{width:calc(100% - 33%)}
+        .skn-mna4 .dynamicIcon svg.admin_a *,.skn-mna4 .dynamicIcon svg.healthcare_a *{stroke:transparent}
+        .skn-mna4 .dynamicIcon svg .st2{fill:inherit}
+        .skn-mna4 .dynamicIcon svg.ret_a{fill:#fff!important}
+
+        /*Personal details section*/
+        .skn-mna4 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-mna4 .details-wrap{width:49%}
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-mna4 .sectionCL .paragraph{padding-top:0!important}
+
+        /*MES and MFR address order code*/
+        .skn-mna4 .zipprefix,.skn-mna4.MES .zipsuffix,.skn-mna4.MFR .zipsuffix{display:none}
+        .skn-mna4 .zipsuffix,.skn-mna4.MES .zipprefix,.skn-mna4.MFR .zipprefix{display:block}
+        .skn-mna4 .SECTION_RCNT .zipsuffix,.skn-mna4.MES .SECTION_RCNT .zipprefix,.skn-mna4.MFR .SECTION_RCNT .zipprefix{display:inline}
+        .skn-mna4.MDE .hide-de{display:none}
+
+        /*Infographic*/
+        .skn-mna4 .lang-sec,.skn-mna4 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between;position:relative}
+        .skn-mna4 .lang-sec .paragraph, .skn-mna4 .skli-sec .paragraph{width:48.2%}
+        .skn-mna4 .lang-sec .heading, .skn-mna4 .skli-sec .heading{position:absolute;left:auto}
+        .skn-mna4 .lang-sec .field *,.skn-mna4 .lang-sec .nativeLangPara .field,.skn-mna4 .skli-sec .field *{display:inline}
+        .skn-mna4 .lang-sec .paragraph,.skn-mna4 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-mna4 .lang-sec .singlecolumn,.skn-mna4 .skli-sec .singlecolumn{margin-left:0;position:relative}
+        .skn-mna4 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+        .skn-mna4 .lang-sec .paragraph.nativeLangPara{width:100%}
+        .skn-mna4 .inner-rating{background-color:#4a4a4a;height:4px;width:60%}
+        .skn-mna4 .lang-sec > .paragraph:nth-last-child(1),.skn-mna4 .lang-sec > .paragraph:nth-last-child(2),
+        .skn-mna4 .skli-sec > .paragraph:nth-last-child(1),.skn-mna4 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-mna4 .hide-bar .rating-bar,.skn-mna4 .hide-colon .colon,.skn-mna4 .hide-only-bar .rating-bar{display:none}
+		.skn-mna4 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-mna4 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+
+        /*HILT multi para/section*/
+        .skn-mna4 .multi-para-hilt{position:relative}
+        .skn-mna4 .multi-para-hilt:after{content: "";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-mna4 .multi-para-hilt .paragraph{margin-bottom:15px;margin-top:0;width:49%;float:left}
+        .skn-mna4 .multi-para-hilt .paragraph:last-child,.skn-mna4 .multi-para-hilt .paragraph:nth-last-child(2):nth-child(2n){margin-bottom:0}
+        .skn-mna4 .multi-para-hilt .paragraph:nth-child(2n+1){margin-left:2%}
+        .skn-mna4 .multi-para-hilt .paragraph:nth-child(2n){clear:left}
+        .skn-mna4 .multi-para-hilt .singlecolumn{margin:0}
+        .skn-mna4 .multi-para-hilt .heading{position:absolute;left:0}
+        .skn-mna4 .multi-section-hilt .multi-para-opt,.skn-mna4 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-mna4 .multi-para-hilt .twocol.skill{display:none}
+
+       /* GRYR */
+        .skn-mna4 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+        .skn-mna4 .section.sign{padding-top:50px !important}
+
+        /*For Extra Space Before Colon*/
+        .skn-mna4 .beforecolonspace{display:none!important}
+        .skn-mna4.MFR .beforecolonspace{display:inline!important}
+        
+        /* Style for Signature */
+        .skn-mna4 .disclaim .singlecolumn,.skn-mna4 .disclaim .singlecolumn li,.skn-mna4 .disclaim .singlecolumn p,.skn-mna4 .disclaim .singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-mna4 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-mna4 .txtleft + .field_sign{text-align:left}
+        .skn-mna4 .txtcenter + .field_sign{text-align:center}
+        .skn-mna4 .txtright + .field_sign{text-align:right}
+        .skn-mna4 .signPic img{max-width:100%}
+
+        /* Text alignment bullet */
+       .skn-mna4 .ttc-align-left ul{text-align:left}
+       .skn-mna4 .ttc-align-right ul{text-align:right}
+       .skn-mna4 .ttc-align-center ul{text-align:center}
+       .skn-mna4 .ttc-align-justify ul{text-align:justify}
+       .skn-mna4 .ttc-align-right li,.skn-mna4 .ttc-align-center li{position:relative;list-style-position:inside;margin-left:0;padding-left:0}
+       .skn-mna4 .ttc-align-right li:first-letter,.skn-mna4 .ttc-align-center li:first-letter{padding-left:4px}
+    

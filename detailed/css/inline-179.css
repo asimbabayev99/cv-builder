@@ -1,0 +1,110 @@
+
+        
+        /* General classes */
+        .skn-mlv4,.skn-mlv4 table{line-height:12px}
+        .skn-mlv4{padding:30px 30px 13px 30px}
+        .skn-mlv4.pagesize{width:595px}
+        .skn-mlv4.fontsize{font-size:10px}
+        .skn-mlv4.fontface{font-family:Arial}
+        
+        .skn-mlv4 .mb-10{margin-bottom:10px;font-weight:600}
+        .skn-mlv4 .fielditem{padding-bottom:5px}
+        .skn-mlv4 .home-phone{padding-bottom:0;margin-bottom:0}
+
+        /* Top Section */
+        .skn-mlv4 .top-section{margin-bottom:20px}
+        .skn-mlv4 .name{font-size:41px;line-height:40px;padding-bottom:5px;color:#F98C79}
+        .skn-mlv4 .prof-title{font-size:11px;line-height:13px;padding-bottom:10px}
+        .skn-mlv4.pict-pcsh-rectangle .paragraph .prfl-pic .field{width:116px}
+
+        /*Change Name Font Size Logic*/
+        .skn-mlv4.update-font-size .name{font-size:30px;line-height:31px}           
+
+        /*Not common Infographic*/
+        .skn-mlv4 .lang-sec.infobarsec .paragraph .lang-scale span,.skn-mlv4 .lang-sec.infotilesec .paragraph .lang-scale span,.skn-mlv4 .skli-sec .paragraph .lang-scale span{font-size:8px!important;line-height:8px;text-transform:capitalize}
+        .skn-mlv4 .lang-sec.infobarsec .paragraph.nativeLangPara .lang-scale span,.skn-mlv4 .lang-sec.infotilesec .paragraph.nativeLangPara .lang-scale span{font-size:9px!important;line-height:10px}
+        .skn-mlv4 .lang-sec.infobarsec .paragraph *,.skn-mlv4 .lang-sec.infotilesec .paragraph *,.skn-mlv4 .skli-sec .paragraph *{font-size:9px;text-transform:uppercase;line-height:10px}
+        .skn-mlv4 .lang-sec .inner-rating,.skn-mlv4 .skli-sec .inner-rating{background:#F98C79}
+        /* Address + Cntc Section */
+        .skn-mlv4 .cntc-section{line-height:14px}
+        .skn-mlv4 .fielditem:last-child .sptr{display:none}
+        .skn-mlv4 .address .fieldgroup span *{font-size:10px}
+        .skn-mlv4 .address .fieldgroup{font-size:0}
+
+        /* Heading */
+        .skn-mlv4 .heading{margin-bottom:10px}        
+        .skn-mlv4 .sectiontitle{font-size:11px;line-height:13px;padding:7px 10px}
+       
+        /* Common section */
+        .skn-mlv4 .paragraph{margin-top:10px}
+        .skn-mlv4 .firstparagraph{margin-top:0!important}
+        .skn-mlv4 .right-box .singlecolumn,.skn-mlv4 .right-box .maincolumn{margin-left:0px}
+        .skn-mlv4 .section{margin-bottom:20px}        
+        .skn-mlv4 .left-box::before{top:186px;height:calc(100% - 186px)}
+        .skn-mlv4.doc-pcpf-none .left-box::before,.skn-mlv4.pict-pcpf-none .left-box::before{top:0;height:100%}
+        .skn-mlv4 .right-box{padding-left:30px;width:343px}
+        .skn-mlv4 .left-box{padding-right:30px;width:calc(100% - 343px)}
+        .skn-mlv4 .totl-expr{background-color:#F98C79;font-size:8px;line-height:12px}
+        
+        /* Skill */
+        .skn-mlv4 .right-box .skill .paddedline:last-child{padding-left:10px}
+        .skn-mlv4 .skill ul li{margin-bottom:10px;line-height:13px}
+       
+        /* Skin specific css */
+        .skn-mlv4 .skli-sec .lang-space,.skn-mlv4 .lang-sec .lang-space{margin-bottom:5px} /*Extra lang css*/
+        .skn-mlv4 .jd-font{font-size:9px}
+        .skn-mlv4 .right-box .experience .paragraph:before{top:6px;left:-37px;width:12px;height:12px}
+        .skn-mlv4 .fielditem-adif{margin-top:3px;text-transform:capitalize}
+        .skn-mlv4 .fielditem-adif span{text-transform:capitalize!important} /*To override uppercase and to save some css */
+        /*PICT and SVG section */
+        .skn-mlv4 .prfl-pic .field,.skn-mlv4 .monogram{width:146px;height:146px;background-color:#F98C79}
+        .skn-mlv4 .monogram .svg-box{width:146px;height:146px;background-color:#F98C79}
+        .skn-mlv4 .monogram svg text{font-size:60px;line-height:40px;fill:#F98C79}     
+        .skn-mlv4 .initial-name span{font-size:60px;line-height:40px}
+        .skn-mlv4 .pict-sec{padding-right:93px;margin-bottom:40px}
+        .skn-mlv4 .color-svg{fill:#F98C79!important} 
+         /*Infographic*/
+        .skn-mlv4 .right-box .lang-sec,.skn-mlv4 .right-box .skli-sec{padding-left:0px}
+        .skn-mlv4 .right-box .lang-sec .heading,.skn-mlv4 .right-box .skli-sec .heading{margin-left:-0px}
+        .skn-mlv4 .lang-sec.infobarsec .inner-rating,.skn-mlv4 .skli-sec.infobarsec .inner-rating{background-color:#F98C79}
+        .skn-mlv4 .left-box .lang-sec .paragraph,.skn-mlv4 .left-box .skli-sec .paragraph{padding-bottom:10px}
+
+        /*Fixes for builer*/
+        .skn-mlv4 .right-box .sortable-item:first-child .section,.skn-mlv4 .left-box .sortable-item:first-child .section{padding-top:0}
+        .skn-mlv4 .left-box .skli-sec .sortableInner .sortable-item .paragraph,.skn-mlv4 .left-box .lang-sec .sortableInner .sortable-item + .sortable-item .paragraph,.skn-mlv4 .left-box .lang-sec .sortableInner .sortable-item .paragraph{max-width:100%;vertical-align:top;display:block;margin-right:0}
+        .skn-mlv4.sortable-drag-item{padding:0}
+        .skn-mlv4 .lang-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .lang-sec .sortableInner > .paragraph:nth-last-child(2),.skn-mlv4 .right-box .skli-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .skli-sec .sortableInner > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-mlv4 .left-box .lang-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mlv4 .left-box .skli-sec .sortableInner > .paragraph:nth-last-child(1){padding-bottom:0}
+        .skn-mlv4 .data-NAME + .section-container:not(.data-SUMM){margin-top:20px}
+        .skn-mlv4 .section.experience:before,.experiment-finalize-page .skn-mlv4 .data-EXPR .section.experience:before{left:-31px}
+        .skn-mlv4 .data-EXPR .section.experience:before{left:-38px}
+        .skn-mlv4 .right-box .lang-sec .sortable-item{display:inline-block}
+         .skn-mlv4 .right-box .lang-sec .sortable-item .paragraph,.skn-mlv4 .right-box .skli-sec .sortable-item .paragraph{width:145px} 
+         .skn-mlv4 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
+        .skn-mlv4 .data-LNGG .doc-item,.skn-mlv4 .data-SKLI .doc-item,.skn-mlv4 .left-box .data-LNGG .sortable-item,.skn-mlv4 .left-box .data-SKLI .sortable-item,.skn-mlv4 .lang-sec .doc-item,.skn-mlv4 .skli-sec .doc-item{width:100%}
+        .skn-mlv4 .data-LNGG .sortableInner,.skn-mlv4 .data-SKLI .sortableInner,.skn-mlv4 .SECTION_LNGG .sortableInner,.skn-mlv4 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mlv4 .data-LNGG .sortable-item,.skn-mlv4 .data-SKLI .sortable-item{width:46.7%}
+        .skn-mlv4 .data-LNGG .sortable-item .paragraph,.skn-mlv4 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+        /*Rectangular Rating Blocks*/ 
+        .skn-mlv4 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#F98C79}
+
+        /* Top SVG */
+        .skn-mlv4 .top-circle{position:absolute;top:-30px;left:-148px;fill:#F98C79;width:205px;height:127px}
+        .skn-mlv4 .top-circle-small{position:absolute;top:-30px;left:87px;fill:#F98C79;width:72px;height:38px}
+        
+        /* Skin Fixes */
+        .skn-mlv4 .name-sec{margin-bottom:0}   
+        .skn-mlv4 .name-sec + .section:not(.summary){margin-top:20px}
+        .skn-mlv4 .name-sec{min-height:60px}
+        /*Job Title Varient*/
+        .skn-mlv4 .job-details{font-size:{$JTFS}px}
+        .skn-mlv4 .job-position,.skn-mlv4 .school-place,.skn-mlv4 .school-date{padding-bottom:5px;font-size:9px}
+        .skn-mlv4 .jobtitle,.skn-mlv4 .school{font-size:12px;color:#F98C79;padding-bottom:3px;line-height:14px}
+        .skn-mlv4 .degree{font-size:9px;padding-bottom:5px}
+        .skn-mlv4 .status{font-size:9px}
+
+        @-moz-document url-prefix() {
+   .page-wrap div:not(.modal-content) .resume-preview .skn-mlv4 .left-box::before,.page-wrap div:not(.modal-content) .resume-preview .skn-mlv4 .section.experience::before {width:2px}
+   .page-wrap div:not(.modal-content) .resume-preview .skn-mlv4 .section.experience::before, .page-wrap div:not(.modal-content) .resume-preview .experiment-finalize-page .skn-mlv4 .data-EXPR .section.experience::before {left:-32px}}
+
+    

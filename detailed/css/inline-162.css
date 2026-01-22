@@ -1,0 +1,97 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;background:#FFF;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-sma1 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-sma1 span.paddedline{display:block;clear:both}
+        .skn-sma1 .txtBold{font-weight:bold}
+        .skn-sma1 .txtCaps{text-transform:uppercase}
+        .skn-sma1 .locationGap{margin-bottom:3px}
+        .skn-sma1 .flt-right{float:right}
+		.skn-sma1 .dispInBlk{display:inline-block}
+		.skn-sma1 .maxWidth{max-width:100%}
+        .skn-sma1 .brk-all{word-break:break-all}
+
+        /*START content disc style for LI*/
+        .skn-sma1 ul,.skn-sma1 li{list-style:none;margin:0 0 0 8px;padding:0}
+        .skn-sma1 ul li{position:relative;margin:0 0 0 5px}
+        .skn-sma1 ul li:before{content:'\25CF\0020';position:absolute;left:-13px;top:0}
+        /*END content disc style for LI*/
+
+        .skn-sma1{color:#231f20;background-color:#FFF!important;word-wrap:break-word;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;min-height:792px}
+        .skn-sma1 .name{font-family:"Palatino Linotype";font-size:15px;line-height:17px;padding:0 0 10px 0;text-align:center;letter-spacing:1px;color:#000}
+        .skn-sma1 .resumeTitle{text-transform:uppercase;;text-align:center;color:#4a4a4a}
+        .skn-sma1 .paragraph{position:relative}
+        .skn-sma1 .heading{font-family:"Palatino Linotype";clear:both;font-weight:bold;text-transform:uppercase;letter-spacing:.5px}
+        .skn-sma1 .sectiontitle{color:#000}
+        .skn-sma1 .address{position:relative;text-align:center;font-size:0.917em;line-height:1.25em;margin-top:0}
+        .skn-sma1 .address2{position:relative;text-align:left;font-size:0.917em;line-height:1.25em}
+        .skn-sma1 .address.adrsExtra{padding-bottom:0;border:none}
+        .skn-sma1 .table_wrapper{width:100%;margin-top:0}
+        .skn-sma1 table.twocol td{width:50%}
+        .skn-sma1 table.skills th,.skn-sma1 table.skills td{width:20%;text-align:center}
+        .skn-sma1 table.skills th{text-decoration:underline}
+        .skn-sma1 table.skills .skillname,.skn-sma1 table.skills .skillrating{text-align:left;width:35%}
+        .skn-sma1 table.skills .skillrating{width:20%}
+        .skn-sma1 table.skills .skillyears,.skn-sma1 table.skills .skilllast{width:19%}
+        .skn-sma1 table.skills .pad1{width:5%}
+        .skn-sma1 table.skills .pad2,.skn-sma1 table.skills .pad3{width:1%}
+        .skn-sma1 .address{padding:0 0 30px 0;border-bottom:1px dashed #CCC}
+        .skn-sma1 .social-link:last-child .sprtr{display:none}
+        .skn-sma1 .social-link .sprtr{padding:0 2px}
+        .skn-sma1 table.skill{table-layout:fixed}
+        .skn-sma1 table .twocol_2{padding-left:10px}
+
+        /*Personal details section*/
+        .skn-sma1 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-sma1 .details-wrap{width:49%}
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-sma1 .sectionCL .paragraph{margin-top:0!important}
+
+        /*MES and MFR address order code*/
+        .skn-sma1 .zipprefix,.skn-sma1.MES .zipsuffix,.skn-sma1.MFR .zipsuffix{display:none}
+        .skn-sma1 .zipsuffix,.skn-sma1.MES .zipprefix,.skn-sma1.MFR .zipprefix{display:block}
+
+        /*Infographic*/
+        .skn-sma1 .lang-sec,.skn-sma1 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-sma1 .lang-sec .heading,.skn-sma1 .skli-sec .heading{width:100%;flex-grow:1}
+        .skn-sma1 .lang-sec .paragraph, .skn-sma1 .skli-sec .paragraph{width:48.4%}
+        .skn-sma1 .lang-sec,.skn-sma1 .skli-sec{font-family:"arial"}
+        .skn-sma1 .lang-sec .field *,.skn-sma1 .lang-sec .nativeLangPara .field,.skn-sma1 .skli-sec .field *{display:inline}
+        .skn-sma1 .lang-sec .paragraph,.skn-sma1 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px!important;margin-top:0}
+        .skn-sma1 .lang-sec .singlecolumn,.skn-sma1 .skli-sec .singlecolumn{margin-left:0!important;position:relative}
+        .skn-sma1 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+        .skn-sma1 .lang-sec .nativeLangPara{width:100%!important}
+        .skn-sma1 .inner-rating{background-color:#1A4771;height:4px;width:60%}
+        .skn-sma1 .lang-sec > .paragraph:nth-last-child(1),.skn-sma1 .lang-sec > .paragraph:nth-last-child(2),
+        .skn-sma1 .skli-sec > .paragraph:nth-last-child(1),.skn-sma1 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0!important}
+        .skn-sma1 .hide-bar .rating-bar,.skn-sma1 .hide-colon .paragraph .colon,.skn-sma1 .hide-only-bar .rating-bar{display:none}
+        .skn-sma1 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-sma1 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+       
+        /* GRYR */
+        .skn-sma1 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+
+        /* Text Align Adjust */
+        .skn-sma1 .ttc-align-left ul{text-align:left}
+        .skn-sma1 .ttc-align-right ul{text-align:right}
+        .skn-sma1 .ttc-align-center ul{text-align:center}
+        .skn-sma1 .ttc-align-justify ul{text-align:justify}
+        .skn-sma1 .ttc-align-right li:before,.skn-sma1 .ttc-align-center li:before{position:relative;left:-4px}
+
+        /*For Extra Space Before Colon*/
+        .skn-sma1 .beforecolonspace{display:none!important}
+        .skn-sma1.MFR .beforecolonspace{display:inline!important}
+
+        /* Duration tag */
+        .skn-sma1 .totl-expr{display:inline-block;float:right;border:1px solid #000;padding:0 5px;font-weight:700;vertical-align:top;text-wrap:nowrap;margin-left:5px}
+        .skn-sma1.texp-curved .totl-expr{border-radius:10px}
+        .skn-sma1 .dflex{display:flex;justify-content:space-between}
+
+        /* for-pdf changes */
+        .skn-sma1.for-pdf.texp-curved .dflex,.skn-sma1.for-pdf.texp-rectangle .dflex{display:block}
+        .skn-sma1.for-pdf.texp-curved .expr-sec .dflex > span:first-child,.skn-sma1.for-pdf.texp-rectangle .expr-sec .dflex > span:first-child{display:inline-block;width:72%}
+        .skn-sma1.for-pdf.texp-curved .expr-sec .dflex > span:last-child,.skn-sma1.for-pdf.texp-rectangle .expr-sec .dflex > span:last-child{display:inline-block;width:28%;float:right}
+
+
+    

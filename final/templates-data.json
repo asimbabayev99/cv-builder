@@ -1,0 +1,326 @@
+[
+  {
+    "index": 0,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 1,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 2,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 3,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 4,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 5,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 6,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 7,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 8,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 9,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 10,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 11,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 12,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 13,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 14,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 15,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 16,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 17,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 18,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 19,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 20,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 21,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 22,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 23,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 24,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 25,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 26,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 27,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 28,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 29,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 30,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 31,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 32,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 33,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  },
+  {
+    "index": 34,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": false
+  },
+  {
+    "index": 35,
+    "className": "skins-card-container",
+    "parentClasses": "card-wrap js-thumbnail-animation slide-in  ",
+    "dataAttrs": {
+      "data-testid": "embd-7922agI"
+    },
+    "hasSvg": true
+  }
+]

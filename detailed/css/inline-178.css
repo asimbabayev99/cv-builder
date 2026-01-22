@@ -1,0 +1,167 @@
+
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800');
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+
+        /*START content disc style for LI*/
+        .skn-mlv4 ul,.skn-mlv4 li{list-style:none;margin:0 0 0 5px;padding:0}
+        .skn-mlv4 p{margin:0 0 5px 0}
+        .skn-mlv4 ul li{position:relative;margin:0 0 5px 0px;padding-left:10px}
+        .skn-mlv4 .experience ul li,.skn-mlv4 .experience p{position:relative;margin:0 0 10px 0px}
+        .skn-mlv4 li::before {content:"•";display:inline-block;width:2px;left:-3px;position:absolute;color:#5F5F5F}
+        .skn-mlv4 .skill ul li:last-child{margin-bottom:0}
+        .skn-mlv4 .skill .paddedline:first-child{margin-bottom:10px}
+        /*END content disc style for LI*/
+
+        .skn-mlv4 .paddedline{display:block}
+        .skn-mlv4 .txt-bold{font-weight:bold}
+        .skn-mlv4 .displayNoneThisField{display:none}
+        .skn-mlv4 .flt-right{float:right}
+        .skn-mlv4 .brk-all{word-break:break-all}             
+        .skn-mlv4 .sptr{padding:0 5px}
+       
+        /*Document TOP section*/
+        .skn-mlv4 .top-section{display:flex}
+        .skn-mlv4{color:#5D5D5D;line-height:12px;font-variant-ligatures:none;word-wrap:break-word;position:relative;min-height:792px;box-sizing:border-box}
+        .skn-mlv4 .name-sec{flex-grow:1;position:relative;margin-bottom:0}   
+        .skn-mlv4 .name span{display:block}   
+        .skn-mlv4 .name{text-transform:uppercase;word-break:break-word;color:#F98C79;font-weight:bold;text-align:left;font-family:'Montserrat';}
+        .skn-mlv4 .name-wrap{text-transform:uppercase;color:#fff;font-weight:500;font-family:'Montserrat';}
+        .skn-mlv4 .prof-title{letter-spacing:0.81px;text-transform:uppercase;color:#5F5F5F;text-align:left;font-weight:800;font-family:'Montserrat'}
+        
+        /*PICT section*/
+        .skn-mlv4 .prfl-pic .field,.skn-mlv4 .monogram{border-radius:50%;box-sizing:border-box}  
+        .skn-mlv4 .monogram .svg-box{background:#F98C79;display:flex;justify-content:center;align-items:center;border-radius:50%;box-sizing:border-box}
+        .skn-mlv4 .monogram svg{width:inherit;height:inherit}
+        .skn-mlv4 .monogram svg text{text-transform:uppercase;fill:#000}
+        .skn-mlv4 .pcpf-fnln .prfl-pic,.skn-mlv4 .monogram{display:none}
+        .skn-mlv4 .pcpf-fnln .monogram{display:block}  
+        .skn-mlv4 .prfl-pic img{width:100%;height:100%;border-radius:50%;object-fit:cover}        
+        .skn-mlv4 .pict-sec{order:0;position:relative;z-index:1;}
+
+        /*Photo Layout styles*/
+        .skn-mlv4.pict-pcsh-square .paragraph .prfl-pic img{border-radius:unset;border:1px solid #373737;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-bottomleft .paragraph .prfl-pic img{border-radius:50%;border:1px solid #373737;border-bottom-left-radius:8px;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-bottomright .paragraph .prfl-pic img{border-radius:50%;border:1px solid #373737;border-bottom-right-radius:8px;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-radius .paragraph .prfl-pic img{border-radius:10px;border:1px solid #373737;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-rectangle .paragraph .prfl-pic .field img{border-radius:unset;border:1px solid #373737}
+        .skn-mlv4.pict-pcsh-rectangle .paragraph .prfl-pic{display:block;width:fit-content;margin:auto}
+        
+        /*Document Bottom section*/
+        .skn-mlv4{flex-wrap:wrap;justify-content:space-between;position:relative}
+        .skn-mlv4 .left-box::before,.skn-mlv4 .section.experience:before{content:"";position: absolute;width:1px;top:0;height:100%;background:#707070;right:0}        
+        .skn-mlv4.doc-pcpf-none .left-box::before,.skn-mlv4.pict-pcpf-none .left-box::before{width:1px}
+        .skn-mlv4 .section.experience{position:relative}
+        .skn-mlv4 .right-box,.skn-mlv4 .left-box{box-sizing:border-box}   
+        .skn-mlv4 .left-box{position:relative}  
+
+        /*Personal details section*/
+        .skn-mlv4 .details-wrap{margin-bottom:10px} 
+        .skn-mlv4 .details-wrap:last-child{margin-bottom:0}
+        /*Heading*/
+        .skn-mlv4 .sectiontitle{letter-spacing:0.81px;text-transform:uppercase;background:#747674;color:#fff;font-weight:800;font-family:'Montserrat'}
+       
+        /*Address section*/
+        .skn-mlv4 .social a{color:#5F5F5F;text-decoration:none}
+		.skn-mlv4 .address{word-break:break-all;word-break:break-word;color:#5F5F5F} /* break-all for Firefox */        
+        .skn-mlv4 .address div:last-child{padding-bottom:0}
+       
+        /*Job Title Varient*/
+        .skn-mlv4 .job-date{text-align:right;width:43%}
+        .skn-mlv4 .job-details{width:57%}
+        .skn-mlv4 .job-position{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-mlv4 .job-position,.skn-mlv4 .school-place,.skn-mlv4 .school-date{text-transform:uppercase;font-family:'Arial';letter-spacing:0.04px;color:#5F5F5F}
+
+        /*Skill section 2 column*/
+        .skn-mlv4 .right-box .skill{display:table;width:100%;table-layout:fixed}
+        .skn-mlv4 .right-box .skill .paddedline{display:table-cell;width:50%}
+        
+        .skn-mlv4 .cmnsize{display:block}
+        .skn-mlv4 .jobtitle,.skn-mlv4 .school{text-transform:uppercase;font-weight:600;font-family:'Montserrat'}
+
+        /*MFR address order code*/
+        .skn-mlv4 .zipprefix,.skn-mlv4.MFR .zipsuffix{display:none!important}
+        .skn-mlv4 .zipsuffix,.skn-mlv4.MFR .zipprefix{display:block!important}        
+        
+        /*PICT variations*/
+        .skn-mlv4.pict-pcpf-none .pict-sec{display:none}
+        .skn-mlv4.pict-pcpf-fnln .prfl-pic,.skn-mlv4 .monogram{display:none}
+        .skn-mlv4.pict-pcpf-fnln .monogram{display:block;background:#fff}  
+
+        /*For Extra Space Before Colon*/
+        .skn-mlv4 .beforecolonspace{display:none !important}
+        .skn-mlv4.show-colon-space .beforecolonspace{display:inline !important}
+       
+       /*New logic for infographic*/
+       .skn-mlv4 .lang-sec .singlecolumn,.skn-mlv4 .skli-sec .singlecolumn{display:none}
+        .skn-mlv4 .lang-sec.infobarsec .infobarpara,.skn-mlv4 .skli-sec.infobarsec .infobarpara,.skn-mlv4 .lang-sec.infotilesec .infotilepara,.skn-mlv4 .skli-sec.infotilesec .infotilepara{display:block}
+        /*Infographic*/
+        .skn-mlv4 .right-box .lang-sec,.skn-mlv4 .right-box .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mlv4 .right-box .lang-sec .heading,.skn-mlv4 .right-box .skli-sec .heading{width:100%;flex-grow:1}
+        .skn-mlv4 .right-box .lang-sec .paragraph.nativeLangPara{width:100%;max-width:100%}
+        .skn-mlv4 .right-box .lang-sec .paragraph, .skn-mlv4 .right-box .skli-sec .paragraph{width:46.7%}
+        .skn-mlv4 .lang-sec .field *,.skn-mlv4 .skli-sec .field *,.skn-mlv4 .lang-sec .nativeLangPara .field{display:inline}
+        .skn-mlv4 .lang-sec.infotilesec .nativeLangPara .field, .skn-mlv4 .lang-sec.infotilesec .field *, .skn-mlv4 .skli-sec .field *{display: inline}
+        .skn-mlv4 .lang-sec .paragraph,.skn-mlv4 .skli-sec .paragraph{vertical-align:top;padding-bottom:10px;margin-top:0}
+        .skn-mlv4 .lang-sec.section .singlecolumn,.skn-mlv4 .skli-sec.section .singlecolumn{margin-left:0;padding-left:0;position:relative}
+        .skn-mlv4 .lang-sec > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .lang-sec > .paragraph:nth-last-child(2),.skn-mlv4 .right-box .skli-sec > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-mlv4 .left-box .lang-sec > .paragraph:nth-last-child(1),.skn-mlv4 .left-box .skli-sec > .paragraph:nth-last-child(1){padding-bottom:0}
+        .skn-mlv4 .left-box .lang-sec .paragraph.nativeLangPara{width:100%;max-width:100%}
+        .skn-mlv4 .right-box .lang-sec.infobarsec .inner-rating,.skn-mlv4 .skli-sec.infobarsec .inner-rating{position:relative}
+        .skn-mlv4 .lang-sec.infobarsec .rating-bar,.skn-mlv4 .skli-sec.infobarsec .rating-bar{background:#D8D8D8;width:100%;clear:both;margin-top:3px;margin-bottom:3px;position:relative;page-break-inside:avoid;border-radius:5px}
+        .skn-mlv4 .lang-sec.infobarsec .inner-rating,.skn-mlv4 .skli-sec.infobarsec .inner-rating{background-color:#000000;height:4px;position:relative;width:60%;border-radius:5px}
+        .skn-mlv4 .left-box .lang-sec .paragraph,.skn-mlv4 .left-box .skli-sec .paragraph{display:block;margin-right:0;width:100%;max-width:100%;margin-top:0}
+        /*Infographic Tiles*/
+        .skn-mlv4 .lang-sec.infotilesec .sliced-rect,.skn-mlv4 .skli-sec .sliced-rect{height:4px;width:100%;line-height:0px;margin-top:3px;margin-bottom:3px;clear:both}
+        .skn-mlv4 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mlv4 .skli-sec .sliced-rect .sliced-rect-tile{height:100%;background-color:#D8D8D8;float:left;margin-right:3px;border-radius:5px}
+        .skn-mlv4 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mlv4 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mlv4 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#000000}
+        .skn-mlv4 .hide-bar .rating-bar,.skn-mlv4 .hide-bar .sliced-rect,.skn-mlv4 .hide-only-bar .rating-bar,.skn-mlv4 .hide-colon .colon{display:none!important}
+        .skn-mlv4 .hide-bar .field-ratt{display:none}
+        .skn-mlv4 .right-box .lang-sec.infotilesec .paragraph.firstparagraph,.skn-mlv4 .right-box .lang-sec.infotilesec .paragraph.firstparagraph + .paragraph,.skn-mlv4 .right-box .skli-sec .paragraph.firstparagraph,.skn-mlv4 .right-box .skli-sec .paragraph.firstparagraph + .paragraph{margin-top:0}
+
+         /*Infographic Languages Ordering(fieldgroup) Support*/
+         .skn-mlv4 .lang-sec.infobarsec .colon,.skn-mlv4 .lang-sec.infotilesec .colon{display:none}
+        .skn-mlv4 .lang-sec.infobarsec .field:first-child .colon,.skn-mlv4 .lang-sec.infotilesec .field:first-child .colon{display:inline}
+
+        /* Style for Signature */
+        .skn-mlv4 .disclaim .singlecolumn,.skn-mlv4 .disclaim .singlecolumn li,.skn-mlv4 .disclaim .singlecolumn p,.skn-mlv4 .disclaim .singlecolumn span{font-size:8px;color:#686868;line-height:10px;}
+        .skn-mlv4 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-mlv4 .txtleft + .field_sign{text-align:left}
+        .skn-mlv4 .txtcenter + .field_sign{text-align:center}
+        .skn-mlv4 .txtright + .field_sign{text-align:right}
+        .skn-mlv4 .signPic img{max-width:100%}
+        .skn-mlv4 .disp-blk{display:block}   
+        .skn-mlv4 .sign-container-data:empty{display:none}
+
+        .skn-mlv4 .right-box .experience .paragraph:before{content:"";position:absolute;top:6px;left:-37px;width:12px;height:12px;border-radius:50%;background:#fff;border:1px solid #707070;box-sizing:content-box}
+        .skn-mlv4 .right-box .experience .paragraph{position: relative;}
+        
+        /* Text alignment bullet */
+        .skn-mlv4 .ttc-align-left ul{text-align:left}
+        .skn-mlv4 .ttc-align-right ul{text-align:right}
+        .skn-mlv4 .ttc-align-center ul{text-align:center}
+        .skn-mlv4 .ttc-align-justify ul{text-align:justify}
+        .skn-mlv4 .ttc-align-right li:before,.skn-mlv4 .ttc-align-center li:before{position:relative;left:-10px}
+
+        .skn-mlv4 .label-cntc.txt-bold{display:none}
+
+         /* Duration tag */
+        .skn-mlv4 .totl-expr{display:inline-block;float:right; padding:0 5px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap;margin-left:5px}
+        .skn-mlv4.texp-curved .totl-expr{border-radius:10px}
+        .skn-mlv4 .dflex{display:flex;justify-content:space-between}
+        .skn-mlv4 .left-box .totl-expr{display:none}
+
+        
+        /*For Iron PDF*/
+        .skn-mlv4.for-iron-pdf{margin-top:-30px}
+        .skn-mlv4.for-iron-pdf .left-box::before,.skn-mlv4.for-iron-pdf .section.experience:before{content:none!important}
+        
+        .skn-mlv4.for-iron-pdf.texp-curved .right-box .dflex,.skn-mlv4.for-iron-pdf.texp-rectangle .right-box .dflex{display:block}
+        .skn-mlv4.for-iron-pdf.texp-curved .right-box .experience .dflex > span:first-child,.skn-mlv4.for-iron-pdf.texp-rectangle .right-box .experience .dflex > span:first-child{display:inline-block;width:72%}
+        .skn-mlv4.for-iron-pdf.texp-curved .right-box .experience .dflex > span:last-child,.skn-mlv4.for-iron-pdf.texp-rectangle .right-box .experience .dflex > span:last-child{display:inline-block;width:28%;float:right}
+        /* .skn-mlv4.for-iron-pdf .right-box .experience .paragraph{page-break-inside: avoid!important} */
+
+    

@@ -1,0 +1,185 @@
+
+
+        @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,500,700');
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-mli2 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        /*START content disc style for LI*/
+        .skn-mli2 ul,.skn-mli2 li{list-style:none;margin:0 0 0 8px;padding:0}
+        .skn-mli2 ul li{position:relative;margin:0}
+        .skn-mli2 ul li:before{content:'\2022';position:absolute;left:-8px;top:0}
+        .skn-mli2 .skli-sec ul li:before,.skn-mli2 .lang-sec ul li:before{left:-9px}
+
+        /*END content disc style for LI*/
+
+        .skn-mli2 .paddedline{display:block}
+        .skn-mli2 .txt-bold,.skn-mli2 strong{font-weight:bold}
+        .skn-mli2 .skli-name-normalwgt .txt-bold{font-weight:400}
+        .skn-mli2 .flt-right{float:right}
+		.skn-mli2 .brk-all{word-break:break-all}
+
+        /* Duration tag */
+        .skn-mli2 .totl-expr{display:inline-block;float:right; padding:0 5px;color:#fff;font-weight:600;vertical-align:top;text-wrap:nowrap;margin-left:5px}
+        .skn-mli2.texp-curved .totl-expr{border-radius:10px}
+        .skn-mli2 .dflex{display:flex;justify-content:space-between}
+        .skn-mli2 .right-box .totl-expr{display: none}
+
+        /*Document*/
+        .skn-mli2{font-family:'Fira Sans';color:#000;line-height:16px;font-weight:300;font-variant-ligatures:none;word-wrap:break-word}
+        .skn-mli2 .parentContainer{table-layout:fixed;display:table;width:100%;border-collapse:collapse}
+        .skn-mli2 .topsection{position:relative;padding-top:45px;border-bottom:1px solid #8DA6B6}
+        .skn-mli2 .topsection:before{content: '';background: #dfe6eb;position: absolute;height: 35px;width: 100%;top: 0;left: 0;opacity:.15}
+        .skn-mli2 .topsection .section{margin-bottom:0}
+        .skn-mli2 .section{padding-bottom:5px}
+        .skn-mli2 .bottom-box{padding-bottom:20px}
+
+        /*Name and CNTC*/
+        .skn-mli2 .name{color:#2a5978;font-size:36px;line-height:34px;font-weight:700;text-align:left;padding-bottom:5px;text-transform:uppercase}
+        .skn-mli2 .companyname{font-weight:700}
+        .skn-mli2 .jobcity,.skn-mli2 .jobstate,.skn-mli2 .degree,.skn-mli2 .programline,.skn-mli2 .jobdates,.skn-mli2 .joblocation, .skn-mli2 .experience .space{font-weight:500}
+        .skn-mli2 .education .jobcity,.skn-mli2 .education .jobstate,.skn-mli2 .education .jobcountry{font-weight:300}
+        .skn-mli2 .resumeTitle{text-align:left;padding-bottom:5px}
+        .skn-mli2 .address .adrsDetails{word-break:normal}
+        .skn-mli2 .adnlLnks{margin-left:0!important}
+		.skn-mli2 .cntc-sec{border-top:none;margin-bottom:0;padding-top:0}
+        .skn-mli2 .social .field a{color:#0000EE;text-decoration:underline}
+        .skn-mli2 .social .field a:hover{text-decoration:underline}
+
+        /* Common style for left and right box */
+        .skn-mli2 .left-box{padding:25px 17px 25px 0;display:table-cell}
+        .skn-mli2 .right-box{padding:25px 0 25px 17px;display:table-cell;vertical-align:top}
+        .skn-mli2 .left-box .section,.skn-mli2 .right-box .section{border-bottom:1px solid #8DA6B6}
+        .skn-mli2 .jloc-field{font-weight:500}
+
+        /*heading*/
+        .skn-mli2 .heading{margin-bottom:4px;font-weight:bold;font-size:18px;overflow:hidden}
+        .skn-mli2 .sectiontitle{color:#2a5978;text-transform:uppercase;padding-right:5px;display:inline;letter-spacing:.5px}
+        .skn-mli2 .sectiontitle:after{content:'';display:inline-block;width:100%;height:12px;margin-right:-100%;margin-left:5px;background:#dfe6eb;opacity:.15}
+        .skn-mli2 .jobline ul{margin-top:3px}
+
+        /*New logic for infographic*/
+        .skn-mli2 .lang-sec .singlecolumn,.skn-mli2 .skli-sec .singlecolumn{display:none}
+        .skn-mli2 .lang-sec.infobarsec .infobarpara,.skn-mli2 .lang-sec.infotilesec .infotilepara,.skn-mli2 .skli-sec.infobarsec .infobarpara,.skn-mli2 .skli-sec.infotilesec .infotilepara{display:block}
+
+        /*Infographic*/
+        .skn-mli2 .lang-sec.infobarsec .field p,.skn-mli2 .lang-sec.infobarsec .nativeLangPara .field{display:inline}
+        .skn-mli2 .lang-sec.infobarsec .paragraph{clear:both;margin-top:0;page-break-inside:avoid}
+        .skn-mli2 .firstparagraph{margin-top:0!important}
+        .skn-mli2 .rating-bar{background:#d5d6d6;width:100%;clear:both}
+        .skn-mli2 .inner-rating{background-color:#2a5978;height:4px;width:60%}
+
+        /*Infographic Skills*/
+        .skn-mli2 .lang-sec.infotilesec .paragraph,.skn-mli2 .skli-sec .paragraph{width:100%;display:inline-block;vertical-align:top;margin-top:0}
+        .skn-mli2 .lang-sec.infotilesec > .paragraph:nth-last-child(1),.skn-mli2 .skli-sec > .paragraph:nth-last-child(1){padding-bottom:0!important}
+        .skn-mli2 .lang-sec.infotilesec .field p,.skn-mli2 .lang-sec.infotilesec .field,.skn-mli2 .skli-sec .field p{display:inline}
+        .skn-mli2 .lang-sec.infotilesec .sliced-rect,.skn-mli2 .skli-sec .sliced-rect{height:6px;width:100%;line-height:0px;margin-top:3px;clear:both}
+        .skn-mli2 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli2 .skli-sec .sliced-rect .sliced-rect-tile{height:100%;background-color:#d5d6d6;float:left;margin-right:3px}
+        .skn-mli2 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mli2 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli2 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#576d7b}
+        .skn-mli2 .hide-bar .rating-bar,.skn-mli2 .hide-bar .sliced-rect,.skn-mli2 .hide-only-bar .rating-bar,.skn-mli2 .hide-colon .colon,.skn-mli2 .hide-bar .field-ratt,.skn-mli2 .lang-sec.hide-only-bar.infotilesec .sliced-rect{display:none!important}
+		
+        .skn-mli2 .nativeLangPara .field:first-child{font-weight:bold}
+        /* Additional Link */
+        .skn-mli2 .adnlLnks li:last-child{padding:0}
+       
+        /* Style for Signature */
+        .skn-mli2 .disclaim .singlecolumn,.skn-mli2 .disclaim .singlecolumn li,.skn-mli2 .disclaim .singlecolumn p,.skn-mli2 .disclaim .singlecolumn span{font-size:9px!important;color:#8a8a8a!important}
+        .skn-mli2 .field_sign{font-size:7px!important;color:#8a8a8a!important}
+        .skn-mli2 .txtleft + .field_sign{text-align:left}
+        .skn-mli2 .txtcenter + .field_sign{text-align:center}
+        .skn-mli2 .txtright + .field_sign{text-align:right}
+        .skn-mli2 .signPic span:first-child{padding-right:6px}
+        .skn-mli2 .signPic img{max-width:100%}
+        .skn-mli2 div[id*='SECTION_SGTR']{margin-bottom:0;padding-bottom:0}
+
+        /*MFR address*/
+        .skn-mli2 .zipsuffix,.skn-mli2.MFR .zipprefix,.skn-mli2.MES .zipprefix{display:inline}
+        .skn-mli2 .zipprefix,.skn-mli2.MFR .zipsuffix,.skn-mli2.MES .zipsuffix{display:none}
+
+        /*MUK colon*/
+        .skn-mli2 .mukcolon{display:none}
+        .skn-mli2.MUK .mukcolon{display:inline!important}
+
+        /* GRYR */
+        .skn-mli2 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+
+        /*For Extra Space Before Colon*/
+        .skn-mli2 .beforecolonspace{display:none!important}
+        .skn-mli2.MFR .beforecolonspace{display:inline!important}
+
+        /*Arab style*/
+        .skn-mli2.arb{direction:rtl;text-align:right} 
+        .skn-mli2.arb ul,.skn-mli2.arb li{margin:0 8px 0 0}
+        .skn-mli2.arb ul li:before{left:0;right:-8px}
+        .skn-mli2.arb ul li{margin:0}
+        .skn-mli2.arb .name,.skn-mli2.arb .resumeTitle{text-align:right}
+        .skn-mli2.arb .left-box{padding:25px 0 25px 17px}
+        .skn-mli2.arb .right-box{padding:25px 17px 25px 0}
+        .skn-mli2.arb .sectiontitle{padding-right:0;padding-left:5px;letter-spacing:unset}
+        .skn-mli2.arb .sectiontitle:after{margin-left:-100%;margin-right:5px}
+        .skn-mli2.arb .phn-dir{direction:ltr}
+        .skn-mli2.arb .flt-right{float:left}
+        .skn-mli2.arb .txtleft + .field_sign{text-align:right}
+        .skn-mli2.arb .left-box .singlecolumn,.skn-mli2.arb .left-box .maincolumn{margin-left:0}
+        .skn-mli2.arb .lang-sec.infotilesec .sliced-rect .sliced-rect-tile, .skn-mli2.arb .skli-sec .sliced-rect .sliced-rect-tile{margin-right:0;margin-left:3px;float:right}
+        .skn-mli2.arb .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child, .skn-mli2.arb .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-left:0}
+       .skn-mli2.arb .arb-comma{display:inline-block;padding-right:2px}
+
+        /*Date style*/
+        .skn-mli2.arb .experience .inner-date{direction:ltr;display:flex;flex-direction:row-reverse}
+        .skn-mli2.arb .experience .dates_wrapper{font-weight:500;padding-right:2px}
+        .skn-mli2.arb .experience .inner-date .jobdates{float:right}
+        .skn-mli2.arb .experience .space{padding:0 3px;float:right}
+        .skn-mli2.arb .experience .singlecolumn > .inner-date + span{clear:both} 
+
+        /* Builder css for mobile device */
+        .android .skn-mli2, .ios .skn-mli2{box-sizing:content-box}
+
+         /*HILT multi para/section*/
+        .skn-mli2 .multi-section-hilt .multi-para-opt,.skn-mli2 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-mli2 .multi-para-hilt .skill{display:none}
+        .skn-mli2 .multi-para-hilt:after{content:"";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-mli2 .right-box .multi-para-hilt .paragraph.firstparagraph, .skn-mli2 .left-box .multi-para-hilt .paragraph.firstparagraph{margin-top:0}
+		.skn-mli2 .multi-para-hilt .paragraph .singlecolumn{margin-left:0}
+        .skn-mli2 .left-box .multi-para-hilt .paragraph{width:49%;max-width:49%;display:block;float:left;clear:none;margin-top:0px;margin-right:2%}
+        .skn-mli2 .left-box .multi-para-hilt .paragraph{margin-bottom:15px;margin-top:0}
+        .skn-mli2 .left-box .multi-para-hilt .paragraph:nth-child(2n+1){margin-right:0}
+        .skn-mli2 .left-box .multi-para-hilt .paragraph:last-child,.skn-mli2 .left-box .multi-para-hilt .paragraph:nth-last-child(2){margin-bottom:0}
+       
+        /*PDF Specific Fix for SKIN-914*/
+        .skn-mli2.for-pdf .section{padding-bottom:0;border:none}
+        .skn-mli2.for-pdf .topsection{border-bottom:none}
+        .skn-mli2.for-pdf .section:after{content:'';display:block;height:5px;background:white;width:100%;border-bottom:1px solid #8DA6B6;page-break-inside:avoid}
+        .skn-mli2.for-pdf .disclaim:after,.skn-mli2.for-pdf div[id*='SECTION_SGTR']:after{content:none}
+    
+        .skn-mli2 .mexp .joblocation{font-weight:300}
+        .skn-mli2 .data-CERT .PARAGRAPH_CERT p,.modal-preview-resume .skn-mli2 .PARAGRAPH_CERT span,.skn-mli2 .cert-sec span p{display:inline-block}
+        /*PDF Issue Fixes*/
+        .skn-mli2.for-pdf .bottom-box{padding-bottom:0}
+        .skn-mli2.for-pdf .section:last-child{margin-bottom:0}
+
+        /*For Paginated HTML*/
+        .skn-mli2.for-paginated-pdf .lang-sec.infotilesec .paragraph,.skn-mli2.for-paginated-pdf .skli-sec .paragraph{display:block!important}
+        .skn-mli2.for-paginated-pdf .parentContainer .left-box,.skn-mli2.for-paginated-pdf .parentContainer .right-box{padding-top:0!important;padding-bottom:0!important}
+        .skn-mli2.for-paginated-pdf .parentContainer{margin-top:25px!important}
+
+        /*Pagination Parameters*/
+        .skn-mli2{data-noofpasses:2}
+
+        /*Paginated - First Page*/
+        .skn-mli2.for-paginated-pdf.pdf-first-page-template .parentContainer{display:none!important}
+        .skn-mli2.for-paginated-pdf.pdf-first-page-template{margin-top:0!important}
+
+        /*Paginated - First pass CSS*/
+        .skn-mli2.for-paginated-pdf.pdf-pass-1 .topsection{visibility:hidden}
+        .skn-mli2.for-paginated-pdf.pdf-pass-1 .right-box{visibility:hidden}
+
+        /*Paginated - Second pass CSS*/
+        .skn-mli2.for-paginated-pdf.pdf-pass-2 .topsection{visibility:hidden}
+        .skn-mli2.for-paginated-pdf.pdf-pass-2{data-rectleft:331}
+        .skn-mli2.for-paginated-pdf.pdf-pass-2 .left-box{visibility:hidden}
+          /*Iron PDF Code*/
+        .skn-mli2.for-iron-pdf{margin-top: -24px}
+    

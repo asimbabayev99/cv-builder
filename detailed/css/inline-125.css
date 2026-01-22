@@ -1,0 +1,76 @@
+
+        .skn-cba2,.skn-cba2 table{line-height:14px}
+        .skn-cba2.pagesize{width:535px}
+        .skn-cba2.fontsize,.skn-cba2 .lang-sec .paragraph *,.skn-cba2 .skli-sec .paragraph *{font-size:12px}
+        .skn-cba2.fontface{font-family:Times New Roman}
+        .skn-cba2.vmargins{padding-top:25px;padding-bottom:25px}
+        .skn-cba2.hmargins{padding-left:30px;padding-right:30px}
+        .skn-cba2 .section{margin-top:15px}
+        .skn-cba2 .sectiontitle{font-size:15px;line-height:17px}
+        .skn-cba2 .heading{margin-bottom:5px}
+        .skn-cba2 .paragraph{margin-top:15px}
+        .skn-cba2 .firstparagraph{margin-top:0}
+        .skn-cba2 .singlecolumn,.skn-cba2 .maincolumn{margin-left:0px}
+        .skn-cba2 table.skills td{padding-top:7px}
+        .skn-cba2 .name{font-size:24px;line-height:32px}
+        .skn-cba2 .resumeTitle{font-size:16px;line-height:26px;padding:0 0 10px 0}
+        .skn-cba2 .address{font-size:11px;line-height:13px;padding-top:8px}
+        .skn-cba2 .address li:before,.skn-cba2 .adnlLnks li:before{font-size:10px}
+        .skn-cba2 .name,.skn-cba2 .sectiontitle{color:#000000}
+        .skn-cba2 .lowerborder,.skn-cba2 .lowerborder2,.skn-cba2 .heading:before{border-color:#000000}
+		.skn-cba2 .skli-sec .singlecolumn .field:last-child{min-height:14px}
+        .skn-cba2 .totl-expr{background-color:#000000;font-size:8px;line-height:12px}
+
+        /* Style for Signature */
+        .skn-cba2 .disclaim{margin:0;padding:0;margin-top:50px}
+        .skn-cba2 .disclaim .heading{margin-bottom:2px}
+
+        /*FIX for Re-calculating width of singlecolumn for CL*/
+        .skn-cba2 .sectionCL .singlecolumn{margin-left:0;width:100%}
+        .skn-cba2 .address2{font-size:12px;line-height:14px}
+
+        /*Infographic*/
+        .skn-cba2 .lang-sec,.skn-cba2 .skli-sec,.skn-cba2 .multi-para-hilt{padding-left:0px}
+        .skn-cba2 .lang-sec .heading,.skn-cba2 .skli-sec .heading,.skn-cba2 .multi-para-hilt .heading{margin-left:-0px}
+        .skn-cba2 .lang-sec .paragraph,.skn-cba2 .skli-sec .paragraph{width:48.3%}
+        .skn-cba2 .lang-sec .heading, .skn-cba2 .skli-sec .heading{width:calc(100% + 0px)}
+        .skn-cba2 .inner-rating{background-color:#000000}
+		.skn-cba2 .lang-sec .sortable-item,.skn-cba2 .skli-sec .sortable-item{vertical-align:top}
+       
+		
+		/*Finalize Fixes*/
+        .skn-cba2 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+		.page-finalize .skn-cba2 .sortableInner .paragraph-container+.paragraph-container{margin:0}
+        .skn-cba2 .data-LNGG .doc-item,.skn-cba2 .data-SKLI .doc-item{width:100%}
+        .skn-cba2 .data-LNGG .sortableInner,.skn-cba2 .data-SKLI .sortableInner,.skn-cba2 .SECTION_LNGG .sortableInner,.skn-cba2 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-cba2 .data-LNGG .sortable-item,.skn-cba2 .data-SKLI .sortable-item{width:48.3%}
+        .skn-cba2 .data-LNGG .sortable-item .paragraph,.skn-cba2 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+        .skn-cba2 .lang-sec .native-lang{width:100%}
+
+	    /*Fixes for builder for skill*/
+        .skn-cba2 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:14px}	
+        .skn-cba2 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-cba2 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+	    .skn-cba2 .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-cba2 .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-cba2  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-cba2  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0!important}
+		
+		/*PDF Flex Handling Code - Personal Information*/
+		.skn-cba2.for-pdf .pdfpdwrapper{display:block}
+		.skn-cba2.for-pdf .pdfpdwrapper .details-wrap:first-child{float:left;padding-right:5px}
+		.skn-cba2.for-pdf .pdfpdwrapper .details-wrap:nth-child(2){float:right}
+		.skn-cba2.for-pdf .pdfpdwrapper .details-wrap{width:265px!important;padding-bottom:5px!important}
+
+        /*CSS for Infographic PDFWrapper*/
+        .skn-cba2.for-pdf .lang-sec,.skn-cba2.for-pdf .skli-sec{display: block;}
+        .skn-cba2.for-pdf .section .pdfinfwrapper{display:block;width:100%}
+        .skn-cba2.for-pdf .section .pdfinfwrapper:after{content:'';clear:both;display:table}
+        .skn-cba2.for-pdf .section .pdfinfwrapper .paragraph:first-child{float:left}
+        .skn-cba2.for-pdf .section .pdfinfwrapper .paragraph:nth-child(2){float:right}
+        .skn-cba2.for-pdf .section .pdfinfwrapper .paragraph{margin-bottom:5px;padding-bottom: 0px;}
+        .skn-cba2.for-pdf .section .pdfinfwrapper:last-child .paragraph{margin-bottom:0}
+        .skn-cba2.for-pdf .section .pdfinfwrapper .paragraph{clear: none;}
+
+         /*PDF Handling for TEXP*/
+        .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-row{display:block;}
+        .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .jobtitle-cell{display:inline-block;width:65%}
+        .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-cell{display:inline-block;float:right;}
+       
+	

@@ -1,0 +1,84 @@
+
+        .skn-mlt6,.skn-mlt6 table{line-height:15px}
+        .skn-mlt6:after{width:calc(190px + 30px);height:calc(100% - 2 * 18px);top:18px;right:18px}
+        .skn-mlt6{min-height:756px}
+        .skn-mlt6.pgsz-a4{min-height:806px}
+        .skn-mlt6.pagesize{width:559px}
+        .skn-mlt6.fontsize,.skn-mlt6 .lang-sec.infobarsec .paragraph *,.skn-mlt6 .lang-sec.infotilesec .paragraph *,.skn-mlt6 .skli-sec .paragraph *{font-size:10px}
+        .skn-mlt6.fontface{font-family:Palatino Linotype}
+        .skn-mlt6.vmargins{padding-top:18px;padding-bottom:18px}
+        .skn-mlt6.hmargins{padding-left:18px;padding-right:18px}
+        .skn-mlt6 .section{padding-top:20px;margin-bottom:20px}
+        .skn-mlt6 .disclaim{margin:0;padding:0;padding-top:50px}
+        .skn-mlt6 .top-section .section.firstsection{padding-top:0;background-color:#3c5769;margin-bottom:0}
+        .skn-mlt6 .sectiontitle{font-size:12px;line-height:17px}
+        .skn-mlt6 .paragraph{margin-top:20px}
+        .skn-mlt6 .paragraph.firstparagraph{margin-top:0}
+        .skn-mlt6 .left-box .singlecolumn,.skn-mlt6 .left-box .maincolumn{margin-left:0px}
+        .skn-mlt6 table.skills td{padding-top:10px}
+        .skn-mlt6 .name{font-size:26px;line-height:46px}
+        .skn-mlt6 .resumeTitle{font-size:18px;line-height:43px;margin-top:-15px}
+        .skn-mlt6 .address{font-size:10px;line-height:15px}
+        .skn-mlt6 .address2{font-size:10px;line-height:15px}
+        .skn-mlt6 .monogram svg{height:40px;width:40px}
+        .skn-mlt6 .right-box{width:190px}
+        /* .skn-mlt6.dynamicbg:before{background-image:url({$DYBG});width:595px} */
+        .skn-mlt6.dynamicbg:before{width:595px}
+        /* .skn-mlt6 .parentContainer{min-height:696px} */
+		/* .skn-mlt6 .skli-sec .singlecolumn .field:last-child{min-height:15px} */
+        .skn-mlt6 .totl-expr{font-size:8px;background-color:#3c5769;line-height:14px}
+
+        .skn-mlt6 .dynamicIcon svg rect.fillRect{fill:#3c5769;stroke:transparent}
+        .skn-mlt6 .mono-svg-7 text,.skn-mlt6 .mono-svg-8 text,.skn-mlt6 .mono-svg-9 text,.skn-mlt6 .mono-svg-10 text,.skn-mlt6 .mono-svg-11 text,.skn-mlt6 .mono-svg-12 text{fill:#3c5769}
+        .skn-mlt6 .mono-svg-8 line,.skn-mlt6 .mono-svg-11 line,.skn-mlt6 .mono-svg-10 line{stroke:#3c5769}
+        /* icons */
+        .skn-mlt6 .iconSvg{line-height:12px}
+        .skn-mlt6 .iconSvg svg,.skn-mlt6 .iconSvg{width:12px;height:12px}
+		.skn-mlt6 .right-box .paragraph-fieldgroup .iconSvg svg{width:15px;height:15px}
+
+        /*Infographic*/
+		.skn-mlt6 .left-box .lang-sec.infobarsec .paragraph{width:148px}
+		.skn-mlt6 .left-box .lang-sec.infobarsec .paragraph.nativeLangPara{width:313px;max-width:313px}
+		.skn-mlt6 .left-box .lang-sec.infobarsec,.skn-mlt6 .left-box .skli-sec,.skn-mlt6 .left-box .multi-para-hilt{padding-left:0px}
+        .skn-mlt6 .left-box .lang-sec.infobarsec .heading,.skn-mlt6 .left-box .skli-sec .heading{margin-left:-0px}
+        .skn-mlt6 .inner-rating{background-color:#3c5769}
+        .skn-mlt6 .right-box .lang-sec .paragraph,.skn-mlt6 .right-box  .skli-sec .paragraph{padding-bottom:10px}
+		
+
+        /*Infographic Tiles*/
+		.skn-mlt6 .left-box .lang-sec.infotilesec .paragraph,.skn-mlt6 .left-box .skli-sec .paragraph{width:148px}
+        .skn-mlt6 .right-box .lang-sec.infotilesec .paragraph,.skn-mlt6 .right-box .skli-sec .paragraph{padding-bottom:10px}
+		.skn-mlt6 .left-box .lang-sec.infotilesec{padding-left:0px}
+        .skn-mlt6 .left-box .lang-sec.infotilesec .heading,.skn-mlt6 .left-box .multi-para-hilt .heading{margin-left:-0px}
+        .skn-mlt6 .lang-sec.infotilesec .firstparagraph,.skn-mlt6 .skli-sec .firstparagraph{padding-top:0}
+		.skn-mlt6 .left-box .lang-sec .paragraph.nativeLangPara{width:313px!important;max-width:313px}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mlt6 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#3c5769}
+		
+		/*Fixes for builder*/
+		.skn-mlt6 .left-box .lang-sec .doc-item .title-edit,.skn-mlt6 .left-box .skli-sec .doc-item .title-edit{margin-left:-0px}
+        .skn-mlt6  .left-box .data-LNGG .sortable-item,.skn-mlt6  .left-box .skli-sec .sortable-item{display:inline-block;vertical-align:top}
+		.skn-mlt6 .left-box .lang-sec.infobarsec .sortableInner .paragraph,.skn-mlt6 .left-box .lang-sec.infotilesec .sortableInner .paragraph,.skn-mlt6 .left-box .skli-sec .sortableInner .paragraph{width:148px}
+        .skn-mlt6 .left-box .sortable-item.active-drag .lang-sec .sortable-item{display:inline-block}
+        .skn-mlt6 .left-box .active .lang-sec.infobarsec .heading .rename-section.text-rename,.skn-mlt6 .left-box .active .skli-sec.infobarsec .heading .rename-section.text-rename{margin-left:-0px}
+
+        /* Fix for MBR */        
+        .skn-mlt6.MBR .left-box .lang-sec .doc-item .title-edit,.skn-mlt6.MBR .left-box .skli-sec .doc-item .title-edit{width:368px}
+
+        /*HILT multi para - For PDF*/
+        .skn-mlt6.for-pdf .right-box .multi-para-hilt .pdfparawrapper .paragraph{margin-bottom:20px}
+
+        /*Fixes for builder for skill*/
+        .skn-mlt6 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:15px}	
+        .skn-mlt6 .right-box .skli-sec .sortable-item:last-child .paragraph .singlecolumn .field:last-child,.skn-mlt6 .left-box .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mlt6 .left-box .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+        .skn-mlt6 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mlt6 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-mlt6 .left-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mlt6 .left-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0}
+	   .skn-mlt6 .right-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph,.skn-mlt6 .right-box .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph{padding-bottom:0}
+	   
+       /*POC Multi Experience Para*/
+       .skn-mlt6 .groupChildPara.paragraph .singlecolumn .companyloc{display:none}
+
+        /*Pagination Parameters*/
+        .skn-mlt6{data-ptbm:18px;data-pgsz:595px}
+		.skn-mlt6.for-paginated-pdf.pdf-pass-2{data-rectleft:369}
+    

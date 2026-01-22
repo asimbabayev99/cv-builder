@@ -1,0 +1,509 @@
+<div class="svg-skin "><div data-testid="embd-98t1CZ7" class="" tabindex=""><div><style type="text/css" id="static">
+        @import url('https://fonts.googleapis.com/css?family=Saira:300,400,500,600,700,900');
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-mli5 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        /*START content disc style for LI*/
+        .skn-mli5 ul,.skn-mli5 li{list-style:none;margin:0 0 0 8px;padding:0}
+        .skn-mli5 ul li{position:relative;margin:0}
+        .skn-mli5 ul li:before{content:'\2022';position:absolute;left:-8px;top:0;}
+        .skn-mli5 .skli-sec ul li:before,.skn-mli5 .lang-sec ul li:before{left:-9px}
+        .skn-mli5 .jobline ul,.skn-mli5 .education .field ul{margin-top:5px}
+        .skn-mli5 .jobline ul li{padding-bottom:3px}
+        .skn-mli5 .jobline ul li:last-child{padding-bottom:0}
+        /*END content disc style for LI*/
+
+        .skn-mli5 .txt-bold{font-weight:600}
+        .skn-mli5 .break-all{word-break:break-all}
+        .skn-mli5 .paddedline{display:block}
+        .skn-mli5 .flt-right{float:right}
+        .skn-mli5 .pb5{padding-bottom:5px}
+        .skn-mli5 .skli-name-normalwgt .txt-bold{font-weight:400}
+        .skn-mli5 .fwt300{font-weight:300}
+
+        .skn-mli5 .ttc-align-left ul{text-align:left}
+        .skn-mli5 .ttc-align-right ul{text-align:right}
+        .skn-mli5 .ttc-align-center ul{text-align:center}
+        .skn-mli5 .ttc-align-justify ul{text-align:justify}
+        .skn-mli5 .ttc-align-right li:before,.skn-mli5 .ttc-align-center li:before{position:relative;left:-4px}
+
+        /*Document*/
+        .skn-mli5{color:#46464e;line-height:16px;font-variant-ligatures:none;word-wrap:break-word}
+        .skn-mli5 .name{color:#496267;font-weight:900;padding:0 0 10px 0;text-align:left;position:relative;letter-spacing:.9px;text-transform: uppercase}
+        .skn-mli5 .resumeTitle{color:#4a4a4a;font-weight:600}
+        .skn-mli5 .parentContainer{display:table;table-layout:fixed;width:100%}
+		.skn-mli5 .paragraph.firstparagraph{margin-top:0}
+		.skn-mli5 .social .field a{color:#fff;text-decoration:underline}
+        .skn-mli5 .social .field a:hover{text-decoration:underline}
+        .skn-mli5 .reco-sec{color:#000}
+        .skn-mli5 .reco-sec .field{color:#46464e}
+        .skn-mli5 .reco-sec .txt-bold{font-weight:700}
+        .skn-mli5 .totl-expr{float:right;padding:0 6px;color:#fff;font-weight:700}
+        .skn-mli5 .right-box .totl-expr{display:none}
+        .skn-mli5.texp-curved .totl-expr{border-radius:10px}
+
+        /* Common style for left and right box */
+        .skn-mli5 .left-box{padding:30px 20px 30px 35px;display:table-cell;vertical-align:top;letter-spacing:0.2px}
+        .skn-mli5 .right-box{background-color:#496267;box-sizing:content-box;display:table-cell;background-size:100%;color:#fff;padding:25px;padding: 40px 35px 30px 20px}
+        .skn-mli5 .right-box .section:first-child,.skn-mli5 .left-box .section:first-child{padding-top:0px}
+        .skn-mli5 .left-box .section:first-child{border-top:none;border-bottom:1px solid #2c5a77;padding-bottom:0;margin-bottom:30px}
+        .skn-mli5 .right-box .section:first-child .paragraph{padding:0;display:block}
+        .skn-mli5 .right-box .section:last-of-type{border:none}
+        .skn-mli5 .right-box .heading,.skn-mli5 .left-box .paragraph{padding-left:0}
+        .skn-mli5 .right-box .section{color:#fff}
+        .skn-mli5 .left-box > .section:last-child,.skn-mli5 .right-box > .section:last-child{margin-bottom:0}
+
+        /* PRFL */
+        .skn-mli5 .prflPic,.skn-mli5 .prflPic .field{display:table-cell;vertical-align:middle;height:168px;text-align:center}
+        .skn-mli5 .prflPic img{max-height:168px;max-width:174px;position:absolute;left:0;right:0;top:0;bottom:0;margin:auto}
+
+        /* Heading */
+        .skn-mli5 .heading{line-height:15px;margin-bottom:10px}
+        .skn-mli5 .left-box .sectiontitle{color:#2c5a77}
+        .skn-mli5 .sectiontitle{display:block;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #2c5a77}
+        .skn-mli5 .right-box .sectiontitle{display:block;border-bottom-color:#fff;margin-left: -20px;padding-left: 20px}
+
+        /* section */
+
+        .skn-mli5 .section:empty{display:none}
+        .skn-mli5 .septr:before{content:"|";font-size:9px;vertical-align:top;padding-left:2px;padding-right:2px}
+        .skn-mli5 .education .joblocation{font-weight:300}
+        .skn-mli5 .right-box .section:after{content:'';display:block}
+
+        .skn-mli5 .jobdates,.skn-mli5 .companyname{font-weight:500}
+        .skn-mli5 .jobcity{font-weight:400}
+        .skn-mli5 .education .jobcity{font-weight:300}
+        .skn-mli5 .left-box .education .paddedline,.skn-mli5 .left-box .experience .paddedline,.skn-mli5 .left-box .multi-para-color,.skn-mli5 .left-box .pdet-sec .txt-bold{color:#000}
+
+        /* Icon style */
+        .skn-mli5 .icon-section{text-align:center}
+
+        /* Circle SVG */
+        .skn-mli5 .wrap{display:table;table-layout:fixed;width:100%}
+        .skn-mli5 .address{text-align:left}
+        .skn-mli5 .adrs-field{display:table;table-layout:fixed;width:100%;margin-bottom:10px;min-height:14px}
+		.skn-mli5 .adrs-field:last-child{margin-bottom:0}
+        .skn-mli5 .adrs-field .circle{border-radius:100%;height:15px;width:15px;display:table-cell;vertical-align:middle;text-align:center;font-size:9px;box-sizing:border-box}
+        .skn-mli5 .userdetail .adrs-field:first-child{padding-top:10px}
+        .skn-mli5 .address .adrs-field > .addrCircle{display:table-cell;vertical-align:middle;padding-left:10px;max-width:166px;box-sizing:border-box;}
+		.skn-mli5 .st1, .skn-mli5 .social .svg-circlebg,.skn-mli5 .paragraph-fieldgroup .social .svg-fillcirclebg[d*='M64.8,32.4L64.8']{fill:#FFFFFF}
+        .skn-mli5 .address .svg-fillcirclebg{fill:#fff}
+
+        /*New logic for infographic*/
+        .skn-mli5 .lang-sec .singlecolumn{display:none}
+        .skn-mli5 .lang-sec.infobarsec .infobarpara,.skn-mli5 .lang-sec.infotilesec .infotilepara{display:block}
+        .skn-mli5 .left-box .lang-sec .paragraph, .skn-mli5 .left-box .skli-sec .paragraph{display:inline-block;margin-bottom:5px;margin-top:0}
+
+        /*Infographic bar*/
+        .skn-mli5 .lang-sec.infobarsec .field p,.skn-mli5 .lang-sec.infobarsec .nativeLangPara .field,.skn-mli5 .skli-sec.infobarsec .field p{display:inline}
+        .skn-mli5 .lang-sec.infobarsec .paragraph,.skn-mli5 .skli-sec.infobarsec .paragraph{vertical-align:top;clear:both;padding-bottom:0}
+        .skn-mli5 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;position:relative;overflow:hidden}
+        .skn-mli5 .inner-rating{height:4px}
+        .skn-mli5 .right-box .rating-bar{background:rgba(255,255,255,.25)}
+        .skn-mli5 .right-box .inner-rating{background:#fff;position:relative}
+        .skn-mli5 .left-box .lang-sec.infobarsec > .paragraph:nth-last-child(1),.skn-mli5 .left-box .skli-sec.infobarsec > .paragraph:nth-last-child(1),.skn-mli5 .left-box .lang-sec.infobarsec > .paragraph:nth-last-child(2),.skn-mli5 .left-box .skli-sec.infobarsec > .paragraph:nth-last-child(2){margin-bottom:0!important}
+
+        .skn-mli5 .right-box .skli-sec .paragraph:last-child .singlecolumn  .field:last-child{min-height:0}
+		.skn-mli5 .left-box .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-mli5 .left-box .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+
+		/*Infographic Tiles*/
+        .skn-mli5 .lang-sec.infotilesec .paragraph,.skn-mli5 .skli-sec.infotilesec .paragraph{display:inline-block;width:100%;vertical-align:top;clear:both;padding-bottom:0px}
+        .skn-mli5 .lang-sec.infotilesec > .paragraph:nth-last-child(1),.skn-mli5 .skli-sec > .paragraph:nth-last-child(1){padding-bottom:0!important}
+        .skn-mli5 .lang-sec.infotilesec .field p,.skn-mli5 .lang-sec.infotilesec .field,.skn-mli5 .skli-sec .field p{display:inline}
+        .skn-mli5 .lang-sec.infotilesec .sliced-rect,.skn-mli5 .skli-sec .sliced-rect{height:6px;width:100%;line-height:0px;margin-top:3px;clear:both}
+        .skn-mli5 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli5 .skli-sec .sliced-rect .sliced-rect-tile{height:100%;background-color:#d5d6d6;float:left;margin-right:3px;}
+
+        /*Infographic Tiles Right Box*/
+        .skn-mli5 .right-box .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli5 .right-box .skli-sec .sliced-rect .sliced-rect-tile{background:rgba(255,255,255,.25)}
+        .skn-mli5 .right-box .lang-sec.infotilesec .sliced-rect .sliced-rect-tile.ratvfill,.skn-mli5 .right-box .sliced-rect .sliced-rect-tile.ratvfill{background:#fff}
+        .skn-mli5 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mli5 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli5 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile.ratvfill,.skn-mli5 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#2c5a77}
+        .skn-mli5 .hide-bar .paragraph .rating-bar,.skn-mli5 .hide-only-bar .rating-bar,.skn-mli5 .hide-colon .paragraph .colon,.skn-mli5 .hide-bar .paragraph .sliced-rect,.skn-mli5 .hide-bar .field-ratt{display:none!important}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli5 .left-box .sliced-rect svg .ratvfill{fill:#2c5a77}
+        .skn-mli5 .right-box .sliced-rect svg .ratvfill{fill:#2d2d2d}
+
+        .skn-mli5 .nativeLangPara .field:first-child{font-weight:bold}
+        /* Style for Signature */
+        .skn-mli5 .disclaim .field.singlecolumn,.skn-mli5 .signPic > .field_sign,.skn-mli5 .disclaim .paragraph,.skn-mli5 .sign .paragraph{margin-left:0}
+        .skn-mli5 .disclaim .field.singlecolumn,.skn-mli5 .disclaim .field.singlecolumn li,.skn-mli5 .disclaim .field.singlecolumn p,.skn-mli5 .disclaim .field.singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-mli5 .sign .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-mli5 .txtleft + .field_sign{text-align:left}
+        .skn-mli5 .txtcenter + .field_sign{text-align:center}
+        .skn-mli5 .txtright + .field_sign{text-align:right}
+        .skn-mli5 .signPic span:first-child{padding-right:6px}
+        .skn-mli5 .signPic img{max-width:100%}
+        .skn-mli5 .left-box .disclaim,.skn-mli5 .left-box .sign{border:none}
+        .skn-mli5 .disclaim .paragraph:before,.skn-mli5 .sign .paragraph:before{display:none}
+		.skn-mli5 .sign.section{padding-top:0}
+
+        /*MFR address*/
+        .skn-mli5 .zipsuffix,.skn-mli5.MFR .zipprefix,.skn-mli5.MES .zipprefix{display:block}
+        .skn-mli5 .zipprefix,.skn-mli5.MFR .zipsuffix,.skn-mli5.MES .zipsuffix{display:none}
+        .skn-mli5 .beforecolonspace{display:none!important}
+        .skn-mli5.MFR .beforecolonspace{display:inline!important}
+
+        /* GRYR */
+        .skn-mli5 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+		
+		 /*HILT multi para/section*/
+         .skn-mli5 .multi-section-hilt .multi-para-opt,.skn-mli5 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-mli5 .multi-para-hilt .dflt-view{display:none}
+        .skn-mli5 .multi-para-hilt:after{content:"";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-mli5 .left-box .multi-para-hilt .paragraph{display:block;float:left;clear:none;margin-top:0px;margin-right:2%}
+        .skn-mli5 .left-box .multi-para-hilt .paragraph:nth-child(2n+1){margin-right:0;float:left}
+		.skn-mli5 .left-box .multi-para-hilt .paragraph:nth-child(2n){clear:left}
+        .skn-mli5 .left-box .multi-para-hilt .paragraph:last-child,.skn-mli5 .left-box .multi-para-hilt .paragraph:nth-last-child(2):nth-child(2n){margin-bottom:0}
+		.skn-mli5 .left-box .multi-para-hilt .singlecolumn{margin-left:0!important;padding-left:0}
+		.skn-mli5 .left-box .multi-para-hilt .paragraph{margin-bottom:15px}
+		.skn-mli5 .left-box .multi-para-hilt .paragraph:last-child{margin-bottom:0}
+        .skn-mli5 .left-box .multi-para-hilt .paragraph{width:48%;max-width:48%}
+
+        /*HILT multi para - For PDF*/
+        .skn-mli5.for-pdf .multi-para-hilt{display:block}
+        .skn-mli5.for-pdf .parentContainer .left-box .multi-para-hilt .pdfparawrapper:after{content:'';clear:both;display:table}
+        .skn-mli5.for-pdf .parentContainer .left-box .multi-para-hilt .pdfparawrapper .paragraph:first-child{float:left;margin-left:0}
+        .skn-mli5.for-pdf .parentContainer .left-box .multi-para-hilt .pdfparawrapper .paragraph:nth-child(2){float:right;margin-left:2%}
+        .skn-mli5.for-pdf .parentContainer .left-box .multi-para-hilt .pdfparawrapper .paragraph{margin-bottom:10px}
+        .skn-mli5.for-pdf .parentContainer .left-box .multi-para-hilt .pdfparawrapper .paragraph:nth-child(2n){clear:none}
+        .skn-mli5.for-pdf .multi-para-hilt .pdfparawrapper:last-child .paragraph:last-child,.skn-mli5.for-pdf .left-box .multi-para-hilt .pdfparawrapper:last-child .paragraph{margin-bottom:0}
+
+        /* Builder css for mobile device */
+        .android .skn-mli5, .ios .skn-mli5{box-sizing:content-box}
+
+        .skn-mli5 .mexp .companyname{font-weight:bold}
+
+        /*builder fixes */
+        .skn-mli5 .cert-sec .singlecolumn p{display:inline}
+
+        /*Hyphen Handling*/
+        .skn-mli5 .hyphen:before{content:' - '}
+        .skn-mli5.hyphen-en-dash .hyphen:before{content:' – '}
+        
+        /*Paginated HTML PDF*/
+        .skn-mli5.for-paginated-pdf .right-box .lang-sec.infotilesec .paragraph,.skn-mli5.for-paginated-pdf .right-box .skli-sec.infotilesec .paragraph{display:block!important}
+        .skn-mli5.for-paginated-pdf .left-box .inf-sec .paragraph,.skn-mli5.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper{display:block!important}
+        .skn-mli5.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper .paragraph-container{display:block!important;float:left}
+        .skn-mli5.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper .paragraph-container + .paragraph-container{float:right}
+        .skn-mli5.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper:after{content:'';display:table;clear:both}
+        .skn-mli5.for-paginated-pdf .parentContainer .left-box,.skn-mli5.for-paginated-pdf .parentContainer .right-box{padding-top:0!important;padding-bottom:0!important}
+        
+        /*Pagination Parameters*/
+        .skn-mli5{data-noofpasses:2}
+
+        /*Paginated - Common BG*/
+        .skn-mli5.for-paginated-pdf.pdf-template .parentContainer .section{display:none!important}
+        .skn-mli5.for-paginated-pdf.pdf-template .parentContainer{min-height:1000px!important;height:1000px!important}
+
+        /*Paginated - First pass CSS*/
+        .skn-mli5.for-paginated-pdf.pdf-pass-1 .right-box{background-color:transparent!important}
+        .skn-mli5.for-paginated-pdf.pdf-pass-1 .right-box{visibility:hidden}
+
+        /*Paginated - Second pass CSS*/
+        .skn-mli5.for-paginated-pdf.pdf-pass-2 .right-box{background-color:transparent!important}
+        .skn-mli5.for-paginated-pdf.pdf-pass-2 .left-box{visibility:hidden}
+
+        .skn-mli5.for-iron-pdf .parentContainer{min-height:auto!important}
+        .skn-mli5.for-iron-pdf .right-box{background-color:transparent!important}
+        .skn-mli5.for-iron-pdf .left-box{padding-top:0!important;padding-bottom:0!important}
+        .skn-mli5.for-iron-pdf .right-box{padding-top:10px!important;padding-bottom:0!important}
+    </style><style type="text/css" id="dynamic" data-time="Thu Jan 22 2026 21:19:33 GMT+0400 (Azerbaijan Standard Time)">
+        .skn-mli5,.skn-mli5 table{line-height:14px}
+        .skn-mli5,.skn-mli5 .parentContainer{min-height:792px}
+        .skn-mli5.pgsz-a4,.skn-mli5.pgsz-a4 .parentContainer{min-height:842px}
+        .skn-mli5.pagesize{width:595px}
+        .skn-mli5.fontsize,.skn-mli5 ul li:before,.skn-mli5 .septr:before{font-size:10px}
+        .skn-mli5.fontface{font-family:Saira}
+        .skn-mli5 .section{margin-bottom:25px}
+        .skn-mli5 .paragraph{margin-top:15px}
+        .skn-mli5 .left-box .singlecolumn,.skn-mli5 .left-box .maincolumn{margin-left:0px}
+        .skn-mli5 table.skills td{padding-top:5px}
+        .skn-mli5 .name{color:#2c5a77;font-size:36px;line-height:34px}
+        .skn-mli5 .resumeTitle{font-size:18px;line-height:18px;margin:0 0 10px 0}
+        .skn-mli5 .address2{font-size:10px}
+        .skn-mli5 .heading{font-size:14px;line-height:17px}
+        .skn-mli5 .left-box .sectiontitle{color:#2c5a77}
+        .skn-mli5 .right-box{width:169px;background-color:#2c5a77}
+        .skn-mli5 ul li{padding-left:0px}
+        .skn-mli5 .sectiontitle,.skn-mli5 .left-box .section:first-child{border-color:#2c5a77}
+        .skn-mli5 .disclaim{padding:0;padding-top:50px}
+		.skn-mli5 .totl-expr{font-size:8px;background-color:#2c5a77;line-height:13px}
+
+        .skn-mli5 .icon-section img{height:100px;width:100px;margin-left:15px}
+
+        /* Circle SVG */
+        .skn-mli5 .adrs-field .circle{height:17px;width:18px}
+        .skn-mli5 .adrs-field svg{height:17px;width:18px; vertical-align:middle;}
+        .skn-mli5 .adrs-field svg .fillclr,.skn-mli5 .icon-svg svg{fill:#2c5a77}
+        .skn-mli5 .address .adrs-field > .addrCircle{padding-left:10px}
+
+        /*New logic for infographic*/
+        .skn-mli5 .lang-sec .singlecolumn,.skn-mli5 .skli-sec .singlecolumn{display:none}
+        .skn-mli5 .lang-sec.infobarsec .infobarpara,.skn-mli5 .lang-sec.infotilesec .infotilepara,
+        .skn-mli5 .skli-sec.infobarsec .infobarpara,.skn-mli5 .skli-sec.infotilesec .infotilepara{display:block}
+        .skn-mli5 .lang-sec > .paragraph:nth-last-child(1),.skn-mli5 .skli-sec > .paragraph:nth-last-child(1){margin-bottom:0!important}
+        .skn-mli5 .left-box .lang-sec .paragraph, .skn-mli5 .left-box .skli-sec .paragraph{width:145px}
+        .skn-mli5 .left-box .lang-sec, .skn-mli5 .left-box .skli-sec,.skn-mli5 .left-box .multi-para-hilt{margin-left:0px}
+        .skn-mli5 .left-box .lang-sec .paragraph.para_odd,.skn-mli5 .left-box .skli-sec .paragraph.para_odd{margin-right:15px}
+        .skn-mli5 .left-box .lang-sec .paragraph.nativeLangPara{width:315px;max-width:315px}
+        .skn-mli5 .left-box .lang-sec .singlecolumn,.skn-mli5 .left-box .skli-sec .singlecolumn{margin-left:0}
+        .skn-mli5 .left-box .lang-sec .heading,.skn-mli5 .left-box .skli-sec .heading,.skn-mli5 .left-box .multi-para-hilt .heading{margin-left:-0px}
+        .resume-preview .skn-mli5 .left-box .lang-sec .paragraph, .skn-mli5 .left-box .skli-sec .paragraph{width:140px}
+        .resume-preview .skn-mli5 .left-box .lang-sec .paragraph.nativeLangPara{width:100%;max-width:100%;word-break:break-word} 
+        
+        /*Infographic Bar*/
+        .skn-mli5 .lang-sec.infobarsec .firstparagraph,.skn-mli5 .skli-sec.infobarsec .firstparagraph{padding-top:0}
+        .skn-mli5 .left-box .inner-rating,.skn-mli5 .right-box .rating-bar:before{background-color:#2c5a77}
+
+        /*Infographic Tiles*/
+        .skn-mli5 .right-box .lang-sec.infotilesec .firstparagraph,.skn-mli5 .skli-sec .firstparagraph{padding-top:0}
+        .skn-mli5 .right-box .lang-sec .paragraph,.skn-mli5 .right-box .skli-sec .paragraph{margin-bottom:5px;padding-bottom:0;margin-top:0}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli5 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile.ratvfill,.skn-mli5 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#2c5a77}
+
+        /*Fixes for builder*/
+        .skn-mli5 .right-box .sortable-item.active .section,.skn-mli5 .right-box .sortable-item.active .social .field a{color:#242424}
+        .skn-mli5 .left-box .sortable-item:first-child .section{border-bottom:1px solid #2c5a77;padding-bottom:0;margin-bottom:25px}
+        .skn-mli5 .left-box .sortable-item:first-child .section{border-color:#2c5a77!important}
+
+        /*Builder fixed for hovering*/
+        .skn-mli5 .right-box .active .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli5 .right-box .active .skli-sec .sliced-rect .sliced-rect-tile,.page-finalize .skn-mli5 .right-box .data-LNGG.active .rating-bar,.page-finalize .skn-mli5 .right-box .data-SKLI.active .rating-bar,.page-finalize .skn-mli5 .right-box .active-drag .rating-bar,.page-finalize .skn-mli5 .right-box .active-drag .sliced-rect .sliced-rect-tile{background:#d5d6d6}
+        .skn-mli5 .right-box .active .lang-sec.infotilesec .sliced-rect .sliced-rect-tile.ratvfill,.skn-mli5 .right-box .active .sliced-rect .sliced-rect-tile.ratvfill,.page-finalize .skn-mli5 .right-box .data-LNGG.active .inner-rating,.page-finalize .skn-mli5 .right-box .data-SKLI.active .inner-rating,.page-finalize .skn-mli5 .right-box .active-drag .inner-rating,.page-finalize .skn-mli5 .right-box .active-drag .sliced-rect .sliced-rect-tile.ratvfill{background:#2c5a77}
+        .skn-mli5 .right-box .active .sectiontitle{border-color:#2c5a77}
+        .skn-mli5 .left-box .lang-sec .sortableInner .sortable-item,.skn-mli5 .left-box .skli-sec .sortableInner .sortable-item{display:inline-block;vertical-align:top}
+        .skn-mli5 .parentContainer .left-box .lang-sec.SECTION_LNGG, .skn-mli5 .parentContainer .left-box .skli-sec.SECTION_SKLI{margin-left:0}
+        .skn-mli5 .parentContainer .left-box .lang-sec.SECTION_LNGG .heading, .skn-mli5 .parentContainer .left-box .skli-sec.SECTION_SKLI .heading{margin-left:0}
+        .skn-mli5 .parentContainer .left-box .lang-sec.SECTION_LNGG .sortableInner,.skn-mli5 .parentContainer .left-box .skli-sec.SECTION_SKLI .sortableInner{margin-left:0px}
+
+        /*HILT multi para - For PDF*/
+        .skn-mli5.for-pdf .right-box .multi-para-hilt .pdfparawrapper .paragraph{margin-bottom:10px}
+
+        @-moz-document url-prefix() {.skn-mli5 .parentContainer{height:792px}}
+        /* support for IE Browser */
+        @media screen and (min-width:0\0) {}
+		
+		/*Fixes for builder for skill*/
+        .skn-mli5 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:13px}	
+        .skn-mli5 .right-box .skli-sec .sortable-item:last-child .paragraph .singlecolumn .field:last-child,.skn-mli5 .left-box .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mli5 .left-box .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+        .skn-mli5 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mli5 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-mli5 .left-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mli5 .left-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{margin-bottom:0!important}
+	   .skn-mli5 .right-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph,.skn-mli5 .right-box .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph{margin-bottom:0!important}
+	   
+        /*POC Multi Experience Para*/
+        .skn-mli5 .groupChildPara.paragraph .singlecolumn .companyloc{display:none}
+
+        /*Pagination Parameters*/
+        .skn-mli5.for-paginated-pdf .parentContainer{margin-top:25px}
+        .skn-mli5{data-ptbm:25px;data-pgsz:595px}
+        .skn-mli5.for-paginated-pdf.pdf-pass-2{data-rectleft:371}
+    </style></div><div data-testid="embd-95CA90b" class="document doc-root doc-finalize fontsize fontface vmargins hmargins  pagesize skn-mli5 MLI5 MUK                   pgsz-a4 hyphen-normal texp-rectangle" docskinwidth="598" style="transform: scale(0.352941, 0.326216);"><div data-testid="embd-92LqKqF0" id="CONTAINER_PARENT_0" class="parentContainer"><div data-testid="embd-92PDkR60" id="CONTAINER_0" class="left-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="8" class="sortable-item section-container SortableItem-sibling  data-NAME"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-NAME" id="SECTION_NAME1a1a32ad-f01c-4377-b2f6-1a65f9bf6cb8" class="section notdraggable SECTION_NAME firstsection" data-section-cd="NAME"><div data-testid="embd-88uQIHR-NAME" class="doc-item"><div data-testid="embd-88aw0Ce-NAME" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-44bc0bd4-6d0c-480d-8f32-8d70df1621d0" id="PARAGRAPH_NAME_44bc0bd4-6d0c-480d-8f32-8d70df1621d0" class="paragraph PARAGRAPH_NAME firstparagraph"><div data-testid="embd-78blCsH">
+                        <div class="name" data-uppercase="true">
+                            <span id="FIELD_FNAM">Dom</span>
+                            <span id="FIELD_LNAM">Webster</span>
+                        </div>
+                        
+                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="8" class="sortable-item section-container SortableItem-sibling  data-SUMM"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMMaae374b0-0228-4808-a3fe-b04cc0c571fb" class="section SECTION_SUMM has-title" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_SUMM">PROFESSIONAL SUMMARY<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename PROFESSIONAL SUMMARY " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-SUMM" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-f6669442-f38f-e0e2-fad7-6104f95f3e6d" id="PARAGRAPH_SUMM_f6669442-f38f-e0e2-fad7-6104f95f3e6d" class="paragraph PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn" id="FIELD_FRFM"><p>Motivated Care Assistant with 10 years of experience in the Care industry. Offering expertise in person-centred care, implementation and monitoring of individual care plans and management of resident assessments and files. Energetic self-starter and team builder able to navigate high-stress situations. Well-versed in monitoring clients with developmental disabilities and adhering to patient care plans.</p></div>
+                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="8" class="sortable-item section-container SortableItem-sibling  data-EXPR"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR313e1c77-349e-497b-bdb6-f0271f1e85bf" class="section experience SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_EXPR">Work history<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Work history " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EXPR" class=""><div data-testid="embd-87S8HNi313e1c77-349e-497b-bdb6-f0271f1e85bf" id="CONTAINER_313e1c77-349e-497b-bdb6-f0271f1e85bf" class="sortableInner"><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="8" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="8" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-998e66f0-eaa8-4a72-b41c-7158c85a1d86" id="PARAGRAPH_EXPR_998e66f0-eaa8-4a72-b41c-7158c85a1d86" class="paragraph PARAGRAPH_EXPR firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT|TEXP">
+                                <span class="jobtitle txtCaps txt-bold" id="FIELD_JTIT">Senior Care Assistant</span><span dependency="JTIT+JSTD|EDDT">,</span>
+                                <span class="jobdates" dependency="JSTD|EDDT">
+                                    <span id="FIELD_JSTD" format="%m/%Y">07/2014</span><span dependency="JSTD+EDDT" class="hyphen"></span><span id="FIELD_EDDT" format="%m/%Y">Current</span>
+                                </span>
+                                <span class="totl-expr" id="FIELD_TEXP"></span>
+                            </span>
+                            <span class="paddedline locationGap " dependency="COMP|JSTA|JCIT|JCNT|JCTR|JLOC">
+                                <span class="companyname " id="FIELD_COMP">Private Care Home</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JLOC">, </span></span><span class="jobcity" id="FIELD_JCIT">Edinburgh</span><span class="jobstate" id="FIELD_JSTA"></span><span class="joblocation jobcountry" id="FIELD_JCNT"></span><span id="FIELD_JLOC"></span><span dependency="COMP|JSTA|JCIT|JCNT|JLOC"></span>
+                                <span id="FIELD_JCTR"></span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul><li>Met with patients and families to discuss care and plan of action for future.</li>
+  <li>Implemented new team onboarding programme, reducing training time from four weeks to two.</li>
+  <li>Administered all necessary medications as directed by care plan.</li></ul></span>
+                        </div>
+                    </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="8" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="8" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" class="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT|TEXP">
+                                <span class="jobtitle txtCaps txt-bold" id="FIELD_JTIT">Care Assistant</span><span dependency="JTIT+JSTD|EDDT">,</span>
+                                <span class="jobdates" dependency="JSTD|EDDT">
+                                    <span id="FIELD_JSTD" format="%m/%Y">09/2010</span><span dependency="JSTD+EDDT" class="hyphen"></span><span id="FIELD_EDDT" format="%m/%Y">06/2014</span>
+                                </span>
+                                <span class="totl-expr" id="FIELD_TEXP"></span>
+                            </span>
+                            <span class="paddedline locationGap " dependency="COMP|JSTA|JCIT|JCNT|JCTR|JLOC">
+                                <span class="companyname " id="FIELD_COMP">Ideal Care Homes</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JLOC">, </span></span><span class="jobcity" id="FIELD_JCIT">Edinburgh</span><span class="jobstate" id="FIELD_JSTA"></span><span class="joblocation jobcountry" id="FIELD_JCNT"></span><span id="FIELD_JLOC"></span><span dependency="COMP|JSTA|JCIT|JCNT|JLOC"></span>
+                                <span id="FIELD_JCTR"></span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul><li>Charted daily information such as mood changes, mobility activity, eating percentages and daily inputs and outputs.</li>
+  <li>Developed strong and trusting rapport with each client to facilitate best care possible.</li>
+  <li>Worked to improve patient outlook and daily living through compassionate care.</li></ul></span>
+                        </div>
+                    </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="8" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="8" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" class="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT|TEXP">
+                                <span class="jobtitle txtCaps txt-bold" id="FIELD_JTIT">Care Assistant</span><span dependency="JTIT+JSTD|EDDT">,</span>
+                                <span class="jobdates" dependency="JSTD|EDDT">
+                                    <span id="FIELD_JSTD" format="%m/%Y">11/2008</span><span dependency="JSTD+EDDT" class="hyphen"></span><span id="FIELD_EDDT" format="%m/%Y">08/2010</span>
+                                </span>
+                                <span class="totl-expr" id="FIELD_TEXP"></span>
+                            </span>
+                            <span class="paddedline locationGap " dependency="COMP|JSTA|JCIT|JCNT|JCTR|JLOC">
+                                <span class="companyname " id="FIELD_COMP">Four Seasons Health Care</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JLOC">, </span></span><span class="jobcity" id="FIELD_JCIT">Edinburgh</span><span class="jobstate" id="FIELD_JSTA"></span><span class="joblocation jobcountry" id="FIELD_JCNT"></span><span id="FIELD_JLOC"></span><span dependency="COMP|JSTA|JCIT|JCNT|JLOC"></span>
+                                <span id="FIELD_JCTR"></span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul><li>Maintained confidentiality and compliance standards at all times.</li>
+  <li>Maintained clean and well-organised environment to promote client happiness and safety.</li>
+  <li>Assisted disabled individuals to foster independence while still closely monitoring safety.</li>
+  <li>Supervised frequent activities such as medication and personal hygiene to provide safe living environment for patients.</li></ul></span>
+                        </div>
+                    </div></div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="8" class="sortable-item section-container SortableItem-sibling  data-EDUC"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUCfd38dd6c-e289-4f1b-96e2-457086a24cc8" class="section education SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_EDUC">EDUCATION<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename EDUCATION " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EDUC" class=""><div data-testid="embd-87S8HNifd38dd6c-e289-4f1b-96e2-457086a24cc8" id="CONTAINER_fd38dd6c-e289-4f1b-96e2-457086a24cc8" class="sortableInner"><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="8" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="8" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" class="paragraph PARAGRAPH_EDUC firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <div class="paddedline txt-bold" dependency="DGRE|GRYR|STUY|GRED|GRST|GRIP">
+                                <span class="degree" id="FIELD_DGRE">NVQ Level 3</span><span dependency="DGRE"><span dependency="STUY|GRYR|GRST|GRED|GRIP">, </span></span><span class="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="STUY"><span dependency="GRYR|GRST|GRED|GRIP">,</span></span>
+                                <span class="jobdates" dependency="GRYR|GRED|GRST|GRIP">
+									<span class="xslt_static_change displayNoneThisField">Expected in </span>
+									<span id="FIELD_GRYR" format="%m/%Y">2013</span>
+									<span class="jobdates" id="FIELD_GRST" format="%m/%Y"></span><span class="jobdates" id="FIELD_GRED" format="%m/%Y"></span>
+									
+									<span id="FIELD_GRIP"></span>
+								</span>
+                            </div>
+                            <div class="paddedline" dependency="SCIT|SSTA|SCHO|SCNT">
+                                <span class="companyname" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT|GRHN" class="hyphen"></span></span>
+                                <span class="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span class="joblocation jobstate" id="FIELD_SSTA"></span><span class="joblocation jobcountry" id="FIELD_SCNT"></span><span dependency="SCIT|SSTA|SCNT"></span>
+                                <span class="joblocation" id="FIELD_GRHN"></span>
+                            </div>
+                            
+                             
+                            <span class="field" id="FIELD_FRFM"></span>
+                        </div>
+                    </div></div></div><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="8" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="8" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" class="paragraph PARAGRAPH_EDUC"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <div class="paddedline txt-bold" dependency="DGRE|GRYR|STUY|GRED|GRST|GRIP">
+                                <span class="degree" id="FIELD_DGRE">NVQ Level 2</span><span dependency="DGRE"><span dependency="STUY|GRYR|GRST|GRED|GRIP">, </span></span><span class="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="STUY"><span dependency="GRYR|GRST|GRED|GRIP">,</span></span>
+                                <span class="jobdates" dependency="GRYR|GRED|GRST|GRIP">
+									<span class="xslt_static_change displayNoneThisField">Expected in </span>
+									<span id="FIELD_GRYR" format="%m/%Y">2008</span>
+									<span class="jobdates" id="FIELD_GRST" format="%m/%Y"></span><span class="jobdates" id="FIELD_GRED" format="%m/%Y"></span>
+									
+									<span id="FIELD_GRIP"></span>
+								</span>
+                            </div>
+                            <div class="paddedline" dependency="SCIT|SSTA|SCHO|SCNT">
+                                <span class="companyname" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT|GRHN" class="hyphen"></span></span>
+                                <span class="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span class="joblocation jobstate" id="FIELD_SSTA"></span><span class="joblocation jobcountry" id="FIELD_SCNT"></span><span dependency="SCIT|SSTA|SCNT"></span>
+                                <span class="joblocation" id="FIELD_GRHN"></span>
+                            </div>
+                            
+                             
+                            <span class="field" id="FIELD_FRFM"></span>
+                        </div>
+                    </div></div></div></div></div></div></div></div></div><div data-testid="embd-92PDkR61" id="CONTAINER_1" class="right-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="8" class="sortable-item section-container SortableItem-sibling  data-CNTC"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-CNTC" id="SECTION_CNTCd3d40c22-1b29-401e-a809-9cb7e72d6fdc" class="section SECTION_CNTC notdraggable" data-section-cd="CNTC"><div data-testid="embd-88uQIHR-CNTC" class="doc-item"><div data-testid="embd-88aw0Ce-CNTC" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-3912838f-29f6-467c-8297-bf45ee1ff720" id="PARAGRAPH_CNTC_3912838f-29f6-467c-8297-bf45ee1ff720" class="paragraph PARAGRAPH_CNTC firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="address">
+                            <div class="singlecolumn">
+                                <div class="adrs-field" dependency="ADDR|STRT|CITY|STAT|ZIPC">
+                                    <span class="circle">
+                                        <svg x="0px" y="0px" viewBox="-0.5 -0.5 19 19">
+                                            <circle id="Oval-Copy-5" fill="#FFFFFF" cx="9" cy="9" r="9"></circle>
+                                            <g id="Group-3" class="fillclr" transform="translate(5.000000, 4.000000)">
+                                            <path id="Fill-1" d="M3.7,5.1C2.8,5.1,2,4.4,2,3.5s0.7-1.6,1.6-1.6s1.6,0.7,1.6,1.6S4.6,5.1,3.7,5.1 M3.7,0
+                                                    C1.6,0,0,1.6,0,3.7c0,0.8,0.6,2.3,1.7,4.2c0.8,1.5,1.7,2.7,1.7,2.7L3.7,11l0.2-0.3c0,0,0.9-1.3,1.7-2.7c1.1-2,1.7-3.4,1.7-4.2
+                                                    C7.3,1.6,5.7,0,3.7,0"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="addrCircle">
+                                        <span class="wrap">
+                                            <div class="zipsuffix" dependency="ADDR|STRT|CITY|STAT|ZIPC">
+                                                <span id="FIELD_STRT">46 Roman Rd</span><span dependency="STRT+CITY|STAT">, </span>
+                                                <span id="FIELD_CITY">Leeds</span>
+                                                <span id="FIELD_STAT"></span>
+                                                <span id="FIELD_ZIPC">LS2 3ZR</span>
+                                                <span id="FIELD_ADDR"></span>
+                                            </div>
+                                            
+                                        </span>
+                                    </span>                                    
+                                </div>
+                                
+                                <div dependency="HPHN|CPHN" class="adrs-field">
+                                    <span class="circle">
+                                        <svg viewBox="-0.5 -0.5 19 19">
+                                            <g id="ACQD68_v1_icons" transform="translate(-32.000000, -253.000000)">
+                                                <g id="Group-10" transform="translate(32.000000, 253.000000)">
+                                                    <circle id="Oval-Copy-3" fill="#FFFFFF" cx="9" cy="9" r="9"></circle>
+                                                    <g id="Group-3" class="fillclr" transform="translate(4.500000, 4.000000)">
+                                                        <path d="M8.945125,7.7507875 C8.872625,8.1107875 8.760125,8.4045375 8.598875,8.6507875 C8.426375,8.9095375 8.203875,9.1120375 7.917625,9.2695375 C7.525125,9.4857875 7.097625,9.5945375 6.641375,9.5945375 C6.298875,9.5945375 5.938875,9.5332875 5.562625,9.4120375 C4.803875,9.1670375 4.076375,8.7070375 3.527625,8.3320375 C2.997625,7.9707875 2.511375,7.5182875 2.040125,6.9520375 C1.540125,6.4107875 1.157625,5.8682875 0.868875,5.2957875 C0.568875,4.7032875 0.207625,3.9207875 0.065125,3.1370375 C-0.099875,2.2295375 0.051375,1.4507875 0.515125,0.8207875 C0.708875,0.5570375 0.940125,0.3645375 1.218875,0.2270375 C1.482625,0.0995375 1.788875,0.0257875 2.156375,0.0020375 C2.370125,-0.0117125 2.661375,0.0470375 2.828875,0.4082875 C2.963875,0.6995375 3.106375,0.9945375 3.242625,1.2795375 C3.342625,1.4845375 3.443875,1.6957875 3.542625,1.9057875 C3.606375,2.0407875 3.658875,2.1770375 3.700125,2.3095375 C3.780125,2.5732875 3.707625,2.7895375 3.477625,2.9720375 C3.181375,3.2057875 2.891375,3.4357875 2.616375,3.6695375 C2.605125,3.6795375 2.582625,3.6982875 2.568875,3.7120375 C2.572625,3.7257875 2.581375,3.7532875 2.600125,3.7970375 C2.881375,4.4920375 3.225125,5.0620375 3.647625,5.5370375 L3.653875,5.5445375 C4.071375,6.0257875 4.590125,6.4407875 5.241375,6.8120375 C5.282625,6.8370375 5.307625,6.8482875 5.322625,6.8532875 C5.337625,6.8407875 5.358875,6.8232875 5.370125,6.8132875 C5.637625,6.5695375 5.902625,6.3132875 6.175125,6.0507875 C6.385125,5.8470375 6.610125,5.8020375 6.860125,5.9170375 C6.987625,5.9745375 7.113875,6.0457875 7.240125,6.1257875 C7.433875,6.2520375 7.630125,6.3807875 7.821375,6.5057875 C8.086375,6.6795375 8.358875,6.8582875 8.630125,7.0307875 C8.967625,7.2445375 8.987625,7.5395375 8.945125,7.7507875" id="Fill-1" mask="url(#mask-2)"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="addrCircle">
+                                        <span class="wrap">
+                                            <span id="FIELD_HPHN">07912 345 678</span><span id="FIELD_CPHN"></span>
+                                        </span>
+                                    </span>                                    
+                                </div>
+                                <div dependency="EMAI" class="adrs-field">
+                                    <span class="circle">
+                                        <svg viewBox="-0.5 -0.5 19 19">
+                                            <g transform="translate(-32.000000, -373.000000)">
+                                                   <g id="Group-7" transform="translate(32.000000, 373.000000)">
+                                                       <circle id="Oval-Copy-7" fill="#FFFFFF" cx="9" cy="9" r="9"></circle>
+                                                       <path class="fillclr" d="M4.0425,6.40875 L4.0425,11.95 L6.8125,9.18 L4.0425,6.40875 Z M9.07375,10.46875 L13.54375,6 L4.45375,6 L8.92375,10.46875 C8.965,10.51 9.0325,10.51 9.07375,10.46875 L9.07375,10.46875 Z M9.20125,11.16375 C9.1475,11.21875 9.075,11.2475 8.99875,11.2475 C8.9225,11.2475 8.85125,11.21875 8.7975,11.16375 L7.22375,9.59 L4.47,12.34375 L13.53,12.34375 L10.77625,9.58875 L9.20125,11.16375 Z M13.9575,6.4075 L13.9575,11.94875 L11.18625,9.17875 L13.9575,6.4075 Z" id="Fill-1"></path>
+                                                   </g>
+                                            </g>
+                                       </svg>
+                                    </span>
+                                    <span class="addrCircle">
+                                        <span class="wrap">
+                                            <span id="FIELD_EMAI">dom.webster@example.co.uk</span> 
+                                        </span>
+                                    </span>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+								
+								
+                                
+                                
+                            </div>
+                        </div>
+                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="8" class="sortable-item section-container SortableItem-sibling  data-HILT"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-HILT" id="SECTION_HILT66551e16-9025-4c6a-88fd-21c891f7b2b4" class="section SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_HILT">SKILLS<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename SKILLS " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-HILT" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-f6d39a0e-45b4-431c-82b8-567b069b1da4" id="PARAGRAPH_HILT_f6d39a0e-45b4-431c-82b8-567b069b1da4" class="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+						    <div class="dflt-view">
+                                <span class="paddedline" id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
+  <li>Attention to detail</li>
+  <li>Community activities</li>
+  <li>Medication administration</li>
+  <li>Care plan management</li></ul></span>
+                                <span class="paddedline" id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
+  <li>Client safety and First Aid</li>
+  <li>Compassionate client care</li>
+  <li>Behaviour redirection</li></ul></span>
+							</div>
+                            <div class="multi-para-opt">
+                                <div id="FIELD_PTTL" class="txt-bold multi-para-color"></div>
+                                    <div class="multi-para-content">
+                                        <div id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
+  <li>Attention to detail</li>
+  <li>Community activities</li>
+  <li>Medication administration</li>
+  <li>Care plan management</li></ul></div>
+                                        <div id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
+  <li>Client safety and First Aid</li>
+  <li>Compassionate client care</li>
+  <li>Behaviour redirection</li></ul></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div></div></div></div></div></div></div></div></div></div><div></div></div></div>

@@ -1,0 +1,63 @@
+
+        .skn-mla7,.skn-mla7 table{line-height:13px}
+        .skn-mla7.pagesize{width:505px}
+        .skn-mla7.fontsize, .skn-mla7 .lang-sec .paragraph *, .skn-mla7 .skli-sec .paragraph *{font-size:10px}
+        .skn-mla7.fontface{font-family:Trebuchet MS}
+        .skn-mla7.vmargins{padding-bottom:45px}
+        .skn-mla7.hmargins{padding-left:45px;padding-right:45px}
+        .skn-mla7 .section{padding-top:20px}
+        .skn-mla7 .SECTION_CNTC{padding-top:0!important}
+        .skn-mla7 .sectiontitle{color:#3ee2db;font-size:10px;line-height:15px}
+        .skn-mla7 .paragraph{margin-top:15px}
+        .skn-mla7 .firstparagraph{margin-top:0}
+        .skn-mla7 .left-box .singlecolumn,.skn-mla7 .left-box .maincolumn{margin-left:0px}
+        .skn-mla7 table.skills td{padding-top:7px}
+        .skn-mla7 .name{font-size:32px;line-height:49px;max-width:455px}
+        .skn-mla7 .resumeTitle{font-size:14px;line-height:20px;padding:15px 0 0 0}
+        .skn-mla7 .address{font-size:9px;line-height:13px;padding-top:15px}
+        .skn-mla7 .address2{font-size:10px;line-height:13px;padding-top:15px}
+        .skn-mla7 .left-box{width:331px}
+        .skn-mla7 .totl-expr{background-color:#3ee2db;font-size:8px;line-height:12px;padding:0 6px}
+
+        /*Infographic*/
+         .skn-mla7 .lang-sec .paragraph, .skn-mla7 .skli-sec .paragraph{padding-bottom:7px;vertical-align:top}
+         .skn-mla7 .lang-sec.infobarsec .firstparagraph,.skn-mla7 .skli-sec.infobarsec .firstparagraph{padding-top:0}
+         .skn-mla7 .left-box .lang-sec.infobarsec .paragraph,.skn-mla7 .left-box .skli-sec.infobarsec .paragraph{width:155px;max-width:155px}
+         .skn-mla7 .lang-sec.infobarsec{margin-left:0px}
+         .skn-mla7 .inner-rating{background-color:#3ee2db}
+         .skn-mla7 .left-box .lang-sec.infobarsec .nativeLangPara{width:331px;max-width:331px}
+         .skn-mla7 .left-box .lang-sec.infobarsec .heading,.skn-mla7 .left-box .skli-sec.infobarsec .heading{margin-left:-0px}
+		 .skn-mla7 .left-box .skli-sec{padding-left:0px}
+         .skn-mla7 .left-box .skli-sec .heading{margin-left:-0px}
+         .skn-mla7 .left-box .skli-sec .paragraph{width:155px}
+         .skn-mla7 .right-box .skli-sec .paragraph{padding-bottom:7px}
+
+        /*Full color bleed calculation*/
+        .skn-mla7 .firstsection{margin-left:-45px!important;margin-right:-45px!important;padding-left:45px;padding-right:45px;padding-top:45px}
+        .skn-mla7 .firstsection:after{top:45px;height:25px}
+        .skn-mla7 .firstsection:before{background:#3ee2db;height:45px}
+        .skn-mla7 .firstsection:after,.skn-mla7 .firstsection:before{background:#3ee2db}
+        .skn-mla7 .PARAGRAPH_PRFL{margin-left:-45px!important;margin-right:-45px!important;padding-left:45px;padding-right:45px}
+
+        /*PDF Processing*/
+        .skn-mla7 .left-box > *:last-child, .skn-mla7 .right-box > *:last-child{margin-bottom:-45px}
+        .skn-mla7 .left-box, .skn-mla7 .right-box{padding-top:45px;padding-bottom:45px}
+        .skn-mla7 .parentContainer{margin-top:-25px}
+
+        /*Builder fixes*/
+        .skn-mla7 .data-PRFL{margin-left:-45px!important;margin-right:-45px!important}
+        .skn-mla7 .data-PRFL .firstsection{margin:0!important}
+		 /*builder fixes*/
+        .skn-mla7 .left-box .lang-sec .sortable-item,.skn-mla7 .left-box .skli-sec .sortable-item{display:inline-block}
+        .skn-mla7 .right-box .lang-sec .sortable-item{width:100%}
+        .page-finalize .skn-mla7 .langSec .sortableInner .sortable-item .paragraph{max-width:155px}
+        .page-finalize .skn-mla7 .langSec .sortableInner .sortable-item .paragraph.nativeLangPara{max-width:100%}
+		.page-finalize .skn-mla7 .left-box .langSec .sortableInner .sortable-item .paragraph.nativeLangPara{max-width:331px}
+		.page-finalize .skn-mla7 .right-box .langSec .sortableInner .sortable-item .paragraph{width:100%;max-width:100%}
+
+        .skn-mla7.for-pdf.texp-curved .dflex,.skn-mla7.for-pdf.texp-rectangle .dflex{display:block;}
+        .skn-mla7.for-pdf.texp-curved .expr-sec .dflex > span:first-child,.skn-mla7.for-pdf.texp-rectangle .expr-sec .dflex > span:first-child{display:inline-block;width:72%;}
+        .skn-mla7.for-pdf.texp-curved .expr-sec .dflex > span:last-child,.skn-mla7.for-pdf.texp-rectangle .expr-sec .dflex > span:last-child{display:inline-block;width:28%;float:right;}     
+        
+        .skn-mla7.for-iron-pdf{margin-top:-43px}
+    

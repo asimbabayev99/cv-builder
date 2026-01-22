@@ -1,0 +1,89 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-mla7 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-mla7 .degreeGap{margin-top:5px}
+        .skn-mla7 .txt-bold{font-weight:bold}
+        .skn-mla7 .txtItl{font-style:italic}
+        .skn-mla7 .sprtr{margin:0 3px}
+        .skn-mla7 .sprtr + .sprtr{display:none}
+        .skn-mla7 .paddedline{display:block}
+        .skn-mla7 .flt-right{float:right}
+        .skn-mla7 .disp-inblk{display:inline-block}
+		.skn-mla7 .max-width{max-width:100%}
+
+        /*START content disc style for LI*/
+        .skn-mla7 ul,.skn-mla7 li{list-style:none;margin:0 0 0 8px;padding:0}
+        .skn-mla7 ul li{position:relative;margin:0 0 0 5px}
+        .skn-mla7 ul li:before{content:'\25CF\0020';position:absolute;left:-13px;top:0}
+        /*END content disc style for LI*/
+
+        .skn-mla7{color:#4a4a4a;line-height:16px;font-variant-ligatures:none;min-height:792px}
+        .skn-mla7 .parentContainer{table-layout:fixed}
+        .skn-mla7 table.skills,.skn-mla7 .table_wrapper{width:100%;margin-top:0}
+        .skn-mla7 table.skills th,.skn-mla7 table.skills td{width:20%;text-align:center}
+        .skn-mla7 table.skills th{text-decoration:underline}
+        .skn-mla7 table.skills .skillname,.skn-mla7 table.skills .skillrating{text-align:left;width:35%}
+        .skn-mla7 table.skills .skillrating{width:20%}
+        .skn-mla7 table.skills .skillyears,.skn-mla7 table.skills .skilllast{width:19%}
+        .skn-mla7 table.skills .pad1{width:5%}
+        .skn-mla7 table.skills .pad2,.skn-mla7 table.skills .pad3{width:1%}
+        .skn-mla7 .parentContainer{display:table;width:100%;border-collapse:collapse}
+        .skn-mla7 .name{border:1px solid #505050;border-radius:3px;display:inline-block;font-weight:bold;font-style:italic;padding:0 25px;font-size:30px;line-height:28px;text-align:center;letter-spacing:.8px;word-wrap:break-word}
+        .skn-mla7 .resumeTitle{text-align:center;color:#4a4a4a}
+        .skn-mla7 .address{text-align:center}
+        .skn-mla7 .heading{margin-bottom:10px;font-weight:bold;font-size:18px;text-transform:uppercase;font-style:italic}
+        .skn-mla7 .sectiontitle{color:#3ee2db}
+        .skn-mla7 .sectiontitle,.skn-mla7 .singlecolumn{word-wrap:break-word}
+        .skn-mla7 .left-box{padding-right:20px;display:table-cell;overflow:hidden}
+        .skn-mla7 .right-box{padding-left:20px;display:table-cell;vertical-align:top}
+        .skn-mla7 .firstsection{text-align:center;position:relative}
+        .skn-mla7 .firstsection:after,.skn-mla7 .firstsection:before{background:#3ee2db;content:"";display:block;position:absolute;z-index:-1;width:100%;height:100%;left:0;top:0;-khtml-opacity:.32;-moz-opacity:.32;-ms-filter:"alpha(opacity=32)";filter:alpha(opacity=32);filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0.32);opacity:.32}
+        .skn-mla7 .jobline ul{margin-top:6px}
+        .skn-mla7 .alinkSection{padding-top:10px!important;text-align:center}
+        .skn-mla7 .social-link:last-child .sprtr{display:none}
+		
+		/*New logic for infographic*/
+        .skn-mla7 .lang-sec .singlecolumn,.skn-mla7 .skli-sec .singlecolumn{display:none}
+        .skn-mla7 .lang-sec.infobarsec .infobarpara,.skn-mla7 .skli-sec.infobarsec .infobarpara{display:block}
+		
+		/*Infographic*/
+        .skn-mla7 .lang-sec.infobarsec,.skn-mla7 .skli-sec.infobarsec{font-size:0}
+         .skn-mla7 .lang-sec.infobarsec .field *,.skn-mla7 .skli-sec.infobarsec .field *,.skn-mla7 .lang-sec.infobarsec .nativeLangPara .field{display:inline}
+         .skn-mla7 .lang-sec.infobarsec .para_odd,.skn-mla7 .skli-sec.infobarsec .para_odd{margin-right:15px;display:inline-block}
+         .skn-mla7 .parentContainer .lang-sec.infobarsec .singlecolumn,.skn-mla7 .parentContainer .skli-sec.infobarsec .singlecolumn{margin-left:0;padding-left:0}
+         .skn-mla7 .inner-rating{position:relative}
+         .skn-mla7 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;page-break-inside:avoid}
+         .skn-mla7 .inner-rating{background-color:#3ee2db;height:4px;width:60%}
+        /*  .skn-mla7 .parentContainer .right-box .lang-sec.infobarsec .paragraph:nth-last-child(1), .skn-mla7 .parentContainer .right-box .lang-sec.infobarsec .paragraph:nth-last-child(2){padding-bottom:0} */
+         .skn-mla7 .parentContainer .lang-sec .paragraph,.skn-mla7 .parentContainer .skli-sec .paragraph{display:inline-block;vertical-align:top;margin-top:0px}
+         .skn-mla7 .parentContainer .right-box .lang-sec.infobarsec .paragraph,.skn-mla7 .parentContainer .right-box .skli-sec.infobarsec .paragraph{display:block} /* Added for PDF Fix */
+         .skn-mla7 .right-box .lang-sec.infobarsec .para_odd,.skn-mla7 .right-box .skli-sec.infobarsec .para_odd{margin-right:0px}
+         .skn-mla7 .right-box .lang-sec.infobarsec .paragraph,.skn-mla7 .right-box .skli-sec.infobarsec .paragraph{width:100%}
+         .skn-mla7 .right-box .lang-sec.infobarsec,.skn-mla7 .right-box .skli-sec.infobarsec{margin-left:0px}
+         .skn-mla7 .left-box .lang-sec .paragraph,.skn-mla7 .left-box .skli-sec .paragraph{padding-bottom:5px}
+		 .skn-mla7 .parentContainer .right-box .skli-sec .paragraph{display:block} /* Added for PDF Fix */
+		  
+		  /*Infographic Tiles*/
+        
+        .skn-mla7 .skli-sec .paragraph{display:inline-block;vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-mla7 .parentContainer .right-box .skli-sec .paragraph{display:block} /* Added for PDF Fix */
+        .skn-mla7 .right-box .lang-sec > .paragraph:nth-last-child(1),.skn-mla7 .skli-sec > .paragraph:nth-last-child(1),.skn-mla7 .right-box .skli-sec > .paragraph:nth-last-child(1){padding-bottom:0}
+        .skn-mla7 .left-box .lang-sec > .paragraph:nth-last-child(1),.skn-mla7 .skli-sec > .paragraph:nth-last-child(1),.skn-mla7 .left-box .skli-sec > .paragraph:nth-last-child(1),.skn-mla7 .left-box .skli-sec > .paragraph:nth-last-child(2),.skn-mla7 .left-box .lang-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        
+        .skn-mla7 .hide-bar .field-ratt,.skn-mla7 .hide-only-bar .field-ratt{width:100%!important}
+        .skn-mla7 .hide-bar .rating-bar,.skn-mla7 .hide-bar .field-ratt,.skn-mla7 .hide-only-bar .rating-bar,.skn-mla7 .hide-colon .colon{display:none!important}
+
+        /*Duration tag*/
+        .skn-mla7 .totl-expr{display:inline-block;float:right; padding:0 6px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap;margin-left:5px}
+        .skn-mla7.texp-curved .totl-expr{border-radius:10px}
+        .skn-mla7 .dflex{display:flex;justify-content:space-between}
+        .skn-mla7 .right-box .totl-expr{display:none}
+
+        /* GRYR */
+        .skn-mla7 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+        
+        /*Iron PDF Overlapping Fix*/
+        .skn-mla7.for-iron-pdf div#CONTAINER_PARENT_0:before{content:'';display:block;position:absolute;left:0;top:0;width:100%;height:10px;z-index:-1000;background:#FFF}
+    

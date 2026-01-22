@@ -1,0 +1,46 @@
+
+        .skn-mli3,.skn-mli3 table{line-height:13px}
+        .skn-mli3.pagesize{width:595px}
+        .skn-mli3.fontsize{font-size:10px}
+        .skn-mli3.fontface{font-family:Times New Roman}
+        .skn-mli3 .section{margin-bottom:25px}
+        .skn-mli3 .SECTION_ALNK + .section{margin-top:25px}
+        .skn-mli3 .firstparagraph{margin-top:0!important}
+        .skn-mli3 .paragraph{margin-top:15px}
+        .skn-mli3 .parentContainer{min-height:696px}
+        .skn-mli3 .middlesection .left-box, .skn-mli3 .parentContainer .left-box{padding-left:50px}
+        .skn-mli3 .middlesection .right-box, .skn-mli3 .parentContainer .right-box{padding-right:50px}
+        .skn-mli3 .middlesection .left-box:after{margin-left:50px}
+        .skn-mli3 .middlesection .right-box:after{margin-right:50px}
+        .skn-mli3 .parentContainer .right-box .singlecolumn,.skn-mli3 .parentContainer .right-box .maincolumn{margin-left:0px}
+        .skn-mli3 .name{font-size:24px;line-height:28px}
+        .skn-mli3 .resumeTitle{font-size:14px;line-height:14px}
+        .skn-mli3 .sectiontitle{font-size:14px;line-height:17px}
+        .skn-mli3 .left-box{width:169px}
+        .skn-mli3 .middlesection .left-box:before,.skn-mli3 .middlesection .right-box:before,.skn-mli3 .bottomsection,.skn-mli3 .innerRating{background:#009bcc}
+        .skn-mli3 ul li{padding-left:0px}
+        .skn-mli3 .totl-expr{font-size:8px;line-height:12px}
+        .skn-mli3 .totl-expr:before{background-color:#009bcc}
+
+        /*Infographic*/
+        .skn-mli3 .langSec .paragraph,.skn-mli3 .infoSec .paragraph{padding-top:5px}
+        .skn-mli3 .langSec .firstparagraph,.skn-mli3 .infoSec .firstparagraph{padding-top:0}
+
+        .skn-mli3.for-pdf.texp-curved .parentContainer .right-box .expr-sec .paragraph .singlecolumn .dispBlock .dflex{display:block;}
+        .skn-mli3.for-pdf.texp-curved .parentContainer .right-box .expr-sec .paragraph .singlecolumn .dispBlock .dflex > span:first-child{display:inline-block;width:72%}
+        .skn-mli3.for-pdf.texp-curved .parentContainer .right-box .expr-sec .paragraph .singlecolumn .dispBlock .dflex > span:last-child{display:inline-block;float:right;width:28%;text-align:right;}
+
+        .skn-mli3.for-pdf.texp-rectangle .parentContainer .right-box .expr-sec .paragraph .singlecolumn .dispBlock .dflex{display:block;}
+        .skn-mli3.for-pdf.texp-rectangle .parentContainer .right-box .expr-sec .paragraph .singlecolumn .dispBlock .dflex > span:first-child{display:inline-block;width:72%}
+        .skn-mli3.for-pdf.texp-rectangle .parentContainer .right-box .expr-sec .paragraph .singlecolumn .dispBlock .dflex > span:last-child{display:inline-block;float:right;width:28%;text-align:right;}
+
+
+        @media screen and (min-width:0\0) {
+            .skn-mli3 .middlesection{display:flex}
+            .skn-mli3 .middlesection .left-box{width:224px}
+            .skn-mli3 .middlesection .right-box{width:calc(100% - 278px)}
+            .skn-mli3 .middlesection .left-box,.skn-mli3 .middlesection .right-box{display:inline;box-sizing:content-box}
+            .skn-mli3 .middlesection .left-box{min-height:inherit}
+        }
+
+    

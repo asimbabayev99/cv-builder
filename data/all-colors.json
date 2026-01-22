@@ -1,0 +1,146 @@
+[
+  {
+    "color": "#929496",
+    "label": "Aluminium",
+    "mainIndex": "0",
+    "itemId": "main-0"
+  },
+  {
+    "color": "#AE9B93",
+    "label": "Cedrus",
+    "mainIndex": null,
+    "itemId": "sub-0-0"
+  },
+  {
+    "color": "#C4B08F",
+    "label": "Camel",
+    "mainIndex": null,
+    "itemId": "sub-0-1"
+  },
+  {
+    "color": "#944150",
+    "label": "Bordeaux",
+    "mainIndex": "1",
+    "itemId": "main-1"
+  },
+  {
+    "color": "#B41C2E",
+    "label": "Cardinal",
+    "mainIndex": null,
+    "itemId": "sub-1-0"
+  },
+  {
+    "color": "#CF142B",
+    "label": "Fire Engine",
+    "mainIndex": null,
+    "itemId": "sub-1-1"
+  },
+  {
+    "color": "#B9481F",
+    "label": "Terracotta",
+    "mainIndex": "2",
+    "itemId": "main-2"
+  },
+  {
+    "color": "#C9652D",
+    "label": "Nasturtium",
+    "mainIndex": null,
+    "itemId": "sub-2-0"
+  },
+  {
+    "color": "#C97375",
+    "label": "Ambrose",
+    "mainIndex": null,
+    "itemId": "sub-2-1"
+  },
+  {
+    "color": "#C28E56",
+    "label": "Ochre",
+    "mainIndex": "3",
+    "itemId": "main-3"
+  },
+  {
+    "color": "#E8A509",
+    "label": "Luteum",
+    "mainIndex": null,
+    "itemId": "sub-3-0"
+  },
+  {
+    "color": "#F2C000",
+    "label": "Tuscan Sun",
+    "mainIndex": null,
+    "itemId": "sub-3-1"
+  },
+  {
+    "color": "#166C60",
+    "label": "Castleton",
+    "mainIndex": "4",
+    "itemId": "main-4"
+  },
+  {
+    "color": "#008E6E",
+    "label": "Persian Green",
+    "mainIndex": null,
+    "itemId": "sub-4-0"
+  },
+  {
+    "color": "#56B239",
+    "label": "Shamrock",
+    "mainIndex": null,
+    "itemId": "sub-4-1"
+  },
+  {
+    "color": "#496267",
+    "label": "Smalt Blue",
+    "mainIndex": "5",
+    "itemId": "main-5"
+  },
+  {
+    "color": "#027D89",
+    "label": "Ocean",
+    "mainIndex": null,
+    "itemId": "sub-5-0"
+  },
+  {
+    "color": "#00B0C5",
+    "label": "Central Coast",
+    "mainIndex": null,
+    "itemId": "sub-5-1"
+  },
+  {
+    "color": "#102A73",
+    "label": "Ink Blue",
+    "mainIndex": "6",
+    "itemId": "main-6"
+  },
+  {
+    "color": "#0069A5",
+    "label": "Cobalt",
+    "mainIndex": null,
+    "itemId": "sub-6-0"
+  },
+  {
+    "color": "#009CCC",
+    "label": "Azure",
+    "mainIndex": null,
+    "itemId": "sub-6-1"
+  },
+  {
+    "color": "#4A4A4A",
+    "label": "Lead",
+    "mainIndex": "7",
+    "itemId": "main-7"
+  },
+  {
+    "color": "#2A5978",
+    "label": "Blumine",
+    "mainIndex": null,
+    "itemId": "sub-7-0"
+  },
+  {
+    "color": "#576C7C",
+    "label": "Slate",
+    "mainIndex": null,
+    "itemId": "sub-7-1"
+  }
+]

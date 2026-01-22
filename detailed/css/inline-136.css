@@ -1,0 +1,112 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-hra1 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-hra1 span.paddedline,.skn-hra1 span.dates_wrapper{display:block}
+        .skn-hra1 span.dates_wrapper{float:left}
+        .skn-hra1 span.jobtitle,.skn-hra1 span.companyname,.skn-hra1 span.degree,.skn-hra1 span.programline,.skn-hra1 .txtBold{font-weight:bold}
+		.skn-hra1 .logo,.skn-hra1 .nodisplay{display:none}
+        .skn-hra1 .flt-right{float:right}
+		.skn-hra1 .dispInBlk{display:inline-block}
+		.skn-hra1 .dispBlk{display:block}
+		.skn-hra1 .maxWidth{max-width:100%}
+		.skn-hra1 .brk-all{word-break:break-all}
+
+        .skn-hra1 ul,.skn-hra1 li{list-style-type:disc;margin:0 0 0 10px;padding:0}
+        .skn-hra1 ul li{margin:0 0 0 13px}
+        .skn-hra1 .adnlLnks ul{margin:0}
+        .skn-hra1 .adnlLnks li{list-style:none;display:inline}
+
+        .skn-hra1{color:#000;word-wrap:break-word;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;min-height:792px}
+		.skn-hra1 .name{font-size:15px;line-height:17px;font-weight:bold;padding:0;text-align:center;font-variant:small-caps}
+        .skn-hra1 .resumeTitle{text-align:center;color:#4a4a4a}
+        .skn-hra1 .paragraph{position:relative}
+        .skn-hra1 .heading{width:100%;clear:both;font-weight:bold;font-variant:small-caps}
+        .skn-hra1 .sectiontitle{background-color:#FFF;padding:0 10px 1px 0;position:absolute}
+        .skn-hra1 .address{position:relative;text-align:center;font-size:0.917em;line-height:1.25em;margin-top:11px}
+        .skn-hra1 .address2{position:relative;text-align:left;font-size:0.917em;line-height:1.25em}
+        .skn-hra1 .section .adnlLnks{text-align:center;margin-left:0}
+        .skn-hra1 .table_wrapper{width:100%;margin-top:0}
+        .skn-hra1 table.twocol td{width:50%;vertical-align:top}
+        .skn-hra1 table.skills th,.skn-hra1 table.skills td{width:20%;text-align:center}
+        .skn-hra1 table.skills th{text-decoration:underline}
+        .skn-hra1 table.skills .skillname,.skn-hra1 table.skills .skillrating{text-align:left;width:35%}
+        .skn-hra1 table.skills .skillrating{width:20%}
+        .skn-hra1 table.skills .skillyears,.skn-hra1 table.skills .skilllast{width:19%}
+        .skn-hra1 table.skills .pad1{width:5%}
+        .skn-hra1 table.skills .pad2,.skn-hra1 table.skills .pad3{width:1%}
+        .skn-hra1 .section{position:relative}
+		.skn-hra1 .social-link:last-child .sprtr,.skn-hra1 .fieldgroup .fielditem:last-child .sprtr{display:none}
+        .skn-hra1 .paragraph-fieldgroup .sprtr{padding:0 3px}
+        .skn-hra1 .address .fieldgroup:nth-child(2){padding-top:4px;display:inline-block}
+        .skn-hra1 .address .fieldgroup:nth-child(2):empty{display:none}
+ 
+        .skn-hra1 .totl-expr{display:inline-block;padding:1px 6px;color:#fff;font-weight:700;vertical-align:top;float:right;text-wrap:nowrap;margin-left:3px;height:100%}
+        .skn-hra1.texp-curved .totl-expr{border-radius:10px}
+        .skn-hra1 .dflex{display:flex;justify-content:space-between}
+      
+        /*Personal details section*/
+        .skn-hra1 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-hra1 .details-wrap{width:49%} 
+        
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-hra1 .sectionCL .paragraph{margin-top:0}
+
+        /* Style for Signature */
+        .skn-hra1 .disclaim .singlecolumn,.skn-hra1 .signPic > .field_sign{margin-left:0}
+        .skn-hra1 .disclaim .singlecolumn,.skn-hra1 .disclaim .singlecolumn li,.skn-hra1 .disclaim .singlecolumn p,.skn-hra1 .disclaim .singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-hra1 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-hra1 .txtleft + .field_sign{text-align:left}
+        .skn-hra1 .txtcenter + .field_sign{text-align:center}
+        .skn-hra1 .txtright + .field_sign{text-align:right}
+        .skn-hra1 .signPic span:first-child{padding-right:6px}
+        .skn-hra1 .signPic img{padding-top:5px;max-width:100%}
+
+        /*MES and MFR address order code*/
+        .skn-hra1 .zipprefix,.skn-hra1.MES .zipsuffix,.skn-hra1.MFR .zipsuffix{display:none}
+        .skn-hra1 .zipsuffix,.skn-hra1.MES .zipprefix,.skn-hra1.MFR .zipprefix{display:inline}
+        .skn-hra1.MDE .hide-de{display:none}
+
+        /*Infographic*/
+        .skn-hra1 .lang-sec,.skn-hra1 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-hra1 .lang-sec .field *,.skn-hra1 .lang-sec .nativeLangPara .field,.skn-hra1 .skli-sec .field *{display:inline}
+        .skn-hra1 .lang-sec .paragraph,.skn-hra1 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-hra1 .lang-sec .singlecolumn,.skn-hra1 .skli-sec .singlecolumn{margin-left:0;position:relative}
+        .skn-hra1 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+        .skn-hra1 .lang-sec .nativeLangPara{width:100%!important}
+        .skn-hra1 .inner-rating{background-color:#576d7b;height:4px;width:60%}
+        .skn-hra1 .lang-sec > .paragraph:nth-last-child(1),.skn-hra1 .lang-sec > .paragraph:nth-last-child(2),
+        .skn-hra1 .skli-sec > .paragraph:nth-last-child(1),.skn-hra1 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-hra1 .hide-bar .rating-bar,.skn-hra1 .hide-colon .paragraph .colon,.skn-hra1 .hide-only-bar .rating-bar{display:none}
+		.skn-hra1 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-hra1 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+
+        /*HILT multi para/section*/
+        .skn-hra1 .multi-para-hilt:after{content: "";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-hra1 .multi-para-hilt .paragraph{margin-bottom:10px;margin-top:0;width:49%;float:left}
+        .skn-hra1 .multi-para-hilt .paragraph:last-child,.skn-hra1 .multi-para-hilt .paragraph:nth-last-child(2):nth-child(2n){margin-bottom:0}
+        .skn-hra1 .multi-para-hilt .paragraph:nth-child(2n+1){margin-left:2%}
+        .skn-hra1 .multi-para-hilt .paragraph:nth-child(2n){clear:left}
+        .skn-hra1 .multi-para-hilt .singlecolumn{margin:0}
+        .skn-hra1 .multi-section-hilt .multi-para-opt,.skn-hra1 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-hra1 .multi-para-hilt .twocol.skill{display:none}
+
+        /*For Extra Space Before Colon*/
+        .skn-hra1 .beforecolonspace{display:none!important}
+        .skn-hra1.MFR .beforecolonspace{display:inline!important}
+
+        /* GRYR */
+        .skn-hra1 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+
+        /* Text alignment bullet */
+       .skn-hra1 .ttc-align-left ul{text-align:left}
+       .skn-hra1 .ttc-align-right ul{text-align:right}
+       .skn-hra1 .ttc-align-center ul{text-align:center}
+       .skn-hra1 .ttc-align-justify ul{text-align:justify}
+       .skn-hra1 .ttc-align-right li,.skn-hra1 .ttc-align-center li{position:relative;list-style-position:inside;margin-left:0}
+       .skn-hra1:not(.for-pdf) .ttc-align-right li:first-letter,.skn-hra1:not(.for-pdf) .ttc-align-center li:first-letter{margin-left:-5px}
+
+        /*Hyphen Handling*/
+        .skn-hra1 .hyphen:before{content:' - '}
+        .skn-hra1.hyphen-en-dash .hyphen:before{content:' – '}
+    

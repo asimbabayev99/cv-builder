@@ -1,0 +1,97 @@
+
+        .skn-tma4,.skn-tma4 table{line-height:16px}
+        .skn-tma4.pagesize{width:531px}
+        .skn-tma4.fontsize,.skn-tma4 .lang-sec .paragraph *,.skn-tma4 .skli-sec .paragraph *,.skn-tma4 .multi-section-hilt .paragraph *{font-size:11px}
+        .skn-tma4.fontface{font-family:Arial}
+        .skn-tma4.vmargins{padding-top:32px;padding-bottom:32px}
+        .skn-tma4.hmargins{padding-left:32px;padding-right:32px}
+        .skn-tma4 .heading{width:140px}
+        .skn-tma4 .section{min-height:50px}
+        .skn-tma4 .section:before {content:'';position:absolute;height:100%;left:140px}
+        .skn-tma4 .paragraph .singlecolumn{min-height:16px}
+        .skn-tma4 .firstparagraph{padding-top:0}
+        .skn-tma4 .singlecolumn,.skn-tma4 .maincolumn,.skn-tma4 .section:after{margin-left:140px}
+        .skn-tma4 .lang-sec .heading,.skn-tma4 .skli-sec .heading{left:-141px}
+        .skn-tma4 .sectiontitle{font-size:11px;line-height:16px}
+        .skn-tma4 table.skills td{padding-top:5px}
+        .skn-tma4 .name{font-size:34px;line-height:44px}
+        .skn-tma4 .resumeTitle{font-size:15px;line-height:25px;padding:0 0 10px 0}
+        .skn-tma4 .address{font-size:11px;line-height:16px}
+        .skn-tma4 .dynamicIcon svg{fill:#0187de}
+        .skn-tma4 .dynamicIcon svg *{stroke:#0187de}
+		.skn-tma4 .skli-sec .singlecolumn .field:last-child{min-height:16px}
+        .skn-tma4 .totl-expr{background-color:#0187de;font-size:6px;line-height:10px}
+
+        /*Timeline*/
+        .skn-tma4 .paragraph .singlecolumn{padding-top:10px;padding-bottom:10px}
+        .skn-tma4 .sign.section{padding-top:10px}
+        .skn-tma4 .firstparagraph .singlecolumn{padding-top:0}
+        .skn-tma4 .heading:before{top:3px}
+
+        /* SDCL */
+        .skn-tma4 .name,.skn-tma4 .sectiontitle,.skn-tma4 .jobtitle{color:#0187de}
+        .skn-tma4 .monogram svg circle{stroke:#0187de}
+        .skn-tma4 .paragraph + .paragraph:before{left:135px;top:13px}
+
+        /*FIX for Re-calculating width of singlecolumn for CL*/
+        .skn-tma4 .sectionCL .singlecolumn{margin-left:0;width:100%}
+        .skn-tma4 .address2{font-size:11px;line-height:16px}
+        .skn-tma4 .SortableList > .SortableItem:nth-child(2) .section:after {content:'';border-left:5px solid #fff;position:absolute;top:0;left:-1px;height:12px}
+        .skn-tma4 [id^="SECTION_EXPR"] .sortableInner,.skn-tma4 [id^="SECTION_EDUC"] .sortableInner{margin-left:140px}
+
+        /*Infographic*/
+        .skn-tma4 .lang-sec,.skn-tma4 .skli-sec{margin-left:140px;padding-bottom:10px}
+        .skn-tma4 .inner-rating{background-color:#0187de}
+
+        /* Multi para hilt */
+        .skn-tma4 .multi-para-hilt{margin-left:140px}
+        .skn-tma4 .multi-para-hilt .heading{margin-left:-141px}
+        /*Word-wrap*/
+        .skn-tma4 .PARAGRAPH_PRFL{display:table;table-layout:fixed;width:100%}
+		
+        /*Finalize Fixes*/
+        .skn-tma4 .lang-sec .sortable-item,.skn-tma4 .skli-sec .sortable-item{display:inline-block;vertical-align:top}
+        .skn-tma4 .lang-sec .sortableInner .sortable-item:not(:first-child) .paragraph,.skn-tma4 .skli-sec .sortableInner .sortable-item:not(:first-child) .paragraph{vertical-align:top}
+        .page-finalize .skn-tma4 .lang-sec .singlecolumn,.page-finalize .skn-tma4 .skli-sec .singlecolumn{border:0}
+        .page-finalize .skn-tma4 .lang-sec,.page-finalize .skn-tma4 .skli-sec{border-left:none;margin-left: 0px;padding-left:140px}
+        .page-finalize .skn-tma4 .lang-sec .sortableInner,.page-finalize .skn-tma4 .skli-sec .sortableInner{border-left:1px solid #979797;padding-left:14px;padding-bottom:10px}
+        .page-finalize .skn-tma4 .lang-sec .heading + div > div:not(.sortableInner) .firstparagraph .singlecolumn,.page-finalize .skn-tma4 .skli-sec .heading + div > div:not(.sortableInner) .firstparagraph .singlecolumn{ border-left:1px solid #979797}
+        .TMA4.skn-tma4 .section:not(.lang-info) .firstparagraph .singlecolumn,.TMA4.skn-tma4 .section:not(.info-info) .firstparagraph .singlecolumn{min-height:auto}
+        .page-finalize .skn-tma4 .section {min-height: 24px}
+        .skn-tma4 .sortableInner .sortable-item+.sortable-item .paragraph:before, .skn-tma4 .sortableInner .paragraph+.paragraph:before{background:none;border:none}
+        .page-finalize .skn-tma4 .lang-sec,.page-finalize .skn-tmaf.skn-tma4 .skli-sec .heading4 .skli-sec{padding-bottom:0;}
+        .skn-tma4 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+        .page-finalize #spellcheck .skn-tma4 .lang-sec,.page-finalize #spellcheck .skn-tma4 .skli-sec{border-left:1px solid #979797;margin-left:140px;padding-left:14px}
+        .skn-tma4 .lang-sec .doc-item .heading:before,.skn-tma4 .skli-sec .doc-item .heading:before{right:-7px}
+        .skn-tma4 .lang-sec .title-edit,.skn-tma4 .skli-sec .title-edit{left:-141px}
+        .skn-tma4 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
+        .skn-tma4 .data-LNGG .doc-item,.skn-tma4 .data-SKLI .doc-item,.skn-tma4 .lang-sec .doc-item,.skn-tma4 .skli-sec .doc-item{width:100%}
+        .skn-tma4 .data-LNGG .sortableInner,.skn-tma4 .data-SKLI .sortableInner,.skn-tma4 .SECTION_LNGG .sortableInner,.skn-tma4 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-tma4 .data-LNGG .sortable-item,.skn-tma4 .data-SKLI .sortable-item{width:48.2%}
+        .skn-tma4 .data-LNGG .sortable-item .paragraph,.skn-tma4 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+		
+		 /*Fixes for builder for skill*/
+        .skn-tma4 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:16px}	
+        .skn-tma4 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-tma4 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+       .skn-tma4 .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-tma4 .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-tma4  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-tma4  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0}
+	   
+	   /*PDF Flex Handling Code - Personal Information*/
+		.skn-tma4.for-pdf .pdet-sec .singlecolumn{display:block}
+		.skn-tma4.for-pdf .pdfpdwrapper{display:table}
+		.skn-tma4.for-pdf .pdfpdwrapper .details-wrap:first-child{display:table-cell;padding-right:5px}
+		.skn-tma4.for-pdf .pdfpdwrapper .details-wrap:nth-child(2){display:table-cell;}
+		.skn-tma4.for-pdf .pdfpdwrapper .details-wrap{width:183px!important;}
+
+    /*Infographic Containers*/
+    .skn-tma4.for-pdf .lang-sec,.skn-tma4.for-pdf .skli-sec{display:block}
+    .skn-tma4.for-pdf .pdfinfwrapper{display:block}
+    .skn-tma4.for-pdf .pdfinfwrapper:after{content:'';clear:both;display:table}
+    .skn-tma4.for-pdf .pdfinfwrapper .paragraph:first-child{float:left}
+    .skn-tma4.for-pdf .pdfinfwrapper .paragraph:nth-child(2){float:right}
+    .skn-tma4.for-pdf .pdfinfwrapper:last-child .paragraph{margin-bottom:0;padding-bottom:0}
+
+    /*PDF Handling for TEXP*/
+    .document.for-pdf.expr-durt-cexp .section.exprience .paragraph .singlecolumn .texp-row{display:block;}
+    .document.for-pdf.expr-durt-cexp .section.exprience .paragraph .singlecolumn .jobtitle-cell{display:inline-block;width:70%}
+    .document.for-pdf.expr-durt-cexp .section.exprience .paragraph .singlecolumn .texp-cell{display:inline-block;float:right;}
+    

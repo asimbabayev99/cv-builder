@@ -1,0 +1,102 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-cna1 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-cna1 .grayItl{font-style:italic;color:#C3C3C3}
+        .skn-cna1 span.jobtitle,.skn-cna1 span.degree,.skn-cna1 span.smry,.skn-cna1 span.skils{font-weight:bold}
+        .skn-cna1 span.jobtitle,.skn-cna1 span.degree{text-transform:uppercase}
+        .skn-cna1 span.email{color:#00ADEF;text-transform:lowercase}
+        .skn-cna1 .logo,.skn-cna1 .nodisplay{display:none}
+        .skn-cna1 span.paddedline{display:block}
+        .skn-cna1 .txtBold{font-weight:bold}        
+        .skn-cna1 .flt-right{float:right}
+        .skn-cna1 .dispInBlk{display:inline-block}
+        .skn-cna1 .maxWidth{max-width:100%}
+        .skn-cna1 .brk-all{word-break:break-all}
+
+        .skn-cna1 ul{margin-left:10px}
+        .skn-cna1 ul li{margin-left:13px;list-style-type:disc}
+        .skn-cna1 .adnlLnks ul,.skn-cna1 .adnlLnks li{list-style:none;margin:0}
+        .skn-cna1 .adnlLnks li{display:inline;margin-right:10px}
+
+        .skn-cna1{color:#666;word-wrap:break-word;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;min-height:792px}
+        .skn-cna1 .name{font-size:15px;font-weight:bold;line-height:17px;padding:0;text-transform:uppercase;border-top:6px solid #58585B;padding:18px 0 0 0}
+        .skn-cna1 .resumeTitle{color:#4a4a4a;text-transform:lowercase}
+        .skn-cna1 .resumeTitle:first-letter{text-transform:uppercase}/*To make sentence case*/
+        .skn-cna1 .paragraph{position:relative}
+        .skn-cna1 .heading{clear:both;color:#231F20;text-transform:uppercase;font-style:italic;font-weight:bold;width:100%}
+        .skn-cna1 .address,.skn-cna1 .address2{position:relative;font-size:0.917em;line-height:1.25em;color:#808284}
+        .skn-cna1 .address{text-transform:uppercase}
+        .skn-cna1 .adnlLnks{margin-top:5px}
+		.skn-cna1 .skill{display:table;width:100%;table-layout:fixed}
+        .skn-cna1 .table_wrapper{width:100%;margin-top:0}
+        .skn-cna1 table.twocol td{width:50%;vertical-align:top;display:table-cell}
+        .skn-cna1 p font{color:#666}
+        .skn-cna1 .social-link .sprtr{padding:0 2px}
+        .skn-cna1 .social-link:last-child .sprtr{display:none}
+
+        .skn-cna1 .totl-expr{display:inline-block;padding:0 6px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap;font-style:normal}
+        .skn-cna1.texp-curved .totl-expr{border-radius:10px}
+        .skn-cna1 .dflex{display:flex;justify-content:space-between}
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-cna1 .sectionCL{border:none!important}
+        .skn-cna1 .sectionCL .paragraph{margin-top:0}
+
+        /*For Extra Space Before Colon*/
+        .skn-cna1 .beforecolonspace{display:none!important}
+        .skn-cna1.MFR .beforecolonspace{display:inline!important}
+        .skn-cna1.MDE .hide-de{display:none}
+
+        /* Style for Signature */
+        .skn-cna1 .disclaim .singlecolumn,.skn-cna1 .signPic > .field_sign{margin-left:0}
+        .skn-cna1 .disclaim .singlecolumn,.skn-cna1 .disclaim .singlecolumn li,.skn-cna1 .disclaim .singlecolumn p,.skn-cna1 .disclaim .singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-cna1 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-cna1 .txtleft+.field_sign{text-align:left}
+        .skn-cna1 .txtcenter+.field_sign{text-align:center}
+        .skn-cna1 .txtright+.field_sign{text-align:right}
+        .skn-cna1 .signPic span:first-child{padding-right:6px}
+        .skn-cna1 .signPic img{padding-top:5px;max-width:100%}
+        .skn-cna1 .SECTION_PPDT_SGTR{border-top:0px!important}
+
+        /*MES and MFR address order code*/
+        .skn-cna1 span.zipprefix,.skn-cna1.MES .zipsuffix,.skn-cna1.MFR .zipsuffix{display:none}
+        .skn-cna1 span.zipsuffix,.skn-cna1.MES .zipprefix,.skn-cna1.MFR .zipprefix{display:block}
+
+        /*Infographic*/
+        .skn-cna1 .lang-sec,.skn-cna1 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-cna1 .lang-sec .field *,.skn-cna1 .lang-sec .nativeLangPara .field,.skn-cna1 .skli-sec .field *{display:inline}
+        .skn-cna1 .lang-sec .paragraph,.skn-cna1 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-cna1 .lang-sec .singlecolumn,.skn-cna1 .skli-sec .singlecolumn{margin-left:0;position:relative}
+        .skn-cna1 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+        .skn-cna1 .lang-sec .paragraph.nativeLangPara{width:100%}
+        .skn-cna1 .inner-rating{background-color:#576d7b;height:4px;width:60%}
+        .skn-cna1 .lang-sec > .paragraph:nth-last-child(1),.skn-cna1 .lang-sec > .paragraph:nth-last-child(2),
+        .skn-cna1 .skli-sec > .paragraph:nth-last-child(1),.skn-cna1 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-cna1 .hide-bar .rating-bar,.skn-cna1 .hide-colon .colon,.skn-cna1 .hide-only-bar .rating-bar{display:none}
+		.skn-cna1 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-cna1 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+       /*Personal details section*/
+        .skn-cna1 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-cna1 .details-wrap{width:49%}
+        /*HILT multi para/section*/
+        .skn-cna1 .multi-para-hilt:after{content: "";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-cna1 .multi-para-hilt .paragraph{margin-bottom:10px;margin-top:0;width:49%;float:left}
+        .skn-cna1 .multi-para-hilt .paragraph:last-child,.skn-cna1 .multi-para-hilt .paragraph:nth-last-child(2):nth-child(2n){margin-bottom:0}
+        .skn-cna1 .multi-para-hilt .paragraph:nth-child(2n+1){margin-left:2%}
+        .skn-cna1 .multi-para-hilt .paragraph:nth-child(2n){clear:left}
+        .skn-cna1 .multi-para-hilt .singlecolumn{margin:0}
+        .skn-cna1 .multi-section-hilt .multi-para-opt,.skn-cna1 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-cna1 .multi-para-hilt .twocol.skill{display:none}
+
+       /* GRYR */
+        .skn-cna1 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+
+        /* Text alignment bullet */
+       .skn-cna1 .ttc-align-left ul{text-align:left}
+       .skn-cna1 .ttc-align-right ul{text-align:right}
+       .skn-cna1 .ttc-align-center ul{text-align:center}
+       .skn-cna1 .ttc-align-justify ul{text-align:justify}
+       .skn-cna1 .ttc-align-right li,.skn-cna1 .ttc-align-center li{position:relative;list-style-position:inside;margin-left:0}
+       .skn-cna1:not(.for-pdf) .ttc-align-right li:first-letter,.skn-cna1:not(.for-pdf) .ttc-align-center li:first-letter{margin-left:-4px}
+
+    

@@ -1,0 +1,101 @@
+
+        .skn-mca2,.skn-mca2 table{line-height:12px}
+        .skn-mca2.pagesize{width:515px}
+        .skn-mca2.fontsize,.skn-mca2 .lang-sec.infobarsec .paragraph *,.skn-mca2 .lang-sec.infotilesec .paragraph *,.skn-mca2 .skli-sec .paragraph *{font-size:11px}
+        .skn-mca2.fontface{font-family:Century Gothic}
+        .skn-mca2.vmargins{padding-top:32px;padding-bottom:32px}
+        .skn-mca2.hmargins{padding-left:40px;padding-right:40px}
+        .skn-mca2 .section{margin-top:10px}
+        .skn-mca2 .disclaim{margin:0;padding:0;margin-top:50px}
+        .skn-mca2 .section.firstsection,.skn-mca2 .section.SECTION_CNTC,.skn-mca2 .paragraph.firstparagraph{margin-top:0}
+        .skn-mca2 .heading{margin-bottom:2px}
+        .skn-mca2 .paragraph{margin-top:4px}
+        .skn-mca2 .singlecolumn,.skn-mca2 .maincolumn,.skn-mca2 .myLftIndnt{margin-left:115px}
+        .skn-mca2 span.dates_wrapper{width:115px;font-size:11px;line-height:13px}
+        .skn-mca2 .sectiontitle{font-size:12px;line-height:13px}
+        .skn-mca2 .name{font-size:21px;line-height:38px}
+        .skn-mca2 .resumeTitle{font-size:15px;line-height:15px;padding:0 0 10px 0}
+        .skn-mca2 .thinbottomborder{border-bottom:0px solid}
+        .skn-mca2 .address{font-size:11px;line-height:13px}
+        .skn-mca2 .adrsExtra{margin-bottom:5px}
+        .skn-mca2 table.skills td{padding-top:2px}
+        .skn-mca2 .noPind{margin-left:0}
+        .skn-mca2 .execRsmTitle{font-size:12px;line-height:13px}
+        .skn-mca2 span.compDescWrap{margin-bottom:2px}
+        .skn-mca2 .name,.skn-mca2 .sectiontitle{color:#000000}
+		.skn-mca2 .skli-sec .singlecolumn .field:last-child{min-height:12px}
+		.skn-mca2 .disclaim,.skn-mca2 .sign{margin-top:50px}
+		.skn-mca2 .sign + .disclaim,.skn-mca2 .disclaim + .sign{margin-top:10px}
+        .skn-mca2 .totl-expr{background-color:#000000;font-size:8px;line-height:12px}
+
+        /* icons */
+        .skn-mca2 .iconSvg{line-height:11px}
+        .skn-mca2 .iconSvg svg,.skn-mca2 .iconSvg{width:11px;height:11px}
+
+        /*FIX for Re-calculating width of singlecolumn for CL*/
+        .skn-mca2 .sectionCL .field.singlecolumn{margin-left:0;width:100%;font-size:11px}
+        .skn-mca2 .address2{font-size:11px;line-height:12px}
+
+        /*Infographic Bar*/
+        .skn-mca2 .lang-sec.infobarsec,.skn-mca2 .skli-sec.infobarsec,.skn-mca2 .multi-para-hilt{padding-left:115px}
+        .skn-mca2 .lang-sec.infobarsec .heading,.skn-mca2 .skli-sec.infobarsec .heading,.skn-mca2 .multi-para-hilt .heading{margin-left:-115px}
+        .skn-mca2 .lang-sec.infobarsec .sortable-item .para_odd,.skn-mca2 .lang-sec.infobarsec .sortable-item .para_even,.skn-mca2 .skli-sec.infobarsec .sortable-item .para_odd,.skn-mca2 .skli-sec.infobarsec .sortable-item .para_even{max-width:{$LGBW}px}
+        .skn-mca2 .lang-sec.infobarsec .inner-rating,.skn-mca2 .skli-sec.infobarsec .inner-rating{background-color:#000000}
+        .skn-mca2 .lang-sec .heading,.skn-mca2 .skli-sec .heading{width:calc(100% + 115px)}
+        .skn-mca2 .lang-sec .paragraph,.skn-mca2 .skli-sec .paragraph{width:47.6%}
+        .skn-mca2 .data-LNGG .doc-item,.skn-mca2 .data-SKLI .doc-item,.skn-mca2 .lang-sec .doc-item,.skn-mca2 .skli-sec .doc-item{width:100%}
+        .skn-mca2 .data-LNGG .sortableInner,.skn-mca2 .data-SKLI .sortableInner,.skn-mca2 .SECTION_LNGG .sortableInner,.skn-mca2 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mca2 .data-LNGG .sortable-item,.skn-mca2 .data-SKLI .sortable-item{width:47.6%}
+        .skn-mca2 .data-LNGG .sortable-item .paragraph,.skn-mca2 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+        .skn-mca2 .lang-sec .native-lang{width:100%}
+
+        /*Infographic Tiles*/
+        .skn-mca2 .lang-sec.infotilesec,.skn-mca2 .skli-sec{padding-left:115px}
+        .skn-mca2 .lang-sec.infotilesec .heading,.skn-mca2 .skli-sec .heading{margin-left:-115px}
+        
+        /*Rectangular Rating Blocks*/
+        .skn-mca2 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#000000}
+
+        /*Builder fixes*/
+        .skn-mca2 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+        .page-finalize .skn-mca2 .lang-sec,.page-finalize .skn-mca2 .skli-sec{padding-left:0}
+        .page-finalize .skn-mca2 .lang-sec .heading,.page-finalize .skn-mca2 .skli-sec .heading{margin-left:0}
+        .page-finalize .skn-mca2 .lang-sec .sortableInner,.page-finalize .skn-mca2 .skli-sec .sortableInner{margin-left:115px}
+        .page-finalize .skn-mca2 .lang-sec .heading + div > div:not(.sortableInner) .firstparagraph .singlecolumn{margin-left:115px!important}
+        .page-finalize .skn-mca2 .sortableInner .paragraph-container+.paragraph-container,.page-finalize .sortable-drag-item.skn-mca2 .section{margin:0}
+		.skn-mca2 .lang-sec .sortable-item{vertical-align:top}
+        .skn-mca2 .skli-sec.SECTION_SKLI .paragraph *{color:#000}
+        .skn-mca2 .lang-sec .title-edit,.skn-mca2 .skli-sec .title-edit{margin-left:-115px}
+
+        /*Spell checker*/
+        .page-finalize #spellcheck .skn-mca2 .lang-sec,.page-finalize #spellcheck .skn-mca2 .skli-sec{padding-left:115px}
+        .page-finalize #spellcheck .skn-mca2 .lang-sec .heading, .page-finalize #spellcheck .skn-mca2 .skli-sec .heading{margin-left:-115px}
+		
+		/*Fixes for builder for skill*/
+        .skn-mca2 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:12px}	
+        .skn-mca2 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mca2 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+       .skn-mca2 .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mca2 .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-mca2  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mca2  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0!important}
+	   
+       /*PDF Flex Handling Code - Personal Information*/
+		.skn-mca2.for-pdf .pdfpdwrapper .details-wrap{width:197px}
+
+        /*Button*/
+        .skn-mca2.show-btn-gap .prfl-sec{padding-bottom:25px}
+        .skn-mca2.show-btn .section.btnlnk{margin-top:5px}
+        .skn-mca2.show-btn .btnlnk a:before{background:#000000}
+        .skn-mca2.show-btn .btnlnk .paragraph{padding-right:8px;padding-top:5px;height:20px}
+        .skn-mca2.for-pdf.show-btn .btnlnk a{box-shadow: 1px 1px 2px 0px #BFBFBF}
+        .skn-mca2.for-pdf.show-btn .btnlnk a:before{top:0} 
+
+        /*Photo Layout styles*/
+        .skn-mca2.pict-pcsh-circle .paragraph .prflPic img{width:99px;height:99px}
+        .skn-mca2.pict-pcsh-square .paragraph .prflPic img{width:99px;height:99px;height:99px}
+        .skn-mca2.pict-pcsh-bottomleft .paragraph .prflPic img{height:99px;width:99px}
+        .skn-mca2.pict-pcsh-bottomright .paragraph .prflPic img{height:99px;width:99px}
+        .skn-mca2.pict-pcsh-radius .paragraph .prflPic img{height:99px;width:99px}
+
+       /*PDF Handling for TEXP*/
+      .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-row{display:block;}
+      .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .jobtitle-cell{display:inline-block;width:70%}
+      .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-cell{display:inline-block;float:right;}
+    

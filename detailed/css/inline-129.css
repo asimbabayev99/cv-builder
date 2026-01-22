@@ -1,0 +1,84 @@
+
+        .skn-mlu4,.skn-mlu4 table{line-height:15px}
+        .skn-mlu4.pagesize{width:595px}
+        .skn-mlu4{min-height:792px}
+        .skn-mlu4.pgsz-a4{min-height:842px}
+        .skn-mlu4.fontsize,.skn-mlu4 ul li:before,.skn-mlu4 .septr:before,.skn-mlu4 .lang-sec.infobarsec .paragraph *,.skn-mlu4 .lang-sec.infotilesec .paragraph *,.skn-mlu4 .skli-sec .paragraph *{font-size:11px}
+        .skn-mlu4.fontface{font-family:Trebuchet MS}
+        .skn-mlu4 .section{padding-top:20px}
+        .skn-mlu4 .left-box .section{padding-top:10px}
+        .skn-mlu4 .left-box .section:after{padding-bottom:10px}
+        .skn-mlu4 .paragraph.firstparagraph{margin-top:0}
+        .skn-mlu4 .paragraph{margin-top:10px}
+        .skn-mlu4 .right-box .singlecolumn,.skn-mlu4 .right-box .maincolumn{margin-left:0px}
+        .skn-mlu4 table.skills td{padding-top:5px}
+        .skn-mlu4 .name{font-size:34px;line-height:32px}
+        .skn-mlu4 .resumeTitle{font-size:18px;line-height:18px;margin:0 0 10px 0}
+        .skn-mlu4 .address2{font-size:11px;line-height:{$CILH}px}
+        .skn-mlu4 .heading{font-size:14px;line-height:18px}
+        .skn-mlu4 .left-box{width:174px}
+        .skn-mlu4 .jobdates{font-size:10px}
+        .skn-mlu4 .left-box{background-color:#2b2b2b}
+        .skn-mlu4 .left-box .wrapper{background:#2b2b2b} /*For finalize page*/
+        .skn-mlu4 .prflPic,.skn-mlu4 .prflPic .field,.skn-mlu4 .prflPic img{width:130px;height:167px}
+		.skn-mlu4 .skli-sec .singlecolumn .field:last-child{min-height:16px}
+        .skn-mlu4 .totl-expr{background-color:#2b2b2b;font-size:6px;line-height:9px}
+
+        .skn-mlu4 .adrs-field .circle{width:20px}
+        .skn-mlu4 .adrs-field svg{width:20px;height:20px;vertical-align:middle}
+        /* .skn-mlu4 .adrs-field svg > circle{fill:#2b2b2b} */
+        .skn-mlu4 .address .adrs-field > .addrCircle{padding-left:11px}
+
+        .skn-mlu4 .right-box .multi-para-hilt .paragraph{width:48%;max-width:48%}
+
+        /*Infographic Bar*/
+		.skn-mlu4 .right-box .lang-sec.infobarsec .paragraph,.skn-mlu4 .right-box .skli-sec.infobarsec .paragraph{width:150px}
+		.skn-mlu4 .right-box .lang-sec.infobarsec .paragraph.nativeLangPara,.skn-mlu4 .right-box .skli-sec.infobarsec .paragraph.nativeLangPara{width:320px;max-width:320px}
+		.skn-mlu4 .right-box .lang-sec.infobarsec,.skn-mlu4 .right-box .skli-sec.infobarsec{padding-left:0px}
+        .skn-mlu4 .right-box .lang-sec.infobarsec .heading,.skn-mlu4 .right-box .skli-sec.infobarsec .heading,.skn-mlu4 .right-box .multi-para-hilt .heading{margin-left:-0px}
+        .skn-mlu4 .right-box .inner-rating,.skn-mlu4 .left-box .rating-bar:before,.skn-mlu4 .left-box .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:before,.skn-mlu4 .left-box .skli-sec .sliced-rect .sliced-rect-tile:before{background-color:#2b2b2b}
+        .skn-mlu4 .left-box .lang-sec .paragraph,.skn-mlu4 .left-box .skli-sec .paragraph{padding-bottom:5px}
+
+        /*Infographic Tiles*/
+		.skn-mlu4 .right-box .lang-sec.infotilesec .paragraph,.skn-mlu4 .right-box .skli-sec .paragraph{width:150px}
+		.skn-mlu4 .right-box .lang-sec.infotilesec .paragraph.nativeLangPara,.skn-mlu4 .right-box .skli-sec.infotilesec .paragraph.nativeLangPara{width:320px;max-width:320px}
+		.skn-mlu4 .right-box .lang-sec.infotilesec,.skn-mlu4 .right-box .skli-sec.infotilesec,.skn-mlu4 .right-box .multi-para-hilt{padding-left:0px}
+        .skn-mlu4 .right-box .lang-sec.infotilesec .heading,.skn-mlu4 .right-box .skli-sec.infotilesec .heading{margin-left:-0px}
+        .skn-mlu4 .lang-sec.infotilesec .firstparagraph,.skn-mlu4 .skli-sec .firstparagraph{padding-top:0}
+
+        /*Photo Layout styles*/
+        .skn-mlu4.pict-pcsh-circle .paragraph .prflPic img{width:130px;height:130px}
+        .skn-mlu4.pict-pcsh-square .paragraph .prflPic img{width:130px;height:130px}
+        .skn-mlu4.pict-pcsh-bottomleft .paragraph .prflPic img{height:130px;width:130px}
+        .skn-mlu4.pict-pcsh-bottomright .paragraph .prflPic img{height:130px;width:130px}
+        .skn-mlu4.pict-pcsh-radius .paragraph .prflPic  img{height:130px;width:130px}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mlu4 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#2b2b2b}
+
+        /*Builder Fix*/
+        .skn-mlu4 .left-box .SortableItem .section{padding-top:10px}
+        .skn-mlu4 .right-box .SortableItem .section{padding-top:20px}
+        .skn-mlu4 .left-box .SortableItem:first-child .section,.skn-mlu4 .right-box .SortableItem:first-child .section{padding-top:10px}
+        .skn-mlu4 .left-box > .sortable-item .section,
+        .skn-mlu4 .left-box > .sortable-item .paragraph{background:#2b2b2b} /*For finalize page*/
+        .skn-mlu4 .left-box .skli-sec.infobarsec .paragraph *,.skn-mlu4 .left-box .skli-sec.infotilesec .paragraph *{color:#fff}
+        .skn-mlu4 .right-box .skli-sec.infobarsec .paragraph *,.skn-mlu4 .right-box .skli-sec.infotilesec .paragraph *{color:#242424}
+        .MLU4.skn-mlu4 .sortableInner .paragraph-container+.paragraph-container{margin-top:0}
+		.skn-mlu4 .right-box .lang-sec .sortable-item,.skn-mlu4 .right-box .skli-sec .sortable-item{display:inline-block;vertical-align:top}
+		.skn-mlu4 .right-box .lang-sec .doc-item .title-edit,.skn-mlu4 .right-box .skli-sec .doc-item .title-edit{margin-left:-0px}
+        .skn-mlu4 .right-box .active .lang-sec.infobarsec .heading .rename-section.text-rename,.skn-mlu4 .right-box .active .skli-sec.infobarsec .heading .rename-section.text-rename{margin-left:-0px}
+        /*PPDT*/
+        .skn-mlu4 .disclaim.section{margin:0;padding:0;padding-top:50px}
+		
+		/*Fixes for builder for skill*/
+        .skn-mlu4 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:16px}	
+        .skn-mlu4 .left-box .skli-sec .sortable-item:last-child .paragraph .singlecolumn .field:last-child,.skn-mlu4 .right-box .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mlu4 .right-box .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+        .skn-mlu4 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph,.skn-mlu4 .left-box .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph{padding-bottom:0}
+        .skn-mlu4 .right-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mlu4 .right-box .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-mlu4 .right-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mlu4 .right-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0}
+	   
+        /* For-pdf*/
+        .skn-mlu4.for-pdf.pict-pcsh-bottomleft .paragraph .prflPic img{border:1.5px solid #fff}
+        .skn-mlu4.for-pdf.pict-pcsh-bottomright .paragraph .prflPic img{border:1.5px solid #fff}
+        .skn-mlu4.for-pdf .totl-expr{padding: 0pt 6pt 1pt}
+    

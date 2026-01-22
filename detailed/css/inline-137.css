@@ -1,0 +1,78 @@
+
+        .skn-hra1,.skn-hra1 table{line-height:14px}
+        .skn-hra1.pagesize{width:545px}
+        .skn-hra1.fontsize,.skn-hra1 .lang-sec .paragraph *,.skn-hra1 .skli-sec .paragraph *{font-size:12px}
+        .skn-hra1.fontface{font-family:Times New Roman}
+        .skn-hra1.vmargins{padding-top:12px;padding-bottom:12px}
+        .skn-hra1.hmargins{padding-left:25px;padding-right:25px}
+        .skn-hra1 .section{margin-top:4px}
+        .skn-hra1 .firstsection{margin-top:0}
+        .skn-hra1 .SECTION_CNTC{margin-top:0}
+        .skn-hra1 .heading{margin-bottom:1px;height:14px}
+        .skn-hra1 .paragraph{margin-top:3px}
+        .skn-hra1 .firstparagraph{margin-top:0}
+        .skn-hra1 .singlecolumn,.skn-hra1 .maincolumn{margin-left:105px}
+        .skn-hra1 span.dates_wrapper{width:105px}
+        .skn-hra1 .bottomborder{border-bottom:1px solid#000000}
+        .skn-hra1 .sectiontitle{font-size:14px;line-height:16px;border-bottom:1px solid #FFF;color:#000000}
+        .skn-hra1 .name{color:#000000;font-size:24px;line-height:28px}
+        .skn-hra1 .resumeTitle{font-size:16px;line-height:26px;padding:4px 0}
+        .skn-hra1 .address{font-size:12px;line-height:14px;margin-top:4px}
+        .skn-hra1 table.skills td{padding-top:1px}
+		.skn-hra1 .skli-sec .singlecolumn .field:last-child{min-height:14px}
+        .skn-hra1 .totl-expr{background-color:#000000;font-size:8px;line-height:12px}
+
+        /* Style for Signature */
+        .skn-hra1 .disclaim{margin:0;padding:0;margin-top:20px}
+        .skn-hra1 .disclaim .heading{margin-bottom:2px}
+
+        /*FIX for Re-calculating width of singlecolumn for CL*/
+        .skn-hra1 .sectionCL .singlecolumn{margin-left:0;width:100%}
+        .skn-hra1 .address2{font-size:12px;line-height:14px}
+
+        /*Infographic*/
+        .skn-hra1 .lang-sec,.skn-hra1 .skli-sec,.skn-hra1 .multi-para-hilt{padding-left:105px}
+        .skn-hra1 .lang-sec .heading,.skn-hra1 .skli-sec .heading,.skn-hra1 .multi-para-hilt .heading{margin-left:-105px}
+        .skn-hra1 .lang-sec .heading,.skn-hra1 .skli-sec .heading{width:calc(100% + 105px)}
+        .skn-hra1 .lang-sec .paragraph,.skn-hra1 .skli-sec .paragraph{width:47.8%}
+        .skn-hra1 .inner-rating{background-color:#000000}
+        .skn-hra1 .data-LNGG .doc-item,.skn-hra1 .data-SKLI .doc-item{width:100%}
+        .skn-hra1 .lang-sec .sortable-item,.skn-hra1 .skli-sec .sortable-item{vertical-align:top;margin-top:0}
+        .skn-hra1 .data-LNGG .sortableInner,.skn-hra1 .data-SKLI .sortableInner,.skn-hra1 .SECTION_LNGG .sortableInner,.skn-hra1 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-hra1 .data-LNGG .sortable-item,.skn-hra1 .data-SKLI .sortable-item{width:47.8%}
+        .skn-hra1 .data-LNGG .sortable-item .paragraph,.skn-hra1 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+        .skn-hra1 .lang-sec .native-lang{width:100%}
+
+        /*Finalize Fixes*/
+        .skn-hra1 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+        .page-finalize .skn-hra1 .sortableInner .paragraph-container+.paragraph-container,.page-finalize .sortable-drag-item.skn-hra1 .section{margin:0}
+        .skn-hra1 .langSec .sortableInner .sortable-item:not(:first-child) .paragraph,.skn-hra1 .infoSec .sortableInner .sortable-item:not(:first-child) .paragraph{vertical-align:top}
+        .page-finalize .skn-hra1 .section.langSec .paragraph{margin-top:0px}
+		
+		
+	    /*Fixes for builder for skill*/
+        .skn-hra1 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:14px}	
+        .skn-hra1 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-hra1 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+       .skn-hra1 .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-hra1 .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-hra1  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-hra1  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0!important}
+	   
+		/*PDF Flex Handling Code - Personal Information*/
+		.skn-hra1.for-pdf .pdfpdwrapper{display:block}
+		.skn-hra1.for-pdf .pdfpdwrapper .details-wrap:first-child{float:left;padding-right:5px}
+		.skn-hra1.for-pdf .pdfpdwrapper .details-wrap:nth-child(2){float:right}
+		.skn-hra1.for-pdf .pdfpdwrapper .details-wrap{width:217px!important;}
+
+        /*CSS for Infographic PDFWrapper*/
+        .skn-hra1.for-pdf .lang-sec,.skn-hra1.for-pdf .skli-sec{display: block;}
+        .skn-hra1.for-pdf .section .pdfinfwrapper{display:block;width:100%}
+        .skn-hra1.for-pdf .section .pdfinfwrapper:after{content:'';clear:both;display:table}
+        .skn-hra1.for-pdf .section .pdfinfwrapper .paragraph:first-child{float:left}
+        .skn-hra1.for-pdf .section .pdfinfwrapper .paragraph:nth-child(2){float:right}
+        .skn-hra1.for-pdf .section .pdfinfwrapper .paragraph{margin-bottom:5px;padding-bottom: 0px;}
+        .skn-hra1.for-pdf .section .pdfinfwrapper:last-child .paragraph{margin-bottom:0}
+        .skn-hra1.for-pdf .section .pdfinfwrapper .paragraph{clear: none;}
+
+        /*PDF Handling for TEXP*/
+       .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-row{display:block;}
+       .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .jobtitle-cell{display:inline-block;width:75%}
+       .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-cell{display:inline-block;float:right;}
+    

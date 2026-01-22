@@ -1,0 +1,576 @@
+<div class="svg-skin "><div data-testid="embd-98t1CZ7" class="" tabindex=""><div><style type="text/css" id="static">
+
+        @import url('https://fonts.googleapis.com/css?family=Blinker:400,700');
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-mli1 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        /*START content disc style for LI*/
+        .skn-mli1 ul,.skn-mli1 li{list-style:none;margin:0 0 0 8px;padding:0}
+        .skn-mli1 ul li{position:relative;margin:0}
+        .skn-mli1 ul li:before{content:'\2022';position:absolute;left:-8px;top:2px;font-family:auto}
+        .skn-mli1 .jobline ul,.skn-mli1 .education .field ul{margin-top:5px}
+        .skn-mli1 .adnlLnks ul{margin-left:0}
+        .skn-mli1 .adnlLnks ul li:before{content:''}
+        /*END content disc style for LI*/
+
+        .skn-mli1 .clear{clear:both;height:0}
+        .skn-mli1 .txt-bold{font-weight:bold}
+        .skn-mli1 .break-all{word-break:break-all}
+        .skn-mli1 .paddedline{display:block}
+        .skn-mli1 .flt-right{float:right}
+        .skn-mli1 .pb5{padding-bottom:5px}
+
+        .skn-mli1 .ttc-align-left ul{text-align:left}
+        .skn-mli1 .ttc-align-right ul{text-align:right}
+        .skn-mli1 .ttc-align-center ul{text-align:center}
+        .skn-mli1 .ttc-align-justify ul{text-align:justify}
+        .skn-mli1 .ttc-align-right li:before,.skn-mli1 .ttc-align-center li:before{position:relative;left:-4px}
+
+        /*Document*/
+        .skn-mli1{color:#46464e;line-height:16px;font-variant-ligatures:none;min-height:792px;word-wrap:break-word}
+        .skn-mli1 .name{color:#496267;font-weight:bold;padding:0 0 10px 0;text-align:left;position:relative;letter-spacing:.5px}
+        .skn-mli1 .resumeTitle{color:#4a4a4a;font-weight:bold}
+        .skn-mli1 .parentContainer{display:table;table-layout:fixed;width:100%;min-height:inherit}
+		.skn-mli1 .parentContainer .right-box > .section:first-child + .section{border-top:none}
+        .skn-mli1 .parentContainer .right-box > .sortable-item:first-child + .sortable-item .section{border:none}
+		.skn-mli1 .paragraph.firstparagraph{margin-top:0}
+		.skn-mli1 .social-link .field a{color:#fff}
+        .skn-mli1 .locationGap{display:flex;justify-content:space-between}
+        .skn-mli1 .totl-expr{float:right;padding:0 6px;color:#fff;font-weight:600;text-wrap:nowrap}
+        .skn-mli1 .left-box .totl-expr{display:none}
+        .skn-mli1.texp-curved .totl-expr{border-radius:10px}
+        .skn-mli1 .paddedline.locationGap .flt-right{min-width:100px;text-align:right}
+
+        /*Photo Layout styles*/
+        .skn-mli1.pict-pcsh-circle .paragraph .prflPic img{border-radius:50%;box-sizing:border-box;border:1px solid #fff}
+        .skn-mli1.pict-pcsh-rectangle .paragraph .prflPic img{border-radius:unset;box-sizing:border-box;border:1px solid #fff}
+        .skn-mli1.pict-pcsh-bottomleft .paragraph .prflPic img{border-radius:50%;border-bottom-left-radius:8px;box-sizing:border-box;border:1px solid #fff}
+        .skn-mli1.pict-pcsh-bottomright .paragraph .prflPic img{border-radius:50%;border-bottom-right-radius:8px;box-sizing:border-box;border:1px solid #fff}
+        .skn-mli1.pict-pcsh-radius .paragraph .prflPic img{border-radius:10px;box-sizing:border-box;border:1px solid #fff}
+
+        /* Common style for left and right box */
+        .skn-mli1 .right-box{padding:25px 35px 25px 20px;display:table-cell;vertical-align:top;letter-spacing:0.2px}
+        .skn-mli1 .left-box{background-color:#496267;box-sizing:content-box;display:table-cell;background-size:100%;color:#fff;padding:25px 20px 25px 35px}
+        .skn-mli1 .left-box .section{border-top:1px solid #fff}
+        .skn-mli1 .right-box .section{border-top:1px solid #000}
+        .skn-mli1 .left-box .section:first-child,.skn-mli1 .right-box .section:first-child{padding-top:0px}
+        .skn-mli1 .right-box .section:first-child{border-top:none;border-bottom:5px solid #000;padding-bottom:0;margin-bottom:30px}
+        .skn-mli1 .left-box .section[id^="SECTION_PICT"]{padding-top:0;margin-bottom:25px;border:none;text-align:center;position:relative}
+        .skn-mli1 .left-box .section:first-child .paragraph{padding:0;display:block}
+        .skn-mli1 .left-box .heading,.skn-mli1 .right-box .paragraph,.skn-mli1 .adnlLnks ul li{padding:0}
+        .skn-mli1 .resumeTitle, .skn-mli1 .right-box .sectiontitle{color:#000}
+		.skn-mli1 .right-box .skill{display:table;width:100%;table-layout:fixed}
+        .skn-mli1 .right-box .skill .paddedline{display:table-cell;width:50%}
+		.skn-mli1 .right-box .skill .paddedline:last-child{padding-left:10px}
+
+        /* PRFL */
+        .skn-mli1 .prflPic,.skn-mli1 .prflPic .field{display:table-cell;vertical-align:middle;text-align:center}
+		.skn-mli1 .prflPic img{position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;object-fit:cover}
+
+        /* Heading */
+        .skn-mli1 .heading{line-height:15px;margin-bottom:5px}
+        .skn-mli1 .sectiontitle{font-weight:bold;;text-transform:uppercase;letter-spacing:.5px}
+        .skn-mli1 .sectiontitle,.skn-mli1 .parentContainer .left-box .singlecolumn{word-wrap:break-word}
+
+        /* section */
+        .skn-mli1 .section:empty,.skn-mli1 .fielditem:empty{display:none}
+
+        .skn-mli1 .septr:before{content:"|";font-size:9px;vertical-align:top;padding-left:2px;padding-right:2px}
+        .skn-mli1 .left-box .section[id^="SECTION_PICT"]:after{display:none}
+        .skn-mli1 .left-box .section:after{content:'';display:block}
+        .skn-mli1 .left-box .sec-cntc{margin-bottom:0}
+        .skn-mli1 .left-box .sec-alnk{border-top:none;margin-top:5px}
+        .skn-mli1 .sec-cntc + .section:not(.sec-alnk){margin-top:25px}
+		
+       /*Signature*/
+	    .skn-mli1 .disclaim .field.singlecolumn,.skn-mli1 .paragraph .signPic > .field_sign{margin-left:0}
+        .skn-mli1 .disclaim .field.singlecolumn,.skn-mli1 .disclaim .field.singlecolumn li,.skn-mli1 .disclaim .field.singlecolumn p,.skn-mli1 .disclaim .field.singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-mli1 .sign .field_sign{font-size:7px;color:#8a8a8a;letter-spacing:0}
+        .skn-mli1 .txtleft + .field_sign{text-align:left}
+        .skn-mli1 .txtcenter + .field_sign{text-align:center}
+        .skn-mli1 .txtright + .field_sign{text-align:right}
+        .skn-mli1 .signPic span:first-child{padding-right:6px}
+        .skn-mli1 .signPic img{max-width:100%}
+		.skn-mli1 .right-box .sign.section{border:none;margin-bottom:0}
+		.skn-mli1 .disclaim.section{border:none;margin-bottom:0}
+		
+		
+		/* SVG Icon Style */
+        .skn-mli1 .iconRow{display:table;table-layout:fixed;width:100%;margin-bottom:5px;word-wrap:break-word}
+        .skn-mli1 .iconRow:last-child{margin-bottom:0}
+        .skn-mli1 .social-link .iconRow:last-child{margin-bottom:5px}
+        .skn-mli1 .iconSvg{width:12px;height:12px;display:table-cell;vertical-align:middle}
+        .skn-mli1 .iconSvg svg{vertical-align:middle;fill:#fff}
+        .skn-mli1 .icoTxt{display:table-cell;padding-left:10px}
+		.skn-mli1 .social svg{transform:scale(1.5)}
+        .skn-mli1 .iconRow.mili-field svg{transform:scale(1.2)}
+        .skn-mli1 .iconRow.relg-field svg{transform:scale(1.4)}
+		
+		.skn-mli1 .st0{filter:url(#Adobe_OpacityMaskFilter);}
+        .skn-mli1 .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF}
+        .skn-mli1 .st2{mask:url(#mask-2_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF}
+		 
+        /*New logic for infographic*/
+        .skn-mli1 .lang-sec .singlecolumn,.skn-mli1 .skli-sec .singlecolumn{display:none}
+        .skn-mli1 .lang-sec.infobarsec .infobarpara,.skn-mli1 .lang-sec.infotilesec .infotilepara,
+        .skn-mli1 .skli-sec.infobarsec .infobarpara,.skn-mli1 .skli-sec.infotilesec .infotilepara{display:block}
+
+        /*Infographic*/
+        /* .skn-mli1 .lang-sec.infobarsec,.skn-mli1 .skli-sec.infobarsec{font-size:0} */
+
+        .skn-mli1 .lang-sec,.skn-mli1 .skli-sec{padding-left:0px;display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mli1 .lang-sec .paragraph,.skn-mli1 .skli-sec .paragraph{width:47.6%;padding-bottom:5px;padding-top:0}
+        .skn-mli1 .lang-sec .paragraph:nth-last-child(1),.skn-mli1 .lang-sec .paragraph:nth-last-child(2),.skn-mli1 .skli-sec .paragraph:nth-last-child(1),.skn-mli1 .skli-sec .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-mli1 .lang-sec .nativeLangPara.paragraph,.skn-mli1 .left-box .lang-sec .paragraph,.skn-mli1 .left-box .skli-sec .paragraph{width:100%;max-width:100%}
+
+        .skn-mli1 .lang-sec.infobarsec .field *,.skn-mli1 .lang-sec.infobarsec .nativeLangPara .field,.skn-mli1 .skli-sec.infobarsec .field *{display:inline}
+        .skn-mli1 .lang-sec.infobarsec .paragraph,.skn-mli1 .skli-sec.infobarsec .paragraph{display:inline-block;vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-mli1 .lang-sec.infobarsec .paragraph .singlecolumn,.skn-mli1 .skli-sec.infobarsec .singlecolumn{margin-left:0;padding-left:0;position:relative}
+        .skn-mli1 .lang-sec.infobarsec > .paragraph:nth-last-child(1),.skn-mli1 .right-box .lang-sec.infobarsec > .paragraph:nth-last-child(2),.skn-mli1 .skli-sec.infobarsec > .paragraph:nth-last-child(1),.skn-mli1 .right-box .skli-sec.infobarsec > .paragraph:nth-last-child(2){padding-bottom:0!important}
+        .skn-mli1 .lang-sec.infobarsec .paragraph.nativeLangPara{width:100%}
+        .skn-mli1 .right-box .lang-sec.infobarsec .inner-rating,.skn-mli1 .right-box .skli-sec.infobarsec .inner-rating{position:relative}
+        .skn-mli1 .right-box .lang-sec.infobarsec .rating-bar,.skn-mli1 .right-box .skli-sec.infobarsec .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;position:relative;page-break-inside:avoid}
+        .skn-mli1 .left-box .lang-sec.infobarsec .rating-bar,.skn-mli1 .left-box .skli-sec.infobarsec .rating-bar{background:rgba(255,255,255,.25);width:100%;clear:both;margin-top:3px;position:relative;page-break-inside:avoid}
+        .skn-mli1 .right-box .lang-sec.infobarsec .inner-rating,.skn-mli1 .right-box .skli-sec.infobarsec .inner-rating{background-color:#496267;height:4px;position:relative;width:60%}
+        .skn-mli1 .left-box .lang-sec.infobarsec .inner-rating,.skn-mli1 .left-box .skli-sec.infobarsec .inner-rating{background-color:#fff;height:4px;position:relative;width:60%}
+        .skn-mli1 .left-box .lang-sec.infobarsec .paragraph,.skn-mli1 .left-box .skli-sec.infobarsec .paragraph{display:block;margin-right:0;width:100%;max-width:100%}
+        .skn-mli1 .lang-sec .paragraph,.skn-mli1 .skli-sec .paragraph{padding-top:0} 
+        .skn-mli1 .left-box .rating-bar{background: transparent;position: relative;width: 100%;clear: both;}
+        .skn-mli1 .left-box .inner-rating{background-color:#fff;position: relative}
+        .skn-mli1 .left-box .rating-bar:before{content: '';position: absolute;height: 4px;width: 100%;left: 0;top: 0;opacity: .35;height:100%}
+        .skn-mli1 .left-box .lang-sec .sliced-rect .sliced-rect-tile.ratvfill, .skn-mli1 .left-box .sliced-rect .sliced-rect-tile.ratvfill{background:#fff}
+        .skn-mli1 .left-box .lang-sec .sliced-rect .sliced-rect-tile, .skn-mli1 .left-box .skli-sec .sliced-rect .sliced-rect-tile{background: rgba(255,255,255,.25);}
+        .skn-mli1 .left-box .skli-sec .paragraph:last-child .singlecolumn  .field:last-child{min-height:0}
+		.skn-mli1 .right-box .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-mli1 .right-box .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+
+
+		
+		/*Infographic Tiles*/
+        .skn-mli1 .lang-sec.infotilesec .paragraph,.skn-mli1 .skli-sec .paragraph{display:inline-block;vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-mli1 .lang-sec.infotilesec > .paragraph:nth-last-child(1),.skn-mli1 .right-box .lang-sec.infotilesec > .paragraph:nth-last-child(2),.skn-mli1 .skli-sec > .paragraph:nth-last-child(1),.skn-mli1 .right-box .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0!important}
+        .skn-mli1 .lang-sec.infotilesec .field *,.skn-mli1 .skli-sec .field *,.skn-mli1 .lang-sec.infotilesec .nativeLangPara .field{display:inline}
+        .skn-mli1 .lang-sec.infotilesec .paragraph .singlecolumn,.skn-mli1 .skli-sec .paragraph .singlecolumn{margin-left:0;padding-left:0}
+        .skn-mli1 .lang-sec.infotilesec .sliced-rect,.skn-mli1 .skli-sec .sliced-rect{height:6px;width:100%;line-height:0px;margin-top:3px;clear:both}
+        .skn-mli1 .left-box .lang-sec.infotilesec .paragraph,.skn-mli1 .left-box .skli-sec .paragraph{width:100%;max-width:100%;margin-top:0}
+        .skn-mli1 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli1 .skli-sec .sliced-rect .sliced-rect-tile{height:100%;background-color:#d5d6d6;float:left;margin-right:3px}
+        .skn-mli1 .left-box .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mli1 .left-box .skli-sec .sliced-rect .sliced-rect-tile{background-color:rgba(255,255,255,.25)}
+        .skn-mli1 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mli1 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
+
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli1 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#496267}
+		.skn-mli1 .hide-bar .paragraph .rating-bar,.skn-mli1 .hide-only-bar .rating-bar,.skn-mli1 .hide-bar .paragraph .sliced-rect,.skn-mli1 .hide-bar .paragraph .field-ratt,.skn-mli1 .hide-colon .paragraph .colon{display:none}
+
+        /*MFR address*/
+        .skn-mli1 .zipsuffix,.skn-mli1.LFR .zipprefix,.skn-mli1.MFR .zipprefix,.skn-mli1.MES .zipprefix{display:block}
+        .skn-mli1 .zipprefix,.skn-mli1.MFR .zipsuffix,.skn-mli1.MES .zipsuffix{display:none}
+		
+        /* For Space before colon*/
+        .skn-mli1 .beforecolonspace{display:none!important}
+        .skn-mli1.MFR .beforecolonspace{display:inline!important}
+
+        /* GRYR */
+		.skn-mli1 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+		
+		/*HILT multi para/section*/
+        .skn-mli1 .multi-section-hilt .multi-para-opt,.skn-mli1 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-mli1 .multi-para-hilt .dflt-view{display:none}
+        .skn-mli1 .multi-para-hilt:after{content:"";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+        .skn-mli1 .right-box .multi-para-hilt .paragraph{display:block;float:left;clear:none;margin-top:0px;margin-right:2%}
+        .skn-mli1 .right-box .multi-para-hilt .paragraph:nth-child(2n+1){margin-right:0}
+        .skn-mli1 .right-box .multi-para-hilt .paragraph:nth-last-child(1),.skn-mli1 .right-box .multi-para-hilt .paragraph:nth-last-child(2){margin-bottom:0}
+		.skn-mli1 .right-box .multi-para-hilt .singlecolumn{margin-left:0!important;padding-left:0}
+		.skn-mli1 .right-box .multi-para-hilt .paragraph{margin-bottom:15px}
+		.skn-mli1 .left-box .multi-para-hilt .paragraph:last-child{margin-bottom:0}
+        .skn-mli1 .right-box .multi-para-hilt .paragraph:nth-child(2n){clear:right}
+
+        .skn-mli1 .paragraph-fieldgroup .social svg, .skn-mli1 .paragraph-fieldgroup .social-link svg .svg-inricon{transform:scale(1.45);transform-origin:center;}
+        .skn-mli1 .paragraph-fieldgroup .sml-face{opacity:.3}        
+        .skn-mli1 .paragraph-fieldgroup .big-face{fill:#fff}        
+        .skn-mli1 .paragraph-fieldgroup .big-face + g{fill:#496267}
+        .skn-mli1 .paragraph-fieldgroup .text{fill:#000;transform:scale(1.2);transform-origin:45px 30px}
+
+        /*PICT support*/
+        .skn-mli1.pict-pcpf-none .pict-sec{display:none}
+        /*Button style*/
+        .skn-mli1.show-btn .section.btnlnk{font-size:0;text-align:left;margin-bottom:0}
+        .skn-mli1.show-btn .btnlnk .paragraph{display:inline-block;margin:0;width:auto;height:100%}
+        .skn-mli1.show-btn .btnlnk .paragraph:last-child{padding-right:0}
+        .skn-mli1:not(.show-btn) .btnlnk{display:none}
+        .skn-mli1.show-btn-gap .btnlnk + .section{border-top:none}
+
+        /*Button SVG*/
+        .skn-mli1.show-btn .btnlnk a{display:flex;align-items:center;text-decoration:none;position:relative;text-align:center;padding:4px 8px;box-shadow:1px 1px 2px 0px rgba(0, 0, 0, 0.25);color:#000;font-size:10px;line-height:normal;font-weight:normal;border-radius:4px}
+        .skn-mli1.show-btn .btnlnk a:before{content:'';width:100%;height:100%;background:#000;opacity:0.2;position:absolute;left:0;border-radius:4px}
+
+        /*Arab style*/
+        .skn-mli1.arb{direction:rtl;text-align:right} 
+        .skn-mli1.arb .name{text-align:right;letter-spacing:0}
+        .skn-mli1.arb ul li:before{right:-8px;left:0}
+        .skn-mli1.arb ul, .skn-mli1.arb li{margin:0 8px 0 0}
+        .skn-mli1.arb ul,.skn-mli1.arb .adnlLnks.singlecolumn li{margin:0}
+        .skn-mli1.arb .flt-right{float:left}
+        .skn-mli1.arb .iconSvg svg{transform:scaleX(-1)}
+        .skn-mli1.arb .iconSvg.social svg{transform: scale(1.5)}
+        .skn-mli1.arb .iconSvg.arb-svg svg,.skn-mli1.arb .iconRow.video-cv svg{transform:scale(1)}
+        .skn-mli1.arb .arb-ltr,.skn-mli1.arb .social-link .icoTxt,.skn-mli1.arb .sec-alnk .adnlLnks li{direction:ltr}
+        .skn-mli1.arb .icoTxt{padding-left:0}
+        .skn-mli1.arb .expr-sec .jobdates,.skn-mli1.arb .sign.SECTION_PPDT_SGTR{float:right}
+        .skn-mli1.arb .expr-sec .space{float:right;padding:0 2px}
+        .skn-mli1.arb .jobline ul, .skn-mli1.arb .education .field ul{margin-top:5px}
+        .skn-mli1.arb .right-box .skill .paddedline:last-child{padding-left:0;padding-right:10px}
+        .skn-mli1.arb .txtleft + .field_sign{text-align:right}
+        .skn-mli1.arb .left-box .lang-sec .heading,.skn-mli1.arb .left-box .skli-sec .heading{width:100%;box-sizing:border-box}
+        .skn-mli1.arb .right-box .lang-sec,.skn-mli1.arb .right-box .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mli1.arb .right-box .lang-sec .paragraph,.skn-mli1.arb .right-box .skli-sec .paragraph{width:47%}
+        .skn-mli1.arb .lang-sec.infotilesec .sliced-rect .sliced-rect-tile, .skn-mli1.arb .skli-sec .sliced-rect .sliced-rect-tile{margin-right:0;margin-left:3px;float:right}
+        .skn-mli1.arb .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child, .skn-mli1.arb .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-left:0}
+        .skn-mli1.arb .right-box .lang-sec .paragraph .singlecolumn,.skn-mli1.arb .right-box .skli-sec .paragraph .singlecolumn,.skn-mli1.arb .right-box .lang-sec .paragraph.para_even,.skn-mli1.arb .right-box .skli-sec .paragraph.para_even,.skn-mli1.arb .right-box .lang-sec .paragraph.para_odd,.skn-mli1.arb .right-box .skli-sec .paragraph.para_odd{margin-right:0}
+        .skn-mli1.arb .right-box .lang-sec.infotilesec .nativeLangPara{margin-left:0;margin-right:0;max-width:100%}
+        
+        /*PDF Arabic Fixes*/
+        .skn-mli1.arb.for-pdf .left-box .lang-sec.infobarsec .paragraph,.skn-mli1.arb.for-pdf .left-box .skli-sec.infobarsec .paragraph{display:table}
+        .skn-mli1.for-pdf .parentContainer .right-box .section.expr-sec .paragraph .singlecolumn .locationGap .texp-blk{width:30%;text-align:right}
+
+        /*Hyphen Handling*/
+        .skn-mli1 .hyphen:before{content:' - '}
+        .skn-mli1.hyphen-en-dash .hyphen:before{content:' – '}
+
+          /*Iron PDF Code*/
+        .skn-mli1.for-iron-pdf{margin-top: -24px}
+        .skn-mli1.for-iron-pdf .left-box{background-color: transparent!important;}
+    </style><style type="text/css" id="dynamic" data-time="Thu Jan 22 2026 21:43:11 GMT+0400 (Azerbaijan Standard Time)">
+        .skn-mli1,.skn-mli1 table{line-height:14px}
+        .skn-mli1.pagesize{width:595px}
+        .skn-mli1{min-height:792px}
+        .skn-mli1.pgsz-a4{min-height:842px}
+        .skn-mli1.fontsize{font-size:10px}
+        .skn-mli1.fontface{font-family:Blinker}
+        .skn-mli1 .section{margin-bottom:25px}
+        .skn-mli1 .paragraph{margin-top:15px}
+        .skn-mli1 .right-box .singlecolumn,.skn-mli1 .right-box .maincolumn{margin-left:0px}
+        .skn-mli1 table.skills td{padding-top:5px}
+        .skn-mli1 .name{color:#496267;font-size:36px;line-height:35px}
+        .skn-mli1 .resumeTitle{font-size:17px;line-height:17px;margin:0 0 10px 0}
+        .skn-mli1 .address2{font-size:10px;line-height:{$CILH}px}
+        .skn-mli1 .heading{font-size:14px;line-height:17px}
+        .skn-mli1 .left-box{background-color:#496267;width:169px}
+		.skn-mli1 .left-box .multi-para-hilt .paragraph{margin-bottom:10px}
+        .skn-mli1 ul li{padding-left:0px}
+        .skn-mli1 .left-box,.skn-mli1 .right-box .inner-rating{background-color:#496267}
+        .skn-mli1 .sectiontitle{font-size:14px;line-height:17px}
+        .skn-mli1 .right-box .singlecolumn, .skn-mli1 .right-box .maincolumn{margin-left:0px}
+		.skn-mli1 .skli-sec .singlecolumn .field:last-child{min-height:15px}
+        .skn-mli1 .disclaim,.skn-mli1 .sign{margin-top:50px}
+		.skn-mli1 .sign + .disclaim,.skn-mli1 .disclaim + .sign{margin-top:25px}
+		.skn-mli1 .totl-expr{font-size:8px;background-color:#496267;line-height:12px}
+        .skn-mli1.pict-pcsh-rectangle .paragraph .prflPic img{min-width:139px;max-width:139px}
+        .skn-mli1.pict-pcsh-rectangle .prflPic,.skn-mli1.pict-pcsh-rectangle .prflPic .field{width:139px}
+
+        /* icons */
+        .skn-mli1 .iconSvg{line-height:12px}
+        .skn-mli1 .iconSvg svg,.skn-mli1 .iconSvg{width:12px;height:12px}
+        .skn-mli1 .paragraph-fieldgroup .big-face + g, .skn-mli1 .paragraph-fieldgroup .text{fill:#496267}  		
+
+       /*Infographic*/
+        .skn-mli1 .right-box .lang-sec,.skn-mli1 .right-box .skli-sec{padding-left:0px}
+        .skn-mli1 .right-box .lang-sec .heading,.skn-mli1 .right-box .skli-sec .heading,.skn-mli1 .right-box .multi-para-hilt .heading{margin-left:-0px;width:calc(100% + 0px)}
+        .skn-mli1 .right-box .lang-sec.infobarsec .inner-rating,.skn-mli1 .right-box .skli-sec.infobarsec .inner-rating{background-color:#496267}
+        .skn-mli1 .left-box .lang-sec.infobarsec .paragraph,.skn-mli1 .left-box .skli-sec.infobarsec .paragraph{padding-bottom:5px}
+      
+       /*Important needed for MPIT builder*/
+
+        /*Infographic Skills*/
+        .skn-mli1 .left-box .lang-sec.infotilesec .paragraph,.skn-mli1 .left-box .skli-sec .paragraph{padding-bottom:5px}
+		
+		/*Rectangular Rating Blocks*/
+        .skn-mli1 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#496267}
+        .skn-mli1 .left-box .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#fff}
+		
+		/*Multi-para HILT*/
+        .skn-mli1 .right-box .multi-para-hilt .paragraph{width:49%;max-width:49%}
+
+        /*fixes for builder*/
+        .skn-mli1 .right-box .lang-sec .sortable-item,.skn-mli1 .right-box .skli-sec .sortable-item{display:inline-block}
+		/* .resume-preview .skn-mli1 .right-box .lang-sec .paragraph,.resume-preview .skn-mli1 .right-box .skli-sec .paragraph{width:{$LGPW}px;max-width:{$LGPW}px} */
+        .resume-preview .skn-mli1 .right-box .lang-sec .paragraph.nativeLangPara,.resume-preview .skn-mli1 .right-box .skli-sec .paragraph.nativeLangPara{max-width:100%!important;width:100%!important}
+        .skn-mli1 .data-CNTC + .section:not(.data-ALNK) .section{margin-top:25px}
+        .skn-mli1 .right-box .sortable-item:first-child .section{border-top:none;border-bottom:5px solid #000;padding-bottom:0;margin-bottom:30px}
+        .skn-mli1 .left-box .data-CNTC + .sortable-item:not(.data-ALNK) .section{margin-top:25px}
+		.skn-mli1 .left-box .active .inner-rating, .skn-mli1 .left-box .active-drag .inner-rating{background-color:#496267!important}
+		.skn-mli1 .left-box .active .rating-bar, .skn-mli1 .left-box .active-drag .rating-bar{background:#d5d6d6 !important}
+        
+        /* MPUK */
+        /* .resume-preview .skn-mli1.MUK .right-box .lang-sec .paragraph,.resume-preview .skn-mli1.MUK .right-box .skli-sec .paragraph{width:{$LGUK}px;max-width:{$LGUK}px} */
+        /* LES */
+       /*  .resume-preview .skn-mli1.LES .right-box .lang-sec .paragraph.nativeLangPara,.resume-preview .skn-mli1.LES .right-box .skli-sec .paragraph.nativeLangPara{width:{$LGTW}px !important}
+        .resume-preview .skn-mli1.LES .right-box .lang-sec.infotilesec .paragraph,.resume-preview .skn-mli1.LES .right-box .skli-sec.infotilesec .paragraph{width:{$LGUK}px;max-width:{$LGUK}px} */
+        
+        /* PRFL */
+        .skn-mli1 .prflPic,.skn-mli1 .prflPic .field{height:169px;width:169px}
+		.skn-mli1 .prflPic img{max-height:169px;max-width:169px;min-height:169px;min-width:169px}
+
+        @-moz-document url-prefix(){.skn-mli1 .parentContainer{height:600px}}
+		@media all and (-ms-high-contrast:none)
+            {
+            .skn-mli1 .prflPic img{position:static}/* IE11 */
+        }
+		
+		/*Fixes for builder for skill*/
+
+        /*LCINTL infographic logics */
+        .skn-mli1 .doc-item{width:100%}
+        .skn-mli1 .lang-sec .sortableInner,.skn-mli1 .skli-sec .sortableInner{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-mli1 .lang-sec .sortableInner .sortable-item,.skn-mli1 .skli-sec .sortableInner .sortable-item{width:47.45%}
+        .skn-mli1 .left-box .lang-sec .sortableInner .sortable-item,.skn-mli1 .left-box .skli-sec .sortableInner .sortable-item{width:100%}
+        .skn-mli1 .section.lang-sec .sortable-item .paragraph,.skn-mli1 .section.skli-sec .sortable-item .paragraph,.skn-mli1 .lang-sec .sortableInner .native-lang{width:100%}
+		
+
+
+        .skn-mli1 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:15px}	
+        .skn-mli1 .left-box .skli-sec .sortable-item:last-child .paragraph .singlecolumn .field:last-child,.skn-mli1 .right-box .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mli1 .right-box .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+        .skn-mli1 .right-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mli1 .right-box .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-mli1 .right-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mli1 .right-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0!important}
+	   .skn-mli1 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph,.skn-mli1 .left-box .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph{padding-bottom:0!important}
+	   
+       /*PICT support*/
+       .skn-mli1.pict-pcpf-none .pict-sec + .section, .skn-mli1.pict-pcpf-none .sortable-item:first-child + .sortable-item .section:not(.pict-sec){margin-top:45px}
+        /*Button*/
+        .skn-mli1.show-btn-gap .prfl-sec{padding-bottom:40px}
+        .skn-mli1.show-btn .section.btnlnk{margin-top:10px;height:20px}
+        .skn-mli1.show-btn .btnlnk a:before{background:#496267}
+        .skn-mli1.show-btn .btnlnk .paragraph{padding-right:8px}
+        .skn-mli1.show-btn .right-box .section:first-child{margin-bottom:10px}
+        .skn-mli1.show-btn-gap .right-box .section:first-child{margin-bottom:40px}
+        .skn-mli1.show-btn .btnlnk + .section{padding-top:10px;border-top:none}
+
+        /*Arab style*/
+        .skn-mli1.arb .resumeTitle{margin:0 0 10px 0}
+        .skn-mli1.arb .icoTxt{padding-right:10px}
+        .skn-mli1.arb,.skn-mli1.arb table{line-height:22px}
+        .skn-mli1.arb .right-box .singlecolumn,.skn-mli1.arb .right-box .maincolumn{margin-right:0px}
+        .skn-mli1.arb .right-box .singlecolumn,.skn-mli1.arb .right-box .maincolumn{margin-left:0px}
+        .skn-mli1.arb .right-box{padding:25px 20px 25px 35px}
+        .skn-mli1.arb .left-box{padding:25px 35px 25px 20px}
+        .skn-mli1.arb .name{line-height:47px}
+        .skn-mli1.arb .resumeTitle{line-height:22px}
+
+     
+        .skn-mli1.arb .right-box .lang-sec .heading, .skn-mli1.arb .right-box .skli-sec .heading,.skn-mli1.arb .right-box .lang-sec.infotilesec .heading, .skn-mli1.arb .right-box .skli-sec .heading{margin-right:-0px;width:calc(100% + 0px);margin-left:0}
+        .skn-mli1.arb .right-box .lang-sec.infobarsec, .skn-mli1.arb .right-box .skli-sec.infobarsec,.skn-mli1.arb .right-box .lang-sec.infotilesec, .skn-mli1.arb .right-box .skli-sec, .skn-mli1.arb .right-box .multi-para-hilt{padding-right:0px;padding-left:0}
+        .skn-mli1 .disclaim.section .paragraph .singlecolumn{margin-right:0}
+
+        /* for-pdf */
+        .skn-mli1.for-pdf .prflPic img{max-height:168.5px;max-width:168.5px;min-height:168.5px;min-width:168.5px}
+        .skn-mli1.for-pdf.pict-pcsh-rectangle .paragraph .prflPic img{min-width:138.5px;max-width:138.5px}
+        .skn-mli1.for-pdf .parentContainer .lang-sec, .skn-mli1.for-pdf .parentContainer .skli-sec{display:block}
+        .skn-mli1.for-pdf .rating-bar,.skn-mli1.for-pdf .sliced-rect{page-break-inside:avoid;}
+
+        /* for lngg pdf */
+        .skn-mli1.for-pdf .right-box  .pdfinfwrapper{display:block}
+        .skn-mli1.for-pdf .right-box  .pdfinfwrapper:after{content:'';clear:both;display:table}
+        .skn-mli1.for-pdf .right-box  .pdfinfwrapper .paragraph:nth-child(odd){float:left}
+        .skn-mli1.for-pdf .right-box  .pdfinfwrapper .paragraph:nth-child(even){float:right}
+        .skn-mli1.for-pdf .right-box  .pdfinfwrapper .paragraph{margin-bottom:10px}
+        .skn-mli1.for-pdf .right-box  .pdfinfwrapper .paragraph{padding-bottom:0px}
+        .skn-mli1.for-pdf .right-box  .pdfinfwrapper:last-child .paragraph{margin-bottom:0}
+        .skn-mli1.for-pdf .lang-sec,.skn-mli1.for-pdf .skli-sec{display:block}
+        
+    </style></div><div data-testid="embd-95CA90b" class="document doc-root doc-finalize fontsize fontface vmargins hmargins pagesize skn-mli1 MLI1 MUK  pgsz-a4 hyphen-normal pict-pcpf-purl texp-rectangle  expr-durt-none" docskinwidth="598" style="transform: scale(0.352941, 0.326603);"><div data-testid="embd-92LqKqF0" id="CONTAINER_PARENT_0" class="parentContainer"><div data-testid="embd-92PDkR60" id="CONTAINER_0" class="left-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling  data-PICT"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-PICT" id="SECTION_PICTa2e3abc4-fc5a-4d5c-80fb-ac187cd5be60" class="section notdraggable pict-sec SECTION_PICT firstsection" data-section-cd="PICT"><div data-testid="embd-88uQIHR-PICT" class="doc-item"><div data-testid="embd-88aw0Ce-PICT" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-389ae0dd-26d7-4892-a4b9-d1e4f0b10399" id="PARAGRAPH_PICT_389ae0dd-26d7-4892-a4b9-d1e4f0b10399" class="paragraph PARAGRAPH_PICT firstparagraph placeholder-text"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="prflPic">
+                            <div class="field" id="FIELD_PURL"><img data-testid="{`embd-78pIea6`}" class="chk" src="https://assets.myperfectcv.co.uk/blobimages/muk/builder/images/sampleSkinImageSquare.png" alt="Smiley face"> <a data-testid="{`embd-781qcXk`}" href="javascript:;" class="ds-btn ds-btn-primary ds-btn-sm btn btn-primary btn-prfl-edit" title="Edit Photo">Edit Photo</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling  data-CNTC"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-CNTC" id="SECTION_CNTCd3d40c22-1b29-401e-a809-9cb7e72d6fdc" class="section sec-cntc notdraggable SECTION_CNTC has-title" data-section-cd="CNTC"><div data-testid="embd-88uQIHR-CNTC" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_CNTC">Contact<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Contact " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-CNTC" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-3912838f-29f6-467c-8297-bf45ee1ff720" id="PARAGRAPH_CNTC_3912838f-29f6-467c-8297-bf45ee1ff720" class="paragraph PARAGRAPH_CNTC firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="address">
+                            <div class="singlecolumn">
+                                <div class="iconRow" dependency="ADDR|STRT|CITY|STAT|ZIPC">
+                                    <div class="iconSvg">
+                                        <svg width="11px" height="15px" viewBox="0 0 11 15">
+                                            <path d="M5.390712,9.10533109 C3.337092,9.110718 1.661472,7.444818 1.65551617,5.390658 C1.649592,3.337038 3.316032,1.660878 5.370192,1.65546217 C7.423812,1.649538 9.099432,3.315978 9.10538783,5.370138 C9.111312,7.423758 7.444872,9.099378 5.390712,9.10533109 L5.390712,9.10533109 Z M5.365332,-0.000182380992 C2.398572,0.007938 -0.008208,2.428758 -0.000128385548,5.394978 C0.003132,6.606198 0.399492,7.748838 1.145772,8.699238 L5.404752,14.126778 L9.633492,8.675478 C10.374372,7.721298 10.764252,6.576498 10.761032,5.365278 C10.752912,2.399058 8.332092,-0.008262 5.365332,-0.000182380992 L5.365332,-0.000182380992 Z M5.798952,7.034958 L4.971132,7.037118 L4.967892,5.795658 L3.725892,5.798898 L3.723732,4.971078 L4.965192,4.967838 L4.961952,3.726378 L5.789772,3.723678 L5.793012,4.965138 L7.034472,4.961898 L7.037172,5.789718 L5.795712,5.792958 L5.798952,7.034958 Z M5.372352,2.48328723 C3.775032,2.487618 2.479032,3.791178 2.48334123,5.388498 C2.487672,6.985818 3.791232,8.281818 5.388552,8.27750877 C6.985872,8.273178 8.281872,6.969618 8.27756277,5.372298 C8.273232,3.774978 6.969672,2.478978 5.372352,2.48328723 L5.372352,2.48328723 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="icoTxt zipsuffix">
+                                        <span id="FIELD_STRT">46 Roman Rd</span><span dependency="STRT"><span dependency="NBHD|CITY|STAT">, </span></span>
+                                        <span id="FIELD_NBHD"></span>
+                                        <span id="FIELD_CITY">Leeds</span>
+                                        <span id="FIELD_STAT"></span>
+                                        <span id="FIELD_ZIPC">LS2 3ZR</span>
+                                        <span id="FIELD_ADDR"></span>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="iconRow" dependency="HPHN|CPHN">
+                                    <div class="iconSvg">
+                                        <svg width="12px" height="12px" viewBox="0 0 12 12">
+                                            <path d="M10.80006,8.7999 C9.63846,8.7999 8.53206,8.5473 7.51206,8.0487 C7.41606,8.0007 7.30566,7.9953 7.20546,8.0301 C7.10466,8.0655 7.02246,8.1393 6.97566,8.2347 L6.34746,9.5361 C4.72026,8.6277 3.37266,7.2819 2.46546,5.6541 L3.76626,5.0241 C3.86226,4.9773 3.93546,4.8951 3.97026,4.7943 C4.00506,4.6941 3.99846,4.5843 3.95106,4.4877 C3.45306,3.4677 3.19986,2.3619 3.19986,1.1997 C3.19986,0.9789 3.02106,0.8001 2.80026,0.8001 L0.40026,0.8001 C0.17886,0.8001 6e-05,0.9789 6e-05,1.1997 C6e-05,7.1553 4.84506,11.9997 10.80006,11.9997 C11.02086,11.9997 11.20026,11.8209 11.20026,11.6001 L11.20026,9.2001 C11.20026,8.9793 11.02086,8.7999 10.80006,8.7999 M6.40026,-0.0003 C6.17886,-0.0003 6.00006,0.1791 6.00006,0.3999 C6.00006,0.6207 6.17886,0.8001 6.40026,0.8001 C9.04746,0.8001 11.20026,2.9529 11.20026,5.6001 C11.20026,5.8209 11.37906,5.9997 11.59986,5.9997 C11.82066,5.9997 12.00006,5.8209 12.00006,5.6001 C12.00006,2.5119 9.48726,-0.0003 6.40026,-0.0003 M6.40026,1.5999 C6.17886,1.5999 6.00006,1.7793 6.00006,2.0001 C6.00006,2.2209 6.17886,2.3997 6.40026,2.3997 C8.16486,2.3997 9.60006,3.8355 9.60006,5.6001 C9.60006,5.8209 9.77886,5.9997 10.00026,5.9997 C10.22106,5.9997 10.39986,5.8209 10.39986,5.6001 C10.39986,3.3945 8.60526,1.5999 6.40026,1.5999 M6.40026,3.2001 C6.17886,3.2001 6.00006,3.3789 6.00006,3.5997 C6.00006,3.8211 6.17886,3.9999 6.40026,3.9999 C7.28226,3.9999 7.99986,4.7175 7.99986,5.6001 C7.99986,5.8209 8.17926,5.9997 8.40006,5.9997 C8.62086,5.9997 8.80026,5.8209 8.80026,5.6001 C8.80026,4.2765 7.72326,3.2001 6.40026,3.2001" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="icoTxt arb-ltr">
+                                        <span id="FIELD_HPHN">07912 345 678</span>
+                                        <span id="FIELD_CPHN"></span>
+                                    </div>
+                                </div>
+                                <div class="iconRow" dependency="EMAI">
+                                    <div class="iconSvg">
+                                        <svg width="12px" height="12px" viewBox="0 0 12 12">
+                                            <path d="M11.8425,0.06954 C11.7279,-0.01206 11.5767,-0.02286 11.4519,0.04254 L0.2019,5.91774 C0.0687,5.98674 -0.0099,6.12894 0.0009,6.27834 C0.0123,6.42834 0.1119,6.55674 0.2535,6.60534 L3.3807,7.67394 L10.0419,1.97934 L4.8873,8.18874 L10.1289,9.98034 C10.1679,9.99294 10.2087,10.00014 10.2501,10.00014 C10.3179,10.00014 10.3857,9.98154 10.4451,9.94554 C10.5399,9.88734 10.6047,9.79014 10.6209,9.68034 L11.9961,0.43074 C12.0165,0.29034 11.9577,0.15174 11.8425,0.06954 L11.8425,0.06954 Z M4.3749,8.80614 L6.4083,9.50094 L5.0523,11.34714 C4.9797,11.44494 4.8669,11.50014 4.7499,11.50014 C4.7109,11.50014 4.6713,11.49414 4.6329,11.48154 C4.4793,11.43054 4.3749,11.28714 4.3749,11.12514 L4.3749,8.80614 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="icoTxt arb-ltr">
+                                        <span id="FIELD_EMAI">dom.webster@example.co.uk</span>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+								
+								
+                                
+                                
+                            </div>
+                        </div>
+                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling  data-HILT"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-HILT" id="SECTION_HILT66551e16-9025-4c6a-88fd-21c891f7b2b4" class="section SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_HILT">SKILLS<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename SKILLS " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-HILT" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-f6d39a0e-45b4-431c-82b8-567b069b1da4" id="PARAGRAPH_HILT_f6d39a0e-45b4-431c-82b8-567b069b1da4" class="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+						    <div class="skill dflt-view">
+                                <span class="paddedline" id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
+  <li>Attention to detail</li>
+  <li>Community activities</li>
+  <li>Medication administration</li>
+  <li>Care plan management</li></ul></span>
+                                <span class="paddedline" id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
+  <li>Client safety and First Aid</li>
+  <li>Compassionate client care</li>
+  <li>Behaviour redirection</li></ul></span>
+							</div>
+                            <div class="multi-para-opt">
+                                <div id="FIELD_PTTL" class="txt-bold"></div>
+                                    <div class="multi-para-content">
+                                        <div id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
+  <li>Attention to detail</li>
+  <li>Community activities</li>
+  <li>Medication administration</li>
+  <li>Care plan management</li></ul></div>
+                                        <div id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
+  <li>Client safety and First Aid</li>
+  <li>Compassionate client care</li>
+  <li>Behaviour redirection</li></ul></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div></div></div></div></div></div></div></div><div data-testid="embd-92PDkR61" id="CONTAINER_1" class="right-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling  data-NAME"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-NAME" id="SECTION_NAME1a1a32ad-f01c-4377-b2f6-1a65f9bf6cb8" class="section notdraggable SECTION_NAME firstsection" data-section-cd="NAME"><div data-testid="embd-88uQIHR-NAME" class="doc-item"><div data-testid="embd-88aw0Ce-NAME" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-44bc0bd4-6d0c-480d-8f32-8d70df1621d0" id="PARAGRAPH_NAME_44bc0bd4-6d0c-480d-8f32-8d70df1621d0" class="paragraph PARAGRAPH_NAME firstparagraph"><div data-testid="embd-78blCsH">
+                        <div class="name">
+                            <span id="FIELD_FNAM">Dom</span>
+                            <span id="FIELD_LNAM">Webster</span>
+                        </div>
+                        
+                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling  data-SUMM"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMMaae374b0-0228-4808-a3fe-b04cc0c571fb" class="section SECTION_SUMM has-title" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_SUMM">PROFESSIONAL SUMMARY<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename PROFESSIONAL SUMMARY " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-SUMM" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-f6669442-f38f-e0e2-fad7-6104f95f3e6d" id="PARAGRAPH_SUMM_f6669442-f38f-e0e2-fad7-6104f95f3e6d" class="paragraph PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn" id="FIELD_FRFM"><p>Motivated Care Assistant with 10 years of experience in the Care industry. Offering expertise in person-centred care, implementation and monitoring of individual care plans and management of resident assessments and files. Energetic self-starter and team builder able to navigate high-stress situations. Well-versed in monitoring clients with developmental disabilities and adhering to patient care plans.</p></div>
+                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling  data-EXPR"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR313e1c77-349e-497b-bdb6-f0271f1e85bf" class="section expr-sec SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_EXPR">Work history<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Work history " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EXPR" class=""><div data-testid="embd-87S8HNi313e1c77-349e-497b-bdb6-f0271f1e85bf" id="CONTAINER_313e1c77-349e-497b-bdb6-f0271f1e85bf" class="sortableInner"><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="0" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-998e66f0-eaa8-4a72-b41c-7158c85a1d86" id="PARAGRAPH_EXPR_998e66f0-eaa8-4a72-b41c-7158c85a1d86" class="paragraph PARAGRAPH_EXPR firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <span class="paddedline locationGap" dependency="JTIT|JSTD|EDDT">
+                                <span class="jobtitle txt-bold txtCaps" id="FIELD_JTIT">Senior Care Assistant</span>
+                                <span class="flt-right" dependency="JSTD|EDDT">
+                                    <span class="jobdates" id="FIELD_JSTD" format="%m/%Y" formatarbc="%Y/%m">07/2014</span><span dependency="JSTD+EDDT" class="space hyphen"></span><span class="jobdates" id="FIELD_EDDT" format="%m/%Y" formatarbc="%Y/%m">Current</span>
+                                </span>
+                            </span>
+                            <span class="paddedline locationGap" dependency="COMP|JSTA|JCIT|JCNT|JCTR|TEXP">
+                                <span dependency="COMP|JSTA|JCIT|JCNT|JCTR|TEXP">
+                                    <span class="companyname txt-bold" id="FIELD_COMP">Private Care Home</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JCTR" class="txt-bold hyphen"></span></span>
+                                    <span class="jobcity" id="FIELD_JCIT">Edinburgh</span><span class="jobstate" id="FIELD_JSTA"></span><span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                                    <span id="FIELD_JCTR"></span>
+                                </span>
+                                
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul><li>Met with patients and families to discuss care and plan of action for future.</li>
+  <li>Implemented new team onboarding programme, reducing training time from four weeks to two.</li>
+  <li>Administered all necessary medications as directed by care plan.</li></ul></span>
+                        </div>
+                    </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="0" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" class="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <span class="paddedline locationGap" dependency="JTIT|JSTD|EDDT">
+                                <span class="jobtitle txt-bold txtCaps" id="FIELD_JTIT">Care Assistant</span>
+                                <span class="flt-right" dependency="JSTD|EDDT">
+                                    <span class="jobdates" id="FIELD_JSTD" format="%m/%Y" formatarbc="%Y/%m">09/2010</span><span dependency="JSTD+EDDT" class="space hyphen"></span><span class="jobdates" id="FIELD_EDDT" format="%m/%Y" formatarbc="%Y/%m">06/2014</span>
+                                </span>
+                            </span>
+                            <span class="paddedline locationGap" dependency="COMP|JSTA|JCIT|JCNT|JCTR|TEXP">
+                                <span dependency="COMP|JSTA|JCIT|JCNT|JCTR|TEXP">
+                                    <span class="companyname txt-bold" id="FIELD_COMP">Ideal Care Homes</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JCTR" class="txt-bold hyphen"></span></span>
+                                    <span class="jobcity" id="FIELD_JCIT">Edinburgh</span><span class="jobstate" id="FIELD_JSTA"></span><span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                                    <span id="FIELD_JCTR"></span>
+                                </span>
+                                
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul><li>Charted daily information such as mood changes, mobility activity, eating percentages and daily inputs and outputs.</li>
+  <li>Developed strong and trusting rapport with each client to facilitate best care possible.</li>
+  <li>Worked to improve patient outlook and daily living through compassionate care.</li></ul></span>
+                        </div>
+                    </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="0" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" class="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <span class="paddedline locationGap" dependency="JTIT|JSTD|EDDT">
+                                <span class="jobtitle txt-bold txtCaps" id="FIELD_JTIT">Care Assistant</span>
+                                <span class="flt-right" dependency="JSTD|EDDT">
+                                    <span class="jobdates" id="FIELD_JSTD" format="%m/%Y" formatarbc="%Y/%m">11/2008</span><span dependency="JSTD+EDDT" class="space hyphen"></span><span class="jobdates" id="FIELD_EDDT" format="%m/%Y" formatarbc="%Y/%m">08/2010</span>
+                                </span>
+                            </span>
+                            <span class="paddedline locationGap" dependency="COMP|JSTA|JCIT|JCNT|JCTR|TEXP">
+                                <span dependency="COMP|JSTA|JCIT|JCNT|JCTR|TEXP">
+                                    <span class="companyname txt-bold" id="FIELD_COMP">Four Seasons Health Care</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JCTR" class="txt-bold hyphen"></span></span>
+                                    <span class="jobcity" id="FIELD_JCIT">Edinburgh</span><span class="jobstate" id="FIELD_JSTA"></span><span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                                    <span id="FIELD_JCTR"></span>
+                                </span>
+                                
+                            </span>
+                            <span class="jobline" id="FIELD_JDES"><ul><li>Maintained confidentiality and compliance standards at all times.</li>
+  <li>Maintained clean and well-organised environment to promote client happiness and safety.</li>
+  <li>Assisted disabled individuals to foster independence while still closely monitoring safety.</li>
+  <li>Supervised frequent activities such as medication and personal hygiene to provide safe living environment for patients.</li></ul></span>
+                        </div>
+                    </div></div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="0" class="sortable-item section-container SortableItem-sibling  data-EDUC"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -2px;"></div><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUCfd38dd6c-e289-4f1b-96e2-457086a24cc8" class="section education SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_EDUC">EDUCATION<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename EDUCATION " class="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EDUC" class=""><div data-testid="embd-87S8HNifd38dd6c-e289-4f1b-96e2-457086a24cc8" id="CONTAINER_fd38dd6c-e289-4f1b-96e2-457086a24cc8" class="sortableInner"><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="0" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" class="paragraph PARAGRAPH_EDUC firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <div class="paddedline" dependency="DGRE|STUY|GRYR|GRED|GRST|GRIP">
+                                <span class="degree txt-bold" id="FIELD_DGRE">NVQ Level 3</span><span dependency="DGRE+STUY"><span class="beforecolonspace"> </span><span class="txt-bold">: </span></span><span class="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="DGRE|STUY"><span dependency="GRYR|GRED|GRST|GRIP">,</span></span>
+								<span class="jobdates" dependency="GRYR|GRED|GRST|GRIP">
+                                    <span class="xslt_static_change displayNoneThisField">Expected in </span>
+                                    <span id="FIELD_GRYR" format="%m/%Y" formatarbc="%Y/%m">2013</span>
+                                    <span class="jobdates" id="FIELD_GRST" format="%m/%Y" formatarbc="%Y/%m"></span><span class="jobdates" id="FIELD_GRED" format="%m/%Y" formatarbc="%Y/%m"></span>
+									
+                                    <span id="FIELD_GRIP"></span>
+                                </span>
+                            </div>
+                            <div class="paddedline" dependency="SCIT|SSTA|SCHO|SCNT|GRHN">
+                                <span class="companyname txt-bold" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT|GRHN" class="hyphen"></span></span>
+                                <span class="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span class="joblocation jobstate" id="FIELD_SSTA"></span><span class="joblocation jobcountry" id="FIELD_SCNT"></span><span dependency="SCIT|SSTA|SCNT"></span><span class="joblocation" id="FIELD_GRHN"></span>
+							</div>
+                            
+                            
+                            <span class="field" id="FIELD_FRFM"></span>
+                        </div>
+                    </div></div></div><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="0" class="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="0" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" class="paragraph PARAGRAPH_EDUC"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <div class="paddedline" dependency="DGRE|STUY|GRYR|GRED|GRST|GRIP">
+                                <span class="degree txt-bold" id="FIELD_DGRE">NVQ Level 2</span><span dependency="DGRE+STUY"><span class="beforecolonspace"> </span><span class="txt-bold">: </span></span><span class="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="DGRE|STUY"><span dependency="GRYR|GRED|GRST|GRIP">,</span></span>
+								<span class="jobdates" dependency="GRYR|GRED|GRST|GRIP">
+                                    <span class="xslt_static_change displayNoneThisField">Expected in </span>
+                                    <span id="FIELD_GRYR" format="%m/%Y" formatarbc="%Y/%m">2008</span>
+                                    <span class="jobdates" id="FIELD_GRST" format="%m/%Y" formatarbc="%Y/%m"></span><span class="jobdates" id="FIELD_GRED" format="%m/%Y" formatarbc="%Y/%m"></span>
+									
+                                    <span id="FIELD_GRIP"></span>
+                                </span>
+                            </div>
+                            <div class="paddedline" dependency="SCIT|SSTA|SCHO|SCNT|GRHN">
+                                <span class="companyname txt-bold" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT|GRHN" class="hyphen"></span></span>
+                                <span class="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span class="joblocation jobstate" id="FIELD_SSTA"></span><span class="joblocation jobcountry" id="FIELD_SCNT"></span><span dependency="SCIT|SSTA|SCNT"></span><span class="joblocation" id="FIELD_GRHN"></span>
+							</div>
+                            
+                            
+                            <span class="field" id="FIELD_FRFM"></span>
+                        </div>
+                    </div></div></div></div></div></div></div></div></div></div></div><div></div></div></div>

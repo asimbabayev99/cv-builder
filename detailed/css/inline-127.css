@@ -1,0 +1,123 @@
+
+        .skn-mlf1,.skn-mlf1 table{line-height:14px}
+        .skn-mlf1.pagesize{width:535px}
+        .skn-mlf1.fontsize,.skn-mlf1 .lang-sec.infobarsec .paragraph *,.skn-mlf1 .lang-sec.infotilesec .paragraph *,.skn-mlf1 .skli-sec .paragraph *{font-size:10px}
+        .skn-mlf1.fontface{font-family:Century Gothic}
+        .skn-mlf1.hmargins{padding-left:30px;padding-right:30px}
+        .skn-mlf1 .section{margin-top:25px}
+        .skn-mlf1 .paragraph.firstparagraph{margin-top:0}
+        .skn-mlf1 .paragraph{margin-top:20px}
+        .skn-mlf1 .parentContainer .singlecolumn,.skn-mlf1 .parentContainer .maincolumn{margin-left:137px}
+		
+        .skn-mlf1 .name{font-size:26px;line-height:34px;color:#576d7b}
+        .skn-mlf1 .resumeTitle{font-size:12px;line-height:20px}
+        .skn-mlf1 .heading,.skn-mlf1 .heading:before{width:120px}
+        .skn-mlf1 .sectiontitle{font-size:10px;line-height:12px}
+        .skn-mlf1 .iconRow{line-height:12px}
+        .skn-mlf1 .left-box{width:137px}
+        .skn-mlf1 .right-box{margin-left:137px}
+		.skn-mlf1 .skli-sec .singlecolumn .field:last-child{min-height:12px}
+
+        .skn-mlf1 .parentContainer .section,.skn-mlf1 .heading:before{border-color:#576d7b}
+        .skn-mlf1 .heading:before{background:#576d7b}
+        .skn-mlf1 .topshape{fill:#576d7b;top:-1px}
+        .skn-mlf1 .totl-expr{font-size:8px;background-color:#576d7b}
+
+        /*Algorithm Width*/
+        .skn-mlf1 .PICTPic,.skn-mlf1 .PICTPic .field{max-width:100px}
+        .skn-mlf1 .topsection{border-top:25px solid #576d7b;min-height:150px}
+    
+        /*Icons*/
+        .skn-mlf1 .iconRow svg path.rect{fill:#576d7b}
+        .skn-mlf1 .iconRow svg .svg-fillsqrbg,.skn-mlf1 .iconRow .new-flds svg path,.skn-mlf1 .iconRow svg .svg-inriconobj{fill:#576d7b}
+        .skn-mlf1 .iconRow .iconSvg{height:10px;width:10px}
+        .skn-mlf1 .iconRow .iconSvg svg{height:10px;width:10px}
+        .skn-mlf1 .square{height:10px;width:10px;background-color:#576d7b}
+
+        /*Infographic Bar*/
+        .skn-mlf1 .lang-sec.infobarsec,.skn-mlf1 .skli-sec.infobarsec{padding-left:137px;box-sizing:border-box}
+        .skn-mlf1 .lang-sec.infobarsec .heading,.skn-mlf1 .skli-sec.infobarsec .heading,.skn-mlf1 .multi-para-hilt .heading{margin-left:-137px}
+        .skn-mlf1 .lang-sec.infobarsec .inner-rating,.skn-mlf1 .skli-sec.infobarsec .inner-rating{background-color:#576d7b}
+
+        .skn-mlf1 .fielditem-olsh{padding-top:5px;margin-bottom:-3px}
+
+        /*Infographic Tiles*/
+        .skn-mlf1 .lang-sec.infotilesec,.skn-mlf1 .skli-sec,.skn-mlf1 .multi-para-hilt{padding-left:137px;box-sizing:border-box}
+        .skn-mlf1 .lang-sec.infotilesec .heading,.skn-mlf1 .skli-sec .heading,.skn-mlf1 .lang-sec .title-edit{margin-left:-137px}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mlf1 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#576d7b}
+   
+        /*Finalize Fixes*/
+        .skn-mlf1 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+        .skn-mlf1 .lang-sec .sortableInner .sortable-item:not(:first-child) .paragraph,.skn-mlf1 .skli-sec .sortableInner .sortable-item:not(:first-child) .paragraph{vertical-align:top}
+        .skn-mlf1 .data-LNGG .sortable-item:nth-last-child(1) .paragraph,.skn-mlf1 .data-LNGG .sortable-item:nth-last-child(2) .paragraph,.skn-mlf1 .data-SKLI .sortable-item:nth-last-child(1) .paragraph,.skn-mlf1 .data-SKLI .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0}
+        .skn-mlf1 .name-contact .section.SECTION_CNTC, .skn-mlf1 .name-contact .section.SECTION_ALNK {float:none;display:inline-block;margin-top:0;padding: 0 1% 0 0;}
+        .skn-mlf1.LUK .parentContainer{padding-bottom:30px}
+        .skn-mlf1.LUK .right-box .SECTION_NAME{margin-top:0}
+        .page-finalize .skn-mlf1 .sortableInner .paragraph-container+.paragraph-container,.page-finalize .sortable-drag-item.skn-mlf1 .section{margin:0}
+        .skn-mlf1 .data-LNGG .sortableInner .sortable-item,.skn-mlf1 .data-SKLI .sortableInner .sortable-item{display:inline-block;vertical-align:top}
+        .skn-mlf1.LES .lang-sec .title-edit{margin-left:-137px}
+        .skn-mlf1 .left-box .sortable-item:first-child .section,.skn-mlf1 .right-box .sortable-item:first-child .section{margin-top:0}
+        .skn-mlf1 .left-box .sortable-item:first-child .section{padding-top:20px}
+        .skn-mlf1.LES{padding-bottom:25px}
+        .skn-mlf1.LES .data-EDUC .sortableInner,.skn-mlf1.LES .data-EXPR .sortableInner{display:inline-block;width:calc(100% - 124px)}
+        .skn-mlf1.LES .data-EDUC .sortableInner .singlecolumn,.skn-mlf1.LES .data-EXPR .sortableInner .singlecolumn{margin-left:16px}
+        .skn-mlf1.LES .data-EDUC .sortableInner .paragraph .doc-overlay,.skn-mlf1.LES .data-EXPR .sortableInner .paragraph .doc-overlay{left:5px!important}
+        .skn-mlf1 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
+        .skn-mlf1 .data-LNGG .doc-item,.skn-mlf1 .data-SKLI .doc-item,.skn-mlf1 .lang-sec .doc-item,.skn-mlf1 .skli-sec .doc-item{width:100%}
+        .skn-mlf1 .data-LNGG .sortableInner,.skn-mlf1 .data-SKLI .sortableInner,.skn-mlf1 .SECTION_LNGG .sortableInner,.skn-mlf1 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mlf1 .data-LNGG .sortable-item,.skn-mlf1 .data-SKLI .sortable-item{width:48.2%}
+        .skn-mlf1 .data-LNGG .sortable-item .paragraph,.skn-mlf1 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+        .page-finalize .skn-mlf1 .section.lang-sec .sortableInner .paragraph{margin-top:0}
+
+        /*Photo Layout styles*/
+        .skn-mlf1.pict-pcsh-circle .paragraph .PICTPic img{width:99px;height:99px}
+        .skn-mlf1.pict-pcsh-square .paragraph .PICTPic img{width:99px;height:99px}
+        .skn-mlf1.pict-pcsh-bottomleft .paragraph .PICTPic img{height:99px;width:99px}
+        .skn-mlf1.pict-pcsh-bottomright .paragraph .PICTPic img{height:99px;width:99px}
+        .skn-mlf1.pict-pcsh-radius .paragraph .PICTPic img{height:99px;width:99px}
+
+        /*PPDT*/
+        .skn-mlf1 .disclaim.section{margin:0;padding:0;margin-top:50px}
+
+        /*RNA fixes*/
+        .RNA .name-contact .firstsection{margin-top:0}
+        .RNA.skn-mlf1 .parentContainer{padding-bottom:25px}
+        .RNA.skn-mlf1 .data-LNGG .sortableInner .sortable-item{display:inline-block;vertical-align:top}
+        .RNA.skn-mlf1 .data-LNGG .nativeLangPara{width:100%!important;max-width:100%!important}
+        .RNA.skn-mlf1 .data-LNGG .para_odd{margin-right:15px}
+        .RNA.skn-mlf1 .PICTPic, .RNA.skn-mlf1 .PICTPic .field{height:129px; width:100px}
+        .skn-mlf1 .doc-item .heading::before, .skn-mlf1 .doc-item .heading{width:124px}
+        .skn-mlf1.LDE .left-box .SECTION_PICT{margin-top:0;padding-top:20px}
+        .skn-mlf1.LDE .right-box .SECTION_NAME {margin-top:0}
+        .skn-mlf1 .right-box .sortable-item .section.SECTION_NAME{margin-bottom:16px}
+		@-moz-document url-prefix() {
+        .skn-mlf1 .heading::before{top:-7px}
+        .resume-preview .skn-mlf1 .parentContainer .section{border-width:2px}
+        }
+        
+		 /*Fixes for builder for skill*/
+        .skn-mlf1 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:12px}	
+        .skn-mlf1 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mlf1 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+       
+        .skn-mlf1 .skli-sec.graphic-none-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:auto}	
+
+        /*PDF Flex Handling Code - Personal Information*/
+		.skn-mlf1.for-pdf .pdet-sec .singlecolumn{display:block}
+		.skn-mlf1.for-pdf .pdfpdwrapper{display:block}
+		.skn-mlf1.for-pdf .pdfpdwrapper .details-wrap:first-child{float:left;padding-right:5px}
+		.skn-mlf1.for-pdf .pdfpdwrapper .details-wrap:nth-child(2){float:right}
+		.skn-mlf1.for-pdf .pdfpdwrapper .details-wrap{width:194px;}
+
+        /*Infographic Containers*/
+        .skn-mlf1.for-pdf .lang-sec,.skn-mlf1.for-pdf .skli-sec{display:block}
+        .skn-mlf1.for-pdf .pdfinfwrapper{display:block}
+        .skn-mlf1.for-pdf .pdfinfwrapper:after{content:'';clear:both;display:table}
+        .skn-mlf1.for-pdf .pdfinfwrapper .paragraph:first-child{float:left}
+        .skn-mlf1.for-pdf .pdfinfwrapper .paragraph:nth-child(2){float:right}
+        .skn-mlf1.for-pdf .pdfinfwrapper:last-child .paragraph{margin-bottom:0;padding-bottom:0}
+
+        .skn-mlf1.for-pdf .skli-sec ul li:before, .skn-mlf1.for-pdf .lang-sec ul li:before{left:-1.3px!important}
+        .skn-mlf1.for-iron-pdf .skli-sec ul li:before, .skn-mlf1.for-iron-pdf .lang-sec ul li:before{left:-1px!important}
+    

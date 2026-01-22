@@ -1,0 +1,119 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;background:#FFF;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-tma3 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-tma3 span.paddedline{display:block}
+        .skn-tma3 .jobtitle,.skn-tma3 .degree{font-weight:bold;color:#343b40}
+        .skn-tma3 .companyname,.skn-tma3 .programline{color:#343b40}
+        .skn-tma3 .datesWrapper,.skn-tma3 .flt-right{float:right}
+        .skn-tma3 .datesWrapper{font-style:italic}
+        .skn-tma3 .txtBold{font-weight:bold}
+		.skn-tma3 .dispInBlk{display:inline-block}
+		.skn-tma3 .maxWidth{max-width:100%}
+        .skn-tma3 .brk-all{word-break:break-all}
+
+        .skn-tma3 ul,.skn-tma3 li{list-style-type:disc;margin:5px 0 0 10px;padding:0}
+        .skn-tma3 ul li{margin:0 0 0 13px;padding:0 0 0 10px}
+
+        .skn-tma3{color:#343b40;background-color:#FFF;word-wrap:break-word;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;min-height:792px}
+        .skn-tma3 .name{font-weight:bold;font-size:15px;line-height:17px;padding:0;text-align:left;text-transform:uppercase;letter-spacing:1px;color:#343b40}
+        .skn-tma3 .resumeTitle{color:#4a4a4a}
+        .skn-tma3 .paragraph{position:relative}
+        .skn-tma3 .address,.skn-tma3 .address2{position:relative;text-align:left;font-size:0.917em;line-height:1.25em}
+        .skn-tma3 .address{margin:0}
+        .skn-tma3 .table_wrapper{width:100%;margin-top:0}
+		.skn-tma3 .skill{display:table;width:100%;table-layout:fixed}
+        .skn-tma3 table.twocol td{width:50%;display:table-cell}
+        .skn-tma3 table.skills,.skn-tma3 table.twocol{width:100%}
+        .skn-tma3 table.skills th,.skn-tma3 table.skills td{width:20%;text-align:center}
+        .skn-tma3 table.skills th{text-decoration:underline}
+        .skn-tma3 table.skills .skillname,.skn-tma3 table.skills .skillrating{text-align:left;width:35%}
+        .skn-tma3 table.skills .skillrating{width:20%}
+        .skn-tma3 table.skills .skillyears,.skn-tma3 table.skills .skilllast{width:19%}
+        .skn-tma3 table.skills .pad1{width:5%}
+        .skn-tma3 table.skills .pad2,.skn-tma3 table.skills .pad3{width:1%}
+        .skn-tma3 .heading{clear:both;font-weight:bold;text-transform:uppercase;color:#343b40}
+        .skn-tma3 .sectiontitle{letter-spacing:1px}
+        .skn-tma3 .social-link .sprtr{padding:0 2px}
+        .skn-tma3 .social-link:last-child .sprtr{display:none}
+        .skn-tma3 .texp-cell{display:block;text-align:right;margin-bottom:8px}
+        .skn-tma3 .totl-expr{display:inline-block;padding:0px 6px;color:#fff;font-weight:700;text-wrap:nowrap;font-style:italic}
+        .skn-tma3.texp-curved .totl-expr{border-radius:10px}
+        .skn-tma3 .dflex{display:flex;justify-content:space-between}
+
+        /*Personal details section*/
+        .skn-tma3 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-tma3 .details-wrap{width:49%}
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-tma3 .sectionCL .paragraph{margin-top:0}
+
+        /*Timeline classes*/
+        .skn-tma3 .section{border-left:1px solid #434d54;padding-left:20px;margin-left:17px;position:relative}
+        .skn-tma3 .firstsection,.skn-tma3 .SECTION_CNTC,.skn-tma3 .firstsection,.skn-tma3 .SECTION_ALNK,.skn-tma3 .SECTION_PRFL,.skn-tma3 .SECTION_PPDT_SGTR{border:none}
+        .skn-tma3 .SECTION_CNTC+.section:before,.skn-tma3 .SECTION_ALNK+.section:before,.skn-tma3 .SECTION_PRFL+.section:before{content:"";top:0;left:-1px;width:2px;height:5px;background:#fff;position:absolute;z-index:1}
+        .skn-tma3 .firstsection{padding-bottom:0}
+        .skn-tma3 .heading{position:relative}
+        .skn-tma3 .heading:before{display:block;position:absolute;top:4px;left:-25px;content:"";height:8px;width:8px;border:1px solid #434d54;border-radius:100%;background: #fff;z-index:2}
+
+        /*Builder team Fix for finalise page*/
+        .skn-tma3 .SortableItem:nth-of-type(2) .section:before{content:"";top:0;left:-1px;width:2px;height:5px;background:#fff;position:absolute;z-index:1}
+
+        /*MES and MFR address order code*/
+        .skn-tma3 .zipprefix,.skn-tma3.MES .zipsuffix,.skn-tma3.MFR .zipsuffix{display:none}
+        .skn-tma3 .zipsuffix,.skn-tma3.MES .zipprefix,.skn-tma3.MFR .zipprefix{display:block}
+        .skn-tma3.MDE .hide-de{display:none}
+
+        /*Infographic*/
+        .skn-tma3 .lang-sec,.skn-tma3 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-tma3 .lang-sec .heading,.skn-tma3 .skli-sec .heading{width:100%;flex-grow:1}
+        .skn-tma3 .lang-sec .paragraph, .skn-tma3 .skli-sec .paragraph{width:48.5%}
+        .skn-tma3 .lang-sec .field *,.skn-tma3 .lang-sec .nativeLangPara .field,.skn-tma3 .skli-sec .field *{display:inline}
+        .skn-tma3 .lang-sec .paragraph,.skn-tma3 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-tma3 .lang-sec .singlecolumn,.skn-tma3 .skli-sec .singlecolumn{margin-left:0;position:relative}
+        .skn-tma3 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+        .skn-tma3 .section.lang-sec .paragraph.nativeLangPara{width:100%;padding-bottom:5px}
+        .skn-tma3 .inner-rating{background-color:#1A4771;height:4px;width:60%}
+        .skn-tma3 .lang-sec > .paragraph:nth-last-child(1),.skn-tma3 .lang-sec > .paragraph:nth-last-child(2),
+        .skn-tma3 .skli-sec > .paragraph:nth-last-child(1),.skn-tma3 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-tma3 .hide-bar .rating-bar,.skn-tma3 .hide-only-bar .rating-bar,.skn-tma3 .hide-colon .colon{display:none}
+		
+		.skn-tma3 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-tma3 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+
+       /*HILT multi para/section*/
+       .skn-tma3 .multi-section-hilt .multi-para-opt,.skn-tma3 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-tma3 .multi-para-hilt .dflt-view{display:none}
+       .skn-tma3 .multi-para-hilt:after{content:"";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+	   .skn-tma3 .multi-para-hilt .paragraph .singlecolumn{margin-left:0}
+       .skn-tma3 .multi-para-hilt .paragraph{width:49%;max-width:49%;display:block;float:left;clear:none;margin-top:0px;margin-right:2%;margin-bottom:10px;margin-top:0}
+       .skn-tma3 .multi-para-hilt .paragraph:nth-child(2n+1){margin-right:0}
+       .skn-tma3 .multi-para-hilt .paragraph:last-child,.skn-tma3 .multi-para-hilt .paragraph:nth-last-child(2){margin-bottom:0}
+
+        /* GRYR */
+        .skn-tma3 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+        .skn-tma3 .section.sign{padding-top:50px}
+
+        /*For Extra Space Before Colon*/
+        .skn-tma3 .beforecolonspace{display:none!important}
+        .skn-tma3.MFR .beforecolonspace{display:inline!important}
+                                
+        /* Style for Signature */
+        .skn-tma3 .disclaim .singlecolumn,.skn-tma3 .disclaim .singlecolumn li,.skn-tma3 .disclaim .singlecolumn p,.skn-tma3 .disclaim .singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-tma3 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-tma3 .txtleft + .field_sign{text-align:left}
+        .skn-tma3 .txtcenter + .field_sign{text-align:center}
+        .skn-tma3 .txtright + .field_sign{text-align:right}
+        .skn-tma3 .signPic img{max-width:100%}
+
+         /* Text alignment bullet */
+       .skn-tma3 .ttc-align-left ul{text-align:left}
+       .skn-tma3 .ttc-align-right ul{text-align:right}
+       .skn-tma3 .ttc-align-center ul{text-align:center}
+       .skn-tma3 .ttc-align-justify ul{text-align:justify}
+       .skn-tma3 .ttc-align-right li,.skn-tma3 .ttc-align-center li{position:relative;list-style-position:inside;margin-left:0;padding-left:0}
+       .skn-tma3 .ttc-align-right li:first-letter,.skn-tma3 .ttc-align-center li:first-letter{padding-left:5px}
+
+        /*Hyphen Handling*/
+        .skn-tma3 .hyphen:before{content:' - '}
+        .skn-tma3.hyphen-en-dash .hyphen:before{content:' – '}
+    

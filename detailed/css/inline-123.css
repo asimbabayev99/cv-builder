@@ -1,0 +1,63 @@
+
+        .skn-mli2,.skn-mli2 table{line-height:15px}
+        .skn-mli2{min-height:792px}
+        .skn-mli2.pgsz-a4{min-height:842px}
+        .skn-mli2.pagesize{width:525px}
+        .skn-mli2.fontsize{font-size:10px}
+        .skn-mli2.fontface{font-family:Fira Sans}
+        .skn-mli2.hmargins{padding-left:35px;padding-right:35px}
+        .skn-mli2 .totl-expr{background-color:#2a5978;font-size:8px;line-height:12px}
+        .skn-mli2 .section{margin-bottom:25px}
+        .skn-mli2 .disclaim{padding:0;padding-top:50px}
+        .skn-mli2 .sectiontitle{color:#2a5978;font-size:14px;line-height:16px}
+        .skn-mli2 .paragraph{margin-top:15px}
+        .skn-mli2 .left-box .singlecolumn,.skn-mli2 .left-box .maincolumn{margin-left:0px}
+        .skn-mli2 table.skills td{padding-top:5px}
+        .skn-mli2 .name{color:#2a5978;font-size:36px;line-height:34px}
+        .skn-mli2 .resumeTitle{color:#2a5978;font-size:18px}
+        .skn-mli2 .left-box{width:331px}
+        .skn-mli2 ul li{padding-left:0px}
+        .skn-mli2 .sectiontitle:after{height:11px}
+        .skn-mli2 .topsection:before,.skn-mli2 .sectiontitle:after{background-color:#2a5978}
+        .skn-mli2 .left-box .section, .skn-mli2 .right-box .section,.skn-mli2 .topsection{border-color:#2a5978}
+
+        /*Infographic*/
+        .skn-mli2 .lang-sec.infobarsec .paragraph{padding-top:5px}
+        .skn-mli2 .lang-sec.infobarsec .firstparagraph{padding-top:0}
+        .skn-mli2 .inner-rating{background-color:#2a5978}
+
+        /*Infographic Skills*/
+        .skn-mli2 .lang-sec.infotilesec .paragraph,.skn-mli2 .skli-sec .paragraph{padding-bottom:5px}
+        .skn-mli2 .lang-sec.infotilesec .firstparagraph,.skn-mli2 .skli-sec .firstparagraph{padding-top:0}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli2 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#2a5978}
+
+        /*HILT multi para*/   
+        .skn-mli2 .left-box .multi-para-hilt{padding-left:0px}
+        .skn-mli2 .left-box .multi-para-hilt .heading{margin-left:-0px}
+
+        /*PDF Specific Fix for SKIN-914*/
+        .skn-mli2.for-pdf .section:after{border-color:#2a5978}
+        /*POC Multi Experience Para*/
+        .skn-mli2 .groupChildPara.paragraph .singlecolumn .companyloc{display:none}
+
+         /*Arab style*/
+         .skn-mli2.arb,.skn-mli2.arb table{line-height:21px}
+         .skn-mli2.arb .name{line-height:38px}
+         .skn-mli2.arb .sectiontitle{line-height:22px}
+        .skn-mli2.arb .left-box .singlecolumn,.skn-mli2.arb .left-box .maincolumn{margin-right:0px}
+
+        .skn-mli2.arb.for-pdf .lang-sec .paragraph,.skn-mli2.arb.for-pdf .skli-sec .paragraph{display:block}
+        .skn-mli2.arb.for-pdf .lang-sec.infobarsec .paragraph{page-break-inside:auto}
+        .skn-mli2.arb.for-pdf .rating-bar,.skn-mli2.arb.for-pdf .rating-bar .inner-rating{page-break-inside:avoid}
+
+        /*For-PDF*/
+        .skn-mli2.for-pdf .sftr-sec .paragraph .field b,.skn-mli2.for-pdf .skli-sec .paragraph .field b,.skn-mli2.for-pdf .lang-sec .paragraph .field b{font-weight:700}
+        .skn-mli2.for-pdf.texp-curved .parentContainer .left-box .experience .singlecolumn .paddedline .dflex,.skn-mli2.for-pdf.texp-rectangle .parentContainer .left-box .experience .singlecolumn .paddedline .dflex{display:block;}
+        .skn-mli2.for-pdf.texp-curved .parentContainer .left-box .experience .singlecolumn .paddedline .dflex  > span:first-child,.skn-mli2.for-pdf.texp-rectangle .parentContainer .left-box .experience .singlecolumn .paddedline .dflex  > span:first-child{display:inline-block;width:70%;}
+        .skn-mli2.for-pdf.texp-curved .parentContainer .left-box .experience .singlecolumn .paddedline .dflex  > span:last-child,.skn-mli2.for-pdf.texp-rectangle .parentContainer .left-box .experience .singlecolumn .paddedline .dflex  > span:last-child{display:inline-block;width:30%;float:right;}
+
+        /*Pagination Parameters*/
+        .skn-mli2{data-ptbm:25px;data-pgsz:595px}
+    

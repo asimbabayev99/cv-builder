@@ -1,0 +1,112 @@
+
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{line-height:1;text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+        .skn-upa2 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
+
+        .skn-upa2 span.jobtitle,.skn-upa2 span.companyname,.skn-upa2 span.degree,.skn-upa2 .txtBold{font-weight:bold}
+        .skn-upa2 .datesWrapper,.skn-upa2 .flt-right{float:right}
+        .skn-upa2 .logo,.skn-upa2 .nodisplay{display:none}
+        .skn-upa2 span.paddedline{display:block}
+		    .skn-upa2 .dispInBlk{display:inline-block}
+		    .skn-upa2 .maxWidth{max-width:100%}
+        .skn-upa2 .brk-all{word-break:break-all}
+
+        .skn-upa2 ul,.skn-upa2 li{list-style-type:disc;margin:0 0 0 10px;padding:0}
+        .skn-upa2 ul li{margin:0 0 0 13px}
+        .skn-upa2 .adnlLnks ul{margin:0}
+        .skn-upa2 .adnlLnks li{display:inline!important}
+        .skn-upa2 .adnlLnks li:first-child{margin:0}
+
+        .skn-upa2{word-wrap:break-word;color:#000;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;min-height:792px}
+        .skn-upa2 .name{font-size:15px;line-height:17px;font-weight:bold;padding:0;text-align:left;text-transform:uppercase;color:#000}
+        .skn-upa2 .name span.lName{color:#C00000}
+        .skn-upa2 .resumeTitle{text-align:left;color:#4a4a4a}
+        .skn-upa2 .paragraph{position:relative}
+        .skn-upa2 .heading{clear:both;font-weight:normal}
+        .skn-upa2 .address{position:relative;text-align:left;font-size:0.917em;line-height:1.25em;margin-top:11px;background-color:#000;padding:4px 5px;color:#FFF}
+        .skn-upa2 .address2{position:relative;text-align:left;font-size:0.917em;line-height:1.25em}
+        .skn-upa2 .adnlLnks{text-align:center;margin-top:5px}
+        .skn-upa2 .table_wrapper{width:100%;margin-top:0}
+		    .skn-upa2 .skill{display:table;width:100%;table-layout:fixed}
+        .skn-upa2 table.twocol td{width:50%;vertical-align:top;display:table-cell}
+        .skn-upa2 table.skills th,.skn-upa2 table.skills td{width:20%;text-align:center}
+        .skn-upa2 table.skills th{text-decoration:underline}
+        .skn-upa2 table.skills .skillname,.skn-upa2 table.skills .skillrating{text-align:left;width:35%}
+        .skn-upa2 table.skills .skillrating{width:20%}
+        .skn-upa2 table.skills .skillyears,.skn-upa2 table.skills .skilllast{width:19%}
+        .skn-upa2 table.skills .pad1{width:5%}
+        .skn-upa2 table.skills .pad2,.skn-upa2 table.skills .pad3{width:1%}
+        .skn-upa2 .bottomborder{border-color:#C00000}
+        .skn-upa2 .social-link .sprtr{padding:0 2px}
+        .skn-upa2 .social-link:last-child .sprtr{display:none}
+
+        .skn-upa2 .totl-expr{display:inline-block;padding:0 6px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap}
+        .skn-upa2.texp-curved .totl-expr{border-radius:10px}
+        .skn-upa2 .dflex{display:flex;justify-content:space-between}
+
+        /*Personal details section*/
+        .skn-upa2 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-upa2 .details-wrap{width:49%}
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-upa2 .sectionCL .paragraph{margin-top:0}
+
+        /* Style for Signature */
+        .skn-upa2 .disclaim .singlecolumn,.skn-upa2 .signPic > .field_sign{margin-left:0}
+        .skn-upa2 .disclaim .singlecolumn,.skn-upa2 .disclaim .singlecolumn li,.skn-upa2 .disclaim .singlecolumn p,.skn-upa2 .disclaim .singlecolumn span{font-size:9px;color:#8a8a8a}
+        .skn-upa2 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-upa2 .txtleft + .field_sign{text-align:left}
+        .skn-upa2 .txtcenter + .field_sign{text-align:center}
+        .skn-upa2 .txtright + .field_sign{text-align:right}
+        .skn-upa2 .signPic span:first-child{padding-right:6px}
+        .skn-upa2 .signPic img{padding-top:5px;max-width:100%}
+
+        /*MES and MFR address order code*/
+        .skn-upa2 .zipprefix,.skn-upa2.MES .zipsuffix,.skn-upa2.MFR .zipsuffix{display:none}
+        .skn-upa2 .zipsuffix,.skn-upa2.MES .zipprefix,.skn-upa2.MFR .zipprefix{display:inline}
+        .skn-upa2.MDE .hide-de{display:none}
+
+        /*Infographic*/
+        .skn-upa2 .lang-sec,.skn-upa2 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-upa2 .lang-sec .heading,.skn-upa2 .skli-sec .heading{width:100%;flex-grow:1}
+        .skn-upa2 .lang-sec .paragraph, .skn-upa2 .skli-sec .paragraph{width:48.6%}
+        .skn-upa2 .lang-sec .field *,.skn-upa2 .lang-sec .nativeLangPara .field,.skn-upa2 .skli-sec .field *{display:inline}
+        .skn-upa2 .lang-sec .paragraph,.skn-upa2 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-upa2 .lang-sec .singlecolumn,.skn-upa2 .skli-sec .singlecolumn{margin-left:0;position:relative}
+        .skn-upa2 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
+        .skn-upa2 .lang-sec .paragraph.nativeLangPara{width:100%}
+        .skn-upa2 .inner-rating{background-color:#000;height:4px;width:60%}
+        .skn-upa2 .lang-sec > .paragraph:nth-last-child(1),.skn-upa2 .lang-sec > .paragraph:nth-last-child(2),
+        .skn-upa2 .skli-sec > .paragraph:nth-last-child(1),.skn-upa2 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+		    .skn-upa2 .hide-bar .rating-bar,.skn-upa2 .hide-only-bar .rating-bar,.skn-upa2 .hide-colon .colon{display:none}
+        .skn-upa2 .infoSec{display:block}
+        .skn-upa2 .infoSec .singlecolumn{margin-left:0}
+        .skn-upa2 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+		
+	    	.skn-upa2 .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-upa2 .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
+
+        /*HILT multi para/section*/
+        .skn-upa2 .multi-section-hilt .multi-para-opt,.skn-upa2 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-upa2 .multi-para-hilt .dflt-view{display:none}
+        .skn-upa2 .multi-para-hilt:after{content:"";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
+	      .skn-upa2 .multi-para-hilt .paragraph .singlecolumn{margin-left:0}
+        .skn-upa2 .multi-para-hilt .paragraph{width:49%;max-width:49%;display:block;float:left;clear:none;margin-top:0px;margin-right:2%;margin-bottom:10px;margin-top:0}
+        .skn-upa2 .multi-para-hilt .paragraph:nth-child(2n+1){margin-right:0}
+        .skn-upa2 .multi-para-hilt .paragraph:last-child,.skn-upa2 .multi-para-hilt .paragraph:nth-last-child(2){margin-bottom:0}
+
+        /* GRYR */
+        .skn-upa2 .displayNoneThisField{display:none}/* Keep this class always at bottom */
+		
+		/*For Extra Space Before Colon*/
+        .skn-upa2 .beforecolonspace{display:none!important}
+        .skn-upa2.MFR .beforecolonspace{display:inline!important}
+
+        /* Text alignment bullet */
+        .skn-upa2 .ttc-align-left ul{text-align:left}
+        .skn-upa2 .ttc-align-right ul{text-align:right}
+        .skn-upa2 .ttc-align-center ul{text-align:center}
+        .skn-upa2 .ttc-align-justify ul{text-align:justify}
+        .skn-upa2 .ttc-align-right li,.skn-upa2 .ttc-align-center li{position:relative;list-style-position:inside;margin-left:0}
+        .skn-upa2:not(.for-pdf) .ttc-align-right li:first-letter,.skn-upa2:not(.for-pdf) .ttc-align-center li:first-letter{margin-left:-4px}
+        
+        .skn-upa2.for-iron-pdf .rating-bar{page-break-inside:avoid}
+    

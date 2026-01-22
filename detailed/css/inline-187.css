@@ -1,0 +1,81 @@
+
+        .skn-mls8{padding-left:40px;padding-right:40px;padding-bottom:35px}
+        .skn-mls8,.skn-mls8 table{line-height:12px}
+        .skn-mls8.pagesize{width:595px}
+        .skn-mls8.fontsize,.skn-mls8 .lang-sec.infobarsec .paragraph *,.skn-mls8 .lang-sec.infotilesec .paragraph *,.skn-mls8 .skli-sec .paragraph *{font-size:9px}
+        .skn-mls8.fontface{font-family:PT Sans}
+        .skn-mls8 .parent-container .left-box{width:146px;max-width:146px;padding-right:21px}
+        .skn-mls8 .section ul li:before{top:3px;left:5px}
+        .skn-mls8 .section{padding-top:15px}
+        .skn-mls8 .paragraph{margin-top:16px}
+        .skn-mls8 .right-box .singlecolumn,.skn-mls8 .right-box .maincolumn{margin-left:0px}
+        .skn-mls8 table.skills td{padding-top:7px}
+        .skn-mls8 .name{font-size:36px;line-height:36px;color:#9B3016;padding-top:35px}
+        .skn-mls8 .resume-title{font-size:11px;line-height:14px;padding-top:5px;}
+        .skn-mls8 .sectiontitle{color:#9B3016}
+        .skn-mls8 .sectiontitle::after{width:30px}
+        .skn-mls8 .heading{font-size:13px;line-height:16px;margin-bottom:13px}
+        .skn-mls8 .top-section{margin-bottom:30px}
+        .skn-mls8 .top-section .monogram-wrap{width:117px;height:132px;background:#9B3016;padding-top:23px;padding-bottom:15px}
+        .skn-mls8 .prfl-pic{width:117px;height:132px;background:#9B3016;padding-top:23px;padding-bottom:15px}
+        .skn-mls8 .prfl-pic .field{width:75px;height:75px;}
+        .skn-mls8 .parent-container .right-box{padding-left:19px}
+        .skn-mls8 .name-wrap{width:75px;height:75px;background:#9B3016}
+        .skn-mls8 .cntc-sec .ico-txt{line-height:14px}
+        .skn-mls8 .edu-year{line-height:10px;margin-bottom:5px}
+        .skn-mls8 .exp-textsize{font-size:10px}
+        .skn-mls8 .edu-degree{margin-bottom:3px}
+        .skn-mls8 .initial-name{font-size:28px}
+        .skn-mls8 .initial-name span{line-height:44px}
+        .skn-mls8 .address{padding-top:5px}
+        .skn-mls8 .adn-link .icon-row{line-height:14px}
+        .skn-mls8 .right-box .skill .paddedline:last-child{padding-left:19px}
+        .skn-mls8 ul li{padding-left:13px}
+        .skn-mls8 .address div{margin-bottom:5px}
+        .skn-mls8 .top-section .monogram-wrap,.skn-mls8 .top-section .prfl-pic{background-color:#9B3016}
+        .skn-mls8 .pict-sec{padding-right:30px}
+        .skn-mls8.pict-pcsh-rectangle .paragraph .prfl-pic .field{width:65px}
+        .skn-mls8 .totl-expr{background-color:#9B3016;font-size:8px;line-height:12px}
+        
+        /* signature style */
+        .skn-mls8 .disclaim,.skn-mls8 .sign{padding-top:30px}
+        .skn-mls8 .sign + .disclaim,.skn-mls8 .disclaim + .sign{padding-top:15px}
+
+        /*Infographic*/
+        .skn-mls8 .parent-container .right-box .lang-sec,.skn-mls8 .parent-container .right-box .skli-sec{padding-left:0px}
+        .skn-mls8 .parent-container .right-box .lang-sec .heading,.skn-mls8 .parent-container .right-box .skli-sec .heading{margin-left:-0px}
+        .skn-mls8 .lang-sec.infobarsec .inner-rating,.skn-mls8 .skli-sec.infobarsec .inner-rating{background-color:#9B3016}
+        .skn-mls8 .left-box .lang-sec .paragraph,.skn-mls8 .left-box .skli-sec .paragraph{padding-bottom:5px}
+        .skn-mls8 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
+        .skn-mls8 .data-LNGG .doc-item,.skn-mls8 .data-SKLI .doc-item,.skn-mls8 .lang-sec .doc-item,.skn-mls8 .skli-sec .doc-item{width:100%}
+        .skn-mls8 .data-LNGG .sortableInner,.skn-mls8 .data-SKLI .sortableInner,.skn-mls8 .SECTION_LNGG .sortableInner,.skn-mls8 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mls8 .data-LNGG .sortable-item,.skn-mls8 .data-SKLI .sortable-item{width:45.8%}
+        .skn-mls8 .data-LNGG .sortable-item .paragraph,.skn-mls8 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+
+        /*Fixes for builer*/
+        .skn-mls8 .parent-container .right-box .sortable-item:first-child .section,.skn-mls8 .parent-container .left-box .sortable-item:first-child .section{padding-top:0}
+        .skn-mls8 .left-box .skli-sec .sortableInner .sortable-item .paragraph,.skn-mls8 .left-box .lang-sec .sortableInner .sortable-item + .sortable-item .paragraph,.skn-mls8 .left-box .lang-sec .sortableInner .sortable-item .paragraph{max-width:100%;vertical-align:top;display:block;margin-right:0}
+        .skn-mls8.sortable-drag-item{padding:0}
+        .skn-mls8 .lang-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mls8 .right-box .lang-sec .sortableInner > .paragraph:nth-last-child(2),.skn-mls8 .right-box .skli-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mls8 .right-box .skli-sec .sortableInner > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-mls8 .left-box .lang-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mls8 .left-box .skli-sec .sortableInner > .paragraph:nth-last-child(1){padding-bottom:0}
+
+        /* Dynamic Fixes for builer*/
+        .page-finalize .skn-mls8 .lang-sec .para_odd,.page-finalize .skn-mls8 .lang-sec .para_even{max-width:{$LGBW}px}
+        .skn-mls8 .parent-container .lang-sec .sortable-item + .sortable-item .paragraph{max-width:{$LGBW}px}
+        .page-finalize .skn-mls8 .sortable-drag-item:before{display:none}
+        .page-finalize .skn-mls8 .sortable-drag-item ul li:before{top:3px}
+        .page-finalize .skn-mls8 .right-box.dropable-container .lang-sec .sortableInner .sortable-item{display:inline-block}
+        .page-finalize .skn-mls8 .right-box .lang-sec .sortable-item,.page-finalize .skn-mls8 .right-box .skli-sec .sortable-item{display:inline-block}
+        .skn-mls8 .lang-sec .sortable-item .rating-bar,.skn-mls8 .lang-sec .sortable-item .field{max-width:{$LGBW}px}
+        .skn-mls8 .right-box .sortable-item .lang-sec .paragraph.para_odd,.skn-mls8 .right-box .sortable-item .skli-sec .paragraph.para_odd{margin-right:30px}
+
+        /*Rectangular Rating Blocks*/ 
+        .skn-mls8 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#9B3016}
+        /*Change Name Font Size Logic*/
+        .skn-mls8.update-font-size .name{font-size:26px;line-height:29px}
+        .skn-mls8 .top-section .inner-box,.resume-preview .skn-mls8 .top-section .inner-box{display:flex;justify-content:space-between}
+
+        .skn-mls8 .SortableItem-sibling.data-NAME{flex-grow:1}
+        .page-final .skn-mls8.pict-pcpf-purl .name-sec{width:100%;word-break:break-word}
+
+    

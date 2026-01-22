@@ -1,0 +1,75 @@
+
+        .skn-mli4,.skn-mli4 table{line-height:12px}
+        .skn-mli4{min-height:792px}
+        .skn-mli4.pgsz-a4{min-height:842px}
+        .skn-mli4:before{width:calc(232px);background:#576d7b}
+        .skn-mli4.pagesize{width:595px}
+        .skn-mli4.fontsize{font-size:9px}
+        .skn-mli4.fontface{font-family:PT Sans}
+        .skn-mli4 .compfont{font-size:10px}
+        .skn-mli4 .section{margin-bottom:25px}
+
+        .skn-mli4 .firstparagraph{margin-top:0!important}
+        .skn-mli4 .paragraph,.skn-mli4 .left-box .multi-para-hilt .paragraph{margin-top:12px}
+        .skn-mli4 .parentContainer .singlecolumn,.skn-mli4 .parentContainer .maincolumn,.skn-mli4 .right-box .multi-para-hilt{margin-left:0px}
+		.skn-mli4 .right-box .multi-para-hilt .heading{margin-left:-0px}
+        .skn-mli4 .left-box .singlecolumn{margin-left:0!important}
+        .skn-mli4 .name{font-size:40px;line-height:54px}
+        .skn-mli4 .resumeTitle{font-size:18px;line-height:20px}
+        .skn-mli4 .sectiontitle{font-size:14px;line-height:17px}
+        .skn-mli4 .left-box{width:232px}
+        .skn-mli4 .topsection,.skn-mli4 .parentContainer .left-box:before,.skn-mli4 .parentContainer .right-box:before,.skn-mli4 .inner-rating{background-color:#576d7b}
+        .skn-mli4 .topsection .top-box{border-bottom:3px solid #576d7b}
+        .skn-mli4 ul li{padding-left:-1px}
+        .skn-mli4 .totl-expr{background-color:#576d7b;font-size:7px;line-height:12px}
+
+         /* Icon style */
+         .skn-mli4 .icon-section{left:30x}
+        .skn-mli4 .icon-section img{height:60px;width:60px}
+        .skn-mli4 .icon-section + .section{margin:0 67px}
+        .skn-mli4 .icon-section + .section .paragraph{padding:0 30px}
+
+        /*Infographic*/
+        .skn-mli4 .lang-sec.infobarsec .paragraph{padding-top:5px}
+        .skn-mli4 .lang-sec.infobarsec .firstparagraph{padding-top:0}
+
+        /*Infographic Skills*/
+        .skn-mli4 .lang-sec.infotilesec .paragraph,.skn-mli4 .skli-sec .paragraph{padding-bottom:5px}
+        .skn-mli4 .lang-sec.infotilesec .firstparagraph,.skn-mli4 .skli-sec .firstparagraph{padding-top:0}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mli4 .paragraph .sliced-rect .sliced-rect-tile.ratvfill,.skn-mli4 .left-box .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#576d7b}
+
+        .skn-mli4 .SECTION_CNTC + .section{margin-top:25px}
+
+        /*Fixes for builder*/
+        .skn-mli4 .left-box .data-CNTC + .sortable-item:not(.data-ALNK) .section{margin-top:25px}
+
+        @-moz-document url-prefix() {
+        .skn-mli4 .parentContainer{height:672px}
+        .skn-mli4 .left-box{min-height:inherit}
+        }
+        /* support for IE Browser */
+        @media screen and (min-width:0\0) {
+        .skn-mli4 .parentContainer{display:flex}
+        .skn-mli4 .right-box{width:calc(100% - 232px)}
+        .skn-mli4 .left-box,.skn-mli4 .right-box{display:inline}
+        .skn-mli4 .left-box{min-height:inherit}
+        }
+
+         /*POC Multi Experience Para*/
+         .skn-mli4 .groupChildPara.paragraph .singlecolumn .companyloc{display:none}
+
+        /*Pagination Parameters*/
+        .skn-mli4{data-ptbm:25px;data-pgsz:595px}
+
+        /*For PDF TEXP Handling*/
+        .document.texp-curved.for-pdf .parentContainer .right-box .expr-sec .paragraph .dflex,.document.texp-rectangle.for-pdf .parentContainer .right-box .expr-sec .paragraph .dflex{display:block;}
+        .document.texp-curved.for-pdf .parentContainer .right-box .expr-sec .paragraph .dflex > span:first-child,.document.texp-rectangle.for-pdf .parentContainer .right-box .expr-sec .paragraph .dflex > span:first-child{display:inline-block;width:70%}
+        .document.texp-curved.for-pdf .parentContainer .right-box .expr-sec .paragraph .dflex > span:last-child,.document.texp-rectangle.for-pdf .parentContainer .right-box .expr-sec .paragraph .dflex > span:last-child{display:inline-block;float:right;width:30%;}
+
+        .skn-mli4.for-pdf,.skn-mli4.for-pdf::before{background:none!important;}
+         .skn-mli4.for-pdf .left-box::before{background:none!important;}
+         .skn-mli4.for-pdf .left-box{background:none!important;}
+
+    

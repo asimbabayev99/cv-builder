@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="chrome">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Template - CV Builder</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Allura|Dancing+Script|Dynalight|Mrs+Saint+Delafield|Fira+Sans|PT+Sans|Saira|Blinker|PT+Sans+Caption|Bodoni+MT|Oswald|Source+Sans+Pro" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/main-1.0.0.380.css">
+    <link rel="stylesheet" href="css/74c61b83702de20d.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="HeaderStyles-sc-339a379-0 isWtLr header" id="hiwHeader">
+        <div class="ContainerStyles-sc-155c9075-0 cdzjYP container">
+            <a id="homeLogoLink" class="navbar-brand p-none">
+                <img src="https://www.myperfectcv.co.uk/blobimages/muk/builder/images/logo-new-uk.svg" alt="logo" width="200px" height="22px">
+            </a>
+        </div>
+        <div id="curved-corner-topright"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <!-- Title Section -->
+            <div class="choose-template-header">
+                <h1 class="page-title">Choose a template</h1>
+                <p class="page-subtitle">Pick from our collection of professionally designed templates</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <div role="tablist" class="tabs">
+                    <button role="tab" class="tab-btn active" data-tab="popular" aria-selected="true">Most popular</button>
+                    <button role="tab" class="tab-btn" data-tab="all" aria-selected="false">All</button>
+                </div>
+            </div>
+
+            <!-- Templates Grid -->
+            <div class="templates-grid" id="templatesGrid">
+                <!-- Templates will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div class="modal-overlay" id="previewModal" style="display: none;">
+        <div class="modal-preview-skin-container">
+            <button class="modal-close" aria-label="Close">&times;</button>
+
+            <div class="modal-content">
+                <div class="modal-left">
+                    <div class="modal-head">
+                        <h2 class="modal-head-text" id="modalTemplateName">Template Name</h2>
+                    </div>
+
+                    <!-- Color Palette -->
+                    <div class="color-palette-section">
+                        <h3 class="color-section-title">Choose colour</h3>
+                        <div class="color-palette" id="colorPalette">
+                            <!-- Colors will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Use Template Button -->
+                    <button class="btn-use-template">Use this template</button>
+                </div>
+
+                <div class="modal-right">
+                    <div class="preview-container" id="previewContainer">
+                        <!-- Template preview will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">*The names and logos of the companies mentioned above are registered trademarks of their respective owners.</p>
+        </div>
+    </footer>
+
+    <!-- Template Data -->
+    <script src="js/templates-data.js"></script>
+    <script src="js/colors-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

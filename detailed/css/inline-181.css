@@ -1,0 +1,62 @@
+
+      .skn-mpa5,.skn-mpa5 table{line-height:16px}
+      .skn-mpa5.pagesize{width:471px}
+      .skn-mpa5.fontsize,.skn-mpa5 .lang-sec .paragraph *,.skn-mpa5 .skli-sec .paragraph *{font-size:12px}
+      .skn-mpa5.fontface{font-family:Roboto}
+      .skn-mpa5.vmargins{padding-top:37px;padding-bottom:37px}
+      .skn-mpa5.hmargins{padding-left:62px;padding-right:62px}
+      .skn-mpa5 .section{margin-top:10px}
+      .skn-mpa5 .firstsection.section,.skn-mpa5 .SECTION_CNTC,.skn-mpa5 .firstparagraph.paragraph{margin-top:0}
+      .skn-mpa5 .paragraph{margin-top:6px}
+      .skn-mpa5 .singlecolumn,.skn-mpa5 .maincolumn{margin-left:0px}
+      .skn-mpa5 .sectiontitle{font-size:14px;line-height:20px}
+      .skn-mpa5 .name{font-size:30px;line-height:38px;padding-top:6px;border-top-color:#663399;color:#663399}
+      .skn-mpa5 .resumeTitle{font-size:16px;line-height:28px;padding:0 0 8px 0}
+      .skn-mpa5 .PARAGRAPH_PRFL .address,.skn-mpa5 .PARAGRAPH_CLPRFL .address{font-size:12px;line-height:16px}
+      .skn-mpa5 table.skills td{padding-top:3px}
+      .skn-mpa5 .smryWrap{border-top:2px dotted #663399;border-bottom:2px dotted #663399;padding-top:8px;padding-bottom:8px}
+	    .skn-mpa5 .skli-sec .singlecolumn .field:last-child{min-height:16px}
+      .skn-mpa5 .totl-expr{background-color:#663399;font-size:8px;line-height:14px}
+
+      /*FIX for Re-calculating width of singlecolumn for CL*/
+      .skn-mpa5 .address2{font-size:12px;line-height:16px}
+
+      /*Infographic*/
+      .skn-mpa5 .lang-sec,.skn-mpa5 .skli-sec,.skn-mpa5 .multi-para-hilt{padding-left:0px}
+      .skn-mpa5 .lang-sec .heading,.skn-mpa5 .skli-sec .heading,.skn-mpa5 .multi-para-hilt .heading{margin-left:-0px}
+      .skn-mpa5 .inner-rating{background-color:#663399}
+
+      /*Builder fixes*/
+      .skn-mpa5 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
+      .skn-mpa5 .lang-sec .sortable-item,.skn-mpa5 .skli-sec .sortable-item{display:inline-block;vertical-align:top}
+      .skn-mpa5 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
+      .skn-mpa5 .data-LNGG .doc-item,.skn-mpa5 .data-SKLI .doc-item,.skn-mpa5 .lang-sec .doc-item,.skn-mpa5 .skli-sec .doc-item{width:100%}
+      .skn-mpa5 .data-LNGG .sortableInner,.skn-mpa5 .data-SKLI .sortableInner,.skn-mpa5 .SECTION_LNGG .sortableInner,.skn-mpa5 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+      .skn-mpa5 .data-LNGG .sortable-item,.skn-mpa5 .data-SKLI .sortable-item{width:48.4%}
+      .skn-mpa5 .data-LNGG .sortable-item .paragraph,.skn-mpa5 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+	  
+	  /*Fixes for builder for skill*/
+      .skn-mpa5 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:16px}	
+      .skn-mpa5 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mpa5 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+      .skn-mpa5 .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mpa5 .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-mpa5  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mpa5  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0!important}
+        
+      /*PDF Flex Handling Code - Personal Information*/
+		.skn-mpa5.for-pdf .pdet-sec .singlecolumn{display:block}
+		.skn-mpa5.for-pdf .pdfpdwrapper{display:block}
+		.skn-mpa5.for-pdf .pdfpdwrapper .details-wrap:first-child{float:left;padding-right:5px}
+		.skn-mpa5.for-pdf .pdfpdwrapper .details-wrap:nth-child(2){float:right}
+		.skn-mpa5.for-pdf .pdfpdwrapper .details-wrap{width:233px;}
+    
+    /*Infographic Containers*/
+    .skn-mpa5.for-pdf .lang-sec,.skn-mpa5.for-pdf .skli-sec{display:block}
+    .skn-mpa5.for-pdf .pdfinfwrapper{display:block}
+    .skn-mpa5.for-pdf .pdfinfwrapper:after{content:'';clear:both;display:table}
+    .skn-mpa5.for-pdf .pdfinfwrapper .paragraph:first-child{float:left}
+    .skn-mpa5.for-pdf .pdfinfwrapper .paragraph:nth-child(2){float:right}
+    .skn-mpa5.for-pdf .pdfinfwrapper:last-child .paragraph{margin-bottom:0;padding-bottom:0}
+
+    /*PDF Handling for TEXP*/
+    .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-row{display:block;}
+    .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .jobtitle-cell{display:inline-block;width:75%}
+    .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-cell{display:inline-block;float:right;}
+  

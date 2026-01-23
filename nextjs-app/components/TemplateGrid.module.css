@@ -1,0 +1,22 @@
+.templatesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 480px) {
+  .templatesGrid {
+    gap: 16px;
+  }
+}

@@ -1,0 +1,48 @@
+export interface Template {
+  index: number;
+  skinName: string;
+  displayName: string;
+  category: string;
+  popular: boolean;
+}
+
+export const TEMPLATES_DATA: Template[] = [
+  { index: 0, skinName: "mli1", displayName: "Milano", category: "All", popular: true },
+  { index: 1, skinName: "mli2", displayName: "Milano 2", category: "All", popular: true },
+  { index: 2, skinName: "cba2", displayName: "Cubic 2", category: "All", popular: true },
+  { index: 3, skinName: "mlf1", displayName: "Malibu", category: "All", popular: true },
+  { index: 4, skinName: "mlu4", displayName: "Modular 4", category: "All", popular: true },
+  { index: 5, skinName: "mli5", displayName: "Milano 5", category: "All", popular: true },
+  { index: 6, skinName: "mli6", displayName: "Milano 6", category: "All", popular: false },
+  { index: 7, skinName: "mlu7", displayName: "Modular 7", category: "All", popular: false },
+  { index: 8, skinName: "hra1", displayName: "Horizon", category: "All", popular: false },
+  { index: 9, skinName: "tma4", displayName: "Tempo 4", category: "All", popular: false },
+  { index: 10, skinName: "mli4", displayName: "Milano 4", category: "All", popular: false },
+  { index: 11, skinName: "sma2", displayName: "Summit 2", category: "All", popular: false },
+  { index: 12, skinName: "ata1", displayName: "Atlantic", category: "All", popular: false },
+  { index: 13, skinName: "tma3", displayName: "Tempo 3", category: "All", popular: false },
+  { index: 14, skinName: "mlt6", displayName: "Malta 6", category: "All", popular: false },
+  { index: 15, skinName: "mlu6", displayName: "Modular 6", category: "All", popular: false },
+  { index: 16, skinName: "sli1", displayName: "Slim", category: "All", popular: false },
+  { index: 17, skinName: "mta3", displayName: "Marta 3", category: "All", popular: false },
+  { index: 18, skinName: "cba1", displayName: "Cubic", category: "All", popular: false },
+  { index: 19, skinName: "hra2", displayName: "Horizon 2", category: "All", popular: false },
+  { index: 20, skinName: "mca2", displayName: "Mica 2", category: "All", popular: false },
+  { index: 21, skinName: "sma1", displayName: "Summit", category: "All", popular: false },
+  { index: 22, skinName: "lca1", displayName: "Lucca", category: "All", popular: false },
+  { index: 23, skinName: "cna1", displayName: "Canna", category: "All", popular: false },
+  { index: 24, skinName: "mli3", displayName: "Milano 3", category: "All", popular: false },
+  { index: 25, skinName: "upa1", displayName: "Uppsala", category: "All", popular: false },
+  { index: 26, skinName: "mla7", displayName: "Mala 7", category: "All", popular: false },
+  { index: 27, skinName: "mna4", displayName: "Mona 4", category: "All", popular: false },
+  { index: 28, skinName: "upa2", displayName: "Uppsala 2", category: "All", popular: false },
+  { index: 29, skinName: "mlv4", displayName: "Malva 4", category: "All", popular: false },
+  { index: 30, skinName: "mpa5", displayName: "Mopa 5", category: "All", popular: false },
+  { index: 31, skinName: "pca1", displayName: "Pica", category: "All", popular: false },
+  { index: 32, skinName: "mta2", displayName: "Marta 2", category: "All", popular: false },
+  { index: 33, skinName: "mls8", displayName: "Mills 8", category: "All", popular: false },
+  { index: 34, skinName: "mla3", displayName: "Mala 3", category: "All", popular: false },
+  { index: 35, skinName: "mls9", displayName: "Mills 9", category: "All", popular: false }
+];
+
+export const POPULAR_TEMPLATES = TEMPLATES_DATA.filter(t => t.popular);

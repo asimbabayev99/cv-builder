@@ -1,0 +1,16 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.withBorder {
+  border: 1px solid #d0d0d0;
+}
+
+.content {
+  width: 595px;
+  min-height: 842px;
+  transform-origin: top left;
+  background: #fff;
+}

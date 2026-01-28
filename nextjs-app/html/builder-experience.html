@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Work Experience - AI Bullet Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6764f2",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#111022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .resume-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111118] dark:text-white min-h-screen">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e2e8f0] dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-3">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+</svg>
+</div>
+<h2 class="text-[#111118] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">ResumePro AI</h2>
+</div>
+<div class="flex items-center gap-9">
+<a class="text-[#111118] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Resume Builder</a>
+<a class="text-[#111118] dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Templates</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-slate-200" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJyMqwEhtVrFKk4rgHsA38LaqqngB9uUFcQMaSWAf1AtvFQU24n3-N7rDLl6YqSsLCsQEnzhPabQmt52AMWtEVM_7uaqtTsu0o1NX6eAmYBA2fWwQV9Pzc37GxIy2DeHz6FcK451-cvYjdPg_igDAiy78DNGkVa6Olirqhv8B8I-N2Fwj6pNUypP0-keRfXBDzLX2EDiioAJWHb3W07QH5cvv-BaB0Osvms_ddx6cP_3gSg1peRSwzNiTlZ9eMcvvqKJQWlQxzRQQ");'></div>
+</div>
+</header>
+<main class="flex h-[calc(100-64px)] overflow-hidden">
+<!-- Left Sidebar: Form Builder -->
+<div class="w-1/2 flex flex-col h-full overflow-y-auto custom-scrollbar px-10 py-8 border-r border-slate-200 dark:border-slate-800">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 mb-4">
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium" href="#">Resume Builder</a>
+<span class="text-slate-400 text-sm font-medium">/</span>
+<span class="text-primary text-sm font-bold">Step 4: Work Experience</span>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-3 mb-8 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-[#111118] dark:text-white text-base font-semibold">Overall Completion</p>
+<p class="text-primary text-sm font-bold">60%</p>
+</div>
+<div class="rounded-full bg-slate-100 dark:bg-slate-800 h-2">
+<div class="h-2 rounded-full bg-primary" style="width: 60%;"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Section 4 of 6: Almost there!</p>
+</div>
+<!-- Page Heading -->
+<div class="mb-8">
+<h1 class="text-[#111118] dark:text-white text-3xl font-black leading-tight tracking-tight mb-2">Work Experience</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base">Detail your professional journey. Use our AI to turn simple duties into performance-driven results.</p>
+</div>
+<!-- Work Experience List -->
+<div class="space-y-6">
+<!-- Collapsed Entry -->
+<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between group cursor-pointer hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">business_center</span>
+</div>
+<div>
+<p class="text-[#111118] dark:text-white font-bold">Junior Designer</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Pixel Perfect Agency • 2020 - 2021</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+<!-- Expanded Entry (Active Form) -->
+<div class="rounded-xl border-2 border-primary bg-white dark:bg-slate-900 shadow-xl overflow-hidden">
+<div class="p-6 space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Job Title</label>
+<input class="rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm" type="text" value="Senior Product Designer"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Company</label>
+<input class="rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm" type="text" value="TechFlow Inc."/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Employment Type</label>
+<select class="rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
+<option>Full-time</option>
+<option>Contract</option>
+<option>Freelance</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Location</label>
+<input class="rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm" type="text" value="San Francisco, CA (Remote)"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Start Date</label>
+<div class="flex gap-2">
+<select class="flex-1 rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 text-sm"><option>Jan</option><option selected="">Mar</option></select>
+<select class="flex-1 rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 text-sm"><option>2022</option><option selected="">2021</option></select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">End Date</label>
+<div class="flex gap-2 opacity-50 pointer-events-none">
+<select class="flex-1 rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 text-sm"><option>Dec</option></select>
+<select class="flex-1 rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 text-sm"><option>2024</option></select>
+</div>
+</div>
+</div>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors font-medium">I am currently working in this role</span>
+</label>
+<!-- AI Description Area -->
+<div class="mt-8 space-y-4">
+<div class="flex items-center justify-between">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Job Description &amp; Achievements</label>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-bold rounded-full transition-all border border-primary/20">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                                    Generate AI Bullet Points
+                                </button>
+</div>
+<div class="border border-slate-200 dark:border-slate-800 rounded-lg p-4 bg-slate-50 dark:bg-slate-800/50">
+<div class="flex gap-2 mb-3 border-b border-slate-200 dark:border-slate-800 pb-2">
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+</div>
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm" placeholder="e.g. Led the redesign of the mobile app and increased conversion by 20%..." rows="4">Led the design of a new e-commerce dashboard and managed a team of 3 junior designers. We worked on improving user retention and speed.</textarea>
+</div>
+<!-- AI Suggestion Comparison Panel -->
+<div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-xl p-5 space-y-4">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">magic_button</span>
+<span>AI Enhancements</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Before</p>
+<div class="text-sm text-slate-500 italic border-l-2 border-slate-200 pl-3">
+                                            "Led the design of a new e-commerce dashboard and managed a team of designers."
+                                        </div>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-bold text-primary uppercase tracking-wider">ATS-Optimized Suggestions</p>
+<div class="space-y-3">
+<div class="flex gap-3 bg-white dark:bg-slate-900 p-2 rounded border border-primary/10">
+<input checked="" class="mt-1 rounded border-slate-300 text-primary" type="checkbox"/>
+<p class="text-xs leading-relaxed text-[#111118] dark:text-slate-300">
+                                                    Spearheaded the UI/UX redesign of an enterprise-level e-commerce dashboard, resulting in a <strong>24% increase in user session duration</strong>.
+                                                </p>
+</div>
+<div class="flex gap-3 bg-white dark:bg-slate-900 p-2 rounded border border-primary/10">
+<input checked="" class="mt-1 rounded border-slate-300 text-primary" type="checkbox"/>
+<p class="text-xs leading-relaxed text-[#111118] dark:text-slate-300">
+                                                    Mentored and led a cross-functional design team of 3, streamlining workflows and <strong>reducing project turnaround time by 15%</strong>.
+                                                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-end pt-2">
+<button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-colors">Apply Selected Bullets</button>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+<button class="px-4 py-2 text-slate-500 font-bold text-sm hover:text-slate-800">Delete</button>
+<button class="px-6 py-2 bg-primary text-white font-bold text-sm rounded-lg hover:shadow-lg transition-all">Save Entry</button>
+</div>
+</div>
+</div>
+<!-- Add More Button -->
+<button class="w-full py-4 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl flex items-center justify-center gap-2 text-slate-500 hover:text-primary hover:border-primary transition-all font-bold">
+<span class="material-symbols-outlined">add_circle</span>
+                    Add Work Experience
+                </button>
+</div>
+<!-- Footer Navigation -->
+<div class="mt-12 flex justify-between items-center pt-8 border-t border-slate-200 dark:border-slate-800">
+<button class="flex items-center gap-2 px-6 py-3 border border-slate-200 dark:border-slate-800 rounded-xl font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                    Previous Step
+                </button>
+<button class="flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all">
+                    Next: Education
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Sidebar: Live Resume Preview -->
+<div class="w-1/2 bg-slate-100 dark:bg-slate-950 flex flex-col items-center py-10 overflow-y-auto custom-scrollbar">
+<div class="sticky top-0 mb-6 flex gap-4">
+<div class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full shadow-sm text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-700 flex items-center gap-1">
+<span class="size-2 rounded-full bg-green-500"></span> Live Preview
+                </div>
+<button class="px-3 py-1 bg-white dark:bg-slate-800 rounded-full shadow-sm text-[10px] font-bold text-slate-500 border border-slate-200 dark:border-slate-700 hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">zoom_in</span> Zoom
+                </button>
+</div>
+<!-- A4 Page Simulation -->
+<div class="w-[595px] min-h-[842px] bg-white text-[#1e293b] p-12 resume-shadow relative overflow-hidden">
+<!-- Resume Header -->
+<header class="mb-10 text-center">
+<h2 class="text-3xl font-black uppercase tracking-widest text-slate-900">Alex Johnston</h2>
+<p class="text-slate-500 text-sm mt-2">Senior Product Designer • alex.j@example.com • +1 555-0123</p>
+</header>
+<!-- Professional Summary -->
+<section class="mb-8">
+<h3 class="text-xs font-black text-primary uppercase tracking-[0.2em] mb-3 border-b border-slate-100 pb-1">Profile</h3>
+<p class="text-[11px] leading-relaxed text-slate-600">Dynamic Product Designer with 5+ years of experience specializing in complex SaaS ecosystems and user-centric design systems. Proven track record of increasing engagement through data-driven UI improvements.</p>
+</section>
+<!-- Work Experience (Live Highlighted Section) -->
+<section class="mb-8 relative">
+<!-- Subtle highlight overlay for active editing -->
+<div class="absolute -inset-4 bg-primary/5 border border-primary/20 rounded-lg pointer-events-none"></div>
+<div class="absolute -left-12 top-0 flex flex-col items-center gap-1 opacity-100">
+<span class="material-symbols-outlined text-primary text-xl">edit</span>
+<div class="h-12 w-0.5 bg-primary/20"></div>
+</div>
+<h3 class="text-xs font-black text-primary uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-1">Experience</h3>
+<div class="space-y-6">
+<!-- Current Role Highlighted -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<h4 class="font-bold text-sm text-slate-900">Senior Product Designer</h4>
+<span class="text-[10px] text-slate-500 font-bold">2021 — PRESENT</span>
+</div>
+<p class="text-[11px] text-primary font-bold mb-2">TechFlow Inc. • San Francisco, CA</p>
+<ul class="list-disc ml-4 space-y-1">
+<li class="text-[10px] text-slate-600 leading-relaxed">Spearheaded the UI/UX redesign of an enterprise-level e-commerce dashboard, resulting in a 24% increase in user session duration.</li>
+<li class="text-[10px] text-slate-600 leading-relaxed">Mentored and led a cross-functional design team of 3, streamlining workflows and reducing project turnaround time by 15%.</li>
+<li class="text-[10px] text-slate-600 leading-relaxed">Collaborated with engineering to build a scalable React-based design system now used across 4 product lines.</li>
+</ul>
+</div>
+<!-- Previous Role -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<h4 class="font-bold text-sm text-slate-900">Junior Designer</h4>
+<span class="text-[10px] text-slate-500 font-bold">2020 — 2021</span>
+</div>
+<p class="text-[11px] text-slate-500 font-bold mb-2">Pixel Perfect Agency • Remote</p>
+<ul class="list-disc ml-4 space-y-1">
+<li class="text-[10px] text-slate-600 leading-relaxed opacity-60">Supported senior designers in creating high-fidelity wireframes and interactive prototypes for 12+ client projects.</li>
+<li class="text-[10px] text-slate-600 leading-relaxed opacity-60">Delivered production-ready assets and documentation, ensuring seamless handoffs to development teams.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Education Section (Preview Only) -->
+<section>
+<h3 class="text-xs font-black text-primary uppercase tracking-[0.2em] mb-3 border-b border-slate-100 pb-1">Education</h3>
+<div>
+<div class="flex justify-between items-baseline">
+<h4 class="font-bold text-sm text-slate-900">BFA in Interaction Design</h4>
+<span class="text-[10px] text-slate-500 font-bold">2016 — 2020</span>
+</div>
+<p class="text-[11px] text-slate-500">Rhode Island School of Design</p>
+</div>
+</section>
+<!-- Bottom Decoration -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
+</div>
+<p class="mt-10 text-slate-400 text-xs text-center px-20">
+                Tip: Your resume is 1 page long. Research shows 1-page resumes have a <span class="text-primary font-bold">40% higher</span> response rate for mid-level roles.
+            </p>
+</div>
+</main>
+</body></html>

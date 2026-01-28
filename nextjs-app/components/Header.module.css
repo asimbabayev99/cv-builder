@@ -1,3 +1,4 @@
+/* Header */
 .header {
   background: #fff;
   padding: 15px 0;
@@ -16,4 +17,5 @@
 .navbarBrand {
   display: inline-block;
   cursor: pointer;
+  text-decoration: none;
 }

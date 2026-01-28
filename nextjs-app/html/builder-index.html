@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Builder - Work Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4245f0",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101122",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dbdbe6;
+            border-radius: 10px;
+        }
+        .a4-preview {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            transform: scale(0.65);
+            transform-origin: top center;
+        }
+        @media (max-width: 1440px) {
+            .a4-preview {
+                transform: scale(0.5);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111118] dark:text-white">
+<div class="flex h-screen overflow-hidden">
+<!-- Left: Navigation Sidebar -->
+<aside class="w-64 flex flex-col bg-white dark:bg-background-dark border-r border-[#dbdbe6] dark:border-white/10 shrink-0">
+<div class="p-6 flex flex-col gap-6 h-full">
+<div class="flex flex-col gap-1">
+<h1 class="text-xl font-black tracking-tight text-primary">ResumeAI</h1>
+<div class="flex flex-col gap-2 mt-4">
+<div class="flex justify-between items-center text-xs font-semibold">
+<span class="text-[#616289] dark:text-gray-400">Progress</span>
+<span class="text-primary">60%</span>
+</div>
+<div class="h-1.5 w-full bg-[#f0f0f4] dark:bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1 grow">
+<!-- Completed Step -->
+<div class="flex items-center gap-3 px-3 py-2 text-[#616289] dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-green-500 font-bold" style="font-size: 20px;">check_circle</span>
+<p class="text-sm font-medium">Profile</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-[#616289] dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-green-500 font-bold" style="font-size: 20px;">check_circle</span>
+<p class="text-sm font-medium">Personal Info</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-[#616289] dark:text-gray-400 hover:bg-background-light dark:hover:bg-white/5 rounded-lg transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-green-500 font-bold" style="font-size: 20px;">check_circle</span>
+<p class="text-sm font-medium">Education</p>
+</div>
+<!-- Active Step -->
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined fill-1" style="font-size: 20px;">work</span>
+<p class="text-sm font-bold">Work Experience</p>
+</div>
+<!-- Future Steps -->
+<div class="flex items-center gap-3 px-3 py-2 text-[#616289] dark:text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 20px;">construction</span>
+<p class="text-sm font-medium">Skills</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-[#616289] dark:text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 20px;">description</span>
+<p class="text-sm font-medium">Summary</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-[#616289] dark:text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 20px;">verified</span>
+<p class="text-sm font-medium">Finalize</p>
+</div>
+</nav>
+<div class="mt-auto border-t border-[#dbdbe6] dark:border-white/10 pt-4">
+<div class="flex items-center gap-3 px-3 py-2 text-[#616289] dark:text-gray-400">
+<span class="material-symbols-outlined" style="font-size: 20px;">help</span>
+<p class="text-sm font-medium">Help Center</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Center: Work Experience Form -->
+<main class="flex-1 overflow-y-auto bg-white dark:bg-background-dark custom-scrollbar">
+<div class="max-w-[800px] mx-auto px-8 py-12 pb-32">
+<div class="flex flex-wrap justify-between items-start gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<h2 class="text-4xl font-black leading-tight tracking-tight">Work Experience</h2>
+<p class="text-[#616289] dark:text-gray-400 text-base">Tell us about your professional background. Start with your most recent role.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-bold text-sm hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+<span>Add Position</span>
+</button>
+</div>
+<!-- Experience Card 1 -->
+<div class="space-y-8">
+<div class="p-6 rounded-xl border border-[#dbdbe6] dark:border-white/10 bg-white dark:bg-white/5 shadow-sm space-y-6">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-[#616289]">Current Position</span>
+<button class="text-[#616289] hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-[#111118] dark:text-gray-200">Job Title</span>
+<input class="w-full px-4 py-3 rounded-lg border border-[#dbdbe6] dark:border-white/20 bg-white dark:bg-background-dark focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" type="text" value="Senior Product Designer"/>
+</label>
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-[#111118] dark:text-gray-200">Company</span>
+<input class="w-full px-4 py-3 rounded-lg border border-[#dbdbe6] dark:border-white/20 bg-white dark:bg-background-dark focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" type="text" value="TechCorp Inc."/>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-3">
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-[#111118] dark:text-gray-200">Start Date</span>
+<input class="w-full px-4 py-3 rounded-lg border border-[#dbdbe6] dark:border-white/20 bg-white dark:bg-background-dark focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" type="month" value="2022-01"/>
+</label>
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-[#111118] dark:text-gray-200">End Date</span>
+<input class="w-full px-4 py-3 rounded-lg border border-[#dbdbe6] dark:border-white/20 bg-gray-50 dark:bg-white/5 text-[#616289] outline-none transition-all" disabled="" placeholder="Present" type="month"/>
+</label>
+</div>
+<label class="flex flex-col gap-1.5">
+<span class="text-sm font-semibold text-[#111118] dark:text-gray-200">Location</span>
+<input class="w-full px-4 py-3 rounded-lg border border-[#dbdbe6] dark:border-white/20 bg-white dark:bg-background-dark focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" type="text" value="San Francisco, CA"/>
+</label>
+</div>
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 text-primary border-[#dbdbe6] rounded focus:ring-primary" id="current" type="checkbox"/>
+<label class="text-sm font-medium text-[#616289] dark:text-gray-400" for="current">I currently work here</label>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-semibold text-[#111118] dark:text-gray-200">Description</span>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-[#4245f0] to-[#8b5cf6] text-white rounded-full text-xs font-bold shadow-lg hover:shadow-primary/30 transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 16px;">auto_fix_high</span>
+<span>AI Rewrite</span>
+</button>
+</div>
+<div class="relative">
+<div class="absolute top-2 left-2 flex gap-1 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm p-1 rounded border border-[#dbdbe6] dark:border-white/10">
+<button class="p-1 hover:bg-gray-100 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-[18px]">format_bold</span></button>
+<button class="p-1 hover:bg-gray-100 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-[18px]">format_list_bulleted</span></button>
+</div>
+<textarea class="w-full pt-12 px-4 py-3 rounded-lg border border-[#dbdbe6] dark:border-white/20 bg-white dark:bg-background-dark focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all text-sm leading-relaxed" placeholder="Describe your key responsibilities and achievements..." rows="6">• Led the redesign of the core SaaS platform, resulting in a 25% increase in user engagement.
+• Collaborated with cross-functional teams of engineers and product managers to deliver high-quality design solutions.
+• Mentored junior designers and established a new design system that improved production speed by 40%.</textarea>
+</div>
+</div>
+</div>
+<!-- Experience Card 2 (Minimized/Previous) -->
+<div class="flex items-center justify-between p-4 rounded-xl border border-[#dbdbe6] dark:border-white/10 bg-[#fbfbfd] dark:bg-white/5">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 bg-white dark:bg-background-dark border border-[#dbdbe6] dark:border-white/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[#616289]">business</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111118] dark:text-white">Product Designer</h4>
+<p class="text-xs text-[#616289] dark:text-gray-400">DesignStudio | 2019 - 2021</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-all">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Navigation -->
+<footer class="fixed bottom-0 left-64 right-[450px] bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-[#dbdbe6] dark:border-white/10 px-8 py-4 z-10 flex justify-between items-center">
+<button class="px-6 py-2.5 text-[#111118] dark:text-white font-bold text-sm hover:bg-[#f0f0f4] dark:hover:bg-white/5 rounded-lg transition-all">
+                    Back
+                </button>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 text-[#616289] dark:text-gray-300 font-bold text-sm hover:text-primary transition-all">
+                        Skip for now
+                    </button>
+<button class="px-8 py-2.5 bg-primary text-white font-bold text-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all">
+                        Save &amp; Continue
+                    </button>
+</div>
+</footer>
+</main>
+<!-- Right: Live A4 Preview -->
+<aside class="w-[450px] bg-[#f0f0f4] dark:bg-background-dark/50 flex justify-center overflow-y-auto overflow-x-hidden custom-scrollbar border-l border-[#dbdbe6] dark:border-white/10">
+<div class="py-12 flex flex-col items-center">
+<div class="mb-4 flex gap-4 bg-white dark:bg-background-dark px-4 py-2 rounded-full shadow-sm border border-[#dbdbe6] dark:border-white/10">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">zoom_in</span></button>
+<div class="w-[1px] h-4 bg-[#dbdbe6] dark:bg-white/20 my-auto"></div>
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">zoom_out</span></button>
+<div class="w-[1px] h-4 bg-[#dbdbe6] dark:bg-white/20 my-auto"></div>
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">print</span></button>
+</div>
+<!-- A4 Sheet Container -->
+<div class="a4-preview bg-white shadow-2xl relative">
+<!-- Resume Content Preview -->
+<div class="h-full w-full flex flex-col font-display text-[#111118]">
+<!-- Header -->
+<div class="text-center mb-8">
+<h1 class="text-2xl font-black uppercase tracking-widest mb-1">Alex Rivera</h1>
+<div class="text-[10px] text-[#616289] flex justify-center gap-2 font-medium">
+<span>alex.rivera@example.com</span>
+<span>•</span>
+<span>+1 (555) 123-4567</span>
+<span>•</span>
+<span>San Francisco, CA</span>
+</div>
+</div>
+<!-- Summary -->
+<div class="mb-6">
+<h2 class="text-xs font-black border-b-2 border-black pb-1 mb-2 uppercase tracking-widest">Professional Summary</h2>
+<p class="text-[10px] leading-relaxed text-gray-700">Innovative Product Designer with over 5 years of experience in creating user-centered digital products. Proven track record in increasing user engagement and streamlining design processes through systematic solutions.</p>
+</div>
+<!-- Experience -->
+<div class="mb-6">
+<h2 class="text-xs font-black border-b-2 border-black pb-1 mb-2 uppercase tracking-widest">Experience</h2>
+<!-- Current Job Item -->
+<div class="mb-4">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="text-[11px] font-bold">Senior Product Designer</h3>
+<span class="text-[9px] font-bold italic">Jan 2022 - Present</span>
+</div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-[10px] font-medium text-primary">TechCorp Inc.</span>
+<span class="text-[9px] text-gray-500">San Francisco, CA</span>
+</div>
+<ul class="list-disc ml-4 text-[9px] text-gray-700 leading-relaxed space-y-1">
+<li>Led the redesign of the core SaaS platform, resulting in a 25% increase in user engagement.</li>
+<li>Collaborated with cross-functional teams of engineers and product managers to deliver high-quality design solutions.</li>
+<li>Mentored junior designers and established a new design system that improved production speed by 40%.</li>
+</ul>
+</div>
+<!-- Previous Job Item -->
+<div class="mb-4">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="text-[11px] font-bold">Product Designer</h3>
+<span class="text-[9px] font-bold italic">Jun 2019 - Dec 2021</span>
+</div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-[10px] font-medium text-gray-600">DesignStudio</span>
+<span class="text-[9px] text-gray-500">New York, NY</span>
+</div>
+<ul class="list-disc ml-4 text-[9px] text-gray-700 leading-relaxed space-y-1">
+<li>Designed mobile-first interfaces for a variety of FinTech clients.</li>
+<li>Reduced project turnaround time by 15% through optimized prototyping workflows.</li>
+</ul>
+</div>
+</div>
+<!-- Education -->
+<div>
+<h2 class="text-xs font-black border-b-2 border-black pb-1 mb-2 uppercase tracking-widest">Education</h2>
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="text-[11px] font-bold">BFA in Graphic Design</h3>
+<span class="text-[9px] font-bold italic">2015 - 2019</span>
+</div>
+<span class="text-[10px] text-gray-600">Rhode Island School of Design</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</body></html>

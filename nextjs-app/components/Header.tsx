@@ -1,18 +1,22 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Header.module.css';
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <a className={styles.navbarBrand}>
-          <svg width="200" height="22" viewBox="0 0 200 22" fill="none">
-            <text x="0" y="18" fill="#333" fontSize="18" fontWeight="bold" fontFamily="sans-serif">
-              CV Builder
-            </text>
-          </svg>
-        </a>
+        <Link href="/" className={styles.navbarBrand}>
+          <Image
+            src="https://www.myperfectcv.co.uk/blobimages/muk/builder/images/logo-new-uk.svg"
+            alt="logo"
+            width={200}
+            height={22}
+            priority
+          />
+        </Link>
       </div>
     </header>
   );

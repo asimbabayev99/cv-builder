@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <p className={styles.footerText}>
-          Professional CV templates for your career success
+          *The names and logos of the companies mentioned above are registered trademarks of their respective owners.
         </p>
       </div>
     </footer>

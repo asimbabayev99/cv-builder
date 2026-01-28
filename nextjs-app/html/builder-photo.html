@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Builder - Profile Image</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .resume-preview-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-[#111118] dark:text-white">
+<div class="flex h-screen flex-col lg:flex-row overflow-hidden">
+<!-- Left Side: Interactive Workspace (40%) -->
+<div class="flex flex-col w-full lg:w-[450px] xl:w-[500px] bg-white dark:bg-[#1a1b2e] border-r border-[#dbdbe6] dark:border-[#2d2e4a] overflow-y-auto">
+<!-- Progress Bar Section -->
+<div class="flex flex-col gap-3 p-6 border-b border-[#f0f0f4] dark:border-[#2d2e4a]">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-[#111118] dark:text-white text-sm font-medium leading-normal">Step 1: Profile Image</p>
+<p class="text-primary text-xs font-bold leading-normal uppercase tracking-wider">25% Complete</p>
+</div>
+<div class="rounded-full bg-[#dbdbe6] dark:bg-[#2d2e4a] h-1.5 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Header Content -->
+<div class="px-6 pt-8">
+<h2 class="text-[#111118] dark:text-white tracking-tight text-[28px] font-bold leading-tight pb-2">Profile Image</h2>
+<p class="text-[#616289] dark:text-gray-400 text-base font-normal leading-relaxed">
+                    Upload a professional photo to personalize your resume. This step is optional.
+                </p>
+</div>
+<!-- Upload Area -->
+<div class="px-6 py-8 flex flex-col grow">
+<div class="flex flex-col grow">
+<div class="group flex flex-col items-center justify-center gap-6 rounded-xl border-2 border-dashed border-[#dbdbe6] dark:border-[#2d2e4a] hover:border-primary dark:hover:border-primary bg-background-light/50 dark:bg-background-dark/30 px-6 py-16 transition-colors cursor-pointer">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined !text-3xl">add_a_photo</span>
+</div>
+<div class="flex max-w-[480px] flex-col items-center gap-1">
+<p class="text-[#111118] dark:text-white text-lg font-bold leading-tight tracking-tight text-center">Upload your photo</p>
+<p class="text-[#616289] dark:text-gray-400 text-sm font-normal leading-normal text-center">Supports JPG, PNG (Max 5MB)</p>
+</div>
+</div>
+<button class="flex min-w-[120px] items-center justify-center rounded-lg h-10 px-5 bg-white dark:bg-[#2d2e4a] border border-[#dbdbe6] dark:border-[#3d3e5a] text-[#111118] dark:text-white text-sm font-bold shadow-sm hover:bg-gray-50 dark:hover:bg-[#343555] transition-colors">
+<span class="truncate">Select File</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="p-6 border-t border-[#f0f0f4] dark:border-[#2d2e4a] bg-white dark:bg-[#1a1b2e]">
+<div class="flex flex-col gap-3">
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 hover:bg-[#5255d4] transition-colors">
+<span class="truncate">Continue</span>
+</button>
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-transparent text-[#616289] dark:text-gray-400 text-base font-semibold leading-normal hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors">
+<span class="truncate">Skip this step</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Side: Live Preview (60%) -->
+<div class="hidden lg:flex flex-1 bg-background-light dark:bg-background-dark items-center justify-center p-12 overflow-y-auto">
+<!-- A4 Page Representation -->
+<div class="bg-white dark:bg-[#1e1f36] w-[595px] h-[842px] min-h-[842px] resume-preview-shadow rounded-sm flex flex-col origin-top scale-[0.85] xl:scale-100">
+<!-- Resume Header -->
+<div class="p-10 flex justify-between items-start border-b-2 border-primary/10">
+<div class="flex-1">
+<div class="h-8 w-48 bg-gray-200 dark:bg-[#2d2e4a] rounded mb-3"></div>
+<div class="h-4 w-32 bg-gray-100 dark:bg-[#252640] rounded mb-6"></div>
+<div class="flex gap-4">
+<div class="h-3 w-20 bg-gray-100 dark:bg-[#252640] rounded"></div>
+<div class="h-3 w-20 bg-gray-100 dark:bg-[#252640] rounded"></div>
+<div class="h-3 w-20 bg-gray-100 dark:bg-[#252640] rounded"></div>
+</div>
+</div>
+<!-- Avatar Placeholder in Preview -->
+<div class="w-32 h-32 rounded-lg bg-background-light dark:bg-background-dark border-2 border-dashed border-[#dbdbe6] dark:border-[#2d2e4a] flex flex-col items-center justify-center gap-2 text-[#dbdbe6] dark:text-[#2d2e4a]">
+<span class="material-symbols-outlined !text-4xl">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Photo</span>
+</div>
+</div>
+<!-- Resume Body Content Placeholders -->
+<div class="p-10 flex flex-col gap-10">
+<!-- Summary -->
+<div>
+<div class="h-4 w-24 bg-primary/20 rounded mb-4"></div>
+<div class="space-y-2">
+<div class="h-3 w-full bg-gray-50 dark:bg-[#252640] rounded"></div>
+<div class="h-3 w-full bg-gray-50 dark:bg-[#252640] rounded"></div>
+<div class="h-3 w-3/4 bg-gray-50 dark:bg-[#252640] rounded"></div>
+</div>
+</div>
+<!-- Experience -->
+<div>
+<div class="h-4 w-32 bg-primary/20 rounded mb-4"></div>
+<div class="space-y-6">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between">
+<div class="h-3 w-40 bg-gray-100 dark:bg-[#2d2e4a] rounded"></div>
+<div class="h-3 w-20 bg-gray-50 dark:bg-[#252640] rounded"></div>
+</div>
+<div class="h-2 w-full bg-gray-50 dark:bg-[#252640] rounded"></div>
+<div class="h-2 w-5/6 bg-gray-50 dark:bg-[#252640] rounded"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between">
+<div class="h-3 w-40 bg-gray-100 dark:bg-[#2d2e4a] rounded"></div>
+<div class="h-3 w-20 bg-gray-50 dark:bg-[#252640] rounded"></div>
+</div>
+<div class="h-2 w-full bg-gray-50 dark:bg-[#252640] rounded"></div>
+<div class="h-2 w-4/6 bg-gray-50 dark:bg-[#252640] rounded"></div>
+</div>
+</div>
+</div>
+<!-- Skills -->
+<div>
+<div class="h-4 w-20 bg-primary/20 rounded mb-4"></div>
+<div class="flex flex-wrap gap-2">
+<div class="h-6 w-16 bg-gray-50 dark:bg-[#252640] rounded-full"></div>
+<div class="h-6 w-20 bg-gray-50 dark:bg-[#252640] rounded-full"></div>
+<div class="h-6 w-14 bg-gray-50 dark:bg-[#252640] rounded-full"></div>
+<div class="h-6 w-24 bg-gray-50 dark:bg-[#252640] rounded-full"></div>
+<div class="h-6 w-16 bg-gray-50 dark:bg-[#252640] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Watermark -->
+<div class="mt-auto p-6 flex justify-center border-t border-gray-50 dark:border-[#2d2e4a]">
+<div class="h-2 w-24 bg-gray-50 dark:bg-[#252640] rounded"></div>
+</div>
+</div>
+<!-- Preview Label Overlay -->
+<div class="absolute top-8 right-8 bg-white/80 dark:bg-[#1a1b2e]/80 backdrop-blur-sm px-4 py-2 rounded-full border border-[#dbdbe6] dark:border-[#2d2e4a] flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined !text-sm text-primary">visibility</span>
+<span class="text-xs font-bold uppercase tracking-widest text-[#616289] dark:text-gray-400">Live Preview</span>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My CV - AI Insights List View</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6366F1",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .cv-card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-[#1e293b] dark:text-slate-200">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-4 md:px-10 py-3 bg-white dark:bg-slate-900 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-[#0d0d1c] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.1288 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">ResuMe</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="#">My CVs</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Templates</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="relative flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-800"></span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/20 p-0.5">
+<div class="w-full h-full rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBUV5CyuN8TM0k7jPgJ7qXoAAGJMwGx5I9Bahmy4-hLINLXyIXfImLDq0QgNNS0ZCpHucOy-mrofa4uoN41ZxE9Y9gCkwNRHp2MciPaZsuEGmqfOR_CI4o7TM_TA2TsKXhoJ5MGsNpi83eP9x3GgpkQkhtYx8x_9CSSMc7IfLML7Ic-a8KYYqf1DZNzSCR_hLpiTsk5UfqlmiTDJmNZzY4caNfbPgDcs-w50RKj6OTw6RwXzmOLCalxuNZaH5kwnOzq4Wacc0CUkr8");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex justify-center py-8">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] px-4 md:px-10 gap-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#0f172a] dark:text-white text-3xl font-black tracking-tight">My Resumes</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">Optimize your professional presence with AI-powered insights.</p>
+</div>
+<button class="flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-[#5850EC] text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all transform hover:scale-[1.02] active:scale-[0.98]">
+<span class="material-symbols-outlined">add</span>
+<span>Create New Resume</span>
+</button>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<aside class="w-full lg:w-64 shrink-0">
+<div class="flex flex-col gap-1 sticky top-24">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/20 transition-all group" href="#">
+<span class="material-symbols-outlined text-[22px] text-primary filled-icon">description</span>
+<p class="text-sm font-bold text-primary">All Resumes</p>
+<span class="ml-auto bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">4</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-all group" href="#">
+<span class="material-symbols-outlined text-[22px] text-slate-400 group-hover:text-primary">star</span>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">Favorites</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-all group" href="#">
+<span class="material-symbols-outlined text-[22px] text-slate-400 group-hover:text-primary">auto_awesome</span>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">AI Analysis</p>
+</a>
+<div class="h-px bg-slate-200 dark:bg-slate-800 my-4"></div>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-all group" href="#">
+<span class="material-symbols-outlined text-[22px] text-slate-400 group-hover:text-primary">archive</span>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">Archived</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-all group text-red-500" href="#">
+<span class="material-symbols-outlined text-[22px]">delete</span>
+<p class="text-sm font-medium">Trash</p>
+</a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col gap-6">
+<div class="cv-card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300 flex flex-col md:flex-row">
+<div class="p-6 md:w-2/5 flex gap-5 border-b md:border-b-0 md:border-r border-slate-100 dark:border-slate-800">
+<div class="w-24 h-32 shrink-0 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden relative group">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<div class="p-2 space-y-1">
+<div class="h-1.5 w-3/4 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+<div class="h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+<div class="h-1 w-5/6 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+<div class="pt-2 space-y-1">
+<div class="h-1 w-full bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+<div class="h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Senior Product Designer</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                            Updated 2 hours ago
+                                        </p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex-1 p-6 bg-slate-50/50 dark:bg-slate-800/30">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary filled-icon text-[20px]">auto_awesome</span>
+<span class="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">AI Score: 85/100</span>
+</div>
+<span class="px-2.5 py-1 bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400 text-[11px] font-bold rounded-full">Ready to Send</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">lightbulb</span>
+<p class="text-sm text-slate-600 dark:text-slate-400">Add <span class="font-bold text-slate-900 dark:text-white">2 more skills</span> (Figma, Prototyping) to match typical Lead Designer roles.</p>
+</div>
+<div class="flex items-start gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-amber-500 text-[18px] mt-0.5">trending_up</span>
+<p class="text-sm text-slate-600 dark:text-slate-400">Quantify your impact in the "Amazon" role using <span class="font-bold text-slate-900 dark:text-white">metric-driven results</span> (e.g., +20% conversion).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cv-card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300 flex flex-col md:flex-row opacity-90 hover:opacity-100">
+<div class="p-6 md:w-2/5 flex gap-5 border-b md:border-b-0 md:border-r border-slate-100 dark:border-slate-800">
+<div class="w-24 h-32 shrink-0 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 overflow-hidden p-2 space-y-1">
+<div class="h-1.5 w-1/2 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+<div class="h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+<div class="pt-4 space-y-1">
+<div class="h-1 w-full bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+<div class="h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+</div>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Full Stack Engineer</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                            Updated Oct 12, 2023
+                                        </p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex-1 p-6 bg-slate-50/50 dark:bg-slate-800/30">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary filled-icon text-[20px]">auto_awesome</span>
+<span class="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">AI Score: 62/100</span>
+</div>
+<span class="px-2.5 py-1 bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400 text-[11px] font-bold rounded-full">Improvements Needed</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-red-500 text-[18px] mt-0.5">report</span>
+<p class="text-sm text-slate-600 dark:text-slate-400">Summary is too generic. Rewrite to highlight <span class="font-bold text-slate-900 dark:text-white">Cloud Architecture</span> expertise.</p>
+</div>
+<div class="flex items-start gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">link</span>
+<p class="text-sm text-slate-600 dark:text-slate-400">Missing <span class="font-bold text-slate-900 dark:text-white">GitHub link</span>. Tech resumes with Portfolio links are 40% more likely to get responses.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cv-card-hover bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300 flex flex-col md:flex-row border-dashed border-2">
+<div class="p-6 md:w-full flex items-center justify-center gap-4 text-slate-400 dark:text-slate-600 py-12">
+<span class="material-symbols-outlined text-[32px]">post_add</span>
+<div class="text-center">
+<p class="font-bold">Start another draft</p>
+<p class="text-xs">Tailor your profile for a specific company or role</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800 py-10 px-10 bg-white dark:bg-slate-900">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="font-bold text-slate-900 dark:text-white">ResuMe</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">© 2024. Empowering your career with AI.</span>
+</div>
+<div class="flex gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Feedback</a>
+<a class="hover:text-primary transition-colors" href="#">Help</a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

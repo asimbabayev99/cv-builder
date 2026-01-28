@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Builder - Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .resume-shadow {
+            shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111118] dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-[#e2e8f0] dark:border-slate-800 px-6 lg:px-10 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">auto_awesome</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Resume Builder</h2>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">Contact</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">Experience</a>
+<a class="text-sm font-medium text-primary border-b-2 border-primary pb-1" href="#">Education</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary" href="#">Skills</a>
+</nav>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-700 hidden md:block"></div>
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-opacity-90 transition-all">
+                Save &amp; Exit
+            </button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-8 px-6 py-8">
+<!-- Left Panel: Form Section -->
+<div class="flex-1 max-w-3xl">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6">
+<a class="text-slate-500 text-sm font-medium" href="#">Resume</a>
+<span class="text-slate-400 material-symbols-outlined text-xs">chevron_right</span>
+<a class="text-slate-500 text-sm font-medium" href="#">Experience</a>
+<span class="text-slate-400 material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary text-sm font-semibold">Education</span>
+</nav>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl font-black tracking-tight">Education</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">Add your academic background and certifications.</p>
+</div>
+</div>
+<!-- Education List -->
+<div class="space-y-4">
+<!-- Collapsed Card (Reorderable) -->
+<div class="group flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/40 transition-all cursor-move">
+<div class="text-slate-300 dark:text-slate-700">
+<span class="material-symbols-outlined">drag_indicator</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white truncate">Stanford University</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate">Bachelor of Science in Computer Science</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm text-slate-400 hidden sm:block">2018 - 2022</span>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Expanded Card (Active) -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border-l-4 border-l-primary border-t border-r border-b border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden transition-all">
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<h3 class="text-lg font-bold">Edit Education Entry</h3>
+<button class="text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Institution -->
+<div class="col-span-2">
+<label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Institution</label>
+<input class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="Stanford University"/>
+</div>
+<!-- Degree -->
+<div>
+<label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Degree</label>
+<input class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="Bachelor of Science"/>
+</div>
+<!-- Field of Study -->
+<div>
+<label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Field of Study</label>
+<input class="w-full px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" type="text" value="Computer Science"/>
+</div>
+<!-- Dates -->
+<div class="col-span-2">
+<div class="flex flex-col md:flex-row md:items-center gap-4">
+<div class="flex-1 grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Start Date</label>
+<input class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800" type="month" value="2018-09"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">End Date</label>
+<input class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800" type="month" value="2022-05"/>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-4 md:mt-6">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" id="current" type="checkbox"/>
+<label class="text-sm font-medium text-slate-600 dark:text-slate-400" for="current">Currently studying</label>
+</div>
+</div>
+</div>
+<!-- Description with AI Suggestions -->
+<div class="col-span-2 relative">
+<div class="flex justify-between items-center mb-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Description</label>
+<div class="relative group/ai">
+<button class="flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                                            AI Suggestion
+                                        </button>
+<!-- AI Dropdown Simulation -->
+<div class="hidden group-hover/ai:block absolute right-0 top-full mt-2 w-48 bg-white dark:bg-slate-800 shadow-xl border border-slate-100 dark:border-slate-700 rounded-lg p-1 z-10">
+<button class="w-full text-left px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 rounded-md flex items-center gap-2">
+<span class="material-symbols-outlined text-base">format_list_bulleted</span>
+                                                Suggest achievements
+                                            </button>
+<button class="w-full text-left px-3 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700 rounded-md flex items-center gap-2">
+<span class="material-symbols-outlined text-base">magic_button</span>
+                                                Improve wording
+                                            </button>
+</div>
+</div>
+</div>
+<textarea class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none" placeholder="Mention your GPA or relevant coursework..." rows="5">GPA 3.9/4.0. Relevant coursework: Data Structures, Machine Learning, Operating Systems. Recipient of the Academic Excellence Award in 2021.</textarea>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-3">
+<button class="px-6 py-2 text-sm font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">Cancel</button>
+<button class="px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all">Save Changes</button>
+</div>
+</div>
+</div>
+<!-- Add Education Button -->
+<button class="w-full py-6 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-400 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all group">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">add_circle</span>
+<span class="font-bold text-sm">Add Education Entry</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<div class="mt-12 flex justify-between items-center">
+<button class="flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+                    Back
+                </button>
+<button class="flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl hover:shadow-primary/30 transition-all">
+                    Continue to Skills
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Panel: Resume Preview (Sticky) -->
+<div class="hidden lg:block w-[420px]">
+<div class="sticky top-24">
+<div class="flex items-center justify-between mb-4 px-2">
+<h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest">Live Preview</h4>
+<div class="flex items-center gap-2">
+<button class="p-1.5 bg-white dark:bg-slate-800 rounded-lg shadow-sm text-slate-400">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+</button>
+<button class="p-1.5 bg-white dark:bg-slate-800 rounded-lg shadow-sm text-slate-400">
+<span class="material-symbols-outlined text-sm">file_download</span>
+</button>
+</div>
+</div>
+<!-- A4 Simulation -->
+<div class="aspect-[1/1.414] w-full bg-white shadow-2xl rounded-sm p-8 overflow-hidden relative">
+<!-- Resume Content Mockup -->
+<div class="border-b-2 border-primary pb-4 mb-6">
+<h2 class="text-xl font-black text-slate-900">Alex Thompson</h2>
+<p class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">Software Engineer &amp; UI Designer</p>
+</div>
+<!-- Experience Section (Collapsed) -->
+<div class="mb-6">
+<h3 class="text-[10px] font-bold text-primary uppercase tracking-widest mb-2 border-b border-slate-100 pb-1">Experience</h3>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-[10px] font-bold">
+<span>Senior Developer @ TechCorp</span>
+<span class="text-slate-400">2022 - Present</span>
+</div>
+<div class="w-full h-1 bg-slate-50 rounded mt-1"></div>
+</div>
+</div>
+</div>
+<!-- Education Section (Active Highlight) -->
+<div class="mb-6 relative">
+<!-- Pulse effect to show real-time update -->
+<div class="absolute -inset-2 bg-primary/5 rounded border border-primary/10 animate-pulse"></div>
+<h3 class="text-[10px] font-bold text-primary uppercase tracking-widest mb-2 border-b border-slate-100 pb-1 relative">Education</h3>
+<div class="space-y-4 relative">
+<div>
+<div class="flex justify-between items-baseline">
+<h4 class="text-[11px] font-bold text-slate-900">Stanford University</h4>
+<span class="text-[8px] text-slate-400 font-medium">2018 - 2022</span>
+</div>
+<p class="text-[9px] text-slate-700 font-semibold italic">Bachelor of Science in Computer Science</p>
+<p class="text-[8px] text-slate-500 mt-1 leading-relaxed">GPA 3.9/4.0. Relevant coursework: Data Structures, Machine Learning, Operating Systems. Recipient of the Academic Excellence Award in 2021.</p>
+</div>
+<div>
+<div class="flex justify-between items-baseline opacity-50">
+<h4 class="text-[11px] font-bold text-slate-900">MIT OpenCourseWare</h4>
+<span class="text-[8px] text-slate-400 font-medium">2017</span>
+</div>
+<p class="text-[9px] text-slate-700 font-semibold italic opacity-50">Algorithms Certification</p>
+</div>
+</div>
+</div>
+<!-- Skills Mockup -->
+<div>
+<h3 class="text-[10px] font-bold text-primary uppercase tracking-widest mb-2 border-b border-slate-100 pb-1">Skills</h3>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 bg-slate-100 rounded-full text-[8px] font-bold text-slate-600">React.js</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded-full text-[8px] font-bold text-slate-600">TypeScript</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded-full text-[8px] font-bold text-slate-600">Tailwind CSS</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded-full text-[8px] font-bold text-slate-600">Python</span>
+</div>
+</div>
+<!-- Decorative watermark or page footer -->
+<div class="absolute bottom-4 left-8 right-8 flex justify-between items-center text-[7px] text-slate-300">
+<span>Powered by Resume Builder AI</span>
+<span>Page 1 of 1</span>
+</div>
+</div>
+<p class="text-center text-xs text-slate-400 mt-4 italic flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">sync</span>
+                    Syncing changes in real-time...
+                </p>
+</div>
+</div>
+</main>
+<!-- Success AI Toast (Notification style) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 z-[60] border border-slate-700">
+<div class="size-6 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+<span class="text-sm font-medium">AI successfully improved your description</span>
+</div>
+</body></html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Resume Builder AI - Personal Information</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .a4-preview {
+            aspect-ratio: 1 / 1.414;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Top Navigation -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-12 py-3">
+        <div class="max-w-[1440px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-1.5 rounded-lg text-white">
+                    <span class="material-symbols-outlined text-2xl">auto_awesome</span>
+                </div>
+                <h2 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">Resume Builder AI</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors"
+                    href="#">Dashboard</a>
+                <a class="text-slate-900 dark:text-white text-sm font-semibold border-b-2 border-primary py-1"
+                    href="#">Editor</a>
+                <a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors"
+                    href="#">Templates</a>
+                <a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors"
+                    href="#">Job Match</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button
+                    class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <div
+                    class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden ring-2 ring-white dark:ring-slate-800">
+                    <img alt="User Profile Avatar" data-alt="User profile picture placeholder"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0l61IhOKV2pC6Esq47eWKTi5_2yV3I2PTpZOnq4_V6knmLjNxELSeJX_jm5u2Y1NtNW7Kq9Rkd0BWPVcItD37QY2PSiG7LkBhdxz-uQa8WpVr9zF-OFpfHtsLQLQcNl9wtRuvdOPxXfqoYBx3uDVIhg3QsotaD7fZcwvFNKlk5KfNhZLHpn_UszCpsV6tC6opjXRFutbRcdqvH757bKWfS4zQUS2cIwntXqNoLRi7aGGL33kGA0BWOEnxgtU4NHXtdurHxzJunKg" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1440px] mx-auto flex flex-col lg:flex-row h-[calc(100vh-65px)]">
+        <!-- Left: Form Editor Section -->
+        <section class="flex-1 overflow-y-auto px-6 lg:px-12 py-8 scrollbar-hide">
+            <!-- Progress Tracker -->
+            <div class="mb-8">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary">Step 2 of 5</span>
+                    <span class="text-xs font-medium text-slate-500">40% Complete</span>
+                </div>
+                <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-primary h-full w-[40%] rounded-full"></div>
+                </div>
+            </div>
+            <div class="mb-10">
+                <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Personal Information</h1>
+                <p class="text-slate-500 dark:text-slate-400">Introduce yourself to employers and provide contact
+                    details.</p>
+            </div>
+            <form class="space-y-8">
+                <!-- Two-Column Grid for Personal Details -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">First Name</label>
+                        <input
+                            class="w-full h-12 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                            placeholder="e.g. Alexander" type="text" value="Alexander" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Last Name</label>
+                        <input
+                            class="w-full h-12 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                            placeholder="e.g. Bennett" type="text" value="Bennett" />
+                    </div>
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Professional
+                            Title</label>
+                        <input
+                            class="w-full h-12 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                            placeholder="e.g. Senior Software Engineer" type="text" value="Senior Product Designer" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">mail</span>
+                            <input
+                                class="w-full h-12 pl-11 pr-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                placeholder="alex.b@example.com" type="email" />
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Phone Number</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">call</span>
+                            <input
+                                class="w-full h-12 pl-11 pr-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                placeholder="+1 (555) 000-0000" type="tel" />
+                        </div>
+                    </div>
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Location</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">location_on</span>
+                            <input
+                                class="w-full h-12 pl-11 pr-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                placeholder="San Francisco, CA" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <!-- AI Enhanced Summary Section -->
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Professional
+                            Summary</label>
+                        <button
+                            class="flex items-center gap-2 px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary text-xs font-bold rounded-full transition-colors border border-primary/20"
+                            type="button">
+                            <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                            GENERATE SUMMARY
+                        </button>
+                    </div>
+                    <div
+                        class="relative border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-900 shadow-sm">
+                        <div
+                            class="flex items-center gap-2 px-3 py-2 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+                            <button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                                type="button">
+                                <span class="material-symbols-outlined text-xl">format_bold</span>
+                            </button>
+                            <button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                                type="button">
+                                <span class="material-symbols-outlined text-xl">format_italic</span>
+                            </button>
+                            <button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                                type="button">
+                                <span class="material-symbols-outlined text-xl">format_list_bulleted</span>
+                            </button>
+                            <div class="h-4 w-px bg-slate-300 dark:bg-slate-700 mx-1"></div>
+                            <button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                                type="button">
+                                <span class="material-symbols-outlined text-xl">undo</span>
+                            </button>
+                        </div>
+                        <textarea
+                            class="w-full p-4 resize-none border-none focus:ring-0 bg-transparent text-slate-700 dark:text-slate-300 text-sm leading-relaxed"
+                            placeholder="Briefly describe your professional background and key achievements..."
+                            rows="6"></textarea>
+                    </div>
+                </div>
+                <!-- Footer Navigation Buttons -->
+                <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                    <button
+                        class="px-6 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                        type="button">
+                        Back
+                    </button>
+                    <button
+                        class="px-8 py-2.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-lg shadow-primary/20 transition-all flex items-center gap-2"
+                        type="button">
+                        Continue to Experience
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+        <!-- Right: Live A4 Preview Section -->
+        <aside
+            class="hidden xl:flex w-[500px] bg-slate-100 dark:bg-slate-900/50 border-l border-slate-200 dark:border-slate-800 flex-col items-center py-12 px-8 overflow-y-auto">
+            <div class="sticky top-12 w-full">
+                <div class="flex items-center justify-between mb-6 w-full max-w-[360px] mx-auto">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Live Preview</h3>
+                    <div class="flex items-center gap-2">
+                        <button class="p-1.5 bg-white dark:bg-slate-800 rounded-md shadow-sm text-slate-500">
+                            <span class="material-symbols-outlined text-lg">zoom_in</span>
+                        </button>
+                        <button class="p-1.5 bg-white dark:bg-slate-800 rounded-md shadow-sm text-slate-500">
+                            <span class="material-symbols-outlined text-lg">print</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Miniature A4 Paper -->
+                <div
+                    class="a4-preview w-full max-w-[400px] mx-auto bg-white p-8 overflow-hidden flex flex-col gap-6 text-[8px]">
+                    <!-- Header Section of Resume -->
+                    <div class="border-b-2 border-slate-900 pb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h1
+                                    class="text-2xl font-bold text-slate-900 tracking-tight leading-none mb-1 uppercase">
+                                    Alexander Bennett</h1>
+                                <p class="text-[10px] text-primary font-medium uppercase tracking-wider">Senior Product
+                                    Designer</p>
+                            </div>
+                            <div class="text-right text-slate-500 space-y-0.5">
+                                <p class="flex items-center justify-end gap-1"><span
+                                        class="material-symbols-outlined text-[8px]">mail</span> alex.b@example.com</p>
+                                <p class="flex items-center justify-end gap-1"><span
+                                        class="material-symbols-outlined text-[8px]">call</span> +1 (555) 000-0000</p>
+                                <p class="flex items-center justify-end gap-1"><span
+                                        class="material-symbols-outlined text-[8px]">location_on</span> San Francisco,
+                                    CA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Summary Section -->
+                    <div class="space-y-1.5">
+                        <h2
+                            class="text-[9px] font-bold text-slate-900 uppercase border-b border-slate-100 pb-0.5 tracking-widest">
+                            Professional Summary</h2>
+                        <p class="text-slate-600 leading-normal text-justify italic">
+                            Dynamic and results-oriented Professional with over 8 years of experience in high-growth
+                            technology environments. Proven track record of delivering user-centric solutions that
+                            bridge the gap between business objectives and user needs. Expertise in end-to-end product
+                            development, from research to execution.
+                        </p>
+                    </div>
+                    <!-- Experience (Placeholder) -->
+                    <div class="space-y-2">
+                        <h2
+                            class="text-[9px] font-bold text-slate-900 uppercase border-b border-slate-100 pb-0.5 tracking-widest">
+                            Experience</h2>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between font-bold">
+                                <span>Design Lead | TechFlow Inc.</span>
+                                <span>2020 - Present</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-sm"></div>
+                            <div class="w-5/6 bg-slate-100 h-1.5 rounded-sm"></div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between font-bold">
+                                <span>UI Designer | Creative Sphere</span>
+                                <span>2017 - 2020</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-sm"></div>
+                            <div class="w-2/3 bg-slate-100 h-1.5 rounded-sm"></div>
+                        </div>
+                    </div>
+                    <!-- Education (Placeholder) -->
+                    <div class="space-y-2">
+                        <h2
+                            class="text-[9px] font-bold text-slate-900 uppercase border-b border-slate-100 pb-0.5 tracking-widest">
+                            Education</h2>
+                        <div class="flex justify-between">
+                            <span class="font-bold">B.A. Graphic Design | University of California</span>
+                            <span>2013 - 2017</span>
+                        </div>
+                    </div>
+                    <!-- Skills (Placeholder Tags) -->
+                    <div class="space-y-2">
+                        <h2
+                            class="text-[9px] font-bold text-slate-900 uppercase border-b border-slate-100 pb-0.5 tracking-widest">
+                            Skills</h2>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-1.5 py-0.5 bg-slate-100 rounded text-[7px] text-slate-600">Product
+                                Strategy</span>
+                            <span class="px-1.5 py-0.5 bg-slate-100 rounded text-[7px] text-slate-600">Figma</span>
+                            <span
+                                class="px-1.5 py-0.5 bg-slate-100 rounded text-[7px] text-slate-600">Prototyping</span>
+                            <span class="px-1.5 py-0.5 bg-slate-100 rounded text-[7px] text-slate-600">User
+                                Research</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center mt-6 text-[10px] text-slate-400 font-medium">Auto-saving to cloud...</p>
+            </div>
+        </aside>
+    </main>
+    <!-- Mobile Navigation Bar (Shown on smaller screens) -->
+    <div
+        class="xl:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex gap-3 z-50">
+        <button
+            class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-3 rounded-lg">Preview</button>
+        <button class="flex-[2] bg-primary text-white font-bold py-3 rounded-lg">Continue</button>
+    </div>
+</body>
+
+</html>

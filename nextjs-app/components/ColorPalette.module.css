@@ -1,3 +1,4 @@
+/* Color Palette */
 .colorPaletteSection {
   flex: 1;
 }
@@ -11,29 +12,27 @@
 
 .colorPalette {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .colorGroup {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 4px;
+  margin-bottom: 10px;
 }
 
 .colorGroupMain {
   display: flex;
-  justify-content: center;
+  gap: 4px;
 }
 
 .colorOption {
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
   cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease, transform 0.2s ease;
   position: relative;
 }
 
@@ -42,24 +41,23 @@
 }
 
 .colorOption.active {
-  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #333;
+  border-color: #333;
 }
 
 .mainColor {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .subColor {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
 }
 
 .subColors {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 4px;
+  padding-left: 6px;
 }
 
 .whiteColor {

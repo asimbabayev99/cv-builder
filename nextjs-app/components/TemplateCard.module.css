@@ -1,8 +1,8 @@
+/* Template Card */
 .cardWrap {
   position: relative;
   animation: slideIn 0.3s ease forwards;
   opacity: 0;
-  width: fit-content;
 }
 
 @keyframes slideIn {
@@ -18,26 +18,39 @@
 
 .skinsCardContainer {
   background: #fff;
+  border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  width: fit-content;
 }
 
 .skinsCardContainer:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .card {
   position: relative;
 }
 
+/* Thumbnail scaling for grid cards */
 .templateThumbnail {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
   background: #fff;
+  padding: 10px;
 }
 
+.templateThumbnail > div {
+  transform-origin: top left;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Preview Button Overlay */
 .previewOverlay {
   position: absolute;
   top: 0;

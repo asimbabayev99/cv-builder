@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills - Quick Add &amp; Tag Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .resume-preview {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#111118] dark:text-white">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dbdbe6] dark:border-[#2d2e42] bg-white dark:bg-[#1a1b2e] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-[#111118] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">ResumePro AI</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">My Resumes</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Templates</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-[#dbdbe6] dark:border-[#2d2e42]" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADaBq7JjRErFJGMbPdibxmU6xdk0l144sOCMf5ZWpuS3eKyQqjYvlgUbrHrOswDrQsGS67OM5Ubyn5vnRk6wvLG_HHgBOH8IoP50y9UlWdspVClhTtFUoe8GqFAY_i1lP8tqQAV9Kx9964cL9ix6oeye6X4VcV-XS4edpG8ecqlfZ_jzDXd0x8mzpblWFpLBmnDUuoUJwOxJi_AshpFz5wq0FFJH7NGduNg-615Yp3OIKvNBX4LLFxhvx7ltGw2BwZoGmKB4ruS6k");'></div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 px-6 lg:px-10 py-8">
+<!-- Left Workspace -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 text-sm font-medium">
+<a class="text-[#616289] dark:text-[#9ea0d1] hover:text-primary transition-colors" href="#">Resume Builder</a>
+<span class="text-[#616289] dark:text-[#9ea0d1]">/</span>
+<span class="text-[#111118] dark:text-white">Step 5: Skills</span>
+</nav>
+<!-- Heading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-[#111118] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">Highlight Your Expertise</h1>
+<p class="text-[#616289] dark:text-[#9ea0d1] text-base font-normal leading-normal">
+                    Add relevant skills to your resume. Use AI to find industry-specific keywords that pass ATS filters.
+                </p>
+</div>
+<!-- AI Suggestion Prompt -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-5 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+<div>
+<p class="font-bold text-[#111118] dark:text-white">Get Smarter Recommendations</p>
+<p class="text-sm text-[#616289] dark:text-[#9ea0d1]">We've analyzed your "Senior Product Designer" role.</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg font-bold flex items-center gap-2 transition-all">
+<span>Suggest Skills</span>
+<span class="material-symbols-outlined text-[20px]">colors_spark</span>
+</button>
+</div>
+<!-- Search & Input Area -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-[#111118] dark:text-white text-base font-bold leading-normal">Quick Add Skills</label>
+<div class="relative flex w-full items-stretch shadow-sm">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-[#616289]">search</span>
+<input class="flex w-full min-w-0 flex-1 rounded-lg text-[#111118] dark:text-white border border-[#dbdbe6] dark:border-[#2d2e42] bg-white dark:bg-[#1a1b2e] h-14 pl-12 pr-4 text-base focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="e.g., Project Management, React, French..." value=""/>
+<button class="ml-2 bg-primary hover:bg-primary/90 text-white px-6 rounded-lg font-bold flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Autocomplete Preview -->
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="text-xs text-[#616289] dark:text-[#9ea0d1] uppercase font-bold tracking-wider">Suggested:</span>
+<button class="text-xs font-semibold px-2 py-1 rounded bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] hover:border-primary hover:text-primary transition-colors">UI Design</button>
+<button class="text-xs font-semibold px-2 py-1 rounded bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] hover:border-primary hover:text-primary transition-colors">Figma</button>
+<button class="text-xs font-semibold px-2 py-1 rounded bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] hover:border-primary hover:text-primary transition-colors">User Research</button>
+</div>
+</div>
+</div>
+<!-- Current Skills Sections -->
+<div class="space-y-6">
+<div>
+<h3 class="text-[#111118] dark:text-white text-lg font-bold leading-tight flex items-center gap-2 pb-4">
+                        Technical Skills
+                        <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">4</span>
+</h3>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-white dark:bg-[#1a1b2e] border border-primary/40 px-3 py-2 rounded-lg group hover:border-primary transition-all">
+<span class="text-sm font-medium">React.js</span>
+<button class="text-[#616289] hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-[#1a1b2e] border border-primary/40 px-3 py-2 rounded-lg group hover:border-primary transition-all">
+<span class="text-sm font-medium">Tailwind CSS</span>
+<button class="text-[#616289] hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-[#1a1b2e] border border-primary/40 px-3 py-2 rounded-lg group hover:border-primary transition-all">
+<span class="text-sm font-medium">TypeScript</span>
+<button class="text-[#616289] hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-[#1a1b2e] border border-primary/40 px-3 py-2 rounded-lg group hover:border-primary transition-all">
+<span class="text-sm font-medium">GraphQL</span>
+<button class="text-[#616289] hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-[#111118] dark:text-white text-lg font-bold leading-tight flex items-center gap-2 pb-4">
+                        Soft Skills
+                        <span class="bg-gray-100 dark:bg-gray-800 text-gray-500 text-xs px-2 py-0.5 rounded-full">2</span>
+</h3>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] px-3 py-2 rounded-lg group hover:border-primary transition-all">
+<span class="text-sm font-medium">Agile Methodology</span>
+<button class="text-[#616289] hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] px-3 py-2 rounded-lg group hover:border-primary transition-all">
+<span class="text-sm font-medium">Team Leadership</span>
+<button class="text-[#616289] hover:text-red-500 flex items-center"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Navigation -->
+<div class="flex items-center justify-between pt-10 mt-auto border-t border-[#dbdbe6] dark:border-[#2d2e42]">
+<button class="flex items-center gap-2 text-sm font-bold text-[#111118] dark:text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                    Previous Step
+                </button>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-lg font-bold border border-[#dbdbe6] dark:border-[#2d2e42] hover:bg-white dark:hover:bg-[#1a1b2e] transition-all">Save Draft</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all">Next: Summary</button>
+</div>
+</div>
+</div>
+<!-- Right Preview Panel -->
+<div class="lg:col-span-5 relative">
+<div class="sticky top-24 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<h4 class="text-sm font-bold uppercase tracking-widest text-[#616289] dark:text-[#9ea0d1]">Live Preview</h4>
+<div class="flex items-center gap-2">
+<button class="size-8 rounded-full bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] flex items-center justify-center text-[#616289] hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+<button class="size-8 rounded-full bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] flex items-center justify-center text-[#616289] hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Resume A4 Page -->
+<div class="resume-preview bg-white dark:bg-slate-50 w-full aspect-[1/1.41] rounded-lg p-10 text-[#333] overflow-hidden">
+<!-- Fake Header -->
+<div class="border-b-2 border-primary pb-4 mb-6">
+<h2 class="text-2xl font-bold uppercase tracking-tight text-gray-900">Alex Johnston</h2>
+<p class="text-primary font-bold text-sm tracking-widest">SENIOR PRODUCT DESIGNER</p>
+</div>
+<!-- Fake Experience -->
+<div class="mb-6">
+<h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100 pb-1 mb-3">Professional Experience</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-[11px] font-bold">
+<span>TechFlow Solutions</span>
+<span>2020 - Present</span>
+</div>
+<p class="text-[10px] text-gray-600 leading-relaxed mt-1">Leading the design system team and shipping high-impact features for over 1M users.</p>
+</div>
+</div>
+</div>
+<!-- Skills Preview Section -->
+<div class="mb-6">
+<h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100 pb-1 mb-3">Key Expertise</h3>
+<div class="grid grid-cols-2 gap-x-8 gap-y-2">
+<ul class="text-[10px] space-y-1 list-disc list-inside text-gray-800">
+<li>React.js</li>
+<li>Tailwind CSS</li>
+<li>TypeScript</li>
+<li>GraphQL</li>
+</ul>
+<ul class="text-[10px] space-y-1 list-disc list-inside text-gray-800">
+<li>Agile Methodology</li>
+<li>Team Leadership</li>
+<li class="text-primary/40 italic">New Skill...</li>
+</ul>
+</div>
+</div>
+<!-- Fake Content Fillers -->
+<div class="opacity-30">
+<h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100 pb-1 mb-3">Education</h3>
+<div class="text-[10px] space-y-1">
+<p class="font-bold">B.Sc Computer Science</p>
+<p>University of Design &amp; Tech</p>
+</div>
+</div>
+</div>
+<!-- ATS Tip -->
+<div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-900/50 p-4 rounded-xl flex gap-3">
+<span class="material-symbols-outlined text-amber-500">info</span>
+<p class="text-xs text-amber-800 dark:text-amber-200">
+<span class="font-bold">ATS Pro Tip:</span> Including "React.js" and "TypeScript" increases your match rate for this role by 35% based on current job listings.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

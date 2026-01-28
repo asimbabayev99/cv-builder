@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import AuthProvider from '@/components/AuthProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Choose Template - CV Builder',
-  description: 'Pick from our collection of professionally designed CV templates',
+  title: 'ResumePro - Build a Professional Resume in Minutes',
+  description: 'Our AI-powered resume builder helps you create a job-winning CV that passes ATS filters and impresses recruiters instantly.',
 };
 
 export default function RootLayout({
@@ -12,16 +13,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <head>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css?family=Allura|Dancing+Script|Dynalight|Mrs+Saint+Delafield|Fira+Sans|PT+Sans|Saira|Blinker|PT+Sans+Caption|Bodoni+MT|Oswald|Source+Sans+Pro"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/css/all.min.css" />
-        <link rel="stylesheet" href="/css/main-1.0.0.380.css" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css?family=Allura|Dancing+Script|Dynalight|Mrs+Saint+Delafield|Fira+Sans|PT+Sans|Saira|Blinker|PT+Sans+Caption|Bodoni+MT|Oswald|Source+Sans+Pro&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body>{children}</body>
+      <body className="font-display">
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }

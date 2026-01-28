@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Builder - Final Review &amp; Export</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111118] dark:text-white min-h-screen">
+<div class="flex flex-col h-screen">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dbdbe6] dark:border-[#2d2e42] bg-white dark:bg-[#1a1b2e] px-8 py-3 shrink-0">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111118] dark:text-white text-lg font-bold leading-tight tracking-tight">ResumePro</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex items-center gap-2 text-[#616289] dark:text-gray-400 text-sm">
+<span class="material-symbols-outlined text-green-500 text-lg fill-icon">cloud_done</span>
+<span>Auto-saved just now</span>
+</div>
+<div class="h-6 w-px bg-[#dbdbe6] dark:bg-[#2d2e42] mx-2"></div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f0f4] dark:bg-[#2d2e42] text-[#111118] dark:text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#f0f0f4] dark:bg-[#2d2e42] text-[#111118] dark:text-white">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-[#dbdbe6]" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqgk0CkPvj8U0nZaZndpuQLfDRnW0sRdq20F6yk7-2h9a-5nVDamT--mlXzQOfBYWmgXTqwS-bJNXO3qW9UQTHJrae55ZAnzhs7jMBp_Dbz3pSECsTa7cbdv8UHmNbYoiHTn2fkSTL6vEI8ksqfa_EvQ0FXQoR8x_VZ9RA05vfTTaw5hw-u8hlCtO4OpV6MX3gMG_2y866u8l9UHw71wqAVru5f5slbTL6Arjlp61FMWePRZs1OAC6KzULTBo8rSxxso9-XuQ5giU");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Left Side Navigation -->
+<aside class="w-64 border-r border-[#dbdbe6] dark:border-[#2d2e42] bg-white dark:bg-[#1a1b2e] flex flex-col justify-between shrink-0">
+<div class="p-6 overflow-y-auto">
+<div class="mb-8">
+<h1 class="text-[#111118] dark:text-white text-base font-bold mb-1">Resume Progress</h1>
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-[#f0f0f4] dark:bg-[#2d2e42] rounded-full overflow-hidden">
+<div class="w-full h-full bg-primary"></div>
+</div>
+<span class="text-[#616289] dark:text-gray-400 text-xs font-medium">100%</span>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 text-[#111118] dark:text-white hover:bg-[#f0f0f4] dark:hover:bg-[#2d2e42] rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-green-500 fill-icon">check_circle</span>
+<span class="text-sm font-medium">Contact Info</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 text-[#111118] dark:text-white hover:bg-[#f0f0f4] dark:hover:bg-[#2d2e42] rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-green-500 fill-icon">check_circle</span>
+<span class="text-sm font-medium">Work Experience</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 text-[#111118] dark:text-white hover:bg-[#f0f0f4] dark:hover:bg-[#2d2e42] rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-green-500 fill-icon">check_circle</span>
+<span class="text-sm font-medium">Education</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 text-[#111118] dark:text-white hover:bg-[#f0f0f4] dark:hover:bg-[#2d2e42] rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-green-500 fill-icon">check_circle</span>
+<span class="text-sm font-medium">Skills</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary dark:text-primary rounded-lg cursor-default border border-primary/20">
+<span class="material-symbols-outlined fill-icon">check_circle</span>
+<span class="text-sm font-bold">Custom Fields</span>
+</div>
+</nav>
+</div>
+<div class="p-6 border-t border-[#dbdbe6] dark:border-[#2d2e42]">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg h-11 bg-primary text-white text-sm font-bold tracking-tight hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Finalize Resume</span>
+</button>
+</div>
+</aside>
+<!-- Main Workspace Container -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Center: Action & Success States -->
+<div class="flex-1 overflow-y-auto p-10 bg-background-light dark:bg-background-dark">
+<div class="max-w-2xl mx-auto space-y-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm">
+<a class="text-[#616289] dark:text-gray-400 hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="text-[#616289] dark:text-gray-400">/</span>
+<span class="text-[#111118] dark:text-white font-medium">Final Review</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-col gap-3">
+<p class="text-[#111118] dark:text-white text-4xl font-black leading-tight tracking-tight">Your resume is ready!</p>
+<p class="text-[#616289] dark:text-gray-400 text-lg font-normal leading-relaxed">Everything looks great. Review your final document and download it in your preferred format.</p>
+</div>
+<!-- Action Panel / Success Card -->
+<div class="rounded-xl border border-[#dbdbe6] dark:border-[#2d2e42] bg-white dark:bg-[#1a1b2e] p-8 shadow-sm">
+<div class="flex flex-col items-center text-center gap-6">
+<div class="size-20 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-4xl fill-icon">verified</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-2xl font-bold text-[#111118] dark:text-white">All fields completed</h3>
+<p class="text-[#616289] dark:text-gray-400">Great job! Your professional resume is now polished and complete.</p>
+</div>
+<div class="w-full pt-4 space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 h-12 rounded-lg bg-primary text-white font-bold hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                                            Download PDF
+                                        </button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined">description</span>
+                                            Download DOCX
+                                        </button>
+</div>
+<button class="w-full text-sm font-medium text-[#616289] dark:text-gray-400 hover:text-primary underline underline-offset-4">
+                                        Need to make a quick change? Go back to Edit
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Export Options Detail -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 rounded-lg bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] flex items-start gap-4">
+<div class="p-2 rounded-lg bg-[#f0f0f4] dark:bg-[#2d2e42] text-primary">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div>
+<p class="font-bold text-sm">Share Link</p>
+<p class="text-xs text-[#616289] dark:text-gray-400">Create a public URL to share.</p>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-white dark:bg-[#1a1b2e] border border-[#dbdbe6] dark:border-[#2d2e42] flex items-start gap-4">
+<div class="p-2 rounded-lg bg-[#f0f0f4] dark:bg-[#2d2e42] text-primary">
+<span class="material-symbols-outlined">print</span>
+</div>
+<div>
+<p class="font-bold text-sm">Print Version</p>
+<p class="text-xs text-[#616289] dark:text-gray-400">Optimized for physical printing.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Large Preview Pane -->
+<div class="w-[500px] border-l border-[#dbdbe6] dark:border-[#2d2e42] bg-gray-200 dark:bg-[#111118] p-8 flex flex-col items-center relative overflow-hidden shrink-0">
+<div class="w-full flex justify-between items-center mb-6">
+<span class="text-xs font-bold text-[#616289] uppercase tracking-widest">Live Preview</span>
+<button class="text-[#616289] dark:text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+<!-- Resume Document Preview -->
+<div class="w-full aspect-[1/1.414] bg-white shadow-2xl rounded-sm p-10 flex flex-col gap-6 scale-95 origin-top transition-transform cursor-zoom-in">
+<!-- Preview Content Mock -->
+<div class="flex justify-between items-start">
+<div class="space-y-2">
+<div class="h-6 w-32 bg-gray-200 rounded"></div>
+<div class="h-4 w-48 bg-gray-100 rounded"></div>
+</div>
+<div class="size-12 bg-gray-200 rounded-full"></div>
+</div>
+<div class="h-px w-full bg-gray-100"></div>
+<div class="space-y-4">
+<div class="h-4 w-24 bg-primary/20 rounded"></div>
+<div class="space-y-2">
+<div class="h-3 w-full bg-gray-50 rounded"></div>
+<div class="h-3 w-full bg-gray-50 rounded"></div>
+<div class="h-3 w-2/3 bg-gray-50 rounded"></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="h-4 w-32 bg-primary/20 rounded"></div>
+<div class="flex flex-wrap gap-2">
+<div class="h-6 w-16 bg-gray-100 rounded-full"></div>
+<div class="h-6 w-20 bg-gray-100 rounded-full"></div>
+<div class="h-6 w-14 bg-gray-100 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Floating Preview Controls -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 px-4 py-2 bg-[#1a1b2e] dark:bg-white text-white dark:text-[#111118] rounded-full shadow-xl">
+<div class="flex items-center gap-1 border-r border-gray-700 dark:border-gray-200 pr-3">
+<button class="hover:text-primary">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<span class="text-sm font-bold w-12 text-center">85%</span>
+<button class="hover:text-primary">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<span class="text-xs font-medium">Page 1 of 1</span>
+<button class="opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

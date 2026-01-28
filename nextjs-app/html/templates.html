@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Templates Gallery - Standard Grid</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .resume-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .resume-card .overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111118] dark:text-white min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f0f0f4] dark:border-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+        <div class="flex items-center gap-4 text-[#111118] dark:text-white">
+            <div class="size-6 text-primary">
+                <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.1288 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"
+                        fill="currentColor"></path>
+                    <path clip-rule="evenodd"
+                        d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z"
+                        fill="currentColor" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">CVPro</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8 items-center">
+            <nav class="flex items-center gap-9">
+                <a class="text-[#111118] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#">Templates</a>
+                <a class="text-[#111118] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#">My Resumes</a>
+                <a class="text-[#111118] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors"
+                    href="#">Pricing</a>
+            </nav>
+            <div class="flex gap-2">
+                <button
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f0f4] dark:bg-gray-800 text-[#111118] dark:text-white text-sm font-bold">
+                    <span>Sign In</span>
+                </button>
+                <button
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold">
+                    <span>Get Started</span>
+                </button>
+            </div>
+            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-gray-200 dark:border-gray-700"
+                data-alt="User avatar placeholder"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIHZHgKkP811wLiFErePUPstcSCjwYZDiXlQFC1nIvEYoO4HX92icCf2MBAsVS0Uz39bnK_LmhHZI7l8Y4nyNaAwn7m2NSTixZ8FZokv8IOB5wSuGIecryzeWg8hbTSAvYLfWFKkMNV4vNg26lxRep0eFAfED3NIwrw4XH58mkk_r5f6K7E_rBaGjsootm-sHmcRyMZi9Xr5n_uNaPoo8PY87QgPHMIDpqJ9oECTrsLfqB3hHBOSjc5q-UGWoZnSp8xUyc8vY9SiU");'>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1200px] mx-auto px-6 py-12">
+        <!-- Page Heading -->
+        <div class="flex flex-col gap-3 mb-10 text-center md:text-left">
+            <h1 class="text-[#111118] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Choose Your
+                Resume Template</h1>
+            <p class="text-[#616289] dark:text-gray-400 text-lg font-normal leading-normal">Select from 36 professional
+                templates designed to get you hired faster.</p>
+        </div>
+        <!-- ToolBar & Filters -->
+        <div
+            class="bg-white dark:bg-background-dark/50 p-4 rounded-xl border border-[#f0f0f4] dark:border-gray-800 shadow-sm mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Search & Filters -->
+                <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                    <div class="relative w-full md:w-72">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+                        <input
+                            class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Search templates..." type="text" />
+                    </div>
+                    <div class="flex gap-2 flex-wrap">
+                        <button
+                            class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f0f4] dark:bg-gray-800 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                            <span class="text-[#111118] dark:text-white text-sm font-medium">Minimal</span>
+                            <span class="material-symbols-outlined text-gray-500 text-lg">expand_more</span>
+                        </button>
+                        <button
+                            class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 border border-primary/20 px-4">
+                            <span class="text-primary text-sm font-medium">Modern</span>
+                            <span class="material-symbols-outlined text-primary text-lg">close</span>
+                        </button>
+                        <button
+                            class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f0f4] dark:bg-gray-800 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                            <span class="text-[#111118] dark:text-white text-sm font-medium">Creative</span>
+                            <span class="material-symbols-outlined text-gray-500 text-lg">expand_more</span>
+                        </button>
+                        <button
+                            class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f0f4] dark:bg-gray-800 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                            <span class="text-[#111118] dark:text-white text-sm font-medium">Professional</span>
+                            <span class="material-symbols-outlined text-gray-500 text-lg">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Sort Options -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <button
+                        class="p-2 text-[#111118] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
+                        <span class="material-symbols-outlined">filter_list</span>
+                    </button>
+                    <button
+                        class="p-2 text-[#111118] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg flex items-center gap-1 border border-gray-200 dark:border-gray-700 px-3">
+                        <span class="text-sm font-medium">Sort by: Popular</span>
+                        <span class="material-symbols-outlined text-lg">swap_vert</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Template Grid (4 columns) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Classic professional resume template layout"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9Mald2Uem76C4OYRZlHVRNE5gbIEEMkXKCXuGQlpDkrxyDMD3q8Cxqd0L95NBgR9zj7L_08sSeTR3iWeFPP8siJCw3tXB2L4J1hRLVPhGHApyu1lomJuiGz-ebCK6xBnvgQ1A0IaqpfdpFstPl1nL2oIxItXs0qBHHqWeZqQXm7Iz8fyFR7xh70qCR99s0S_k86iiOmwOO5chAB-6VHtLRgm9Y4rv82Himkh1z6-HluHrC-2jfyQd-_yOzyuCiBkeKFtRY2mZ0YU");'>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">The Executive</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Professional Category</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Creative colorful resume layout with sidebar"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPRFieStas66Z81mgzYieRtkU9gBVNnp1cMagJIuX6e24Nav9doMzZ4DCYBYzsAVMCMFYt3RDfZhocBttTzgqatLhj3Ug14MxhrDdgYt_uGQ_o4mA0KS5yXSyyo_Gp3keeg_Z33k4O0Lq7-bHDl-7ElcIzQeeezFecUme3TQJy-DwhYjzog96s2MBhIn7JMfeONcNI3YTvJe5H0w98sJEOrnUNClu050cCWLek1utydvwlwN6XcUl9JQVgYGVgldeJ2SbqDjPD6yI");'>
+                    </div>
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">Creative Flow</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Creative Category</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Corporate minimalist resume design"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_O20aJlz-k-z5RLtOBnt56fVYqM-qsqfb_ZXyVI9AwiUVWMEHSTqZifli25s1Dv_2s1jVUOpYxpqUU8zriNVJH0YOguqzj2ikekw7JtyBv3haCGsCgMVkmz6TSfYG8WGLx2L6Oq2Rhv6wpNjMfezkmHCBMJyNUS-k4SV1ylapYakbOHqXIDegRQGgUppam32L7g0IGg2D1qhFbDKyuoIAdelvbSGKJGPQCVW4cBgvbZvIXa3lP_9AlqIzihyZPVruWyLO35fRinE");'>
+                    </div>
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">Standard Corporate</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Minimal Category</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Modern tech-oriented resume layout"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAILkQ-JuDWl7GjW0reALrFhI5Gl0tsZMjJ2WYunwglpk2RgiWGw_HESYNu1ybOqGxPQlKgJETDQs0-JRDKP5Gud_qhI0koX4TemC40Dyc9vIM8pCj_68j_bDWsfbFfR7A-52JczfAKITWwtLnTF7RhLTJGuGy7g9onsjTQp9d4znoeAfSCdDXQkm_bQZ9hcM9e_26zXn0l6dxjZCROYvL-pDZQ1LT1VGTZz_cwJkJeLazvNXFDrD8t-L4rZ6UsyZgNL2ROdumO5Rw");'>
+                    </div>
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">Modern Minimalist</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Modern Category</p>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Bold professional resume with header accent"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvOQMVA1ymmumgWVIVySIswtKDnIVY2qQUn83RDBGd9pSTKuk00TFhTlnEbjKYbP2rxa8xoCbFvWb9cpHSuajbccM85eVXhdm2Q_c7hZFr7-YZFK1IuKOIA7Uxu146ajmBLEUleSty7CKmivA5JBcYOCHdcJfPAu1QKMAd7BvInTtdxN1HvgR5fd21CkiRcs9yd1hIXJ3qRNLMAF6_HUumXr3Zer_-UIgt0xukferlVhByv_nr9ydhuMJIr-QVhMiI5XUERLB_57c");'>
+                    </div>
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">Professional Bold</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Professional Category</p>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Elegant serif font resume template"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBd6EA8ML6qZX916NFPf9OQRt-Y6IuklVEF48Cz9wDSled92aMNxshIvsgOdnd4_x0wP4KaMEQoH1uLL682W5tNYBkGxRFqRZh5KSJ-a_JBMLBqThZlzIh4vRhUWIZUf71RvJmwe9V0DGpS4tbh9osZMvqD0n-utDCNkTZv8bNAJrQ2umR5hq7iFOE2Fzqscg_bAIco1_ba3nBuG7YZZBAdLT4t63-snHSD2p7do2Heyas1izWc__ZrOYn-Kcwz1qxesE6ySKEcetw");'>
+                    </div>
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">Elegant Serif</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Classic Category</p>
+                </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Tech-savvy innovator resume design"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNuhrW8cFzF9kzSctq485N6oQPDQOPl5mLN-FsHwSO1WGQ2xclTVF5iJUzdDilS45ms2Z0UxlMdPSldvidPxFQY6-d1l3RAbhKbwzhnir_Y5jmub20LgXYcdf9v4ov1ziau0zeUTwutQteJbBiLAVl9wE0Lj6OVEGPnMUtTtYgWaJrj7g5d_x8Z13tCKY4ciW-46EurwINKIr8J8DuAjRK_yKNdcre2F54-wTN19Is7ZgHy-IgDLrFza6ExMG54pw0x43zHbprHTA");'>
+                    </div>
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">Tech Innovator</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Modern Category</p>
+                </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="flex flex-col gap-3 group">
+                <div
+                    class="relative resume-card overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 aspect-[1/1.414]">
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transform group-hover:scale-105 transition-transform duration-500"
+                        data-alt="Modern startup style resume template"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC62gTyM0GT5hkwpNocZOnsYwEjHshEe9KKeJHAia5BD-ynCrzCjj1mHvoV62DD0NDSv2DIXPmCw9SuqsI0N6Wq2Mdkwg37nhVdL1_1rnqowYMjze3dlzsbk6vJw81dUBOIuj5aQoKiJ8kAwMiMvutOwnrfj68-C0zb3AcgWLq0t-NCpNTXvtZyI7JQPOAyjNEndk6kd3H0XfJRW-EbJAsCAs7BEiRgkKmm1oZFQD4qA_bdNXhjZkc-BuStQDtl1w9ZeQqf3cKrpMQ");'>
+                    </div>
+                    <div
+                        class="overlay absolute inset-0 bg-black/60 flex flex-col items-center justify-center gap-3 p-6">
+                        <button
+                            class="w-full bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg">Preview</button>
+                        <button
+                            class="w-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold py-2.5 rounded-lg hover:bg-white/20 transition-all">Use
+                            Template</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[#111118] dark:text-white text-base font-bold leading-normal">Startup Style</p>
+                    <p class="text-[#616289] dark:text-gray-400 text-sm font-normal">A4 • Modern Category</p>
+                </div>
+            </div>
+        </div>
+        <!-- Load More Button -->
+        <div class="mt-16 flex justify-center">
+            <button
+                class="px-8 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-bold text-[#111118] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm">
+                View All 36 Templates
+            </button>
+        </div>
+    </main>
+    <!-- Simple Footer -->
+    <footer class="border-t border-[#f0f0f4] dark:border-gray-800 mt-20 py-10 bg-white dark:bg-background-dark/30">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="size-5 text-primary/60">
+                    <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z">
+                        </path>
+                    </svg>
+                </div>
+                <span class="text-sm text-[#616289] dark:text-gray-400 font-medium">© 2024 CVPro Builder. All rights
+                    reserved.</span>
+            </div>
+            <div class="flex gap-6">
+                <a class="text-sm text-[#616289] dark:text-gray-400 hover:text-primary" href="#">Privacy Policy</a>
+                <a class="text-sm text-[#616289] dark:text-gray-400 hover:text-primary" href="#">Terms of Service</a>
+                <a class="text-sm text-[#616289] dark:text-gray-400 hover:text-primary" href="#">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

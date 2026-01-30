@@ -17,7 +17,22 @@
       "Bash(npm ls:*)",
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(alembic init:*)",
+      "Bash(alembic revision:*)",
+      "Bash(alembic upgrade:*)",
+      "Bash(envScriptspip show httpx)",
+      "Bash(env/Scripts/pip show:*)",
+      "Bash(env/Scripts/python:*)",
+      "Bash(env/Scripts/uvicorn:*)",
+      "Bash(cmd //c \"mklink /J app backend\")",
+      "Bash(backend/env/Scripts/uvicorn app.main:app --reload --port 8000)",
+      "Bash(PYTHONPATH=\".\" backend/env/Scripts/python:*)",
+      "Bash(python:*)",
+      "Bash(env/Scripts/alembic upgrade:*)",
+      "Bash(env/Scripts/alembic current:*)"
     ]
   }
 }

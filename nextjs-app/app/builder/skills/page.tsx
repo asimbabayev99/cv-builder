@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
 import BuilderPreview from '@/components/BuilderPreview';
+import { useResume } from '@/contexts/ResumeContext';
 
 interface Skill {
   id: string;
@@ -15,15 +16,24 @@ const SUGGESTED_SKILLS = ['UI Design', 'Figma', 'User Research'];
 
 export default function BuilderSkillsPage() {
   const router = useRouter();
+  const { resume, saveSection, loading } = useResume();
   const [searchValue, setSearchValue] = useState('');
-  const [skills, setSkills] = useState<Skill[]>([
-    { id: '1', name: 'React.js', category: 'technical' },
-    { id: '2', name: 'Tailwind CSS', category: 'technical' },
-    { id: '3', name: 'TypeScript', category: 'technical' },
-    { id: '4', name: 'GraphQL', category: 'technical' },
-    { id: '5', name: 'Agile Methodology', category: 'soft' },
-    { id: '6', name: 'Team Leadership', category: 'soft' },
-  ]);
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [saving, setSaving] = useState(false);
+
+  // Populate from loaded resume
+  useEffect(() => {
+    if (!resume) return;
+    if (resume.skills && resume.skills.length > 0) {
+      setSkills(
+        resume.skills.map((s: Record<string, unknown>, i: number) => ({
+          id: String(s.id ?? i),
+          name: (s.name as string) ?? '',
+          category: ((s.category as string) ?? 'technical') as 'technical' | 'soft',
+        }))
+      );
+    }
+  }, [resume]);
 
   const technicalSkills = skills.filter((s) => s.category === 'technical');
   const softSkills = skills.filter((s) => s.category === 'soft');
@@ -46,6 +56,25 @@ export default function BuilderSkillsPage() {
     if (e.key === 'Enter') {
       e.preventDefault();
       addSkill(searchValue);
+    }
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await saveSection(
+        'skills',
+        skills.map((s, i) => ({
+          name: s.name,
+          category: s.category,
+          sort_order: i,
+        }))
+      );
+      router.push('/builder/languages');
+    } catch {
+      // stay on page
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -223,10 +252,11 @@ export default function BuilderSkillsPage() {
             Back
           </button>
           <button
-            onClick={() => router.push('/builder/languages')}
-            className="bg-primary hover:bg-[#3235d6] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 transition-all"
+            onClick={handleSave}
+            disabled={saving || loading}
+            className="bg-primary hover:bg-[#3235d6] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 transition-all disabled:opacity-50"
           >
-            Save &amp; Continue
+            {saving ? 'Saving...' : 'Save & Continue'}
           </button>
         </footer>
       </main>

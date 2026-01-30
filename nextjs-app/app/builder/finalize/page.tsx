@@ -1,11 +1,59 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
+import { useResume } from '@/contexts/ResumeContext';
+import { downloadPdf, downloadDocx } from '@/lib/api';
 
 export default function BuilderFinalizePage() {
   const router = useRouter();
+  const { data: session } = useSession();
+  const { resumeId, saveSection } = useResume();
+  const [saving, setSaving] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const token = (session as any)?.accessToken ?? '';
+
+  const handleDownloadPdf = async () => {
+    if (!token || !resumeId) return;
+    setDownloading(true);
+    try {
+      await downloadPdf(token, resumeId);
+    } catch {
+      // ignore
+    } finally {
+      setDownloading(false);
+    }
+  };
+
+  const handleDownloadDocx = async () => {
+    if (!token || !resumeId) return;
+    setDownloading(true);
+    try {
+      await downloadDocx(token, resumeId);
+    } catch {
+      // ignore
+    } finally {
+      setDownloading(false);
+    }
+  };
+
+  const handleSaveTemplate = async (templateName: string, colorHex: string) => {
+    setSaving(true);
+    try {
+      await saveSection('template', {
+        template_name: templateName,
+        color_hex: colorHex,
+      });
+    } catch {
+      // ignore
+    } finally {
+      setSaving(false);
+    }
+  };
 
   const steps: StepItem[] = useMemo(
     () =>
@@ -49,6 +97,29 @@ export default function BuilderFinalizePage() {
               </p>
             </div>
 
+            {/* Template Quick-Save */}
+            <div className="rounded-xl border border-[#dbdbe6] bg-white p-6 shadow-sm space-y-4">
+              <h3 className="text-lg font-bold text-[#111118]">Template Settings</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <button
+                  onClick={() => handleSaveTemplate('modern', '#4245f0')}
+                  disabled={saving}
+                  className="h-12 rounded-lg border-2 border-primary bg-primary/5 text-primary font-bold text-sm hover:bg-primary/10 transition-all disabled:opacity-50"
+                  type="button"
+                >
+                  Modern Blue
+                </button>
+                <button
+                  onClick={() => handleSaveTemplate('classic', '#111118')}
+                  disabled={saving}
+                  className="h-12 rounded-lg border-2 border-[#dbdbe6] text-[#111118] font-bold text-sm hover:bg-gray-50 transition-all disabled:opacity-50"
+                  type="button"
+                >
+                  Classic Dark
+                </button>
+              </div>
+            </div>
+
             {/* Success Card */}
             <div className="rounded-xl border border-[#dbdbe6] bg-white p-8 shadow-sm">
               <div className="flex flex-col items-center text-center gap-6">
@@ -69,7 +140,9 @@ export default function BuilderFinalizePage() {
                 <div className="w-full pt-4 space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <button
-                      className="flex items-center justify-center gap-2 h-12 rounded-lg bg-primary text-white font-bold hover:bg-primary/90 transition-all"
+                      onClick={handleDownloadPdf}
+                      disabled={downloading}
+                      className="flex items-center justify-center gap-2 h-12 rounded-lg bg-primary text-white font-bold hover:bg-primary/90 transition-all disabled:opacity-50"
                       type="button"
                     >
                       <span className="material-symbols-outlined">
@@ -78,7 +151,9 @@ export default function BuilderFinalizePage() {
                       Download PDF
                     </button>
                     <button
-                      className="flex items-center justify-center gap-2 h-12 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all"
+                      onClick={handleDownloadDocx}
+                      disabled={downloading}
+                      className="flex items-center justify-center gap-2 h-12 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all disabled:opacity-50"
                       type="button"
                     >
                       <span className="material-symbols-outlined">

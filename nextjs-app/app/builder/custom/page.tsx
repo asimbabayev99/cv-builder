@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
 import BuilderPreview from '@/components/BuilderPreview';
+import { useResume } from '@/contexts/ResumeContext';
 
 interface CustomEntry {
   id: string;
@@ -16,25 +17,26 @@ interface CustomEntry {
 
 export default function BuilderCustomPage() {
   const router = useRouter();
-  const [entries, setEntries] = useState<CustomEntry[]>([
-    {
-      id: '1',
-      title: 'Volunteer Work at Red Cross',
-      description:
-        'Coordinated community outreach programs and organized fundraising events for disaster relief efforts.',
-      startDate: '2021-03',
-      endDate: '2023-06',
-      expanded: false,
-    },
-    {
-      id: '2',
-      title: '',
-      description: '',
-      startDate: '',
-      endDate: '',
-      expanded: true,
-    },
-  ]);
+  const { resume, saveSection, loading } = useResume();
+  const [entries, setEntries] = useState<CustomEntry[]>([]);
+  const [saving, setSaving] = useState(false);
+
+  // Populate from loaded resume
+  useEffect(() => {
+    if (!resume) return;
+    if (resume.custom_sections && resume.custom_sections.length > 0) {
+      setEntries(
+        resume.custom_sections.map((cs: Record<string, unknown>, i: number) => ({
+          id: String(cs.id ?? i),
+          title: (cs.title as string) ?? '',
+          description: (cs.description as string) ?? '',
+          startDate: (cs.start_date as string) ?? '',
+          endDate: (cs.end_date as string) ?? '',
+          expanded: false,
+        }))
+      );
+    }
+  }, [resume]);
 
   const updateEntry = (id: string, field: keyof CustomEntry, value: string | boolean) => {
     setEntries((prev) =>
@@ -62,6 +64,29 @@ export default function BuilderCustomPage() {
       expanded: true,
     };
     setEntries((prev) => [...prev, newEntry]);
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await saveSection(
+        'custom-sections',
+        entries
+          .filter((e) => e.title.trim())
+          .map((e, i) => ({
+            title: e.title,
+            description: e.description || null,
+            start_date: e.startDate || null,
+            end_date: e.endDate || null,
+            sort_order: i,
+          }))
+      );
+      router.push('/builder/summary');
+    } catch {
+      // stay on page
+    } finally {
+      setSaving(false);
+    }
   };
 
   const steps: StepItem[] = useMemo(
@@ -265,10 +290,11 @@ export default function BuilderCustomPage() {
             Back
           </button>
           <button
-            onClick={() => router.push('/builder/summary')}
-            className="flex items-center gap-2 bg-primary text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all"
+            onClick={handleSave}
+            disabled={saving || loading}
+            className="flex items-center gap-2 bg-primary text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all disabled:opacity-50"
           >
-            Save &amp; Continue
+            {saving ? 'Saving...' : 'Save & Continue'}
           </button>
         </footer>
       </main>

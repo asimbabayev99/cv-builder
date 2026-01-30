@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
 import BuilderPreview from '@/components/BuilderPreview';
+import { useResume } from '@/contexts/ResumeContext';
 
 interface Education {
   id: string;
@@ -19,31 +20,29 @@ interface Education {
 
 export default function BuilderEducationPage() {
   const router = useRouter();
-  const [educations, setEducations] = useState<Education[]>([
-    {
-      id: '1',
-      institution: 'Stanford University',
-      degree: 'Bachelor of Science',
-      fieldOfStudy: 'Computer Science',
-      startDate: '2018-09',
-      endDate: '2022-05',
-      currentlyStudying: false,
-      description:
-        'GPA 3.9/4.0. Relevant coursework: Data Structures, Machine Learning, Operating Systems. Recipient of the Academic Excellence Award in 2021.',
-      expanded: false,
-    },
-    {
-      id: '2',
-      institution: '',
-      degree: '',
-      fieldOfStudy: '',
-      startDate: '',
-      endDate: '',
-      currentlyStudying: false,
-      description: '',
-      expanded: true,
-    },
-  ]);
+  const { resume, saveSection, loading } = useResume();
+  const [educations, setEducations] = useState<Education[]>([]);
+  const [saving, setSaving] = useState(false);
+
+  // Populate from loaded resume
+  useEffect(() => {
+    if (!resume) return;
+    if (resume.educations && resume.educations.length > 0) {
+      setEducations(
+        resume.educations.map((edu: Record<string, unknown>, i: number) => ({
+          id: String(edu.id ?? i),
+          institution: (edu.institution as string) ?? '',
+          degree: (edu.degree as string) ?? '',
+          fieldOfStudy: (edu.field_of_study as string) ?? '',
+          startDate: (edu.start_date as string) ?? '',
+          endDate: (edu.end_date as string) ?? '',
+          currentlyStudying: (edu.currently_studying as boolean) ?? false,
+          description: (edu.description as string) ?? '',
+          expanded: false,
+        }))
+      );
+    }
+  }, [resume]);
 
   const updateEducation = (id: string, field: keyof Education, value: string | boolean) => {
     setEducations((prev) =>
@@ -74,6 +73,32 @@ export default function BuilderEducationPage() {
       expanded: true,
     };
     setEducations((prev) => [...prev, newEdu]);
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await saveSection(
+        'education',
+        educations
+          .filter((edu) => edu.institution.trim())
+          .map((edu, i) => ({
+            institution: edu.institution,
+            degree: edu.degree || null,
+            field_of_study: edu.fieldOfStudy || null,
+            start_date: edu.startDate || null,
+            end_date: edu.endDate || null,
+            currently_studying: edu.currentlyStudying,
+            description: edu.description || null,
+            sort_order: i,
+          }))
+      );
+      router.push('/builder/experience');
+    } catch {
+      // stay on page
+    } finally {
+      setSaving(false);
+    }
   };
 
   const steps: StepItem[] = useMemo(
@@ -317,10 +342,11 @@ export default function BuilderEducationPage() {
             Back
           </button>
           <button
-            onClick={() => router.push('/builder/experience')}
-            className="flex items-center gap-2 bg-primary text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all"
+            onClick={handleSave}
+            disabled={saving || loading}
+            className="flex items-center gap-2 bg-primary text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all disabled:opacity-50"
           >
-            Save &amp; Continue
+            {saving ? 'Saving...' : 'Save & Continue'}
           </button>
         </footer>
       </main>

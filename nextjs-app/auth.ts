@@ -2,18 +2,7 @@ import NextAuth from 'next-auth';
 import Google from 'next-auth/providers/google';
 import Credentials from 'next-auth/providers/credentials';
 
-// Mock user database — replace with a real DB in production
-const MOCK_USERS = [
-  {
-    id: '1',
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    // Pre-hashed password for "password123"
-    password: '$2b$10$IPDejAgufEhZrtR57lFS0ebgZtFMqlkbXX2NdMgwhoTytLIn6Azvq',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBsYhtAXQTA7BqKHtOD1kTv0rurbABmYsA6oXZoYfRGG6_eD4arQRa7s04WfDIyARH-gT1vpjIW9Pk5prri1lJCRzB_XkL3J0HyZV77JcADZUJSJ7hd_D1chSHnSfUaBkayuVlS8F7_PCR6zQq33IaKTT-ABBCgEn10leJ_zFiASrS7HtlNgCD01THX02FZKaqgb2MQGMEecAE_ZyrhawSyQ2whrdPO3d1oANrdO9v7V0N2OBplULOJBXnnUu9P8aWgfi2VVyUP82E',
-  },
-];
+const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -32,30 +21,29 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           return null;
         }
 
-        const user = MOCK_USERS.find(
-          (u) => u.email === credentials.email
-        );
+        const res = await fetch(`${BACKEND_URL}/api/v1/sign-in`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: credentials.email,
+            password: credentials.password,
+          }),
+        });
 
-        if (!user) {
+        if (!res.ok) {
           return null;
         }
 
-        // Dynamic import to avoid Edge runtime issues in middleware
-        const bcrypt = await import('bcryptjs');
-        const isValid = await bcrypt.compare(
-          credentials.password as string,
-          user.password
-        );
-
-        if (!isValid) {
-          return null;
-        }
+        const data = await res.json();
+        // data: { access_token, refresh_token, user: { id, uid, email, first_name, last_name, image, role, auth_provider } }
 
         return {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          image: user.image,
+          id: String(data.user.id),
+          name: `${data.user.first_name} ${data.user.last_name}`,
+          email: data.user.email,
+          image: data.user.image,
+          accessToken: data.access_token,
+          refreshToken: data.refresh_token,
         };
       },
     }),
@@ -64,6 +52,41 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     signIn: '/auth/signin',
   },
   callbacks: {
+    async jwt({ token, user, account }) {
+      // On initial sign-in, persist backend tokens
+      if (user) {
+        token.accessToken = (user as any).accessToken;
+        token.refreshToken = (user as any).refreshToken;
+      }
+
+      // For Google OAuth, exchange the Google ID token with our backend
+      if (account?.provider === 'google' && account.id_token) {
+        try {
+          const res = await fetch(`${BACKEND_URL}/api/v1/google-auth`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token: account.id_token }),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            token.accessToken = data.access_token;
+            token.refreshToken = data.refresh_token;
+            // Update user info from backend
+            token.name = `${data.user.first_name} ${data.user.last_name}`;
+            token.picture = data.user.image;
+          }
+        } catch {
+          // If backend call fails, session still works via Google data
+        }
+      }
+
+      return token;
+    },
+    async session({ session, token }) {
+      (session as any).accessToken = token.accessToken;
+      (session as any).refreshToken = token.refreshToken;
+      return session;
+    },
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
       const isProtected =

@@ -22,6 +22,9 @@ if importlib.util.find_spec("app") is None:
 
 from app.models.base import Base
 from app.models.user import User  # noqa: F401 - register models with metadata
+from app.models.cv import (  # noqa: F401 - register models with metadata
+    Resume, Education, Experience, Skill, Language, Certificate, CustomSection,
+)
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

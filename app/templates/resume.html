@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 24px;
+    color: {{ color_hex or '#111118' }};
+    margin: 0 0 2px 0;
+  }
+  h2 {
+    font-size: 14px;
+    color: {{ color_hex or '#111118' }};
+    border-bottom: 2px solid {{ color_hex or '#111118' }};
+    padding-bottom: 4px;
+    margin: 18px 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  h3 {
+    font-size: 12px;
+    margin: 6px 0 2px 0;
+    color: #222;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 6px 0;
+  }
+  .contact-info {
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .contact-info span {
+    margin-right: 12px;
+  }
+  .summary {
+    font-size: 11px;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  .entry {
+    margin-bottom: 10px;
+  }
+  .entry-header {
+    display: block;
+    margin-bottom: 2px;
+  }
+  .entry-title {
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .entry-sub {
+    color: #666;
+    font-size: 10px;
+  }
+  .entry-date {
+    font-size: 10px;
+    color: #888;
+  }
+  .entry-desc {
+    font-size: 10px;
+    color: #444;
+    margin-top: 2px;
+  }
+  .skills-group {
+    margin-bottom: 6px;
+  }
+  .skills-label {
+    font-weight: bold;
+    font-size: 11px;
+    color: #444;
+    text-transform: capitalize;
+  }
+  .skill-tag {
+    display: inline;
+    font-size: 10px;
+    color: #555;
+  }
+  .lang-item, .cert-item, .custom-item {
+    margin-bottom: 6px;
+  }
+  .header-row {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header-row">
+  <h1>{{ resume.first_name or '' }} {{ resume.last_name or '' }}</h1>
+  {% if resume.professional_title %}
+  <div class="subtitle">{{ resume.professional_title }}</div>
+  {% endif %}
+  <div class="contact-info">
+    {% if resume.email %}<span>{{ resume.email }}</span>{% endif %}
+    {% if resume.phone %}<span>{{ resume.phone }}</span>{% endif %}
+    {% if resume.location %}<span>{{ resume.location }}</span>{% endif %}
+  </div>
+</div>
+
+<!-- Summary -->
+{% if resume.summary %}
+<h2>Summary</h2>
+<div class="summary">{{ resume.summary }}</div>
+{% endif %}
+
+<!-- Experience -->
+{% if resume.experiences %}
+<h2>Experience</h2>
+{% for exp in resume.experiences %}
+<div class="entry">
+  <div class="entry-header">
+    <span class="entry-title">{{ exp.job_title }}</span>
+    {% if exp.company %}
+    <span class="entry-sub"> &mdash; {{ exp.company }}</span>
+    {% endif %}
+  </div>
+  <div class="entry-date">
+    {{ exp.start_date or '' }}{% if exp.start_date and (exp.end_date or exp.currently_working) %} &ndash; {% endif %}{% if exp.currently_working %}Present{% else %}{{ exp.end_date or '' }}{% endif %}
+    {% if exp.location %} | {{ exp.location }}{% endif %}
+    {% if exp.employment_type %} | {{ exp.employment_type }}{% endif %}
+  </div>
+  {% if exp.description %}
+  <div class="entry-desc">{{ exp.description }}</div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+<!-- Education -->
+{% if resume.educations %}
+<h2>Education</h2>
+{% for edu in resume.educations %}
+<div class="entry">
+  <div class="entry-header">
+    <span class="entry-title">{{ edu.institution }}</span>
+  </div>
+  {% if edu.degree or edu.field_of_study %}
+  <div class="entry-sub">
+    {{ edu.degree or '' }}{% if edu.degree and edu.field_of_study %} in {% endif %}{{ edu.field_of_study or '' }}
+  </div>
+  {% endif %}
+  <div class="entry-date">
+    {{ edu.start_date or '' }}{% if edu.start_date and (edu.end_date or edu.currently_studying) %} &ndash; {% endif %}{% if edu.currently_studying %}Present{% else %}{{ edu.end_date or '' }}{% endif %}
+  </div>
+  {% if edu.description %}
+  <div class="entry-desc">{{ edu.description }}</div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+<!-- Skills -->
+{% if resume.skills %}
+<h2>Skills</h2>
+{% set technical = resume.skills | selectattr('category', 'equalto', 'technical') | list %}
+{% set soft = resume.skills | selectattr('category', 'equalto', 'soft') | list %}
+{% if technical %}
+<div class="skills-group">
+  <span class="skills-label">Technical: </span>
+  {% for s in technical %}
+  <span class="skill-tag">{{ s.name }}{% if not loop.last %}, {% endif %}</span>
+  {% endfor %}
+</div>
+{% endif %}
+{% if soft %}
+<div class="skills-group">
+  <span class="skills-label">Soft Skills: </span>
+  {% for s in soft %}
+  <span class="skill-tag">{{ s.name }}{% if not loop.last %}, {% endif %}</span>
+  {% endfor %}
+</div>
+{% endif %}
+{% endif %}
+
+<!-- Languages -->
+{% if resume.languages %}
+<h2>Languages</h2>
+{% for lang in resume.languages %}
+<div class="lang-item">
+  <strong>{{ lang.name }}</strong> &mdash; {{ lang.proficiency }}
+</div>
+{% endfor %}
+{% endif %}
+
+<!-- Certificates -->
+{% if resume.certificates %}
+<h2>Certificates</h2>
+{% for cert in resume.certificates %}
+<div class="cert-item">
+  <div class="entry-title">{{ cert.name }}</div>
+  {% if cert.organization %}
+  <div class="entry-sub">{{ cert.organization }}</div>
+  {% endif %}
+  <div class="entry-date">
+    {% if cert.issue_date %}Issued: {{ cert.issue_date }}{% endif %}
+    {% if cert.expiration_date %} | Expires: {{ cert.expiration_date }}{% endif %}
+    {% if cert.no_expiry %} | No expiration{% endif %}
+  </div>
+  {% if cert.description %}
+  <div class="entry-desc">{{ cert.description }}</div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+<!-- Custom Sections -->
+{% if resume.custom_sections %}
+{% for section in resume.custom_sections %}
+<h2>{{ section.title }}</h2>
+<div class="custom-item">
+  {% if section.start_date or section.end_date %}
+  <div class="entry-date">{{ section.start_date or '' }}{% if section.start_date and section.end_date %} &ndash; {% endif %}{{ section.end_date or '' }}</div>
+  {% endif %}
+  {% if section.description %}
+  <div class="entry-desc">{{ section.description }}</div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+</body>
+</html>

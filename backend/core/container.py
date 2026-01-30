@@ -6,6 +6,7 @@ from app.core.database import Database
 from app.core.uof import UnitOfWork
 from app.services.cache_service import CacheService
 from app.services.user_service import UserService
+from app.services.cv_service import CvService
 
 
 class Container(containers.DeclarativeContainer):
@@ -13,6 +14,7 @@ class Container(containers.DeclarativeContainer):
         modules=[
             "app.api.v1.endpoints.home",
             "app.api.v1.endpoints.user",
+            "app.api.v1.endpoints.cv",
             "app.core.dependencies",
         ]
     )
@@ -38,5 +40,10 @@ class Container(containers.DeclarativeContainer):
 
     user_service = providers.Factory(
         UserService,
+        uow_factory=unit_of_work.provider,
+    )
+
+    cv_service = providers.Factory(
+        CvService,
         uow_factory=unit_of_work.provider,
     )

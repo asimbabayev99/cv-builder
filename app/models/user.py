@@ -1,12 +1,15 @@
 import enum
 import uuid
 from datetime import datetime, timezone
-from typing import Optional
+from typing import TYPE_CHECKING, List, Optional
 
 from sqlalchemy import BigInteger, Boolean, DateTime, Integer, String, Uuid
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base import Base
+
+if TYPE_CHECKING:
+    from app.models.cv import Resume
 
 
 class UserRole(str, enum.Enum):
@@ -33,6 +36,10 @@ class User(Base):
     role: Mapped[str] = mapped_column(String(10), default=UserRole.USER)
     auth_provider: Mapped[str] = mapped_column(String(10), default=AuthProvider.LOCAL)
     google_id: Mapped[Optional[str]] = mapped_column(String(255), unique=True, nullable=True)
+
+    resumes: Mapped[List["Resume"]] = relationship(
+        back_populates="user", cascade="all, delete-orphan"
+    )
 
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     jtv: Mapped[int] = mapped_column(Integer, default=1)

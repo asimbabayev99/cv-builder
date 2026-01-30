@@ -1,9 +1,31 @@
 'use client';
 
+import { useFormState, useFormStatus } from 'react-dom';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
+import { register } from './actions';
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group disabled:opacity-70"
+      type="submit"
+      disabled={pending}
+    >
+      {pending ? 'Creating account...' : 'Create Account'}
+      {!pending && (
+        <span className="material-symbols-outlined !text-xl group-hover:translate-x-1 transition-transform">
+          arrow_forward
+        </span>
+      )}
+    </button>
+  );
+}
 
 export default function SignUpPage() {
+  const [errorMessage, formAction] = useFormState(register, undefined);
+
   const handleGoogleSignIn = () => {
     signIn('google', { callbackUrl: '/' });
   };
@@ -95,11 +117,20 @@ export default function SignUpPage() {
               </p>
             </div>
 
+            {/* Error Message */}
+            {errorMessage && (
+              <div className="mb-6 flex items-center gap-3 p-4 bg-red-50 border border-red-100 rounded-xl">
+                <span className="material-symbols-outlined text-red-500 !text-lg">
+                  error
+                </span>
+                <p className="text-sm text-red-600 font-medium">
+                  {errorMessage}
+                </p>
+              </div>
+            )}
+
             {/* Form */}
-            <form
-              className="space-y-5"
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <form className="space-y-5" action={formAction}>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label
@@ -111,8 +142,10 @@ export default function SignUpPage() {
                   <input
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all placeholder:text-slate-400"
                     id="firstName"
+                    name="firstName"
                     placeholder="John"
                     type="text"
+                    required
                   />
                 </div>
                 <div>
@@ -125,8 +158,10 @@ export default function SignUpPage() {
                   <input
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all placeholder:text-slate-400"
                     id="lastName"
+                    name="lastName"
                     placeholder="Doe"
                     type="text"
+                    required
                   />
                 </div>
               </div>
@@ -141,8 +176,10 @@ export default function SignUpPage() {
                 <input
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all placeholder:text-slate-400"
                   id="email"
+                  name="email"
                   placeholder="name@company.com"
                   type="email"
+                  required
                 />
               </div>
 
@@ -156,8 +193,11 @@ export default function SignUpPage() {
                 <input
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all placeholder:text-slate-400"
                   id="password"
+                  name="password"
                   placeholder="••••••••"
                   type="password"
+                  required
+                  minLength={8}
                 />
               </div>
 
@@ -166,6 +206,7 @@ export default function SignUpPage() {
                   className="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary mt-0.5"
                   id="terms"
                   type="checkbox"
+                  required
                 />
                 <label
                   className="text-sm text-slate-600 font-medium"
@@ -182,15 +223,7 @@ export default function SignUpPage() {
                 </label>
               </div>
 
-              <button
-                className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group"
-                type="submit"
-              >
-                Create Account
-                <span className="material-symbols-outlined !text-xl group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </button>
+              <SubmitButton />
             </form>
 
             {/* Divider */}

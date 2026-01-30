@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
 import BuilderPreview from '@/components/BuilderPreview';
+import { useResume } from '@/contexts/ResumeContext';
 
 interface Certificate {
   id: string;
@@ -16,34 +17,12 @@ interface Certificate {
   description: string;
 }
 
-const DEFAULT_CERTIFICATES: Certificate[] = [
-  {
-    id: '1',
-    name: 'Google Data Analytics Professional Certificate',
-    organization: 'Coursera',
-    issueDate: '2023-01',
-    expirationDate: '',
-    noExpiry: true,
-    credentialLink: '',
-    description: '',
-  },
-  {
-    id: '2',
-    name: 'AWS Certified Solutions Architect',
-    organization: 'Amazon Web Services',
-    issueDate: '2023-05',
-    expirationDate: '',
-    noExpiry: false,
-    credentialLink: '',
-    description:
-      'Validation of expertise in designing distributed systems on AWS, focusing on high availability, cost optimization, and security.',
-  },
-];
-
 export default function BuilderCertificatesPage() {
   const router = useRouter();
-  const [certificates, setCertificates] = useState<Certificate[]>(DEFAULT_CERTIFICATES);
-  const [expandedId, setExpandedId] = useState<string | null>('2');
+  const { resume, saveSection, loading } = useResume();
+  const [certificates, setCertificates] = useState<Certificate[]>([]);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
 
   const [editForm, setEditForm] = useState<Certificate>({
     id: '',
@@ -55,6 +34,25 @@ export default function BuilderCertificatesPage() {
     credentialLink: '',
     description: '',
   });
+
+  // Populate from loaded resume
+  useEffect(() => {
+    if (!resume) return;
+    if (resume.certificates && resume.certificates.length > 0) {
+      setCertificates(
+        resume.certificates.map((c: Record<string, unknown>, i: number) => ({
+          id: String(c.id ?? i),
+          name: (c.name as string) ?? '',
+          organization: (c.organization as string) ?? '',
+          issueDate: (c.issue_date as string) ?? '',
+          expirationDate: (c.expiration_date as string) ?? '',
+          noExpiry: (c.no_expiry as boolean) ?? false,
+          credentialLink: (c.credential_link as string) ?? '',
+          description: (c.description as string) ?? '',
+        }))
+      );
+    }
+  }, [resume]);
 
   const startEdit = (cert: Certificate) => {
     setExpandedId(cert.id);
@@ -92,6 +90,32 @@ export default function BuilderCertificatesPage() {
     setCertificates((prev) => [...prev, newCert]);
     setExpandedId(newCert.id);
     setEditForm(newCert);
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await saveSection(
+        'certificates',
+        certificates
+          .filter((c) => c.name.trim())
+          .map((c, i) => ({
+            name: c.name,
+            organization: c.organization || null,
+            issue_date: c.issueDate || null,
+            expiration_date: c.expirationDate || null,
+            no_expiry: c.noExpiry,
+            credential_link: c.credentialLink || null,
+            description: c.description || null,
+            sort_order: i,
+          }))
+      );
+      router.push('/builder/custom');
+    } catch {
+      // stay on page
+    } finally {
+      setSaving(false);
+    }
   };
 
   const steps: StepItem[] = useMemo(
@@ -360,10 +384,11 @@ export default function BuilderCertificatesPage() {
             Back
           </button>
           <button
-            onClick={() => router.push('/builder/custom')}
-            className="bg-primary hover:bg-[#3235d6] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 transition-all"
+            onClick={handleSave}
+            disabled={saving || loading}
+            className="bg-primary hover:bg-[#3235d6] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 transition-all disabled:opacity-50"
           >
-            Save &amp; Continue
+            {saving ? 'Saving...' : 'Save & Continue'}
           </button>
         </footer>
       </main>

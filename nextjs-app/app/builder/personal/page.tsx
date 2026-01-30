@@ -1,15 +1,58 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
 import BuilderPreview from '@/components/BuilderPreview';
 import AiSummaryModal from '@/components/AiSummaryModal';
+import { useResume } from '@/contexts/ResumeContext';
 
 export default function BuilderPersonalPage() {
   const router = useRouter();
+  const { resume, saveSection, loading } = useResume();
   const [showAiModal, setShowAiModal] = useState(false);
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [professionalTitle, setProfessionalTitle] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [location, setLocation] = useState('');
   const [summary, setSummary] = useState('');
+
+  // Populate from loaded resume
+  useEffect(() => {
+    if (!resume) return;
+    setFirstName(resume.first_name ?? '');
+    setLastName(resume.last_name ?? '');
+    setProfessionalTitle(resume.professional_title ?? '');
+    setEmail(resume.email ?? '');
+    setPhone(resume.phone ?? '');
+    setLocation(resume.location ?? '');
+    setSummary(resume.summary ?? '');
+  }, [resume]);
+
+  const [saving, setSaving] = useState(false);
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await saveSection('personal-info', {
+        first_name: firstName,
+        last_name: lastName,
+        professional_title: professionalTitle,
+        email,
+        phone,
+        location,
+        summary,
+      });
+      router.push('/builder/education');
+    } catch {
+      // stay on page
+    } finally {
+      setSaving(false);
+    }
+  };
 
   const steps: StepItem[] = useMemo(
     () =>
@@ -39,7 +82,7 @@ export default function BuilderPersonalPage() {
           </div>
 
           {/* Form */}
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
             {/* Two-Column Grid for Personal Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -50,7 +93,8 @@ export default function BuilderPersonalPage() {
                   className="w-full h-12 px-4 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all"
                   placeholder="e.g. Alexander"
                   type="text"
-                  defaultValue="Alexander"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
               <div className="space-y-2">
@@ -61,7 +105,8 @@ export default function BuilderPersonalPage() {
                   className="w-full h-12 px-4 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all"
                   placeholder="e.g. Bennett"
                   type="text"
-                  defaultValue="Bennett"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
               <div className="space-y-2 md:col-span-2">
@@ -72,7 +117,8 @@ export default function BuilderPersonalPage() {
                   className="w-full h-12 px-4 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all"
                   placeholder="e.g. Senior Software Engineer"
                   type="text"
-                  defaultValue="Senior Product Designer"
+                  value={professionalTitle}
+                  onChange={(e) => setProfessionalTitle(e.target.value)}
                 />
               </div>
               <div className="space-y-2">
@@ -87,6 +133,8 @@ export default function BuilderPersonalPage() {
                     className="w-full h-12 pl-11 pr-4 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all"
                     placeholder="alex.b@example.com"
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
@@ -102,6 +150,8 @@ export default function BuilderPersonalPage() {
                     className="w-full h-12 pl-11 pr-4 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all"
                     placeholder="+1 (555) 000-0000"
                     type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
               </div>
@@ -117,6 +167,8 @@ export default function BuilderPersonalPage() {
                     className="w-full h-12 pl-11 pr-4 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all"
                     placeholder="San Francisco, CA"
                     type="text"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
                   />
                 </div>
               </div>
@@ -196,11 +248,12 @@ export default function BuilderPersonalPage() {
             Back
           </button>
           <button
-            onClick={() => router.push('/builder/education')}
-            className="px-8 py-2.5 bg-primary text-white font-bold text-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all"
+            onClick={handleSave}
+            disabled={saving || loading}
+            className="px-8 py-2.5 bg-primary text-white font-bold text-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all disabled:opacity-50"
             type="button"
           >
-            Save &amp; Continue
+            {saving ? 'Saving...' : 'Save & Continue'}
           </button>
         </footer>
       </main>

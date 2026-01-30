@@ -1,6 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.repositories.user_repository import UserRepository
+from app.repositories.cv_repository import CvRepository
 
 
 class UnitOfWork:
@@ -8,6 +9,7 @@ class UnitOfWork:
         self.session_factory = session_factory
         self.session: AsyncSession = None
         self._users = None
+        self._cv = None
 
     async def __aenter__(self):
         self._session_cm = self.session_factory()
@@ -26,3 +28,9 @@ class UnitOfWork:
         if self._users is None:
             self._users = UserRepository(self.session)
         return self._users
+
+    @property
+    def cv(self) -> CvRepository:
+        if self._cv is None:
+            self._cv = CvRepository(self.session)
+        return self._cv

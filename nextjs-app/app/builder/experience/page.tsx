@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
 import BuilderPreview from '@/components/BuilderPreview';
+import { useResume } from '@/contexts/ResumeContext';
 
 interface Experience {
   id: string;
@@ -20,33 +21,30 @@ interface Experience {
 
 export default function BuilderExperiencePage() {
   const router = useRouter();
-  const [experiences, setExperiences] = useState<Experience[]>([
-    {
-      id: '1',
-      jobTitle: 'Junior Designer',
-      company: 'Pixel Perfect Agency',
-      employmentType: 'Full-time',
-      startDate: '2020-01',
-      endDate: '2021-12',
-      location: 'Remote',
-      currentlyWorking: false,
-      description: '',
-      expanded: false,
-    },
-    {
-      id: '2',
-      jobTitle: 'Senior Product Designer',
-      company: 'TechFlow Inc.',
-      employmentType: 'Full-time',
-      startDate: '2021-03',
-      endDate: '',
-      location: 'San Francisco, CA (Remote)',
-      currentlyWorking: true,
-      description:
-        'Led the design of a new e-commerce dashboard and managed a team of 3 junior designers. We worked on improving user retention and speed.',
-      expanded: true,
-    },
-  ]);
+  const { resume, saveSection, loading } = useResume();
+  const [experiences, setExperiences] = useState<Experience[]>([]);
+  const [saving, setSaving] = useState(false);
+
+  // Populate from loaded resume
+  useEffect(() => {
+    if (!resume) return;
+    if (resume.experiences && resume.experiences.length > 0) {
+      setExperiences(
+        resume.experiences.map((exp: Record<string, unknown>, i: number) => ({
+          id: String(exp.id ?? i),
+          jobTitle: (exp.job_title as string) ?? '',
+          company: (exp.company as string) ?? '',
+          employmentType: (exp.employment_type as string) ?? 'Full-time',
+          startDate: (exp.start_date as string) ?? '',
+          endDate: (exp.end_date as string) ?? '',
+          location: (exp.location as string) ?? '',
+          currentlyWorking: (exp.currently_working as boolean) ?? false,
+          description: (exp.description as string) ?? '',
+          expanded: false,
+        }))
+      );
+    }
+  }, [resume]);
 
   const updateExperience = (id: string, field: keyof Experience, value: string | boolean) => {
     setExperiences((prev) =>
@@ -78,6 +76,33 @@ export default function BuilderExperiencePage() {
       expanded: true,
     };
     setExperiences((prev) => [...prev, newExp]);
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await saveSection(
+        'experience',
+        experiences
+          .filter((exp) => exp.jobTitle.trim())
+          .map((exp, i) => ({
+            job_title: exp.jobTitle,
+            company: exp.company || null,
+            employment_type: exp.employmentType || null,
+            location: exp.location || null,
+            start_date: exp.startDate || null,
+            end_date: exp.endDate || null,
+            currently_working: exp.currentlyWorking,
+            description: exp.description || null,
+            sort_order: i,
+          }))
+      );
+      router.push('/builder/skills');
+    } catch {
+      // stay on page
+    } finally {
+      setSaving(false);
+    }
   };
 
   const steps: StepItem[] = useMemo(
@@ -229,7 +254,7 @@ export default function BuilderExperiencePage() {
                       </span>
                     </label>
 
-                    {/* AI Description Area */}
+                    {/* Description Area */}
                     <div className="mt-8 space-y-4">
                       <div className="flex items-center justify-between">
                         <label className="text-sm font-bold text-[#111118]">
@@ -281,70 +306,6 @@ export default function BuilderExperiencePage() {
                             updateExperience(exp.id, 'description', e.target.value)
                           }
                         />
-                      </div>
-
-                      {/* AI Suggestion Comparison Panel */}
-                      <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 space-y-4">
-                        <div className="flex items-center gap-2 text-primary font-bold">
-                          <span className="material-symbols-outlined">magic_button</span>
-                          <span>AI Enhancements</span>
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <p className="text-[10px] font-bold text-[#616289] uppercase tracking-wider">
-                              Before
-                            </p>
-                            <div className="text-sm text-[#616289] italic border-l-2 border-[#dbdbe6] pl-3">
-                              &quot;Led the design of a new e-commerce dashboard and managed a
-                              team of designers.&quot;
-                            </div>
-                          </div>
-                          <div className="space-y-2">
-                            <p className="text-[10px] font-bold text-primary uppercase tracking-wider">
-                              ATS-Optimized Suggestions
-                            </p>
-                            <div className="space-y-3">
-                              <div className="flex gap-3 bg-white p-2 rounded border border-primary/10">
-                                <input
-                                  defaultChecked
-                                  className="mt-1 rounded border-[#dbdbe6] text-primary"
-                                  type="checkbox"
-                                />
-                                <p className="text-xs leading-relaxed text-[#111118]">
-                                  Spearheaded the UI/UX redesign of an enterprise-level
-                                  e-commerce dashboard, resulting in a{' '}
-                                  <strong>
-                                    24% increase in user session duration
-                                  </strong>
-                                  .
-                                </p>
-                              </div>
-                              <div className="flex gap-3 bg-white p-2 rounded border border-primary/10">
-                                <input
-                                  defaultChecked
-                                  className="mt-1 rounded border-[#dbdbe6] text-primary"
-                                  type="checkbox"
-                                />
-                                <p className="text-xs leading-relaxed text-[#111118]">
-                                  Mentored and led a cross-functional design team of 3,
-                                  streamlining workflows and{' '}
-                                  <strong>
-                                    reducing project turnaround time by 15%
-                                  </strong>
-                                  .
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex justify-end pt-2">
-                          <button
-                            className="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-colors"
-                            type="button"
-                          >
-                            Apply Selected Bullets
-                          </button>
-                        </div>
                       </div>
                     </div>
 
@@ -418,10 +379,11 @@ export default function BuilderExperiencePage() {
             Back
           </button>
           <button
-            onClick={() => router.push('/builder/skills')}
-            className="px-8 py-2.5 bg-primary text-white font-bold text-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all"
+            onClick={handleSave}
+            disabled={saving || loading}
+            className="px-8 py-2.5 bg-primary text-white font-bold text-sm rounded-lg shadow-lg shadow-primary/20 hover:bg-[#3235d6] transition-all disabled:opacity-50"
           >
-            Save &amp; Continue
+            {saving ? 'Saving...' : 'Save & Continue'}
           </button>
         </footer>
       </main>

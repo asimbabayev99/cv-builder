@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
 import BuilderPreview from '@/components/BuilderPreview';
+import { useResume } from '@/contexts/ResumeContext';
 
 interface Language {
   id: string;
@@ -23,12 +24,24 @@ const SUGGESTED_LANGUAGES = ['Spanish', 'French', 'German', 'Chinese', 'Japanese
 
 export default function BuilderLanguagesPage() {
   const router = useRouter();
+  const { resume, saveSection, loading } = useResume();
   const [searchValue, setSearchValue] = useState('');
-  const [languages, setLanguages] = useState<Language[]>([
-    { id: '1', name: 'English', proficiency: 'Native' },
-    { id: '2', name: 'French', proficiency: 'Fluent' },
-    { id: '3', name: 'Spanish', proficiency: 'Intermediate' },
-  ]);
+  const [languages, setLanguages] = useState<Language[]>([]);
+  const [saving, setSaving] = useState(false);
+
+  // Populate from loaded resume
+  useEffect(() => {
+    if (!resume) return;
+    if (resume.languages && resume.languages.length > 0) {
+      setLanguages(
+        resume.languages.map((l: Record<string, unknown>, i: number) => ({
+          id: String(l.id ?? i),
+          name: (l.name as string) ?? '',
+          proficiency: (l.proficiency as string) ?? 'Beginner',
+        }))
+      );
+    }
+  }, [resume]);
 
   const addLanguage = (name: string) => {
     if (!name.trim()) return;
@@ -54,6 +67,25 @@ export default function BuilderLanguagesPage() {
     if (e.key === 'Enter') {
       e.preventDefault();
       addLanguage(searchValue);
+    }
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await saveSection(
+        'languages',
+        languages.map((l, i) => ({
+          name: l.name,
+          proficiency: l.proficiency.toLowerCase(),
+          sort_order: i,
+        }))
+      );
+      router.push('/builder/certificates');
+    } catch {
+      // stay on page
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -224,10 +256,11 @@ export default function BuilderLanguagesPage() {
             Back
           </button>
           <button
-            onClick={() => router.push('/builder/certificates')}
-            className="bg-primary hover:bg-[#3235d6] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 transition-all"
+            onClick={handleSave}
+            disabled={saving || loading}
+            className="bg-primary hover:bg-[#3235d6] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 transition-all disabled:opacity-50"
           >
-            Save &amp; Continue
+            {saving ? 'Saving...' : 'Save & Continue'}
           </button>
         </footer>
       </main>

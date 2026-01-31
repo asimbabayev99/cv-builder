@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 from pydantic_settings import BaseSettings
 
 # Find .env relative to this file (backend/.env) regardless of CWD
-_env_path = Path(__file__).resolve().parent.parent / ".env"
+_env_path = Path(__file__).resolve().parent.parent.parent / ".env"
+print("Loading environment variables from:", _env_path)
 load_dotenv(_env_path)
 
 ENV: str = ""

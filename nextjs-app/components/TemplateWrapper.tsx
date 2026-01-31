@@ -1,58 +1,94 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import styles from './TemplateWrapper.module.css';
+import { TEMPLATE_COMPONENTS } from './templates';
+
+const A4_WIDTH = 595;
+const A4_HEIGHT = 842;
 
 interface TemplateWrapperProps {
   templateName: string;
-  scaleX: number;
-  scaleY: number;
   showBorder?: boolean;
 }
 
 export default function TemplateWrapper({
   templateName,
-  scaleX,
-  scaleY,
   showBorder = true
 }: TemplateWrapperProps) {
-  const [htmlContent, setHtmlContent] = useState<string>('');
+  const hostRef = useRef<HTMLDivElement>(null);
+  const shadowRootRef = useRef<ShadowRoot | null>(null);
+  const mountRef = useRef<HTMLDivElement | null>(null);
+  const [ready, setReady] = useState(false);
+  const [scale, setScale] = useState(1);
+
+  const TemplateComponent = TEMPLATE_COMPONENTS[templateName];
+
+  const updateScale = useCallback(() => {
+    const host = hostRef.current;
+    if (!host) return;
+    const width = host.clientWidth;
+    const newScale = width / A4_WIDTH;
+    setScale(newScale);
+    if (mountRef.current) {
+      mountRef.current.style.transform = `scale(${newScale})`;
+    }
+  }, []);
 
   useEffect(() => {
-    const fetchTemplate = async () => {
-      try {
-        const response = await fetch(`/templates/${templateName}.html`);
-        if (response.ok) {
-          const html = await response.text();
-          setHtmlContent(html);
-        }
-      } catch (error) {
-        console.error(`Failed to load template ${templateName}:`, error);
-      }
-    };
+    const host = hostRef.current;
+    if (!host || shadowRootRef.current) return;
 
-    fetchTemplate();
-  }, [templateName]);
+    const shadow = host.attachShadow({ mode: 'open' });
+    shadowRootRef.current = shadow;
 
-  // Calculate container dimensions based on A4 size (595px x 842px) and scale
-  const containerWidth = 595 * scaleX;
-  const containerHeight = 842 * scaleY;
+    // Load scoped CSS inside shadow DOM
+    const link1 = document.createElement('link');
+    link1.rel = 'stylesheet';
+    link1.href = '/css/all.min.css';
+
+    const link2 = document.createElement('link');
+    link2.rel = 'stylesheet';
+    link2.href = '/css/main-1.0.0.380.css';
+
+    shadow.appendChild(link1);
+    shadow.appendChild(link2);
+
+    // Create mount point for React portal
+    const mount = document.createElement('div');
+    mount.style.width = `${A4_WIDTH}px`;
+    mount.style.minHeight = `${A4_HEIGHT}px`;
+    mount.style.transformOrigin = 'top left';
+    mount.style.background = '#fff';
+    shadow.appendChild(mount);
+    mountRef.current = mount;
+
+    setReady(true);
+  }, []);
+
+  useEffect(() => {
+    updateScale();
+    const observer = new ResizeObserver(updateScale);
+    if (hostRef.current) observer.observe(hostRef.current);
+    return () => observer.disconnect();
+  }, [updateScale]);
+
+  if (!TemplateComponent) return null;
 
   return (
     <div
+      ref={hostRef}
       className={`${styles.wrapper} ${showBorder ? styles.withBorder : ''}`}
       style={{
-        width: `${containerWidth}px`,
-        height: `${containerHeight}px`,
+        width: '100%',
+        aspectRatio: `${A4_WIDTH} / ${A4_HEIGHT}`,
       }}
     >
-      <div
-        className={styles.content}
-        style={{
-          transform: `scale(${scaleX}, ${scaleY})`,
-        }}
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
+      {ready && mountRef.current && createPortal(
+        <TemplateComponent />,
+        mountRef.current
+      )}
     </div>
   );
 }

@@ -10,10 +10,6 @@ interface TemplateCardProps {
   animationDelay?: number;
 }
 
-// List view scale
-const LIST_SCALE_X = 0.352941;
-const LIST_SCALE_Y = 0.308642;
-
 export default function TemplateCard({ template, onPreview, animationDelay = 0 }: TemplateCardProps) {
   return (
     <div
@@ -28,8 +24,6 @@ export default function TemplateCard({ template, onPreview, animationDelay = 0 }
           <div className={styles.templateThumbnail}>
             <TemplateWrapper
               templateName={template.skinName}
-              scaleX={LIST_SCALE_X}
-              scaleY={LIST_SCALE_Y}
               showBorder={false}
             />
           </div>

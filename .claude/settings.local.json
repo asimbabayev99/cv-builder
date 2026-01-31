@@ -63,7 +63,10 @@
       "Bash(\"C:\\\\Users\\\\Asim\\\\themeforest_templates\\\\cv-builder\\\\backend\\\\env\\\\Scripts\\\\pip.exe\" install xhtml2pdf python-docx)",
       "Bash(\"C:\\\\Users\\\\Asim\\\\themeforest_templates\\\\cv-builder\\\\backend\\\\env\\\\Scripts\\\\pip.exe\" install --force-reinstall --no-deps cryptography)",
       "Bash(\"C:\\\\Users\\\\Asim\\\\themeforest_templates\\\\cv-builder\\\\backend\\\\env\\\\Scripts\\\\python.exe\" -m uvicorn app.main:app --reload --port 8000)",
-      "Bash(del \"C:\\\\Users\\\\Asim\\\\themeforest_templates\\\\cv-builder\\\\nul\")"
+      "Bash(del \"C:\\\\Users\\\\Asim\\\\themeforest_templates\\\\cv-builder\\\\nul\")",
+      "Bash(python3.9:*)",
+      "Bash(PYTHONPATH=/Users/asimbabayev/templates/cv-builder uvicorn:*)",
+      "Bash(uvicorn app.main:app:*)"
     ]
   }
 }

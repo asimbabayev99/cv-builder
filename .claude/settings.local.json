@@ -66,7 +66,13 @@
       "Bash(del \"C:\\\\Users\\\\Asim\\\\themeforest_templates\\\\cv-builder\\\\nul\")",
       "Bash(python3.9:*)",
       "Bash(PYTHONPATH=/Users/asimbabayev/templates/cv-builder uvicorn:*)",
-      "Bash(uvicorn app.main:app:*)"
+      "Bash(uvicorn app.main:app:*)",
+      "Bash(pdftotext:*)",
+      "Bash(open \"http://localhost:3000\")",
+      "Bash(npx playwright:*)",
+      "Bash(jobs:*)",
+      "Bash(open:*)",
+      "Bash(grep:*)"
     ]
   }
 }

@@ -13,7 +13,6 @@ interface BuilderSidebarProps {
 }
 
 export const BUILDER_STEPS: StepItem[] = [
-  { label: 'Profile', icon: 'account_circle', completed: false },
   { label: 'Personal Info', icon: 'person', completed: false },
   { label: 'Education', icon: 'school', completed: false },
   { label: 'Work Experience', icon: 'work', completed: false },

@@ -53,9 +53,8 @@ class ExportService:
             run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
 
         # -- Contact info ----------------------------------------------
-        contact_parts = [
-            v for v in [resume.email, resume.phone, resume.location] if v
-        ]
+        address_part = ", ".join([v for v in [resume.city, resume.country] if v])
+        contact_parts = [v for v in [resume.email, resume.phone, address_part] if v]
         if contact_parts:
             doc.add_paragraph(" | ".join(contact_parts))
 

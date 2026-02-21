@@ -70,7 +70,8 @@ class Resume(Base):
     professional_title: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
     email: Mapped[Optional[str]] = mapped_column(String(254), nullable=True)
     phone: Mapped[Optional[str]] = mapped_column(String(30), nullable=True)
-    location: Mapped[Optional[str]] = mapped_column(String(150), nullable=True)
+    country: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    city: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
     summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     photo_url: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
 

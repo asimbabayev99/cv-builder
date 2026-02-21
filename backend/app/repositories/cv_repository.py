@@ -25,7 +25,8 @@ class CvRepository(BaseRepository):
         resume = Resume(user_id=user_id, title=title)
         self.session.add(resume)
         await self.session.flush()
-        return resume
+        # Reload with relationships to avoid DetachedInstanceError
+        return await self.get_resume(resume.id, user_id)
 
     async def get_resume(self, resume_id: int, user_id: int) -> Optional[Resume]:
         stmt = (

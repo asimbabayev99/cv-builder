@@ -65,7 +65,7 @@ export default function PreviewModal({
   onChangeTemplate,
 }: PreviewModalProps) {
   const router = useRouter();
-  const [selectedColor, setSelectedColor] = useState(COLOR_GROUPS[0].main.color);
+  const [selectedColor, setSelectedColor] = useState('');
   const [zoom, setZoom] = useState(85);
 
   const currentIndex = template ? templates.findIndex(t => t.skinName === template.skinName) : -1;
@@ -151,7 +151,7 @@ export default function PreviewModal({
         </button>
 
         {/* Left: Preview Side (55%) */}
-        <div className="w-[60%] h-full bg-[#f8f9fa] border-r border-gray-100 relative flex flex-col">
+        <div className="w-[60%] h-full bg-[#f5f0eb] border-r border-gray-100 relative flex flex-col">
           <div className="flex-1 overflow-y-auto p-12 custom-scrollbar">
             {/* Resume Paper */}
             <div
@@ -165,6 +165,7 @@ export default function PreviewModal({
               <TemplateWrapper
                 templateName={template.skinName}
                 showBorder={false}
+                themeColor={selectedColor || undefined}
               />
             </div>
           </div>

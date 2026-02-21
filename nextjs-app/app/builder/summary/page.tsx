@@ -13,7 +13,6 @@ export default function BuilderSummaryPage() {
       BUILDER_STEPS.map((step) => ({
         ...step,
         completed: [
-          'Profile',
           'Personal Info',
           'Education',
           'Work Experience',

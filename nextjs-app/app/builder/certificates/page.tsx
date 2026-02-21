@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
-import BuilderPreview from '@/components/BuilderPreview';
 import { useResume } from '@/contexts/ResumeContext';
 
 interface Certificate {
@@ -123,7 +122,6 @@ export default function BuilderCertificatesPage() {
       BUILDER_STEPS.map((step) => ({
         ...step,
         completed: [
-          'Profile',
           'Personal Info',
           'Education',
           'Work Experience',
@@ -373,7 +371,7 @@ export default function BuilderCertificatesPage() {
         </div>
 
         {/* Sticky Bottom Navigation */}
-        <footer className="fixed bottom-0 left-64 right-[450px] bg-white/80 backdrop-blur-md border-t border-[#dbdbe6] px-8 py-4 z-10 flex justify-between items-center">
+        <footer className="fixed bottom-0 left-64 right-0 bg-white/80 backdrop-blur-md border-t border-[#dbdbe6] px-8 py-4 z-10 flex justify-between items-center">
           <button
             onClick={() => router.push('/builder/languages')}
             className="flex items-center gap-2 text-sm font-bold text-[#111118] hover:bg-[#f0f0f4] px-6 py-2.5 rounded-lg transition-all"
@@ -392,8 +390,6 @@ export default function BuilderCertificatesPage() {
           </button>
         </footer>
       </main>
-
-      <BuilderPreview />
     </div>
   );
 }

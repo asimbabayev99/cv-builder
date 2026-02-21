@@ -11,7 +11,7 @@ export default function BuilderPage() {
     // Preserve query params (e.g. ?template=modern&id=5) when redirecting
     const params = searchParams.toString();
     const query = params ? `?${params}` : '';
-    router.replace(`/builder/photo${query}`);
+    router.replace(`/builder/personal${query}`);
   }, [router, searchParams]);
 
   return null;

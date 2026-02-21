@@ -1,6 +1,7 @@
 from datetime import datetime
-from typing import List, Optional
-from pydantic import BaseModel
+from typing import List, Optional, Any
+from uuid import UUID
+from pydantic import BaseModel, field_validator
 
 
 # ---------------------------------------------------------------------------
@@ -17,7 +18,8 @@ class PersonalInfoUpdate(BaseModel):
     professional_title: Optional[str] = None
     email: Optional[str] = None
     phone: Optional[str] = None
-    location: Optional[str] = None
+    country: Optional[str] = None
+    city: Optional[str] = None
     summary: Optional[str] = None
     photo_url: Optional[str] = None
 
@@ -168,7 +170,8 @@ class ResumeResponse(BaseModel):
     professional_title: Optional[str] = None
     email: Optional[str] = None
     phone: Optional[str] = None
-    location: Optional[str] = None
+    country: Optional[str] = None
+    city: Optional[str] = None
     summary: Optional[str] = None
     photo_url: Optional[str] = None
     completion: int
@@ -181,6 +184,13 @@ class ResumeResponse(BaseModel):
     certificates: List[CertificateOut] = []
     custom_sections: List[CustomSectionOut] = []
 
+    @field_validator("uid", mode="before")
+    @classmethod
+    def convert_uid(cls, v: Any) -> str:
+        if isinstance(v, UUID):
+            return str(v)
+        return v
+
     model_config = {"from_attributes": True}
 
 
@@ -191,5 +201,12 @@ class ResumeListItem(BaseModel):
     completion: int
     template_name: Optional[str] = None
     updated_at: Optional[datetime] = None
+
+    @field_validator("uid", mode="before")
+    @classmethod
+    def convert_uid(cls, v: Any) -> str:
+        if isinstance(v, UUID):
+            return str(v)
+        return v
 
     model_config = {"from_attributes": True}

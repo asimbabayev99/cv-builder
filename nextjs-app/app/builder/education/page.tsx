@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import BuilderSidebar, { BUILDER_STEPS, StepItem } from '@/components/BuilderSidebar';
-import BuilderPreview from '@/components/BuilderPreview';
 import { useResume } from '@/contexts/ResumeContext';
 
 interface Education {
@@ -23,6 +22,40 @@ export default function BuilderEducationPage() {
   const { resume, saveSection, loading } = useResume();
   const [educations, setEducations] = useState<Education[]>([]);
   const [saving, setSaving] = useState(false);
+  const [errors, setErrors] = useState<Record<string, Record<string, string>>>({});
+
+  const validateEntry = (edu: Education): Record<string, string> => {
+    const entryErrors: Record<string, string> = {};
+    if (!edu.institution.trim()) {
+      entryErrors.institution = 'Institution is required';
+    }
+    if (!edu.degree.trim()) {
+      entryErrors.degree = 'Degree is required';
+    }
+    if (!edu.startDate) {
+      entryErrors.startDate = 'Start date is required';
+    }
+    if (!edu.currentlyStudying && !edu.endDate) {
+      entryErrors.endDate = 'End date is required';
+    }
+    return entryErrors;
+  };
+
+  const validateAllEntries = (): boolean => {
+    const allErrors: Record<string, Record<string, string>> = {};
+    let isValid = true;
+
+    educations.forEach((edu) => {
+      const entryErrors = validateEntry(edu);
+      if (Object.keys(entryErrors).length > 0) {
+        allErrors[edu.id] = entryErrors;
+        isValid = false;
+      }
+    });
+
+    setErrors(allErrors);
+    return isValid;
+  };
 
   // Populate from loaded resume
   useEffect(() => {
@@ -54,6 +87,30 @@ export default function BuilderEducationPage() {
     setEducations((prev) =>
       prev.map((edu) => (edu.id === id ? { ...edu, expanded: !edu.expanded } : edu))
     );
+    // Clear errors for this entry when collapsing
+    setErrors((prev) => {
+      const newErrors = { ...prev };
+      delete newErrors[id];
+      return newErrors;
+    });
+  };
+
+  const saveEntry = (id: string) => {
+    const edu = educations.find((e) => e.id === id);
+    if (!edu) return;
+
+    const entryErrors = validateEntry(edu);
+    if (Object.keys(entryErrors).length > 0) {
+      setErrors((prev) => ({ ...prev, [id]: entryErrors }));
+      return;
+    }
+
+    setErrors((prev) => {
+      const newErrors = { ...prev };
+      delete newErrors[id];
+      return newErrors;
+    });
+    toggleExpand(id);
   };
 
   const deleteEducation = (id: string) => {
@@ -76,6 +133,29 @@ export default function BuilderEducationPage() {
   };
 
   const handleSave = async () => {
+    // Only validate entries that have some data
+    const filledEntries = educations.filter(
+      (edu) => edu.institution.trim() || edu.degree.trim() || edu.startDate || edu.endDate
+    );
+
+    if (filledEntries.length > 0 && !validateAllEntries()) {
+      // Expand the first entry with errors
+      const firstErrorId = Object.keys(errors)[0] || filledEntries.find((edu) => {
+        const entryErrors = validateEntry(edu);
+        return Object.keys(entryErrors).length > 0;
+      })?.id;
+
+      if (firstErrorId) {
+        setEducations((prev) =>
+          prev.map((edu) => ({
+            ...edu,
+            expanded: edu.id === firstErrorId,
+          }))
+        );
+      }
+      return;
+    }
+
     setSaving(true);
     try {
       await saveSection(
@@ -105,7 +185,7 @@ export default function BuilderEducationPage() {
     () =>
       BUILDER_STEPS.map((step) => ({
         ...step,
-        completed: ['Profile', 'Personal Info'].includes(step.label),
+        completed: ['Personal Info'].includes(step.label),
         active: step.label === 'Education',
       })),
     []
@@ -154,10 +234,12 @@ export default function BuilderEducationPage() {
                       {/* Institution */}
                       <div className="col-span-2">
                         <label className="block text-sm font-semibold mb-2 text-[#111118]">
-                          Institution
+                          Institution <span className="text-red-500">*</span>
                         </label>
                         <input
-                          className="w-full px-4 py-2.5 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                          className={`w-full px-4 py-2.5 rounded-lg border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all ${
+                            errors[edu.id]?.institution ? 'border-red-500' : 'border-[#dbdbe6]'
+                          }`}
                           type="text"
                           value={edu.institution}
                           placeholder="e.g. Stanford University"
@@ -165,15 +247,20 @@ export default function BuilderEducationPage() {
                             updateEducation(edu.id, 'institution', e.target.value)
                           }
                         />
+                        {errors[edu.id]?.institution && (
+                          <p className="text-xs text-red-500 mt-1">{errors[edu.id].institution}</p>
+                        )}
                       </div>
 
                       {/* Degree */}
                       <div>
                         <label className="block text-sm font-semibold mb-2 text-[#111118]">
-                          Degree
+                          Degree <span className="text-red-500">*</span>
                         </label>
                         <input
-                          className="w-full px-4 py-2.5 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                          className={`w-full px-4 py-2.5 rounded-lg border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all ${
+                            errors[edu.id]?.degree ? 'border-red-500' : 'border-[#dbdbe6]'
+                          }`}
                           type="text"
                           value={edu.degree}
                           placeholder="e.g. Bachelor of Science"
@@ -181,6 +268,9 @@ export default function BuilderEducationPage() {
                             updateEducation(edu.id, 'degree', e.target.value)
                           }
                         />
+                        {errors[edu.id]?.degree && (
+                          <p className="text-xs text-red-500 mt-1">{errors[edu.id].degree}</p>
+                        )}
                       </div>
 
                       {/* Field of Study */}
@@ -201,30 +291,37 @@ export default function BuilderEducationPage() {
 
                       {/* Dates */}
                       <div className="col-span-2">
-                        <div className="flex flex-col md:flex-row md:items-center gap-4">
+                        <div className="flex flex-col md:flex-row md:items-start gap-4">
                           <div className="flex-1 grid grid-cols-2 gap-4">
                             <div>
                               <label className="block text-xs font-bold uppercase tracking-wider text-[#616289] mb-1">
-                                Start Date
+                                Start Date <span className="text-red-500">*</span>
                               </label>
                               <input
-                                className="w-full px-3 py-2 rounded-lg border border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                className={`w-full px-3 py-2 rounded-lg border bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all ${
+                                  errors[edu.id]?.startDate ? 'border-red-500' : 'border-[#dbdbe6]'
+                                }`}
                                 type="month"
                                 value={edu.startDate}
                                 onChange={(e) =>
                                   updateEducation(edu.id, 'startDate', e.target.value)
                                 }
                               />
+                              {errors[edu.id]?.startDate && (
+                                <p className="text-xs text-red-500 mt-1">{errors[edu.id].startDate}</p>
+                              )}
                             </div>
                             <div>
                               <label className="block text-xs font-bold uppercase tracking-wider text-[#616289] mb-1">
-                                End Date
+                                End Date {!edu.currentlyStudying && <span className="text-red-500">*</span>}
                               </label>
                               <input
-                                className={`w-full px-3 py-2 rounded-lg border border-[#dbdbe6] outline-none transition-all ${
+                                className={`w-full px-3 py-2 rounded-lg border outline-none transition-all ${
                                   edu.currentlyStudying
-                                    ? 'bg-gray-50 text-[#616289]'
-                                    : 'bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary'
+                                    ? 'bg-gray-50 text-[#616289] border-[#dbdbe6]'
+                                    : errors[edu.id]?.endDate
+                                      ? 'border-red-500 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary'
+                                      : 'border-[#dbdbe6] bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary'
                                 }`}
                                 type="month"
                                 value={edu.endDate}
@@ -233,6 +330,9 @@ export default function BuilderEducationPage() {
                                   updateEducation(edu.id, 'endDate', e.target.value)
                                 }
                               />
+                              {errors[edu.id]?.endDate && (
+                                <p className="text-xs text-red-500 mt-1">{errors[edu.id].endDate}</p>
+                              )}
                             </div>
                           </div>
                           <div className="flex items-center gap-2 mt-4 md:mt-6">
@@ -271,7 +371,7 @@ export default function BuilderEducationPage() {
                         Cancel
                       </button>
                       <button
-                        onClick={() => toggleExpand(edu.id)}
+                        onClick={() => saveEntry(edu.id)}
                         className="px-6 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all"
                         type="button"
                       >
@@ -333,7 +433,7 @@ export default function BuilderEducationPage() {
         </div>
 
         {/* Sticky Bottom Navigation */}
-        <footer className="fixed bottom-0 left-64 right-[450px] bg-white/80 backdrop-blur-md border-t border-[#dbdbe6] px-8 py-4 z-10 flex justify-between items-center">
+        <footer className="fixed bottom-0 left-64 right-0 bg-white/80 backdrop-blur-md border-t border-[#dbdbe6] px-8 py-4 z-10 flex justify-between items-center">
           <button
             onClick={() => router.push('/builder/personal')}
             className="flex items-center gap-2 text-sm font-bold text-[#111118] hover:bg-[#f0f0f4] px-6 py-2.5 rounded-lg transition-all"
@@ -350,8 +450,6 @@ export default function BuilderEducationPage() {
           </button>
         </footer>
       </main>
-
-      <BuilderPreview />
     </div>
   );
 }

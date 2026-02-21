@@ -22,7 +22,8 @@ export interface ResumeData {
   professional_title?: string | null;
   email?: string | null;
   phone?: string | null;
-  location?: string | null;
+  country?: string | null;
+  city?: string | null;
   summary?: string | null;
   photo_url?: string | null;
   completion: number;
@@ -47,7 +48,7 @@ interface ResumeContextValue {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   saveSection: (section: string, data: any) => Promise<void>;
   loadResume: (id: number) => Promise<void>;
-  createResume: (title: string) => Promise<number>;
+  createResume: (title: string, templateName?: string) => Promise<number>;
 }
 
 const ResumeContext = createContext<ResumeContextValue | null>(null);
@@ -86,12 +87,21 @@ export function ResumeProvider({ children }: { children: ReactNode }) {
   );
 
   const createResumeCtx = useCallback(
-    async (title: string): Promise<number> => {
+    async (title: string, templateName?: string): Promise<number> => {
       const token = getToken(session);
       if (!token) throw new Error('Not authenticated');
       setLoading(true);
       try {
-        const data = await api.createResume(token, title);
+        const data = await api.createResume(token, title, templateName);
+        // If template was provided, save it immediately
+        if (templateName) {
+          await api.saveTemplate(token, data.id, { template_name: templateName });
+          // Reload to get fresh data with template
+          const fresh = await api.getResume(token, data.id);
+          setResume(fresh);
+          setResumeId(fresh.id);
+          return fresh.id;
+        }
         setResume(data);
         setResumeId(data.id);
         return data.id;

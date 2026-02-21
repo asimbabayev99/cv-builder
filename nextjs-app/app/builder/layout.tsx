@@ -17,10 +17,13 @@ function BuilderInit({ children }: { children: React.ReactNode }) {
     initRef.current = true;
 
     const idParam = searchParams.get('id');
+    const templateParam = searchParams.get('template');
+
     if (idParam) {
       loadResume(Number(idParam));
     } else if (!resumeId) {
-      createResume('Untitled Resume');
+      // Create resume with template if provided
+      createResume('Untitled Resume', templateParam || undefined);
     }
   }, [status, session, searchParams, loadResume, createResume, resumeId]);
 

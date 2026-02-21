@@ -22,8 +22,8 @@ async function request(method: string, path: string, token: string, body?: unkno
 // Resume CRUD
 // ---------------------------------------------------------------------------
 
-export function createResume(token: string, title: string) {
-  return request('POST', '/resumes', token, { title });
+export function createResume(token: string, title: string, templateName?: string) {
+  return request('POST', '/resumes', token, { title, template_name: templateName });
 }
 
 export function getResume(token: string, id: number) {

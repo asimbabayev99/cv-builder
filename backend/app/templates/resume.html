@@ -109,7 +109,7 @@
   <div class="contact-info">
     {% if resume.email %}<span>{{ resume.email }}</span>{% endif %}
     {% if resume.phone %}<span>{{ resume.phone }}</span>{% endif %}
-    {% if resume.location %}<span>{{ resume.location }}</span>{% endif %}
+    {% if resume.city or resume.country %}<span>{{ resume.city }}{% if resume.city and resume.country %}, {% endif %}{{ resume.country }}</span>{% endif %}
   </div>
 </div>
 

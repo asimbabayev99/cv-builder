@@ -13,7 +13,8 @@ const CATEGORIES = ['All', 'Minimal', 'Modern', 'Creative', 'Professional'] as c
 export default function TemplatesPage() {
   const router = useRouter();
 
-  const [searchQuery, setSearchQuery] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [searchQuery, _setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [showAll, setShowAll] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);

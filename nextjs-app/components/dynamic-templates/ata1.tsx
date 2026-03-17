@@ -1,5 +1,5 @@
 import { DynamicTemplateProps } from '@/types/resume';
-import { formatDate, isRTL } from '@/lib/translations';
+import { isRTL } from '@/lib/translations';
 
 export default function DynamicAta1({ data, translations, language = 'en', colorHex = '#000000' }: DynamicTemplateProps) {
   const rtl = isRTL(language);

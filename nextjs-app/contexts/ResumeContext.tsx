@@ -119,7 +119,8 @@ export function ResumeProvider({ children }: { children: ReactNode }) {
       const token = getToken(session);
       if (!token || !resumeId) return;
 
-      const saveFns: Record<string, (t: string, id: number, d: unknown) => Promise<unknown>> = {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const saveFns: Record<string, (t: string, id: number, d: any) => Promise<any>> = {
         'personal-info': api.savePersonalInfo,
         education: api.saveEducation,
         experience: api.saveExperience,

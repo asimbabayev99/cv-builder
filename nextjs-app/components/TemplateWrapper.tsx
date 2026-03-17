@@ -237,6 +237,7 @@ export default function TemplateWrapper({
   const mountRef = useRef<HTMLDivElement | null>(null);
   const themeStyleRef = useRef<HTMLStyleElement | null>(null);
   const [ready, setReady] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [scale, setScale] = useState(1);
 
   const TemplateComponent = TEMPLATE_COMPONENTS[templateName];

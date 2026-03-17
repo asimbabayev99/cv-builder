@@ -262,11 +262,11 @@ export default function DynamicMpa5({ data, translations, language = 'en', color
                   <span className="paddedline grayItl">
                     {exp.job_title && <span className="jobtitle">{exp.job_title}</span>}
                     {exp.job_title && (exp.location || exp.start_date || exp.end_date) && (
-                      <span className="septrSpace">//</span>
+                      <span className="septrSpace">{'/'}{'/'}</span>
                     )}
                     {exp.location && <span>{exp.location}</span>}
                     {exp.location && (exp.start_date || exp.end_date) && (
-                      <span className="septrSpace">//</span>
+                      <span className="septrSpace">{'/'}{'/'}</span>
                     )}
                     {exp.start_date && formatDate(exp.start_date, language)}
                     {exp.start_date && (exp.end_date || exp.currently_working) && ' – '}
@@ -337,7 +337,7 @@ export default function DynamicMpa5({ data, translations, language = 'en', color
                   <span className="paddedline">
                     {edu.institution && <span>{edu.institution}</span>}
                     {edu.institution && edu.end_date && (
-                      <span className="septrSpace">//</span>
+                      <span className="septrSpace">{'/'}{'/'}</span>
                     )}
                     {edu.end_date && <span>{formatDate(edu.end_date, language)}</span>}
                   </span>

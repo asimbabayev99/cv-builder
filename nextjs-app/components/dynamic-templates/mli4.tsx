@@ -321,19 +321,19 @@ export default function DynamicMli4({ data, translations, language = 'en', color
                   <div className="address">
                     {addressParts.length > 0 && (
                       <div className="dispBlock pb5">
-                        <span className="txt-bold">{translations.address || 'Address'} : </span>
+                        <span className="txt-bold">{'Address'} : </span>
                         <span>{addressParts.join(', ')}</span>
                       </div>
                     )}
                     {data.phone && (
                       <div className="dispBlock pb5">
-                        <span className="txt-bold">{translations.phone || 'Phone'} : </span>
+                        <span className="txt-bold">{'Phone'} : </span>
                         <span>{data.phone}</span>
                       </div>
                     )}
                     {data.email && (
                       <div className="dispBlock pb5">
-                        <span className="txt-bold">{translations.email || 'Email'} : </span>
+                        <span className="txt-bold">{'Email'} : </span>
                         <span>{data.email}</span>
                       </div>
                     )}

@@ -72,7 +72,9 @@
       "Bash(npx playwright:*)",
       "Bash(jobs:*)",
       "Bash(open:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(./env/bin/python:*)",
+      "Bash(xargs ls:*)"
     ]
   }
 }

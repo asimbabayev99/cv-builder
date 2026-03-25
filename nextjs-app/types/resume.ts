@@ -71,6 +71,12 @@ export interface ResumeData {
   phone?: string;
   country?: string;
   city?: string;
+  street_address?: string;
+  postcode?: string;
+  website?: string;
+  linkedin?: string;
+  driving_license?: string;
+  nationality?: string;
   summary?: string;
   photo_url?: string;
 

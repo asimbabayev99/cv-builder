@@ -40,6 +40,19 @@ class SkillCategory(str, enum.Enum):
     SOFT = "soft"
 
 
+class SkillProficiency(str, enum.Enum):
+    BEGINNER = 0
+    INTERMEDIATE = 2
+    ADVANCED = 3
+    EXPERT = 4
+
+
+class ResumeLanguage(str, enum.Enum):
+    EN = "en"
+    RU = "ru"
+    AZ = "az"
+
+
 class LanguageProficiency(str, enum.Enum):
     NATIVE = "native"
     FLUENT = "fluent"
@@ -63,6 +76,8 @@ class Resume(Base):
     # Template & styling
     template_name: Mapped[Optional[str]] = mapped_column(String(50), nullable=True)
     color_hex: Mapped[Optional[str]] = mapped_column(String(7), nullable=True)
+    language: Mapped[Optional[str]] = mapped_column(String(8), default=ResumeLanguage.AZ, nullable=True)
+    is_draft: Mapped[Optional[bool]] = mapped_column(Boolean, default=True)
 
     # Personal info (header section of the CV)
     first_name: Mapped[Optional[str]] = mapped_column(String(50), nullable=True)
@@ -72,6 +87,14 @@ class Resume(Base):
     phone: Mapped[Optional[str]] = mapped_column(String(30), nullable=True)
     country: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
     city: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    street_address: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    postcode: Mapped[Optional[str]] = mapped_column(String(16), nullable=True)
+
+    linkedin: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    website: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    driving_license: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
+    nationality: Mapped[Optional[str]] = mapped_column(String(32), nullable=True)
+
     summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     photo_url: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
 
@@ -121,7 +144,7 @@ class Education(Base):
     institution: Mapped[str] = mapped_column(String(200))
     degree: Mapped[Optional[str]] = mapped_column(String(150), nullable=True)
     field_of_study: Mapped[Optional[str]] = mapped_column(String(150), nullable=True)
-    start_date: Mapped[Optional[str]] = mapped_column(String(7), nullable=True)  # YYYY-MM
+    start_date: Mapped[str] = mapped_column(String(7), nullable=True)  # YYYY-MM
     end_date: Mapped[Optional[str]] = mapped_column(String(7), nullable=True)    # YYYY-MM
     currently_studying: Mapped[bool] = mapped_column(Boolean, default=False)
     description: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
@@ -144,11 +167,11 @@ class Experience(Base):
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
     resume_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("resume.id"), index=True)
 
-    job_title: Mapped[str] = mapped_column(String(150))
-    company: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
+    job_title: Mapped[str] = mapped_column(String(128))
+    company: Mapped[str] = mapped_column(String(128))
     employment_type: Mapped[Optional[str]] = mapped_column(String(20), nullable=True)
     location: Mapped[Optional[str]] = mapped_column(String(150), nullable=True)
-    start_date: Mapped[Optional[str]] = mapped_column(String(7), nullable=True)  # YYYY-MM
+    start_date: Mapped[str] = mapped_column(String(7), nullable=True)  # YYYY-MM
     end_date: Mapped[Optional[str]] = mapped_column(String(7), nullable=True)    # YYYY-MM
     currently_working: Mapped[bool] = mapped_column(Boolean, default=False)
     description: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
@@ -173,6 +196,7 @@ class Skill(Base):
 
     name: Mapped[str] = mapped_column(String(100))
     category: Mapped[str] = mapped_column(String(20), default=SkillCategory.TECHNICAL)
+    proficiency: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     sort_order: Mapped[int] = mapped_column(Integer, default=0)
 
     resume: Mapped["Resume"] = relationship(back_populates="skills")
@@ -207,7 +231,7 @@ class Certificate(Base):
 
     name: Mapped[str] = mapped_column(String(200))
     organization: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
-    issue_date: Mapped[Optional[str]] = mapped_column(String(7), nullable=True)      # YYYY-MM
+    issue_date: Mapped[str] = mapped_column(String(7), nullable=True)      # YYYY-MM
     expiration_date: Mapped[Optional[str]] = mapped_column(String(7), nullable=True)  # YYYY-MM
     no_expiry: Mapped[bool] = mapped_column(Boolean, default=False)
     credential_link: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)

@@ -20,6 +20,12 @@ class PersonalInfoUpdate(BaseModel):
     phone: Optional[str] = None
     country: Optional[str] = None
     city: Optional[str] = None
+    street_address: Optional[str] = None
+    postcode: Optional[str] = None
+    website: Optional[str] = None
+    linkedin: Optional[str] = None
+    driving_license: Optional[str] = None
+    nationality: Optional[str] = None
     summary: Optional[str] = None
     photo_url: Optional[str] = None
 
@@ -172,6 +178,12 @@ class ResumeResponse(BaseModel):
     phone: Optional[str] = None
     country: Optional[str] = None
     city: Optional[str] = None
+    street_address: Optional[str] = None
+    postcode: Optional[str] = None
+    website: Optional[str] = None
+    linkedin: Optional[str] = None
+    driving_license: Optional[str] = None
+    nationality: Optional[str] = None
     summary: Optional[str] = None
     photo_url: Optional[str] = None
     completion: int

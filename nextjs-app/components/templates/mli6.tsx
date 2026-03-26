@@ -1,6 +1,44 @@
 /* eslint-disable */
 // @ts-nocheck
-export default function TemplateMli6() {
+import { sampleData } from "./sampleData";
+import type { ResumeData } from "@/types/resume";
+
+const defaultTranslations = {
+  summary: "Summary",
+  experience: "Work history",
+  education: "Education",
+  skills: "Skills",
+  languages: "Languages",
+  certificates: "Certificates",
+  present: "Current",
+};
+
+function formatDate(dateStr: string, language: string): string {
+  if (!dateStr) return "";
+  const [year, month] = dateStr.split("-");
+  if (!year) return "";
+  if (!month) return year;
+  const date = new Date(parseInt(year), parseInt(month) - 1);
+  return date.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+}
+
+interface DynamicTemplateProps {
+  data: ResumeData;
+  translations: typeof defaultTranslations;
+  language: string;
+  colorHex: string;
+}
+
+export default function TemplateMli6({
+  data = sampleData,
+  translations: t = defaultTranslations,
+  language = "en",
+  colorHex = "#0187de",
+}: Partial<DynamicTemplateProps> = {}) {
+  const getLanguageWidth = (level: number) => {
+    return `${(level / 5) * 100}%`;
+  };
+
   return (
     <>
       <style>{`
@@ -22,9 +60,9 @@ export default function TemplateMli6() {
 
         /*Document*/
         .skn-mli6{color:#020303;line-height:14px;min-height:792px;position:relative}
-		.skn-mli6:not(.sortable-item):before{content:'';box-sizing:content-box;border:20px solid #0187de;height:calc(100% - 40px);position:absolute;left:0;top:0}
+		.skn-mli6:not(.sortable-item):before{content:'';box-sizing:content-box;border:20px solid ${colorHex};height:calc(100% - 40px);position:absolute;left:0;top:0}
         .skn-mli6 .name{color:#000;font-weight:bold;padding:0 0 9px 0;text-align:left;position:relative;word-wrap:break-word;text-transform:capitalize}
-        .skn-mli6 .resumeTitle{color:#0187de;font-weight:bold;text-transform:uppercase;letter-spacing:1px}
+        .skn-mli6 .resumeTitle{color:${colorHex};font-weight:bold;text-transform:uppercase;letter-spacing:1px}
         .skn-mli6 .singlecolumn,.skn-mli6 .sectiontitle{word-wrap:break-word}
 
         /* top section */
@@ -54,7 +92,7 @@ export default function TemplateMli6() {
         .skn-mli6.pict-pcsh-radius .paragraph .pictPic img{border-radius:10px;border:1px solid #373737;box-sizing:border-box}
 
         /* contact section */
-        .skn-mli6 .sectionadrs{clear:both;box-sizing:content-box;color:#fff;margin:20px -25px 25px 0;float:right;background:#0187de;position:relative;width:calc(100% - 40px)}
+        .skn-mli6 .sectionadrs{clear:both;box-sizing:content-box;color:#fff;margin:20px -25px 25px 0;float:right;background:${colorHex};position:relative;width:calc(100% - 40px)}
         .skn-mli6 .sectionadrs .address_sec{display:table;table-layout:fixed;width:100%}
         .skn-mli6 .address{display:table;table-layout:fixed;width:100%}
         .skn-mli6 .col-left{display:table-cell;padding-right:25px;width:64.8%;vertical-align:top}
@@ -81,10 +119,10 @@ export default function TemplateMli6() {
         /*parentContainer*/
         .skn-mli6 .jobline ul{margin-top:8px}
         .skn-mli6 .parentContainer .left-box .section{padding-right:25px;position:relative}
-        .skn-mli6 .parentContainer .right-box{width:201px;border-left:1px solid #0187de;word-break:break-word;box-sizing:content-box}
+        .skn-mli6 .parentContainer .right-box{width:201px;border-left:1px solid ${colorHex};word-break:break-word;box-sizing:content-box}
         .skn-mli6 .parentContainer .right-box .section{padding-left:20px}
         .skn-mli6 .heading{position:relative}
-        .skn-mli6 .right-box .section .heading:before{content:'';border:4px solid #0187de;position:absolute;left:-24.5px;top:3px;z-index:1}
+        .skn-mli6 .right-box .section .heading:before{content:'';border:4px solid ${colorHex};position:absolute;left:-24.5px;top:3px;z-index:1}
         .skn-mli6 .parentContainer .right-box .section:first-child .heading:after{content:'';background:#fff;left:-22px;top:-2px;width:5px;height:18px;position:absolute}
 
         /*Infographic*/
@@ -93,7 +131,7 @@ export default function TemplateMli6() {
 		.skn-mli6 .left-box .langSec .firstparagraph .field.dispBlock{display:block}
         .skn-mli6 .langSec .paragraph,.skn-mli6 .infoSec .paragraph{clear:both;margin-top:0;}
         .skn-mli6 .ratingBar{background:#d5d6d6;width:100%;clear:both;page-break-inside:avoid}
-        .skn-mli6 .innerRating{background-color:#002e58;height:4px;width:60%}
+        .skn-mli6 .innerRating{background-color:${colorHex};height:4px;width:60%}
         .skn-mli6 .iconRow .icon-svg{width:11px;height:11px;float:left;display:inline-flex;vertical-align:middle}
         .skn-mli6 .iconRow .rgtspc{margin-left:18px}
 
@@ -102,10 +140,10 @@ export default function TemplateMli6() {
         /*MFR address*/
         .skn-mli6 .zipsuffix,.skn-mli6.MFR .zipprefix,.skn-mli6.MES .zipprefix{display:block}
         .skn-mli6 .zipprefix,.skn-mli6.MFR .zipsuffix,.skn-mli6.MES .zipsuffix{display:none}
-		
+
         /* GRYR */
 		.skn-mli6 .displayNoneThisField{display:none}/* Keep this class always at bottom */
-		
+
 		/*For Extra Space Before Colon*/
         .skn-mli6 .beforecolonspace{display:none!important}
         .skn-mli6.MFR .beforecolonspace{display:inline!important}
@@ -118,7 +156,7 @@ export default function TemplateMli6() {
         .skn-mli6.texp-curved .totl-expr{border-radius:10px}
         .skn-mli6 .dflex{display:flex;justify-content:space-between}
         .skn-mli6 .right-box .totl-expr{display: none}
-    
+
 
         .skn-mli6,.skn-mli6 table{line-height:14px}
         .skn-mli6.pagesize{width:545px}
@@ -135,13 +173,13 @@ export default function TemplateMli6() {
         .skn-mli6 .resumeTitle{font-size:12px;line-height:14px}
         .skn-mli6 .sectiontitle{font-size:14px;line-height:16px}
         .skn-mli6 .parentcontainer .right-box{width:201px}
-        .skn-mli6 .sectionadrs{margin-right:-25px;padding-right:45px;background:#0187de}
+        .skn-mli6 .sectionadrs{margin-right:-25px;padding-right:45px;background:${colorHex}}
         /*.skn-mli6 .col-left{max-width:262px}
         .skn-mli6 .col-right{max-width:181px}*/
         .skn-mli6 .iconRow .icon-svg{margin-top:2px}
         .skn-mli6 .iconRow .icon-svg.social{margin-top:0px}
         /* .skn-mli6 .iconRow .icon-svg{margin-top:2px} */
-        .skn-mli6 .totl-expr{background-color:#0187de;font-size:8px;line-height:12px}
+        .skn-mli6 .totl-expr{background-color:${colorHex};font-size:8px;line-height:12px}
 
         /* icons */
         /* .skn-mli6 .iconRow .icon-svg{height:10px;width:10px} */
@@ -152,23 +190,22 @@ export default function TemplateMli6() {
         /*Infographic*/
         .skn-mli6 .langSec .paragraph,.skn-mli6 .infoSec .paragraph{padding-top:5px}
         .skn-mli6 .langSec .firstparagraph,.skn-mli6 .infoSec .firstparagraph{padding-top:0}
-        .skn-mli6 .innerRating{background-color:#0187de}
-        .skn-mli6:not(.sortable-item):before{border:20px solid #0187de;width:555px;border:20px solid #0187de}
+        .skn-mli6:not(.sortable-item):before{border:20px solid ${colorHex};width:555px;border:20px solid ${colorHex}}
 
         /* SDCL */
-        .skn-mli6,.skn-mli6 .right-box .section .heading:before,.skn-mli6 .parentContainer .right-box{border-color:#0187de!important}
-        .skn-mli6 .resumeTitle{color:#0187de}
+        .skn-mli6,.skn-mli6 .right-box .section .heading:before,.skn-mli6 .parentContainer .right-box{border-color:${colorHex}}
+        .skn-mli6 .resumeTitle{color:${colorHex}}
 
         /*Photo Layout styles*/
-        .skn-mli6.pict-pcsh-circle .paragraph .pictPic img{width:93px;height:93px;border-color:#0187de}
-        .skn-mli6.pict-pcsh-square .paragraph .pictPic img{width:93px;height:93px;border-color:#0187de}
-        .skn-mli6.pict-pcsh-bottomleft .paragraph .pictPic img{height:93px;width:93px;border-color:#0187de}
-        .skn-mli6.pict-pcsh-bottomright .paragraph .pictPic img{height:93px;width:93px;border-color:#0187de}
-        .skn-mli6.pict-pcsh-radius .paragraph .pictPic img{height:93px;width:93px;border-color:#0187de}
+        .skn-mli6.pict-pcsh-circle .paragraph .pictPic img{width:93px;height:93px;border-color:${colorHex}}
+        .skn-mli6.pict-pcsh-square .paragraph .pictPic img{width:93px;height:93px;border-color:${colorHex}}
+        .skn-mli6.pict-pcsh-bottomleft .paragraph .pictPic img{height:93px;width:93px;border-color:${colorHex}}
+        .skn-mli6.pict-pcsh-bottomright .paragraph .pictPic img{height:93px;width:93px;border-color:${colorHex}}
+        .skn-mli6.pict-pcsh-radius .paragraph .pictPic img{height:93px;width:93px;border-color:${colorHex}}
 
         /* fixes for builder */
         .skn-mli6 *{transition:auto}
-        .skn-mli6 .sectionadrs .sortable-item .section{background:#0187de}
+        .skn-mli6 .sectionadrs .sortable-item .section{background:${colorHex}}
         .skn-mli6 .parentContainer .left-box .sortable-item:first-child .section,
         .skn-mli6 .parentContainer .right-box .sortable-item:first-child .section{padding-top:0}
         .page-final .skn-mli6 .parentContainer .right-box{width:200px}
@@ -187,171 +224,320 @@ export default function TemplateMli6() {
         .skn-mli6.for-pdf.texp-rectangle .parentContainer .left-box .expr-sec .paragraph .singlecolumn .dflex > span:first-child{display:inline-block;width:65%}
         .skn-mli6.for-pdf.texp-rectangle .parentContainer .left-box .expr-sec .paragraph .singlecolumn .dflex > span:last-child{display:inline-block;float:right;width:35%;}
     `}</style>
-      <div className="svg-skin "><div data-testid="embd-98t1CZ7" className="" tabIndex={0}><div></div><div data-testid="embd-95CA90b" className="document doc-root doc-finalize fontsize fontface vmargins hmargins pgsz-a4 pagesize skn-mli6 MLI6 MUK texp-none pict-pcpf-purl " docskinwidth="545" ><div data-testid="embd-92LqKqF0" id="CONTAINER_PARENT_0" className="topsection hidesecondpass"><div data-testid="embd-92PDkR60" id="CONTAINER_0" className="left-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="9" className="sortable-item section-container SortableItem-sibling  data-NAME"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-NAME" id="SECTION_NAME1a1a32ad-f01c-4377-b2f6-1a65f9bf6cb8" className="section notdraggable SECTION_NAME firstsection" data-section-cd="NAME"><div data-testid="embd-88uQIHR-NAME" className="doc-item"><div data-testid="embd-88aw0Ce-NAME" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-44bc0bd4-6d0c-480d-8f32-8d70df1621d0" id="PARAGRAPH_NAME_44bc0bd4-6d0c-480d-8f32-8d70df1621d0" className="paragraph PARAGRAPH_NAME firstparagraph"><div data-testid="embd-78blCsH">
-                        <div className="name" dependency="FNAM|LNAM">
-                            <span id="FIELD_FNAM">Dom</span>
-                            <span id="FIELD_LNAM">Webster</span>
+      <div className="svg-skin">
+        <div className="document doc-root doc-finalize fontsize fontface vmargins hmargins pgsz-a4 pagesize skn-mli6 MLI6 MUK texp-none pict-pcpf-purl">
+          {/* Top Section - Name and Photo */}
+          <div className="topsection hidesecondpass">
+            <div className="left-box">
+              {/* Name Section */}
+              <div className="section notdraggable SECTION_NAME firstsection">
+                <div className="doc-item">
+                  <div className="paragraph PARAGRAPH_NAME firstparagraph">
+                    <div className="name">
+                      <span>{data.first_name}</span>{" "}
+                      <span>{data.last_name}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Summary Section */}
+              <div className="section summary notdraggable SECTION_SUMM">
+                <div className="doc-item">
+                  <div className="paragraph PARAGRAPH_SUMM firstparagraph">
+                    <div className="clearfix doc-item">
+                      <div className="singlecolumn">
+                        <p>{data.summary}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="right-box">
+              {/* Photo Section */}
+              <div className="section notdraggable pict-sec SECTION_PICT firstsection">
+                <div className="doc-item">
+                  <div className="paragraph PARAGRAPH_PICT firstparagraph">
+                    <div className="clearfix doc-item">
+                      <div className="pictPic">
+                        <div className="field">
+                          <img src={data.photo_url} alt="Profile" />
                         </div>
-                        
-                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="9" className="sortable-item section-container SortableItem-sibling  data-SUMM"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMMaae374b0-0228-4808-a3fe-b04cc0c571fb" className="section summary notdraggable SECTION_SUMM" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" className="doc-item"><div data-testid="embd-88aw0Ce-SUMM" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6669442-f38f-e0e2-fad7-6104f95f3e6d" id="PARAGRAPH_SUMM_f6669442-f38f-e0e2-fad7-6104f95f3e6d" className="paragraph PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn" id="FIELD_FRFM"><p>Motivated Care Assistant with 10 years of experience in the Care industry. Offering expertise in person-centred care, implementation and monitoring of individual care plans and management of resident assessments and files. Energetic self-starter and team builder able to navigate high-stress situations. Well-versed in monitoring clients with developmental disabilities and adhering to patient care plans.</p></div>
-                    </div></div></div></div></div></div></div></div><div data-testid="embd-92PDkR61" id="CONTAINER_1" className="right-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="9" className="sortable-item section-container SortableItem-sibling  data-PICT"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-PICT" id="SECTION_PICTa2e3abc4-fc5a-4d5c-80fb-ac187cd5be60" className="section notdraggable pict-sec SECTION_PICT firstsection" data-section-cd="PICT"><div data-testid="embd-88uQIHR-PICT" className="doc-item"><div data-testid="embd-88aw0Ce-PICT" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-389ae0dd-26d7-4892-a4b9-d1e4f0b10399" id="PARAGRAPH_PICT_389ae0dd-26d7-4892-a4b9-d1e4f0b10399" className="paragraph PARAGRAPH_PICT firstparagraph placeholder-text"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="pictPic">
-                            <div className="field" id="FIELD_PURL"><img data-testid="embd-78pIea6" className="chk" src="https://assets.myperfectcv.co.uk/blobimages/muk/builder/images/sampleSkinImage.png" alt="Smiley face" /> </div>
-                        </div>
-                    </div></div></div></div></div></div></div></div></div><div data-testid="embd-92LqKqF1" id="CONTAINER_PARENT_1" className="sectionadrs"><div data-testid="embd-92PDkR62" id="CONTAINER_2" className=""><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="10" className="sortable-item section-container SortableItem-sibling  data-CNTC"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-CNTC" id="SECTION_CNTCd3d40c22-1b29-401e-a809-9cb7e72d6fdc" className="section SECTION_CNTC notdraggable" data-section-cd="CNTC"><div data-testid="embd-88uQIHR-CNTC" className="doc-item"><div data-testid="embd-88aw0Ce-CNTC" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-3912838f-29f6-467c-8297-bf45ee1ff720" id="PARAGRAPH_CNTC_3912838f-29f6-467c-8297-bf45ee1ff720" className="paragraph PARAGRAPH_CNTC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="address">
-                            <div className="col-left">
-                                <div className="iconRow" dependency="EMAI">
-                                    <div className="icon-svg">
-                                        <svg width="10px" height="10px" viewBox="0 0 12 12"><path fill="#fff" d="M4.375 11.125a.376.376 0 0 0 .68.222l1.363-1.846-2.043-.695zM11.452.043L.202 5.918a.375.375 0 0 0 .052.687L3.38 7.674l6.661-5.695-5.155 6.21L10.13 9.98a.377.377 0 0 0 .492-.3L11.996.43a.376.376 0 0 0-.544-.387z"></path></svg>
-                                    </div>
-                                    <div className="rgtspc" id="FIELD_EMAI">dom.webster@example.co.uk</div>
-                                </div>
-                                <div className="iconRow" dependency="HPHN|CPHN">
-                                    <div className="icon-svg">
-                                        <svg width="10px" height="10px" viewBox="0 0 12 12"><path fill="#fff" d="M6.4 3.2a.4.4 0 1 0 0 .8C7.282 4 8 4.718 8 5.6a.4.4 0 0 0 .8 0c0-1.323-1.077-2.4-2.4-2.4m0-1.6a.4.4 0 1 0 0 .8c1.765 0 3.2 1.436 3.2 3.2a.4.4 0 1 0 .8 0c0-2.205-1.795-4-4-4m0-1.6a.4.4 0 1 0 0 .8c2.647 0 4.8 2.153 4.8 4.8a.4.4 0 1 0 .8 0C12 2.512 9.487 0 6.4 0m4.4 8.8a7.422 7.422 0 0 1-3.288-.751.395.395 0 0 0-.307-.019.406.406 0 0 0-.23.205l-.628 1.301a10.062 10.062 0 0 1-3.882-3.882l1.301-.63a.4.4 0 0 0 .185-.536A7.429 7.429 0 0 1 3.2 1.2a.4.4 0 0 0-.4-.4H.4a.4.4 0 0 0-.4.4C0 7.156 4.845 12 10.8 12a.4.4 0 0 0 .4-.4V9.2a.4.4 0 0 0-.4-.4"></path></svg>
-                                    </div>
-                                    <div className="rgtspc">
-                                        <span id="FIELD_HPHN">07912 345 678</span>
-                                        <span id="FIELD_CPHN"></span>
-                                    </div>
-                                </div>
-                                
-								
-                                
-                                
-							</div>
-                            <div className="col-right">
-                                <div className="iconRow">
-                                    <div className="icon-svg" dependency="STRT|CITY|STAT|ZIPC|ADDR">
-                                        <svg width="10px" height="12px" viewBox="0 0 11.11 15"><g className="locationSVG"><path fill="#fff" d="M5.378 2.484a2.906 2.906 0 0 1 2.91 2.893 2.906 2.906 0 0 1-2.894 2.91 2.906 2.906 0 0 1-2.91-2.893 2.906 2.906 0 0 1 2.893-2.91zm.424 3.315l1.245-.003-.002-.83-1.246.003-.003-1.245-.83.003.003 1.245-1.245.003.002.83 1.246-.003.003 1.245.83-.002zM5.365 0a5.387 5.387 0 0 1 5.396 5.365 5.325 5.325 0 0 1-1.127 3.31l-4.23 5.452-4.258-5.428A5.325 5.325 0 0 1 0 5.395 5.387 5.387 0 0 1 5.365 0zm.026 9.106A3.73 3.73 0 0 0 9.106 5.37 3.73 3.73 0 0 0 5.37 1.656 3.729 3.729 0 0 0 1.656 5.39 3.73 3.73 0 0 0 5.39 9.106z"></path> </g></svg>
-                                    </div>
-                                    <div className="zipsuffix rgtspc" dependency="STRT|CITY|STAT|ZIPC|ADDR">
-                                        <span>
-                                            <span id="FIELD_STRT">46 Roman Rd</span><span dependency="STRT"><span dependency="CITY|STAT">,</span></span>
-                                            <span id="FIELD_CITY">Leeds</span>
-                                            <span id="FIELD_STAT"></span>
-                                            <span id="FIELD_ZIPC">LS2 3ZR</span>
-                                            <span id="FIELD_ADDR"></span>
-                                        </span>
-                                    </div>
-                                    
-                                </div>
-                                
-                                
-								
-								
-								
-                            </div>	
-                        </div>
-                    </div></div></div></div></div></div></div></div></div><div data-testid="embd-92LqKqF2" id="CONTAINER_PARENT_2" className="parentContainer hidefirstpass"><div data-testid="embd-92PDkR63" id="CONTAINER_3" className="left-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="11" className="sortable-item section-container SortableItem-sibling  data-EXPR"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR313e1c77-349e-497b-bdb6-f0271f1e85bf" className="section expr-sec SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EXPR">Work history<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Work history " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EXPR" className=""><div data-testid="embd-87S8HNi313e1c77-349e-497b-bdb6-f0271f1e85bf" id="CONTAINER_313e1c77-349e-497b-bdb6-f0271f1e85bf" className="sortableInner"><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="11" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="11" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-998e66f0-eaa8-4a72-b41c-7158c85a1d86" id="PARAGRAPH_EXPR_998e66f0-eaa8-4a72-b41c-7158c85a1d86" className="paragraph PARAGRAPH_EXPR firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <span className="dispBlock" dependency="JSTD|EDDT">
-                                <span className="dflex">
-                                    <span>
-                                        <span className="jobdates" id="FIELD_JSTD" format="%B %Y">July 2014</span><span dependency="JSTD+EDDT">  to  </span>
-                                        <span className="jobdates" id="FIELD_EDDT" format="%B %Y">Current</span><br dependency="JSTD|EDDT" />
-                                    </span>
-                                    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Section */}
+          <div className="sectionadrs">
+            <div className="section SECTION_CNTC notdraggable">
+              <div className="doc-item">
+                <div className="paragraph PARAGRAPH_CNTC firstparagraph">
+                  <div className="clearfix doc-item">
+                    <div className="address">
+                      <div className="col-left">
+                        {/* Email */}
+                        {data.email && (
+                          <div className="iconRow">
+                            <div className="icon-svg">
+                              <svg width="10px" height="10px" viewBox="0 0 12 12">
+                                <path fill="#fff" d="M4.375 11.125a.376.376 0 0 0 .68.222l1.363-1.846-2.043-.695zM11.452.043L.202 5.918a.375.375 0 0 0 .052.687L3.38 7.674l6.661-5.695-5.155 6.21L10.13 9.98a.377.377 0 0 0 .492-.3L11.996.43a.376.376 0 0 0-.544-.387z"></path>
+                              </svg>
+                            </div>
+                            <div className="rgtspc">{data.email}</div>
+                          </div>
+                        )}
+                        {/* Phone */}
+                        {data.phone && (
+                          <div className="iconRow">
+                            <div className="icon-svg">
+                              <svg width="10px" height="10px" viewBox="0 0 12 12">
+                                <path fill="#fff" d="M6.4 3.2a.4.4 0 1 0 0 .8C7.282 4 8 4.718 8 5.6a.4.4 0 0 0 .8 0c0-1.323-1.077-2.4-2.4-2.4m0-1.6a.4.4 0 1 0 0 .8c1.765 0 3.2 1.436 3.2 3.2a.4.4 0 1 0 .8 0c0-2.205-1.795-4-4-4m0-1.6a.4.4 0 1 0 0 .8c2.647 0 4.8 2.153 4.8 4.8a.4.4 0 1 0 .8 0C12 2.512 9.487 0 6.4 0m4.4 8.8a7.422 7.422 0 0 1-3.288-.751.395.395 0 0 0-.307-.019.406.406 0 0 0-.23.205l-.628 1.301a10.062 10.062 0 0 1-3.882-3.882l1.301-.63a.4.4 0 0 0 .185-.536A7.429 7.429 0 0 1 3.2 1.2a.4.4 0 0 0-.4-.4H.4a.4.4 0 0 0-.4.4C0 7.156 4.845 12 10.8 12a.4.4 0 0 0 .4-.4V9.2a.4.4 0 0 0-.4-.4"></path>
+                              </svg>
+                            </div>
+                            <div className="rgtspc">
+                              <span>{data.phone}</span>
+                            </div>
+                          </div>
+                        )}
+                        {/* Website */}
+                        {data.website && (
+                          <div className="iconRow">
+                            <div className="icon-svg">
+                              <svg width="12px" height="12px" viewBox="0 0 12 12">
+                                <path d="M10.8656578,6.57240514 C9.353263,8.08481873 6.91727137,8.06241853 5.42767649,6.57240514 C4.56887944,5.71399743 3.15488429,5.69679728 2.2792873,6.57240514 C1.40929029,7.44241296 1.39009035,8.86962578 2.26008737,9.7396336 C3.13048438,10.6100414 4.55727948,10.5908412 5.42767649,9.72083343 C5.89687487,9.25122921 6.10887415,8.62722361 6.07447426,8.02081816 C6.57807253,8.27242042 7.12207067,8.42722181 7.68286874,8.47282222 C7.61446897,9.34323004 7.24207025,10.1960377 6.57247255,10.8656437 C5.0728777,12.3652572 2.61528615,12.3844574 1.1152913,10.8848439 C-0.38430355,9.38483041 -0.365503615,6.92720833 1.13449123,5.42759486 C2.64688604,3.91518127 5.08247767,3.93758147 6.57247255,5.42759486 C7.4312696,6.28640257 8.84526475,6.30320272 9.72086174,5.42759486 C10.5908587,4.55758704 10.6100587,3.13037422 9.74006167,2.2599664 C8.86966466,1.38995858 7.44246956,1.40915875 6.57247255,2.27916657 C6.10327416,2.74837078 5.89127489,3.37237639 5.92567477,3.97918184 C5.4220765,3.72757958 4.87807837,3.57277819 4.3168803,3.52717778 C4.38568006,2.65676996 4.75767879,1.8039623 5.42767649,1.13435628 C6.92727133,-0.365257191 9.38486289,-0.384457363 10.8848577,1.11515611 C12.3844526,2.61476958 12.3652527,5.07239167 10.8656578,6.57240514" fill="#FFFFFF"></path>
+                              </svg>
+                            </div>
+                            <div className="icoTxt">{data.website}</div>
+                          </div>
+                        )}
+                        {/* LinkedIn */}
+                        {data.linkedin && (
+                          <div className="social-link">
+                            <div className="iconRow">
+                              <div className="icon-svg social">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="linkedin" version="1.1" viewBox="0 0 30 30">
+                                  <path className="svg-inricon fillwht" fill="#fff" d="M10.7,8.6c0,1.2-1,2.1-2,2.1s-2.1-1-2.1-2.1,1-2.1,2.1-2.1,2,1,2,2.1ZM10.3,12.1h-3.4v11.3h3.5v-11.3s-.1,0,0,0ZM16,12.1h-3.4v11.3h3.4v-5.9c0-1.6.7-2.5,2.1-2.5s1.9,1,1.9,2.5v5.9h3.5v-7.1c0-3-1.7-4.5-4.1-4.5s-3.4,1.9-3.4,1.9v-1.7h0Z"></path>
+                                </svg>
+                              </div>
+                              <div className="icoTxt">
+                                <span className="field">{data.linkedin}</span>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <div className="col-right">
+                        {/* Address */}
+                        {(data.street_address || data.city || data.postcode) && (
+                          <div className="iconRow">
+                            <div className="icon-svg">
+                              <svg width="10px" height="12px" viewBox="0 0 11.11 15">
+                                <g className="locationSVG">
+                                  <path fill="#fff" d="M5.378 2.484a2.906 2.906 0 0 1 2.91 2.893 2.906 2.906 0 0 1-2.894 2.91 2.906 2.906 0 0 1-2.91-2.893 2.906 2.906 0 0 1 2.893-2.91zm.424 3.315l1.245-.003-.002-.83-1.246.003-.003-1.245-.83.003.003 1.245-1.245.003.002.83 1.246-.003.003 1.245.83-.002zM5.365 0a5.387 5.387 0 0 1 5.396 5.365 5.325 5.325 0 0 1-1.127 3.31l-4.23 5.452-4.258-5.428A5.325 5.325 0 0 1 0 5.395 5.387 5.387 0 0 1 5.365 0zm.026 9.106A3.73 3.73 0 0 0 9.106 5.37 3.73 3.73 0 0 0 5.37 1.656 3.729 3.729 0 0 0 1.656 5.39 3.73 3.73 0 0 0 5.39 9.106z"></path>
+                                </g>
+                              </svg>
+                            </div>
+                            <div className="zipsuffix rgtspc">
+                              <span>
+                                {data.street_address && <span>{data.street_address}</span>}
+                                {data.street_address && (data.city || data.postcode) && <span>, </span>}
+                                {data.city && <span>{data.city} </span>}
+                                {data.postcode && <span>{data.postcode}</span>}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                        {/* Nationality */}
+                        {data.nationality && (
+                          <div className="iconRow">
+                            <div className="icon-svg">
+                              <svg width="10px" height="13px" viewBox="0 0 10 13">
+                                <path d="M9.18516,7.4406 C9.28996,7.5986 9.30036,7.8014 9.21076,7.9694 C9.12116,8.137 8.94676,8.2414 8.75676,8.2414 L1.03036,8.2414 L1.03036,11.847 C1.03036,12.1322 0.79996,12.3622 0.51516,12.3622 C0.23036,12.3622 -4e-05,12.1322 -4e-05,11.847 L-4e-05,0.515 C-4e-05,0.2302 0.23036,-0.0002 0.51516,-0.0002 C0.79996,-0.0002 1.03036,0.2302 1.03036,0.515 L1.03036,1.0302 L8.75676,1.0302 C8.94676,1.0302 9.12116,1.1346 9.21076,1.3022 C9.30036,1.4702 9.28996,1.673 9.18516,1.831 L7.31516,4.6358 L9.18516,7.4406 Z" fill="#FFFFFF"></path>
+                              </svg>
+                            </div>
+                            <div className="icoTxt">
+                              <span>{data.nationality}</span>
+                            </div>
+                          </div>
+                        )}
+                        {/* Driving License */}
+                        {data.driving_license && (
+                          <div className="iconRow">
+                            <div className="icon-svg">
+                              <svg width="14px" height="10px" viewBox="0 0 14 11">
+                                <path d="M2.49992235,10 C2.96007657,10 3.33325568,9.62682088 3.33325568,9.16666667 L3.33325568,8.33333333 L9.99992235,8.33333333 L9.99992235,9.16666667 C9.99992235,9.62682088 10.3731015,10 10.8332557,10 L11.666589,10 C12.1267432,10 12.4999224,9.62682088 12.4999224,9.16666667 L12.4999224,7.75858561 C12.7561683,7.46561686 12.916589,7.0867157 12.916589,6.66666667 L12.916589,5.41666667 C12.916589,4.91615295 12.6913184,4.47214762 12.3418413,4.16666667 L12.8645057,4.16666667 C13.0079892,4.16666667 13.1329841,4.06901042 13.1676215,3.92995199 L13.3238715,3.30495199 C13.3731066,3.10780843 13.2238756,2.91666667 13.0205014,2.91666667 L11.4613837,2.91666667 L11.0280596,1.83334351 C10.5827318,0.719528198 9.51998257,9.9475983e-14 8.32023485,9.9475983e-14 L5.01294318,9.9475983e-14 C3.81347521,9.9475983e-14 2.75044624,0.719528198 2.30486416,1.83334351 L1.87153999,2.91666667 L0.312676664,2.91666667 C0.109302437,2.91666667 -0.0399285204,3.10780843 0.00956081879,3.30495199 L0.165810819,3.92995199 C0.20044827,4.06901042 0.325443184,4.16666667 0.468926664,4.16666667 L0.991591052,4.16666667 C0.641859606,4.47214762 0.416589017,4.91615295 0.416589017,5.41666667 L0.416589017,6.66666667 C0.416589017,7.08646139 0.577009753,7.46536255 0.833255684,7.75858561 L0.833255684,9.16666667 C0.833255684,9.62682088 1.2064348,10 1.66658902,10 L2.49992235,10 Z M9.99992235,3.75 L3.33325568,3.75 L3.85225796,2.45234172 C4.04210273,1.97786967 4.50174832,1.66666667 5.01294318,1.66666667 L8.32023485,1.66666667 C8.83142972,1.66666667 9.2910753,1.97786967 9.48092007,2.45234172 L9.99992235,3.75 Z M2.49992235,6.66145325 C1.99991726,6.66145325 1.66658902,6.32916768 1.66658902,5.83073934 C1.66658902,5.33228556 1.99991726,5 2.49992235,5 C2.99992744,5 3.74992235,5.74765523 3.74992235,6.24608358 C3.74992235,6.74453735 2.99992744,6.66145325 2.49992235,6.66145325 Z M9.58325568,6.24608358 C9.58325568,5.74765523 10.3332506,5 10.8332557,5 C11.3332608,5 11.666589,5.33228556 11.666589,5.83073934 C11.666589,6.32916768 11.3332608,6.66145325 10.8332557,6.66145325 C10.3332506,6.66145325 9.58325568,6.74453735 9.58325568,6.24608358 Z" fill="#FFFFFF" fillRule="nonzero"></path>
+                              </svg>
+                            </div>
+                            <div className="icoTxt">
+                              <span>{data.driving_license}</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Parent Container - Experience, Skills, Education, Languages */}
+          <div className="parentContainer hidefirstpass">
+            <div className="left-box">
+              {/* Experience Section */}
+              <div className="section expr-sec SECTION_EXPR multi-para has-title">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle">{t.experience}</div>
+                  </div>
+                  <div>
+                    {data.experiences?.map((exp, index) => (
+                      <div
+                        key={exp.id}
+                        className={`paragraph PARAGRAPH_EXPR ${index === 0 ? "firstparagraph" : ""}`}
+                      >
+                        <div className="clearfix doc-item">
+                          <div className="singlecolumn">
+                            <span className="dispBlock">
+                              <span className="dflex">
+                                <span>
+                                  <span className="jobdates">{formatDate(exp.start_date, language)}</span>
+                                  <span>  to  </span>
+                                  <span className="jobdates">
+                                    {exp.currently_working ? t.present : formatDate(exp.end_date, language)}
+                                  </span>
+                                  <br />
                                 </span>
+                              </span>
                             </span>
-                            <span className="dispBlock" dependency="JTIT">
-                                <span className="jobtitle txtCaps txtBold" id="FIELD_JTIT">Senior Care Assistant</span>
+                            <span className="dispBlock">
+                              <span className="jobtitle txtCaps txtBold">{exp.job_title}</span>
                             </span>
-                            <span className="dispBlock locationGap" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span className="companyname txtBold" id="FIELD_COMP">Private Care Home</span><span dependency="COMP"><span dependency="JSTA|JCIT|JCNT">, </span></span><span className="jobcity" id="FIELD_JCIT">Edinburgh</span>
-                                <span className="jobstate" id="FIELD_JSTA"></span><span className="joblocation jobcountry" id="FIELD_JCNT"></span>
+                            <span className="dispBlock locationGap">
+                              <span className="companyname txtBold">{exp.company}</span>
+                              {exp.company && exp.location && <span>, </span>}
+                              <span className="jobcity">{exp.location}</span>
                             </span>
-                            <span className="jobline" id="FIELD_JDES"><ul><li>Met with patients and families to discuss care and plan of action htmlFor future.</li>
-  <li>Implemented new team onboarding programme, reducing training time from four weeks to two.</li>
-  <li>Administered all necessary medications as directed by care plan.</li></ul></span>
+                            <span className="jobline">
+                              <ul>
+                                {exp.description?.split("\n").map((line, i) => (
+                                  <li key={i}>{line}</li>
+                                ))}
+                              </ul>
+                            </span>
+                          </div>
                         </div>
-                    </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="11" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="11" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" className="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <span className="dispBlock" dependency="JSTD|EDDT">
-                                <span className="dflex">
-                                    <span>
-                                        <span className="jobdates" id="FIELD_JSTD" format="%B %Y">September 2010</span><span dependency="JSTD+EDDT">  to  </span>
-                                        <span className="jobdates" id="FIELD_EDDT" format="%B %Y">June 2014</span><br dependency="JSTD|EDDT" />
-                                    </span>
-                                    
-                                </span>
-                            </span>
-                            <span className="dispBlock" dependency="JTIT">
-                                <span className="jobtitle txtCaps txtBold" id="FIELD_JTIT">Care Assistant</span>
-                            </span>
-                            <span className="dispBlock locationGap" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span className="companyname txtBold" id="FIELD_COMP">Ideal Care Homes</span><span dependency="COMP"><span dependency="JSTA|JCIT|JCNT">, </span></span><span className="jobcity" id="FIELD_JCIT">Edinburgh</span>
-                                <span className="jobstate" id="FIELD_JSTA"></span><span className="joblocation jobcountry" id="FIELD_JCNT"></span>
-                            </span>
-                            <span className="jobline" id="FIELD_JDES"><ul><li>Charted daily information such as mood changes, mobility activity, eating percentages and daily inputs and outputs.</li>
-  <li>Developed strong and trusting rapport with each client to facilitate best care possible.</li>
-  <li>Worked to improve patient outlook and daily living through compassionate care.</li></ul></span>
-                        </div>
-                    </div></div></div></div></div></div></div></div></div><div data-testid="embd-92PDkR64" id="CONTAINER_4" className="right-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="11" className="sortable-item section-container SortableItem-sibling  data-HILT"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-HILT" id="SECTION_HILT66551e16-9025-4c6a-88fd-21c891f7b2b4" className="section SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_HILT">SKILLS<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename SKILLS " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-HILT" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6d39a0e-45b4-431c-82b8-567b069b1da4" id="PARAGRAPH_HILT_f6d39a0e-45b4-431c-82b8-567b069b1da4" className="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="right-box">
+              {/* Skills Section */}
+              <div className="section SECTION_HILT has-title">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle">{t.skills}</div>
+                  </div>
+                  <div>
+                    <div className="paragraph PARAGRAPH_HILT firstparagraph">
+                      <div className="clearfix doc-item">
                         <div className="singlecolumn maincolumn">
-                            <span id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
-  <li>Attention to detail</li>
-  <li>Community activities</li>
-  <li>Medication administration</li>
-  <li>Care plan management</li></ul></span>
-                            <span id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
-  <li>Client safety and First Aid</li>
-  <li>Compassionate client care</li>
-  <li>Behaviour redirection</li></ul></span>
+                          <ul>
+                            {data.skills?.map((skill) => (
+                              <li key={skill.id}>{skill.name}</li>
+                            ))}
+                          </ul>
                         </div>
-                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="11" className="sortable-item section-container SortableItem-sibling  data-EDUC"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUCfd38dd6c-e289-4f1b-96e2-457086a24cc8" className="section SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EDUC">EDUCATION<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename EDUCATION " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EDUC" className=""><div data-testid="embd-87S8HNifd38dd6c-e289-4f1b-96e2-457086a24cc8" id="CONTAINER_fd38dd6c-e289-4f1b-96e2-457086a24cc8" className="sortableInner"><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="11" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="11" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Education Section */}
+              <div className="section SECTION_EDUC multi-para has-title">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle">{t.education}</div>
+                  </div>
+                  <div>
+                    {data.educations?.map((edu, index) => (
+                      <div
+                        key={edu.id}
+                        className={`paragraph PARAGRAPH_EDUC ${index === 0 ? "firstparagraph" : ""}`}
+                      >
+                        <div className="clearfix doc-item">
+                          <div className="singlecolumn">
                             <div>
-                                <span className="dispBlock" dependency="GRYR|GRST|GRED|GRIP">
-                                    <span className="xslt_static_change displayNoneThisField">Expected in </span><span id="FIELD_GRYR" format="%B %Y">2013</span>
-                                    <span id="FIELD_GRST" format="%B %Y"></span>
-                                    
-                                    <span id="FIELD_GRED" format="%B %Y"></span>
-                                    
-                                    <span id="FIELD_GRIP"></span>
-                                </span>
-                                <span className="dispBlock txtBold" dependency="DGRE|STUY|GRHN">
-                                    <span className="degree" id="FIELD_DGRE">NVQ Level 3</span><span dependency="DGRE+STUY|GRHN"> </span>
-                                    <span className="programline" id="FIELD_STUY">Health And Social Care</span>
-                                    <span id="FIELD_GRHN"></span>
-                                </span>
-                                <span className="dispBlock" dependency="SCHO|SCIT|SSTA|SCNT">
-                                    <span className="companyname txtBold" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT">, </span></span>
-                                    <span className="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span>
-                                    <span className="joblocation jobstate" id="FIELD_SSTA"></span> <span className="joblocation jobcountry" id="FIELD_SCNT"></span>
-                                </span>
+                              <span className="dispBlock">
+                                <span>{formatDate(edu.end_date, language) || formatDate(edu.start_date, language)}</span>
+                              </span>
+                              <span className="dispBlock txtBold">
+                                {edu.degree && <span className="degree">{edu.degree} </span>}
+                                <span className="programline">{edu.field_of_study}</span>
+                              </span>
+                              <span className="dispBlock">
+                                <span className="companyname txtBold">{edu.institution}</span>
+                                {edu.institution && edu.location && <span>, </span>}
+                                <span className="joblocation jobcity">{edu.location}</span>
+                              </span>
                             </div>
-                            
-                            <span id="FIELD_FRFM"></span>
+                          </div>
                         </div>
-                    </div></div></div><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="11" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="11" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <div>
-                                <span className="dispBlock" dependency="GRYR|GRST|GRED|GRIP">
-                                    <span className="xslt_static_change displayNoneThisField">Expected in </span><span id="FIELD_GRYR" format="%B %Y">2008</span>
-                                    <span id="FIELD_GRST" format="%B %Y"></span>
-                                    
-                                    <span id="FIELD_GRED" format="%B %Y"></span>
-                                    
-                                    <span id="FIELD_GRIP"></span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* Languages Section */}
+              {data.languages && data.languages.length > 0 && (
+                <div className="section langSec SECTION_LNGG has-title">
+                  <div className="doc-item">
+                    <div className="heading">
+                      <div className="sectiontitle">{t.languages}</div>
+                    </div>
+                    <div>
+                      {data.languages.map((lang, index) => (
+                        <div
+                          key={lang.id}
+                          className={`paragraph PARAGRAPH_LNGG ${index === 0 ? "firstparagraph" : ""}`}
+                        >
+                          <div className="clearfix doc-item">
+                            <div className="singlecolumn">
+                              <div className="field">
+                                <span className="txtBold">{lang.name}</span>
+                                <span className="colon">:</span>
+                              </div>
+                              <div className="ratingBar">
+                                <div
+                                  className="innerRating"
+                                  style={{ width: getLanguageWidth(lang.level || 3) }}
+                                ></div>
+                              </div>
+                              <div className="field field-ratt">
+                                <span>
+                                  {lang.proficiency
+                                    ? lang.proficiency.charAt(0).toUpperCase() + lang.proficiency.slice(1)
+                                    : ""}
                                 </span>
-                                <span className="dispBlock txtBold" dependency="DGRE|STUY|GRHN">
-                                    <span className="degree" id="FIELD_DGRE">NVQ Level 2</span><span dependency="DGRE+STUY|GRHN"> </span>
-                                    <span className="programline" id="FIELD_STUY">Health And Social Care</span>
-                                    <span id="FIELD_GRHN"></span>
-                                </span>
-                                <span className="dispBlock" dependency="SCHO|SCIT|SSTA|SCNT">
-                                    <span className="companyname txtBold" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT">, </span></span>
-                                    <span className="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span>
-                                    <span className="joblocation jobstate" id="FIELD_SSTA"></span> <span className="joblocation jobcountry" id="FIELD_SCNT"></span>
-                                </span>
+                              </div>
                             </div>
-                            
-                            <span id="FIELD_FRFM"></span>
+                          </div>
                         </div>
-                    </div></div></div></div></div></div></div></div></div></div></div><div></div></div></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

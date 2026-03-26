@@ -41,7 +41,10 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     ${commonOverrides(c)}
     .name { color: ${c} !important; }
     .sectiontitle { color: ${c} !important; }
+    .sectiontitle:after { background: ${c} !important; }
     .topsection:before { background: ${c} !important; opacity: .15 !important; }
+    .topsection { border-color: ${c} !important; }
+    .left-box .section, .right-box .section { border-color: ${c} !important; }
   `,
 
   // MLI3: accent on right-box overlay, sectiontitle border, totl-expr
@@ -64,13 +67,32 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
   mli5: (c) => `
     ${commonOverrides(c)}
     .name { color: ${c} !important; }
-    .left-box .sectiontitle { color: ${c} !important; }
-    .right-box .sectiontitle { border-bottom-color: ${c} !important; }
+    .left-box .sectiontitle { color: ${c} !important; border-color: ${c} !important; }
+    .left-box .section:first-child { border-bottom-color: ${c} !important; }
+    .right-box { background-color: ${c} !important; }
+    .right-box .sectiontitle { border-bottom-color: #fff !important; }
+    .left-box .inner-rating { background-color: ${c} !important; }
+    .adrs-field svg .fillclr { fill: ${c} !important; }
+    .totl-expr { background-color: ${c} !important; }
   `,
 
-  // MLI6: accent on totl-expr, sectiontitle stays black
+  // MLI6: border, contact section bg, right-box border, innerRating, totl-expr
   mli6: (c) => `
     ${commonOverrides(c)}
+    .skn-mli6 { border-color: ${c} !important; }
+    .skn-mli6:not(.sortable-item):before { border-color: ${c} !important; }
+    .skn-mli6 .sectionadrs { background: ${c} !important; }
+    .skn-mli6 .sectionadrs .sortable-item .section { background: ${c} !important; }
+    .skn-mli6 .resumeTitle { color: ${c} !important; }
+    .skn-mli6 .parentContainer .right-box { border-color: ${c} !important; }
+    .skn-mli6 .right-box .section .heading:before { border-color: ${c} !important; }
+    .skn-mli6 .innerRating { background-color: ${c} !important; }
+    .skn-mli6 .totl-expr { background-color: ${c} !important; }
+    .skn-mli6.pict-pcsh-circle .paragraph .pictPic img { border-color: ${c} !important; }
+    .skn-mli6.pict-pcsh-square .paragraph .pictPic img { border-color: ${c} !important; }
+    .skn-mli6.pict-pcsh-bottomleft .paragraph .pictPic img { border-color: ${c} !important; }
+    .skn-mli6.pict-pcsh-bottomright .paragraph .pictPic img { border-color: ${c} !important; }
+    .skn-mli6.pict-pcsh-radius .paragraph .pictPic img { border-color: ${c} !important; }
   `,
 
   // MLA3: gradient background via :before + totl-expr
@@ -87,13 +109,17 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .firstsection:after { background: ${c} !important; }
   `,
 
-  // MLF1: top border + heading :before + section border + sectiontitle
+  // MLF1: top border + heading :before + section border + name + icons + topshape
   mlf1: (c) => `
     ${commonOverrides(c)}
     .topsection { border-top-color: ${c} !important; }
     .heading:before { border-top-color: ${c} !important; background: ${c} !important; }
     .parentContainer .section { border-top-color: ${c} !important; }
     .name { color: ${c} !important; }
+    .topshape { fill: ${c} !important; }
+    .topshape polygon { fill: ${c} !important; }
+    .iconRow svg path.rect { fill: ${c} !important; }
+    .lang-sec.infobarsec .inner-rating { background-color: ${c} !important; }
   `,
 
   // MLS8: sectiontitle color + inner-rating + totl-expr
@@ -110,11 +136,13 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     ${commonOverrides(c)}
   `,
 
-  // MLU4: inner-rating + ratingBar
+  // MLU4: left-box background + rating bars (icons stay static color)
   mlu4: (c) => `
     ${commonOverrides(c)}
-    .ratingBar:before { background: ${c} !important; }
-    .innerRating { background: ${c} !important; }
+    .left-box { background-color: ${c} !important; }
+    .left-box .inner-rating { background-color: #fff !important; }
+    .left-box .rating-bar:before { background-color: ${c} !important; }
+    .right-box .inner-rating { background-color: ${c} !important; }
   `,
 
   // MLU6: inner-rating + ratingBar + totl-expr
@@ -124,11 +152,16 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .innerRating { background: ${c} !important; }
   `,
 
-  // MLU7: name + sectiontitle + totl-expr
+  // MLU7: name + sectiontitle + address + innerRating + totl-expr
   mlu7: (c) => `
     ${commonOverrides(c)}
-    .name { color: ${c} !important; }
-    .sectiontitle { color: ${c} !important; }
+    .skn-mlu7 .name { color: ${c} !important; }
+    .skn-mlu7 .sectiontitle { color: ${c} !important; }
+    .skn-mlu7 .resumeTitle { color: ${c} !important; }
+    .skn-mlu7 .address { color: ${c} !important; }
+    .skn-mlu7 .additional_lnk { color: ${c} !important; }
+    .skn-mlu7 .innerRating { background-color: ${c} !important; }
+    .skn-mlu7 .totl-expr { background-color: ${c} !important; }
   `,
 
   // MLV4: sectiontitle bg + inner-rating + sliced tiles
@@ -164,8 +197,15 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
   // CBA1: inner-rating
   cba1: (c) => commonOverrides(c),
 
-  // CBA2: inner-rating
-  cba2: (c) => commonOverrides(c),
+  // CBA2: name + sectiontitle + borders + inner-rating
+  cba2: (c) => `
+    ${commonOverrides(c)}
+    .name { color: ${c} !important; }
+    .sectiontitle { color: ${c} !important; }
+    .lowerborder { border-color: ${c} !important; }
+    .lowerborder2 { border-color: ${c} !important; }
+    .heading:before { border-color: ${c} !important; }
+  `,
 
   // CNA1: border-top on name + inner-rating + totl-expr
   cna1: (c) => `

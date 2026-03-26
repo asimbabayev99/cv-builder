@@ -1,6 +1,20 @@
-/* eslint-disable */
-// @ts-nocheck
-export default function TemplateCba2() {
+import type { DynamicTemplateProps } from "@/types/resume";
+import { sampleData } from "./sampleData";
+import { translations, formatDate } from "@/lib/translations";
+
+const defaultTranslations = translations.en;
+
+export default function TemplateCba2({
+  data = sampleData,
+  translations: t = defaultTranslations,
+  language = "az",
+  colorHex = "#000000",
+}: Partial<DynamicTemplateProps> = {}) {
+  const skills = data.skills || [];
+  const midpoint = Math.ceil(skills.length / 2);
+  const skillsColumn1 = skills.slice(0, midpoint);
+  const skillsColumn2 = skills.slice(midpoint);
+
   return (
     <>
       <style>{`
@@ -18,7 +32,7 @@ export default function TemplateCba2() {
 		.skn-cba2 .maxWidth{max-width:100%}
 		.skn-cba2 .bottom-space{padding-bottom:5px}
 		.skn-cba2 .brk-all{word-break:break-all}
-		
+
         .skn-cba2{word-wrap:break-word;text-size-adjust:none;-ms-text-size-adjust:none;-moz-text-size-adjust:none;-webkit-text-size-adjust:none;color:#000;min-height:792px}
         .skn-cba2 ul,.skn-cba2 li{list-style-type:disc;margin:0 0 0 10px;padding:0}
         .skn-cba2 ul li{margin:0 0 5px 10px}
@@ -62,7 +76,7 @@ export default function TemplateCba2() {
 
         /*Personal details section*/
         .skn-cba2 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
-        .skn-cba2 .details-wrap{width:49%;margin-bottom:5px}    
+        .skn-cba2 .details-wrap{width:49%;margin-bottom:5px}
         .skn-cba2 .details-wrap:nth-last-child(1),.skn-cba2 .details-wrap:nth-last-child(2){margin-bottom:0}
 
         /*FIX for FORCEFULLY making left margin ZERO for CL*/
@@ -125,7 +139,7 @@ export default function TemplateCba2() {
         /*Hyphen Handling*/
         .skn-cba2 .hyphen:before{content:' - '}
         .skn-cba2.hyphen-en-dash .hyphen:before{content:' – '}
-    
+
 
         .skn-cba2,.skn-cba2 table{line-height:14px}
         .skn-cba2.pagesize{width:535px}
@@ -144,10 +158,10 @@ export default function TemplateCba2() {
         .skn-cba2 .resumeTitle{font-size:16px;line-height:26px;padding:0 0 10px 0}
         .skn-cba2 .address{font-size:11px;line-height:13px;padding-top:8px}
         .skn-cba2 .address li:before,.skn-cba2 .adnlLnks li:before{font-size:10px}
-        .skn-cba2 .name,.skn-cba2 .sectiontitle{color:#000000}
-        .skn-cba2 .lowerborder,.skn-cba2 .lowerborder2,.skn-cba2 .heading:before{border-color:#000000}
+        .skn-cba2 .name,.skn-cba2 .sectiontitle{color:${colorHex}}
+        .skn-cba2 .lowerborder,.skn-cba2 .lowerborder2,.skn-cba2 .heading:before{border-color:${colorHex}}
 		.skn-cba2 .skli-sec .singlecolumn .field:last-child{min-height:14px}
-        .skn-cba2 .totl-expr{background-color:#000000;font-size:8px;line-height:12px}
+        .skn-cba2 .totl-expr{background-color:${colorHex};font-size:8px;line-height:12px}
 
         /* Style for Signature */
         .skn-cba2 .disclaim{margin:0;padding:0;margin-top:50px}
@@ -162,10 +176,10 @@ export default function TemplateCba2() {
         .skn-cba2 .lang-sec .heading,.skn-cba2 .skli-sec .heading,.skn-cba2 .multi-para-hilt .heading{margin-left:-0px}
         .skn-cba2 .lang-sec .paragraph,.skn-cba2 .skli-sec .paragraph{width:48.3%}
         .skn-cba2 .lang-sec .heading, .skn-cba2 .skli-sec .heading{width:calc(100% + 0px)}
-        .skn-cba2 .inner-rating{background-color:#000000}
+        .skn-cba2 .inner-rating{background-color:${colorHex}}
 		.skn-cba2 .lang-sec .sortable-item,.skn-cba2 .skli-sec .sortable-item{vertical-align:top}
-       
-		
+
+
 		/*Finalize Fixes*/
         .skn-cba2 .sortable-item i.far.fa-check{font-family:"Font Awesome 5 Pro"}
 		.page-finalize .skn-cba2 .sortableInner .paragraph-container+.paragraph-container{margin:0}
@@ -176,10 +190,10 @@ export default function TemplateCba2() {
         .skn-cba2 .lang-sec .native-lang{width:100%}
 
 	    /*Fixes for builder for skill*/
-        .skn-cba2 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:14px}	
-        .skn-cba2 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-cba2 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+        .skn-cba2 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:14px}
+        .skn-cba2 .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-cba2 .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}
 	    .skn-cba2 .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-cba2 .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-cba2  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-cba2  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0!important}
-		
+
 		/*PDF Flex Handling Code - Personal Information*/
 		.skn-cba2.for-pdf .pdfpdwrapper{display:block}
 		.skn-cba2.for-pdf .pdfpdwrapper .details-wrap:first-child{float:left;padding-right:5px}
@@ -200,156 +214,307 @@ export default function TemplateCba2() {
         .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-row{display:block;}
         .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .jobtitle-cell{display:inline-block;width:65%}
         .document.for-pdf.expr-durt-cexp .section.expr-sec .paragraph .singlecolumn .texp-cell{display:inline-block;float:right;}
-       
+
 	`}</style>
-      <div className="svg-skin "><div data-testid="embd-98t1CZ7" className="" tabIndex={0}><div></div><div data-testid="embd-95CA90b" className="document doc-root doc-finalize fontsize fontface vmargins hmargins pgsz-a4 pagesize skn-cba2 CBA2 MUK hyphen-normal pict-pcpf-purl texp-rectangle expr-durt-none " docskinwidth="535" ><div data-testid="embd-91y4rV2" className="name-contact "><div></div><div></div><div data-testid="embd-88MByq6-PRFL" id="SECTION_PRFL30868c37-6fcc-4b70-b87a-afd2447ce0d4" className="section-prfl section SECTION_PRFL firstsection" data-section-cd="PRFL"><div data-testid="embd-88uQIHR-PRFL" className="doc-item"><div data-testid="embd-88aw0Ce-PRFL" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-04f55583-5181-435c-8336-f48964adf912" id="PARAGRAPH_PRFL_04f55583-5181-435c-8336-f48964adf912" className="paragraph PARAGRAPH_PRFL firstparagraph"><div data-testid="embd-78KlmQp">
-                <div className="name">
-                    <span id="FIELD_FNAM">Dom</span>
-                    <span dependency="FNAM+LNAM"></span>
-                    <span id="FIELD_LNAM">Webster</span>
-                </div>
-                
-                <div className="lowerborder"></div>
-                <div className="lowerborder2"></div>
-                
-                <div className="address SECTION_CNTC">
+      <div className="document doc-root doc-finalize fontsize fontface vmargins hmargins pgsz-a4 pagesize skn-cba2 CBA2 MUK hyphen-normal pict-pcpf-purl texp-rectangle expr-durt-none">
+        {/* Name and Contact Section */}
+        <div className="sortable-item section-container name-contact">
+          <div className="section-prfl section SECTION_PRFL firstsection" data-section-cd="PRFL">
+            <div className="doc-item">
+              <div className="paragraph PARAGRAPH_PRFL firstparagraph">
+                <div>
+                  <div className="name">
+                    <span id="FIELD_FNAM">{data.first_name}</span>
+                    <span> </span>
+                    <span id="FIELD_LNAM">{data.last_name}</span>
+                  </div>
+
+                  <div className="lowerborder"></div>
+                  <div className="lowerborder2"></div>
+
+                  <div className="address SECTION_CNTC">
                     <ul>
-                        <li className="first zipsuffix" dependency="ADDR|STRT|CITY|STAT|ZIPC">
-                            <span id="FIELD_STRT">46 Roman Rd</span><span dependency="STRT"><span dependency="CITY|STAT">, </span></span>
-                            <span className="spaced" id="FIELD_CITY">Leeds</span>
-                            <span className="spaced" id="FIELD_STAT"></span>
-                            <span className="spaced" id="FIELD_ZIPC">LS2 3ZR</span>
-							<span id="FIELD_ADDR"></span>
+                      {(data.street_address || data.city || data.postcode) && (
+                        <li className="first zipsuffix">
+                          {data.street_address && <span id="FIELD_STRT">{data.street_address}</span>}
+                          {data.street_address && data.city && <span>, </span>}
+                          {data.city && <span className="spaced" id="FIELD_CITY">{data.city}</span>}
+                          {data.postcode && <span className="spaced" id="FIELD_ZIPC">{data.postcode}</span>}
                         </li>
-                        
-                        
-                        <li dependency="HPHN" className="dispInBlk maxWidth">
-                            
-                            <span id="FIELD_HPHN">07912 345 678</span>
+                      )}
+                      {data.phone && (
+                        <li className="dispInBlk maxWidth">
+                          <span id="FIELD_HPHN">{data.phone}</span>
                         </li>
-                        
-                        <li className="dispInBlk maxWidth"><span id="FIELD_EMAI">dom.webster@example.co.uk</span></li>
+                      )}
+                      {data.email && (
+                        <li className="dispInBlk maxWidth">
+                          <span id="FIELD_EMAI">{data.email}</span>
+                        </li>
+                      )}
                     </ul>
-                </div>
-				
-            </div></div></div></div></div></div></div><div data-testid="embd-89XOkPJ0" className="parent-wrapper"><div data-testid="embd-89Z70JT" data-react-beautiful-dnd-draggable="4" className="sortable-item section-container SortableItem-sibling"><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMMaae374b0-0228-4808-a3fe-b04cc0c571fb" className="section SECTION_SUMM has-title" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_SUMM">PROFESSIONAL SUMMARY<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename PROFESSIONAL SUMMARY " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-SUMM" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6669442-f38f-e0e2-fad7-6104f95f3e6d" id="PARAGRAPH_SUMM_f6669442-f38f-e0e2-fad7-6104f95f3e6d" className="paragraph PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                <div className="singlecolumn" id="FIELD_FRFM"><p>Motivated Care Assistant with 10 years of experience in the Care industry. Offering expertise in person-centred care, implementation and monitoring of individual care plans and management of resident assessments and files. Energetic self-starter and team builder able to navigate high-stress situations. Well-versed in monitoring clients with developmental disabilities and adhering to patient care plans.</p></div>
-            </div></div></div></div></div></div><button data-testid="embd-900sYS3" type="button" className="btn-icon-tertiary btn-icon-move d-none" style={{ right: '-114px' }}><i data-testid="embd-90rd2E3" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="icon-move" title="Move"></i></button></div><div data-testid="embd-89Z70JT" data-react-beautiful-dnd-draggable="4" className="sortable-item section-container SortableItem-sibling"><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR313e1c77-349e-497b-bdb6-f0271f1e85bf" className="section expr-sec SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EXPR">Work history<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Work history " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EXPR" className=""><div data-testid="embd-87S8HNi313e1c77-349e-497b-bdb6-f0271f1e85bf" id="CONTAINER_313e1c77-349e-497b-bdb6-f0271f1e85bf" className="sortableInner"><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="4" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-998e66f0-eaa8-4a72-b41c-7158c85a1d86" id="PARAGRAPH_EXPR_998e66f0-eaa8-4a72-b41c-7158c85a1d86" className="paragraph PARAGRAPH_EXPR firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                <div className="singlecolumn">
-                    <span className="bottom-space paddedline">
-						<span dependency="JTIT|TEXP" style={{ display: 'inline' }}>
-                            <span className="dflex texp-row">
-                                <span className="jobtitle-cell" dependency="JTIT|JSTD|EDDT">
-                                    <span className="jobtitle" id="FIELD_JTIT">Senior Care Assistant</span><span dependency="JTIT"><span dependency="JSTD|EDDT">, </span></span>
-                                    <span dependency="JSTD|EDDT" style={{ display: 'inline' }}>
-                                        <span className="jobdates" id="FIELD_JSTD" format="%m/%Y">07/2014</span><span dependency="JSTD+EDDT" className="hyphen"></span>
-                                        <span className="jobdates" id="FIELD_EDDT" format="%m/%Y">Current</span>
-                                    </span>
-                                </span>
-                                
+                  </div>
+
+                  {(data.nationality || data.driving_license || data.website || data.linkedin) && (
+                    <div className="address new-fields">
+                      <ul>
+                        {data.nationality && (
+                          <li className="dispInBlk maxWidth">
+                            <span className="txtBold">
+                              <span className="xslt_static_change">Nationality</span>
+                              <span className="beforecolonspace"> </span>
+                              <span>: </span>
                             </span>
-						</span>
-					</span>
-                    <span className="paddedline bottom-space" dependency="COMP|JSTA|JCIT|JCNT|JCTR">
-                        <span className="companyname" id="FIELD_COMP">Private Care Home</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JCTR" className="hyphen"></span></span>
-                        <span className="joblocation jobcity" id="FIELD_JCIT">Edinburgh</span>
-                        <span className="joblocation jobstate" id="FIELD_JSTA"></span><span className="joblocation jobcountry" id="FIELD_JCNT"></span><span dependency="JCIT|JSTA|JCNT"></span><span id="FIELD_JCTR"></span>
-                    </span>
-                    <span className="jobline" id="FIELD_JDES"><ul><li>Met with patients and families to discuss care and plan of action htmlFor future.</li>
-  <li>Implemented new team onboarding programme, reducing training time from four weeks to two.</li>
-  <li>Administered all necessary medications as directed by care plan.</li></ul></span>
-                </div>
-            </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="4" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" className="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                <div className="singlecolumn">
-                    <span className="bottom-space paddedline">
-						<span dependency="JTIT|TEXP" style={{ display: 'inline' }}>
-                            <span className="dflex texp-row">
-                                <span className="jobtitle-cell" dependency="JTIT|JSTD|EDDT">
-                                    <span className="jobtitle" id="FIELD_JTIT">Care Assistant</span><span dependency="JTIT"><span dependency="JSTD|EDDT">, </span></span>
-                                    <span dependency="JSTD|EDDT" style={{ display: 'inline' }}>
-                                        <span className="jobdates" id="FIELD_JSTD" format="%m/%Y">09/2010</span><span dependency="JSTD+EDDT" className="hyphen"></span>
-                                        <span className="jobdates" id="FIELD_EDDT" format="%m/%Y">06/2014</span>
-                                    </span>
-                                </span>
-                                
+                            <span id="FIELD_NTLY">{data.nationality}</span>
+                          </li>
+                        )}
+                        {data.driving_license && (
+                          <li className="dispInBlk maxWidth">
+                            <span className="txtBold">
+                              <span className="xslt_static_change">Permit</span>
+                              <span className="beforecolonspace"> </span>
+                              <span>: </span>
                             </span>
-						</span>
-					</span>
-                    <span className="paddedline bottom-space" dependency="COMP|JSTA|JCIT|JCNT|JCTR">
-                        <span className="companyname" id="FIELD_COMP">Ideal Care Homes</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT|JCTR" className="hyphen"></span></span>
-                        <span className="joblocation jobcity" id="FIELD_JCIT">Edinburgh</span>
-                        <span className="joblocation jobstate" id="FIELD_JSTA"></span><span className="joblocation jobcountry" id="FIELD_JCNT"></span><span dependency="JCIT|JSTA|JCNT"></span><span id="FIELD_JCTR"></span>
-                    </span>
-                    <span className="jobline" id="FIELD_JDES"><ul><li>Charted daily information such as mood changes, mobility activity, eating percentages and daily inputs and outputs.</li>
-  <li>Developed strong and trusting rapport with each client to facilitate best care possible.</li>
-  <li>Worked to improve patient outlook and daily living through compassionate care.</li></ul></span>
-                </div>
-            </div></div></div></div></div></div></div><button data-testid="embd-900sYS3" type="button" className="btn-icon-tertiary btn-icon-move d-none" style={{ right: '-114px' }}><i data-testid="embd-90rd2E3" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="icon-move" title="Move"></i></button></div><div data-testid="embd-89Z70JT" data-react-beautiful-dnd-draggable="4" className="sortable-item section-container SortableItem-sibling"><div data-testid="embd-88MByq6-HILT" id="SECTION_HILT66551e16-9025-4c6a-88fd-21c891f7b2b4" className="section SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_HILT">SKILLS<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename SKILLS " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-HILT" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6d39a0e-45b4-431c-82b8-567b069b1da4" id="PARAGRAPH_HILT_f6d39a0e-45b4-431c-82b8-567b069b1da4" className="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                <div className="singlecolumn maincolumn">
-                    <table className="twocol skill">
-                        <tbody><tr>
-                            <td className="twocol_1" id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
-  <li>Attention to detail</li>
-  <li>Community activities</li>
-  <li>Medication administration</li>
-  <li>Care plan management</li></ul></td>
-                            <td className="twocol_2" id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
-  <li>Client safety and First Aid</li>
-  <li>Compassionate client care</li>
-  <li>Behaviour redirection</li></ul></td>
-                        </tr>
-                    </tbody></table>
-                    <div className="multi-para-opt">
-                        <div id="FIELD_PTTL" className="txtBold para-head"></div>
-                            <div className="multi-para-content">
-                                <div id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
-  <li>Attention to detail</li>
-  <li>Community activities</li>
-  <li>Medication administration</li>
-  <li>Care plan management</li></ul></div>
-                                <span className="bottom-space" dependency="SKC1+SKC2"> </span>
-                                <div id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
-  <li>Client safety and First Aid</li>
-  <li>Compassionate client care</li>
-  <li>Behaviour redirection</li></ul></div>
-                            </div>
+                            <span id="FIELD_DRIV">{data.driving_license}</span>
+                          </li>
+                        )}
+                        {data.website && (
+                          <li className="dispInBlk maxWidth">
+                            <span className="txtBold">
+                              <span className="xslt_static_change">Web</span>
+                              <span className="beforecolonspace"> </span>
+                              <span>: </span>
+                            </span>
+                            <span className="brk-all" id="FIELD_WEB1">{data.website}</span>
+                          </li>
+                        )}
+                        {data.linkedin && (
+                          <li className="dispInBlk maxWidth">
+                            <span className="txtBold">
+                              <span>LinkedIn</span>
+                              <span className="beforecolonspace"> </span>
+                              <span>: </span>
+                            </span>
+                            <span className="brk-all" id="FIELD_SOCL">{data.linkedin}</span>
+                          </li>
+                        )}
+                      </ul>
                     </div>
+                  )}
                 </div>
-            </div></div></div></div></div></div><button data-testid="embd-900sYS3" type="button" className="btn-icon-tertiary btn-icon-move d-none" style={{ right: '-114px' }}><i data-testid="embd-90rd2E3" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="icon-move" title="Move"></i></button></div><div data-testid="embd-89Z70JT" data-react-beautiful-dnd-draggable="4" className="sortable-item section-container SortableItem-sibling"><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUCfd38dd6c-e289-4f1b-96e2-457086a24cc8" className="section SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EDUC">EDUCATION<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename EDUCATION " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EDUC" className=""><div data-testid="embd-87S8HNifd38dd6c-e289-4f1b-96e2-457086a24cc8" id="CONTAINER_fd38dd6c-e289-4f1b-96e2-457086a24cc8" className="sortableInner"><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="4" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                <div className="singlecolumn">
-                    <span className="paddedline" dependency="GRYR|STUY|DGRE|GRST|GRED|GRIP">
-                        <span className="degree" id="FIELD_DGRE">NVQ Level 3</span><span dependency="DGRE+STUY"><span className="beforecolonspace"> </span><span>: </span></span><span className="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="DGRE|STUY"><span dependency="GRYR|GRST|GRED">, </span></span>
-                        <span className="xslt_static_change displayNoneThisField">Expected in </span>
-                        <span id="FIELD_GRYR" format="%m/%Y">2013</span>
-                        <span className="jobdates" id="FIELD_GRST" format="%m/%Y"></span><span className="jobdates" id="FIELD_GRED" format="%m/%Y"></span>
-                        
-                        <span id="FIELD_GRIP"></span>
-                    </span>
-                    <span className="paddedline" dependency="SCIT|SCHO|SSTA|SCNT|GRHN">
-                        <span className="companyname companyname_educ" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT" className="hyphen"></span></span><span className="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span dependency="SCIT"></span><span className="joblocation jobstate" id="FIELD_SSTA"></span><span className="joblocation jobcountry" id="FIELD_SCNT"></span><span dependency="SCIT|SCHO|SSTA|SCNT"></span><span id="FIELD_GRHN"></span>
-					</span>
-                    
-                    
-                    <span id="FIELD_FRFM"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Parent Wrapper - Main Content Sections */}
+        <div className="parent-wrapper">
+          {/* Professional Summary */}
+          {data.summary && (
+            <div className="sortable-item section-container SortableItem-sibling">
+              <div className="section SECTION_SUMM has-title" data-section-cd="SUMM">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle" id="SECTIONNAME_SUMM">{t.professional_summary}</div>
+                  </div>
+                  <div className="paragraph PARAGRAPH_SUMM firstparagraph">
+                    <div className="clearfix doc-item">
+                      <div className="singlecolumn" id="FIELD_FRFM">
+                        <p>{data.summary}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div></div></div><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="4" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                <div className="singlecolumn">
-                    <span className="paddedline" dependency="GRYR|STUY|DGRE|GRST|GRED|GRIP">
-                        <span className="degree" id="FIELD_DGRE">NVQ Level 2</span><span dependency="DGRE+STUY"><span className="beforecolonspace"> </span><span>: </span></span><span className="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="DGRE|STUY"><span dependency="GRYR|GRST|GRED">, </span></span>
-                        <span className="xslt_static_change displayNoneThisField">Expected in </span>
-                        <span id="FIELD_GRYR" format="%m/%Y">2008</span>
-                        <span className="jobdates" id="FIELD_GRST" format="%m/%Y"></span><span className="jobdates" id="FIELD_GRED" format="%m/%Y"></span>
-                        
-                        <span id="FIELD_GRIP"></span>
-                    </span>
-                    <span className="paddedline" dependency="SCIT|SCHO|SSTA|SCNT|GRHN">
-                        <span className="companyname companyname_educ" id="FIELD_SCHO">Edinburgh College</span><span dependency="SCHO"><span dependency="SCIT|SSTA|SCNT" className="hyphen"></span></span><span className="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span dependency="SCIT"></span><span className="joblocation jobstate" id="FIELD_SSTA"></span><span className="joblocation jobcountry" id="FIELD_SCNT"></span><span dependency="SCIT|SCHO|SSTA|SCNT"></span><span id="FIELD_GRHN"></span>
-					</span>
-                    
-                    
-                    <span id="FIELD_FRFM"></span>
+              </div>
+            </div>
+          )}
+
+          {/* Work History */}
+          {data.experiences && data.experiences.length > 0 && (
+            <div className="sortable-item section-container SortableItem-sibling">
+              <div className="section expr-sec SECTION_EXPR multi-para has-title" data-section-cd="EXPR">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle" id="SECTIONNAME_EXPR">{t.work_history}</div>
+                  </div>
+                  <div className="sortableInner">
+                    {data.experiences.map((exp, index) => (
+                      <div key={exp.id || index} className="sortable-item paragraph-container SortableItem-sibling">
+                        <div className={`paragraph PARAGRAPH_EXPR ${index === 0 ? 'firstparagraph' : ''}`}>
+                          <div className="clearfix doc-item">
+                            <div className="singlecolumn">
+                              <span className="bottom-space paddedline">
+                                <span style={{ display: 'inline' }}>
+                                  <span className="dflex texp-row">
+                                    <span className="jobtitle-cell">
+                                      <span className="jobtitle" id="FIELD_JTIT">{exp.job_title}</span>
+                                      <span>, </span>
+                                      <span style={{ display: 'inline' }}>
+                                        <span className="jobdates" id="FIELD_JSTD">{formatDate(exp.start_date, language)}</span>
+                                        <span className="hyphen"></span>
+                                        <span className="jobdates" id="FIELD_EDDT">{exp.currently_working ? t.present : formatDate(exp.end_date, language)}</span>
+                                      </span>
+                                    </span>
+                                  </span>
+                                </span>
+                              </span>
+                              <span className="paddedline bottom-space">
+                                <span className="companyname" id="FIELD_COMP">{exp.company}</span>
+                                {exp.location && (
+                                  <>
+                                    <span className="hyphen"></span>
+                                    <span className="joblocation jobcity" id="FIELD_JCIT">{exp.location}</span>
+                                  </>
+                                )}
+                              </span>
+                              {exp.description && (
+                                <span className="jobline" id="FIELD_JDES">
+                                  <ul>
+                                    {exp.description.split('\n').map((line, i) => (
+                                      <li key={i}>{line}</li>
+                                    ))}
+                                  </ul>
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-            </div></div></div></div></div></div></div><button data-testid="embd-900sYS3" type="button" className="btn-icon-tertiary btn-icon-move d-none" style={{ right: '-114px' }}><i data-testid="embd-90rd2E3" tabIndex={0} data-react-beautiful-dnd-drag-handle="4" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="icon-move" title="Move"></i></button></div></div></div><div></div></div></div>
+              </div>
+            </div>
+          )}
+
+          {/* Skills */}
+          {skills.length > 0 && (
+            <div className="sortable-item section-container SortableItem-sibling">
+              <div className="section SECTION_HILT has-title" data-section-cd="HILT">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle" id="SECTIONNAME_HILT">{t.skills}</div>
+                  </div>
+                  <div className="paragraph PARAGRAPH_HILT firstparagraph">
+                    <div className="clearfix doc-item">
+                      <div className="singlecolumn maincolumn">
+                        <table className="twocol skill">
+                          <tbody>
+                            <tr>
+                              <td className="twocol_1" id="FIELD_SKC1">
+                                <ul>
+                                  {skillsColumn1.map((skill, index) => (
+                                    <li key={skill.id || index}>{skill.name}</li>
+                                  ))}
+                                </ul>
+                              </td>
+                              <td className="twocol_2" id="FIELD_SKC2">
+                                <ul>
+                                  {skillsColumn2.map((skill, index) => (
+                                    <li key={skill.id || index}>{skill.name}</li>
+                                  ))}
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Education */}
+          {data.educations && data.educations.length > 0 && (
+            <div className="sortable-item section-container SortableItem-sibling">
+              <div className="section SECTION_EDUC multi-para has-title" data-section-cd="EDUC">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle" id="SECTIONNAME_EDUC">{t.education}</div>
+                  </div>
+                  {data.educations.map((edu, index) => (
+                    <div key={edu.id || index} className={`paragraph PARAGRAPH_EDUC ${index === 0 ? 'firstparagraph' : ''}`}>
+                      <div className="clearfix doc-item">
+                        <div className="singlecolumn">
+                          <span className="paddedline">
+                            {edu.degree && <span className="degree" id="FIELD_DGRE">{edu.degree}</span>}
+                            {edu.field_of_study && (
+                              <>
+                                <span className="programline" id="FIELD_STUY">{edu.field_of_study}</span>
+                              </>
+                            )}
+                            {(edu.start_date || edu.end_date) && (
+                              <>
+                                <span>, </span>
+                                {edu.start_date && <span className="jobdates" id="FIELD_GRST">{formatDate(edu.start_date, language)}</span>}
+                                {edu.start_date && edu.end_date && <span className="hyphen"></span>}
+                                {edu.end_date && <span className="jobdates" id="FIELD_GRED">{formatDate(edu.end_date, language)}</span>}
+                              </>
+                            )}
+                          </span>
+                          <span className="paddedline">
+                            <span className="companyname companyname_educ" id="FIELD_SCHO">{edu.institution}</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Languages */}
+          {data.languages && data.languages.length > 0 && (
+            <div className="sortable-item section-container SortableItem-sibling data-LNGG">
+              <div className="section lang-sec hide-colon SECTION_LNGG has-title data-LNGG" data-section-cd="LNGG">
+                <div className="doc-item">
+                  <div className="heading">
+                    <div className="sectiontitle" id="SECTIONNAME_LNGG">{t.languages}</div>
+                  </div>
+                  <div className="sortableInner">
+                    {data.languages.map((lang, index) => {
+                      const ratingWidth = lang.level ? (lang.level / 5) * 100 : 60;
+                      const proficiencyText = lang.proficiency
+                        ? t[lang.proficiency as keyof typeof t] || lang.proficiency
+                        : "";
+                      return (
+                        <div key={lang.id || index} className="data-LNGG sortable-item paragraph-container SortableItem-sibling">
+                          <div className={`paragraph PARAGRAPH_LNGG ${index === 0 ? 'firstparagraph' : ''}`}>
+                            <div className="clearfix doc-item">
+                              <div className="singlecolumn">
+                                <div className="field">
+                                  <span className="txtBold" id="FIELD_FRFM">{lang.name}</span>
+                                  <span className="colon">
+                                    <span className="beforecolonspace"> </span>
+                                    <span>: </span>
+                                  </span>
+                                  <span className="flt-right" id="FIELD_RATG"></span>
+                                </div>
+                                <div className="rating-bar">
+                                  <div className="inner-rating" id="FIELD_RATV" style={{ width: `${ratingWidth}%` }}></div>
+                                </div>
+                                <div className="field">
+                                  <span id="FIELD_RATT">{proficiencyText}</span>
+                                </div>
+                                <div className="field">
+                                  <span id="FIELD_ADIF"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </>
   );
 }

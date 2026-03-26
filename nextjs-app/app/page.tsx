@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import AppHeader from '@/components/AppHeader';
+import TemplateWrapper from '@/components/TemplateWrapper';
 
 function LogoIcon() {
   return (
@@ -201,49 +202,52 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Template 1 */}
+            {/* Milano */}
             <div className="group relative bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="aspect-[3/4] w-full object-cover object-top"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM8ok4ntoa6ySfniFh3UD4l5eSorNmITMiFSSvub8k4DQTS0S-G27rOJjzTs_Xc82WcC41fO91OptpcllTWmDLUCxAtKeJ3MZ4iRb61MSxboFQuK2Nw4K4VcYbvdm_KGc0Fwt2Vtopfew9qr-rLAFt9RraMeajWI5_46LOxRA4QTP4yFhBr8qmFp7ikhvM8z1gr-JlkZsl-itsiVkMmNajljGFY5MaVO4ccnLJWcQgWBN6T5lYCk3YvxzxeWGO358ZZIY5FiEGcEk"
-                alt="Professional blue minimalist resume layout"
-              />
-              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                <Link href="/templates" className="bg-white text-primary px-6 py-3 rounded-lg font-bold">Use Template</Link>
+              <div className="aspect-[3/4] w-full overflow-hidden">
+                <div className="transform group-hover:scale-105 transition-transform duration-500 origin-top-left">
+                  <TemplateWrapper templateName="mli1" showBorder={false} />
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-3 p-6 transition-opacity">
+                <Link href="/builder?template=mli1" className="w-full max-w-[200px] bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg text-center">
+                  Use Template
+                </Link>
               </div>
               <div className="p-4 border-t">
-                <h5 className="font-bold text-lg">Executive Blue</h5>
+                <h5 className="font-bold text-lg">Milano</h5>
               </div>
             </div>
-            {/* Template 2 */}
+            {/* Milano 2 */}
             <div className="group relative bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="aspect-[3/4] w-full object-cover object-top"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6rxHYs1Fa1qER2I9WbBeWEgJBXzH-0-EDYIx3qilrO_UnaBH1rBGRccRzvyA0tMMGYY4-lDl6EzrrXbdoflb-DjlpxQM7VjiWIe-4sNvgMnr85OvzxTs-y5l5WKhXSvHfKzs5oWdxmQfcxl0qoYC3Ycaq-sw0P1KA0SaHnP-2VkD3c2HEvO7LV1n6pgt9fIoSDvrPCz62BMa2zSvtCwYwd4FnteolP8iZL9CN5uobpzj5FFmYpbvXbUh5ITRbJSg0ebp7jaFGEto"
-                alt="Creative modern resume design with sidebar"
-              />
-              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                <Link href="/templates" className="bg-white text-primary px-6 py-3 rounded-lg font-bold">Use Template</Link>
+              <div className="aspect-[3/4] w-full overflow-hidden">
+                <div className="transform group-hover:scale-105 transition-transform duration-500 origin-top-left">
+                  <TemplateWrapper templateName="mli2" showBorder={false} />
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-3 p-6 transition-opacity">
+                <Link href="/builder?template=mli2" className="w-full max-w-[200px] bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg text-center">
+                  Use Template
+                </Link>
               </div>
               <div className="p-4 border-t">
-                <h5 className="font-bold text-lg">Modern Creative</h5>
+                <h5 className="font-bold text-lg">Milano 2</h5>
               </div>
             </div>
-            {/* Template 3 */}
+            {/* Malibu */}
             <div className="group relative bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="aspect-[3/4] w-full object-cover object-top"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPHvRofvj7GDCBPrGjGHJNZ7IsdnPp-T-Q0W9HB7vPg8tXmCq_5yuJvyvh9gGw07Afb-xQjpf-0q3kWJek6jmOP26tYIJnKgBQZRkgNaTWKP7vs6vegH5FsNL53cutjmwnjj_2ZyEhx0TUtu6ZinlNslIthd_r8jXwtiagqJqFjYBbXx9b5Uqpl9RJKkU2vFbMAiW9XJl0IlYRBBZdXKJWcnVatoqNi7TZJ9a0SKTp6ti255kYw1IjRaiHCgNtvZSd72m_V9Azoxk"
-                alt="Minimalist monochromatic professional CV design"
-              />
-              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                <Link href="/templates" className="bg-white text-primary px-6 py-3 rounded-lg font-bold">Use Template</Link>
+              <div className="aspect-[3/4] w-full overflow-hidden">
+                <div className="transform group-hover:scale-105 transition-transform duration-500 origin-top-left">
+                  <TemplateWrapper templateName="mlf1" showBorder={false} />
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-3 p-6 transition-opacity">
+                <Link href="/builder?template=mlf1" className="w-full max-w-[200px] bg-primary text-white font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-lg text-center">
+                  Use Template
+                </Link>
               </div>
               <div className="p-4 border-t">
-                <h5 className="font-bold text-lg">Pure Minimalist</h5>
+                <h5 className="font-bold text-lg">Malibu</h5>
               </div>
             </div>
           </div>

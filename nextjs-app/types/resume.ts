@@ -8,6 +8,7 @@ export interface Education {
   start_date?: string;
   end_date?: string;
   currently_studying?: boolean;
+  location?: string;
   description?: string;
   sort_order?: number;
 }

@@ -55,10 +55,12 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .sectiontitle { border-bottom-color: ${c} !important; }
   `,
 
-  // MLI4: topsection background + left/right-box :before overlays
+  // MLI4: topsection background + left/right-box :before overlays + sidebar
   mli4: (c) => `
     ${commonOverrides(c)}
     .topsection { background: ${c} !important; }
+    .topsection .top-box { border-bottom-color: ${c} !important; }
+    .skn-mli4:before { background: ${c} !important; }
     .parentContainer .left-box:before { background: ${c} !important; }
     .parentContainer .right-box:before { background: ${c} !important; }
   `,
@@ -131,9 +133,14 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
   // MLS9: minimal
   mls9: (c) => commonOverrides(c),
 
-  // MLT6: inner-rating + sliced tiles + left-box section borders
+  // MLT6: top-section bg + inner-rating + sliced tiles + monogram
   mlt6: (c) => `
     ${commonOverrides(c)}
+    .skn-mlt6 .top-section .firstsection { background-color: ${c} !important; }
+    .skn-mlt6 .section.firstsection { background-color: ${c} !important; }
+    .skn-mlt6 .dynamicIcon svg rect.fillRect { fill: ${c} !important; }
+    .skn-mlt6 .mono-svg-7 text, .skn-mlt6 .mono-svg-8 text, .skn-mlt6 .mono-svg-9 text, .skn-mlt6 .mono-svg-10 text, .skn-mlt6 .mono-svg-11 text, .skn-mlt6 .mono-svg-12 text { fill: ${c} !important; }
+    .skn-mlt6 .mono-svg-8 line, .skn-mlt6 .mono-svg-10 line, .skn-mlt6 .mono-svg-11 line { stroke: ${c} !important; }
   `,
 
   // MLU4: left-box background + rating bars (icons stay static color)
@@ -145,11 +152,14 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .right-box .inner-rating { background-color: ${c} !important; }
   `,
 
-  // MLU6: inner-rating + ratingBar + totl-expr
+  // MLU6: right-box bg + inner-rating + ratingBar + totl-expr
   mlu6: (c) => `
     ${commonOverrides(c)}
-    .ratingBar:before { background: ${c} !important; }
-    .innerRating { background: ${c} !important; }
+    .skn-mlu6 .right-box { background-color: ${c} !important; }
+    .skn-mlu6 .right-box .wrapper { background: ${c} !important; }
+    .skn-mlu6 .right-box > .sortable-item .section, .skn-mlu6 .right-box > .sortable-item .paragraph { background: ${c} !important; }
+    .skn-mlu6 .ratingBar:before { background: ${c} !important; }
+    .skn-mlu6 .left-box .innerRating { background: ${c} !important; }
   `,
 
   // MLU7: name + sectiontitle + address + innerRating + totl-expr
@@ -213,8 +223,13 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .name { border-top-color: ${c} !important; }
   `,
 
-  // HRA1: inner-rating + totl-expr
-  hra1: (c) => commonOverrides(c),
+  // HRA1: name + sectiontitle + borders + inner-rating + totl-expr
+  hra1: (c) => `
+    ${commonOverrides(c)}
+    .name { color: ${c} !important; }
+    .sectiontitle { color: ${c} !important; }
+    .bottomborder { border-bottom-color: ${c} !important; }
+  `,
 
   // HRA2: sectiontitle + inner-rating + totl-expr
   hra2: (c) => `
@@ -240,16 +255,30 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
   // SMA1: inner-rating
   sma1: (c) => commonOverrides(c),
 
-  // SMA2: inner-rating + totl-expr
-  sma2: (c) => commonOverrides(c),
+  // SMA2: heading background + inner-rating + totl-expr
+  sma2: (c) => `
+    ${commonOverrides(c)}
+    .heading { background-color: ${c} !important; }
+  `,
 
-  // TMA3: inner-rating + totl-expr
-  tma3: (c) => commonOverrides(c),
+  // TMA3: name + sectiontitle + inner-rating + totl-expr + timeline borders
+  tma3: (c) => `
+    ${commonOverrides(c)}
+    .name { color: ${c} !important; }
+    .sectiontitle { color: ${c} !important; }
+    .section { border-color: ${c} !important; }
+    .heading:before { border-color: ${c} !important; }
+  `,
 
-  // TMA4: sectiontitle color + inner-rating
+  // TMA4: name + sectiontitle + jobtitle + monogram + inner-rating
   tma4: (c) => `
     ${commonOverrides(c)}
+    .name { color: ${c} !important; }
     .sectiontitle { color: ${c} !important; }
+    .jobtitle { color: ${c} !important; }
+    .monogram svg circle { stroke: ${c} !important; }
+    .dynamicIcon svg { fill: ${c} !important; }
+    .dynamicIcon svg * { stroke: ${c} !important; }
   `,
 
   // UPA1: inner-rating + totl-expr
@@ -258,8 +287,12 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
   // UPA2: inner-rating + totl-expr
   upa2: (c) => commonOverrides(c),
 
-  // ATA1: fallback
-  ata1: (c) => commonOverrides(c),
+  // ATA1: name + sectiontitle + inner-rating + totl-expr
+  ata1: (c) => `
+    ${commonOverrides(c)}
+    .name { color: ${c} !important; }
+    .sectiontitle { color: ${c} !important; }
+  `,
 };
 
 function buildThemeOverrideCSS(templateName: string, color: string): string {

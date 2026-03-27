@@ -1,10 +1,45 @@
 /* eslint-disable */
 // @ts-nocheck
-export default function TemplateMlt6() {
+import type { DynamicTemplateProps } from "@/types/resume";
+import { sampleData } from "./sampleData";
+import { translations, formatDate } from "@/lib/translations";
+
+const defaultTranslations = translations.en;
+
+export default function TemplateMlt6({
+  data = sampleData,
+  translations: t = defaultTranslations,
+  language = "en",
+  colorHex = "#3c5769",
+}: Partial<DynamicTemplateProps> = {}) {
+  // Helper function to get width percentage from language level
+  const getLevelWidth = (level: number | undefined) => {
+    if (!level) return '60%';
+    return `${(level / 5) * 100}%`;
+  };
+
+  // Helper function to get proficiency label
+  const getProficiencyLabel = (proficiency: string | undefined) => {
+    if (!proficiency) return '';
+    const labels: Record<string, string> = {
+      native: 'Native',
+      fluent: 'Fluent',
+      advanced: 'Advanced',
+      intermediate: 'Intermediate',
+      beginner: 'Beginner',
+    };
+    return labels[proficiency] || proficiency;
+  };
+
+  // Get initials for monogram
+  const firstInitial = data.first_name?.charAt(0)?.toUpperCase() || '';
+  const lastInitial = data.last_name?.charAt(0)?.toUpperCase() || '';
+  const initials = `${firstInitial}${lastInitial}`;
+
   return (
     <>
       <style>{`
-        
+
         html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
         body{text-align:left;font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
         .skn-mlt6 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%}
@@ -41,12 +76,12 @@ export default function TemplateMlt6() {
         .skn-mlt6 .heading{padding-bottom:10px;font-weight:bold;font-size:18px}
         .skn-mlt6 .left-box{padding:0 15px 0 10px;display:table-cell;overflow:hidden}
         .skn-mlt6 .right-box{background-color:#f5f5f5;padding:0 15px;display:table-cell;vertical-align:top}
-        .skn-mlt6 .top-section .firstsection{border:none;background-color:#3c5769;color:#fff}
+        .skn-mlt6 .top-section .firstsection{border:none;background-color:${colorHex};color:#fff}
         .skn-mlt6 .left-box .section,.skn-mlt6 .right-box .section{border-top:1px solid #c4c4c4}
         .skn-mlt6 .left-box .section:first-child,.skn-mlt6 .right-box .section:first-child{border:none}
         .skn-mlt6 .monogram{text-align:center}
         .skn-mlt6 .monogram svg{margin-top:20px;text-transform:uppercase}
-        .skn-mlt6 .monogram + .monogram{display:none} /* For POC PS-1041 */
+        .skn-mlt6 .monogram + .monogram{display:none}
         .skn-mlt6 .dynamicIcon{padding-top:20px}
         .skn-mlt6 .totl-expr{float:right;padding:0 6px;color:#fff;font-style:italic;background-color:#f5f5f5;}
         .skn-mlt6 .right-box .totl-expr{display:none}
@@ -86,11 +121,11 @@ export default function TemplateMlt6() {
         .skn-mlt6 .lang-sec.infobarsec .field p,.skn-mlt6 .skli-sec.infobarsec .field *,.skn-mlt6 .lang-sec.infobarsec .nativeLangPara .field{display:inline}
         .skn-mlt6 .lang-sec .paragraph,.skn-mlt6 .skli-sec .paragraph{width:100%;vertical-align:top;margin-top:0;clear:both;padding-bottom:5px;display:inline-block}
         .skn-mlt6 .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;overflow:hidden}
-        .skn-mlt6 .inner-rating{background-color:#fe7a66;height:4px}
+        .skn-mlt6 .inner-rating{background-color:${colorHex};height:4px}
 		.skn-mlt6 .left-box .lang-sec.infobarsec .singlecolumn,.skn-mlt6 .left-box .skli-sec .singlecolumn{margin-left:0}
 		.skn-mlt6 .left-box .lang-sec.infobarsec .para_odd,.skn-mlt6 .skli-sec.infobarsec .para_odd{margin-right:15px}
         .skn-mlt6 .lang-sec.infobarsec > .paragraph:nth-last-child(1),.skn-mlt6 .left-box .lang-sec.infobarsec > .paragraph:nth-last-child(2),.skn-mlt6 .section.skli-sec > .paragraph:nth-last-child(1),.skn-mlt6 .left-box .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
-		
+
 		.skn-mlt6 .right-box .skli-sec .paragraph:last-child .singlecolumn  .field:last-child{min-height:0}
 		.skn-mlt6 .left-box .skli-sec .paragraph:nth-last-child(1) .singlecolumn .field:last-child,.skn-mlt6 .left-box .skli-sec .paragraph:nth-last-child(2) .singlecolumn .field:last-child{min-height:0}
 
@@ -107,7 +142,7 @@ export default function TemplateMlt6() {
         .skn-mlt6 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mlt6 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
 
         /*Rectangular Rating Blocks*/
-        .skn-mlt6 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#576d7b}
+        .skn-mlt6 .sliced-rect .sliced-rect-tile.ratvfill{background-color:${colorHex}}
         .skn-mlt6 .hide-bar .rating-bar,.skn-mlt6 .hide-bar .sliced-rect,.skn-mlt6 .hide-only-bar .rating-bar,.skn-mlt6 .hide-colon .colon,.skn-mlt6 .hide-bar .field-ratt,.skn-mlt6 .lang-sec.hide-only-bar.infotilesec .sliced-rect{display:none!important}
 
         .skn-mlt6 .nativeLangPara .field:first-child{font-weight:bold}
@@ -138,7 +173,7 @@ export default function TemplateMlt6() {
         /*Dyanmic BG*/
         .skn-mlt6.dynamicbg{position:relative}
         .skn-mlt6.dynamicbg:before{background-image:url("");background-repeat:no-repeat;background-position: 0 top;background-size:contain;content:'';position:absolute;left:0;top:0;height:100%;z-index:-1}
-		
+
 		/*HILT multi para/section*/
         .skn-mlt6 .multi-section-hilt .multi-para-opt,.skn-mlt6 .section:not(.multi-para-hilt):not(.multi-section-hilt) .multi-para-opt,.skn-mlt6 .multi-para-hilt .dflt-view{display:none}
         .skn-mlt6 .multi-para-hilt:after{content:"";display:block;clear:both;visibility:hidden;line-height:0;height:0} /*Clearfix*/
@@ -162,61 +197,7 @@ export default function TemplateMlt6() {
 
         /* SVG's style */
         .skn-mlt6 .mono-icon{display:none}
-
-        .skn-mlt6.mono-1 .monogram .svg-default,
-        .skn-mlt6.mono-2 .monogram .svg-default,
-        .skn-mlt6.mono-3 .monogram .svg-default,
-        .skn-mlt6.mono-4 .monogram .svg-default,
-        .skn-mlt6.mono-5 .monogram .svg-default,
-        .skn-mlt6.mono-6 .monogram .svg-default,
-        .skn-mlt6.mono-7 .monogram .svg-default,
-        .skn-mlt6.mono-8 .monogram .svg-default,
-        .skn-mlt6.mono-9 .monogram .svg-default,
-        .skn-mlt6.mono-10 .monogram .svg-default,
-        .skn-mlt6.mono-11 .monogram .svg-default,
-        .skn-mlt6.mono-12 .monogram .svg-default {
-            display: none;
-        }
-        
-        .skn-mlt6.mono-1 .monogram .mono-svg-1,
-        .skn-mlt6.mono-2 .monogram .mono-svg-2,
-        .skn-mlt6.mono-3 .monogram .mono-svg-3,
-        .skn-mlt6.mono-4 .monogram .mono-svg-4,
-        .skn-mlt6.mono-5 .monogram .mono-svg-5,
-        .skn-mlt6.mono-6 .monogram .mono-svg-6,
-        .skn-mlt6.mono-7 .monogram .mono-svg-7,
-        .skn-mlt6.mono-8 .monogram .mono-svg-8,
-        .skn-mlt6.mono-9 .monogram .mono-svg-9,
-        .skn-mlt6.mono-10 .monogram .mono-svg-10,
-        .skn-mlt6.mono-11 .monogram .mono-svg-11,
-        .skn-mlt6.mono-12 .monogram .mono-svg-12{display:inline-block}
-
-        /* .skn-mlt6.mono-1 .monogram .mono-svg-1,
-        .skn-mlt6.mono-11 .monogram .mono-svg-11{font-family:'Playfair Display';}
-        .skn-mlt6.mono-2 .monogram .mono-svg-2,
-        .skn-mlt6.mono-7 .monogram .mono-svg-7{font-family: "Stint Ultra Expanded", serif;}
-        .skn-mlt6.mono-4 .monogram .mono-svg-4,
-        .skn-mlt6.mono-6 .monogram .mono-svg-6,
-        .skn-mlt6.mono-9 .monogram .mono-svg-9,
-        .skn-mlt6.mono-12 .monogram .mono-svg-12{font-family: "Barlow Condensed", sans-serif;}
-        .skn-mlt6.mono-3 .monogram .mono-svg-3,
-        .skn-mlt6.mono-5 .monogram .mono-svg-5,
-        .skn-mlt6.mono-8 .monogram .mono-svg-8,
-        .skn-mlt6.mono-10 .monogram .mono-svg-10{font-family:"Roboto Mono";}
-
-        .skn-mlt6.mono-1 .monogram .mono-svg-1,
-        .skn-mlt6.mono-11 .monogram .mono-svg-11{font-size:12px;line-height:16px;letter-spacing:2px}
-        .skn-mlt6.mono-2 .monogram .mono-svg-2,
-        .skn-mlt6.mono-7 .monogram .mono-svg-7{font-size:18px;line-height:20px;letter-spacing:3px;font-family:"Stint Ultra Expanded", serif;}
-        .skn-mlt6.mono-3 .monogram .mono-svg-3,
-        .skn-mlt6.mono-8 .monogram .mono-svg-8{font-size:11px;line-height:14px;letter-spacing:2px}
-        .skn-mlt6.mono-4 .monogram .mono-svg-4,
-        .skn-mlt6.mono-9 .monogram .mono-svg-9{font-size:11px;line-height:13px;letter-spacing:2px}
-        .skn-mlt6.mono-5 .monogram .mono-svg-5{font-size:12px;line-height:15px;letter-spacing:2px}
-        .skn-mlt6.mono-6 .monogram .mono-svg-6,
-        .skn-mlt6.mono-12 .monogram .mono-svg-12{font-size:12px;line-height:14px;letter-spacing:2px}
-        .skn-mlt6.mono-10 .monogram .mono-svg-10{font-size:12px;line-height:12px;letter-spacing:2px}
-         */
+        .skn-mlt6 .monogram .svg-default{display:inline-block}
 
         /*Hyphen Handling*/
         .skn-mlt6 .hyphen:before{content:' - '}
@@ -224,38 +205,6 @@ export default function TemplateMlt6() {
 
         /* Builder css for mobile device */
         .android .skn-mlt6, .ios .skn-mlt6{box-sizing:content-box}
-
-         /*monogram svg issue for pdf fix*/
-         .skn-mlt6.for-pdf .mono-svg-12 text,.skn-mlt6.for-pdf .mono-svg-6 text,.skn-mlt6.for-pdf .mono-svg-11 text,.skn-mlt6.for-pdf .mono-svg-4 text,.skn-mlt6.for-pdf .mono-svg-5 text,.skn-mlt6.for-pdf .mono-svg-1 text{transform: matrix(1, 0, 0, 1, -1, 0)}
-
-        /*Paginated HTML PDF*/
-        .skn-mlt6.for-paginated-pdf .left-box .inf-sec .paragraph,.skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper,.skn-mlt6.for-paginated-pdf .right-box .inf-sec .paragraph{display:block!important}
-        .skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper .paragraph-container,.skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper > .paragraph{display:block!important;float:left}
-		.skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper .paragraph-container + .paragraph-container,.skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper > .paragraph + .paragraph{float:right}
-		.skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper > .paragraph{clear:none!important}
-        .skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper:after{content:'';display:table;clear:both}
-        .skn-mlt6.for-paginated-pdf .parentContainer .left-box,.skn-mlt6.for-paginated-pdf .parentContainer .left-box{padding-bottom:0!important}
-        .skn-mlt6.for-paginated-pdf .left-box .inf-sec .paginatedpdfinfwrapper > .paragraph{clear:none!important}
-
-        /*Pagination Parameters*/
-        .skn-mlt6{data-noofpasses:2}
-        
-        /*Paginated - First Page*/
-        .skn-mlt6.for-paginated-pdf.pdf-first-page-template .parentContainer{display:none!important}
-        
-        /*Paginated - Common BG*/
-        .skn-mlt6.for-paginated-pdf.pdf-template .top-section{display:none!important}
-        .skn-mlt6.for-paginated-pdf.pdf-template .parentContainer .section{visibility:hidden!important}
-
-        /*Paginated - First pass CSS*/
-        .skn-mlt6.for-paginated-pdf.pdf-pass-1 .top-section,.skn-mlt6.for-paginated-pdf.pdf-pass-1 .parentContainer .right-box{visibility:hidden}
-
-        /*Paginated - Second pass CSS*/
-        .skn-mlt6.for-paginated-pdf.pdf-pass-2 .top-section,.skn-mlt6.for-paginated-pdf.pdf-pass-2 .parentContainer .left-box{visibility:hidden}
-		.skn-mlt6.for-paginated-pdf.pdf-pass-2{data-rectleft:270}
-        .skn-mlt6:after{content:'';background:#f5f5f5;position:absolute;right:0;top:0;height:100%;z-index:-1}
-        /* .skn-mlt6 .top-section,.skn-mlt6 .parentContainer{position:relative;z-index:1} */
-    
 
         .skn-mlt6,.skn-mlt6 table{line-height:15px}
         .skn-mlt6:after{width:calc(190px + 30px);height:calc(100% - 2 * 18px);top:18px;right:18px}
@@ -268,7 +217,7 @@ export default function TemplateMlt6() {
         .skn-mlt6.hmargins{padding-left:18px;padding-right:18px}
         .skn-mlt6 .section{padding-top:20px;margin-bottom:20px}
         .skn-mlt6 .disclaim{margin:0;padding:0;padding-top:50px}
-        .skn-mlt6 .top-section .section.firstsection{padding-top:0;background-color:#3c5769;margin-bottom:0}
+        .skn-mlt6 .top-section .section.firstsection{padding-top:0;background-color:${colorHex};margin-bottom:0}
         .skn-mlt6 .sectiontitle{font-size:12px;line-height:17px}
         .skn-mlt6 .paragraph{margin-top:20px}
         .skn-mlt6 .paragraph.firstparagraph{margin-top:0}
@@ -280,15 +229,12 @@ export default function TemplateMlt6() {
         .skn-mlt6 .address2{font-size:10px;line-height:15px}
         .skn-mlt6 .monogram svg{height:40px;width:40px}
         .skn-mlt6 .right-box{width:190px}
-        /* .skn-mlt6.dynamicbg:before{background-image:url({$DYBG});width:595px} */
         .skn-mlt6.dynamicbg:before{width:595px}
-        /* .skn-mlt6 .parentContainer{min-height:696px} */
-		/* .skn-mlt6 .skli-sec .singlecolumn .field:last-child{min-height:15px} */
-        .skn-mlt6 .totl-expr{font-size:8px;background-color:#3c5769;line-height:14px}
+        .skn-mlt6 .totl-expr{font-size:8px;background-color:${colorHex};line-height:14px}
 
-        .skn-mlt6 .dynamicIcon svg rect.fillRect{fill:#3c5769;stroke:transparent}
-        .skn-mlt6 .mono-svg-7 text,.skn-mlt6 .mono-svg-8 text,.skn-mlt6 .mono-svg-9 text,.skn-mlt6 .mono-svg-10 text,.skn-mlt6 .mono-svg-11 text,.skn-mlt6 .mono-svg-12 text{fill:#3c5769}
-        .skn-mlt6 .mono-svg-8 line,.skn-mlt6 .mono-svg-11 line,.skn-mlt6 .mono-svg-10 line{stroke:#3c5769}
+        .skn-mlt6 .dynamicIcon svg rect.fillRect{fill:${colorHex};stroke:transparent}
+        .skn-mlt6 .mono-svg-7 text,.skn-mlt6 .mono-svg-8 text,.skn-mlt6 .mono-svg-9 text,.skn-mlt6 .mono-svg-10 text,.skn-mlt6 .mono-svg-11 text,.skn-mlt6 .mono-svg-12 text{fill:${colorHex}}
+        .skn-mlt6 .mono-svg-8 line,.skn-mlt6 .mono-svg-11 line,.skn-mlt6 .mono-svg-10 line{stroke:${colorHex}}
         /* icons */
         .skn-mlt6 .iconSvg{line-height:12px}
         .skn-mlt6 .iconSvg svg,.skn-mlt6 .iconSvg{width:12px;height:12px}
@@ -299,9 +245,8 @@ export default function TemplateMlt6() {
 		.skn-mlt6 .left-box .lang-sec.infobarsec .paragraph.nativeLangPara{width:313px;max-width:313px}
 		.skn-mlt6 .left-box .lang-sec.infobarsec,.skn-mlt6 .left-box .skli-sec,.skn-mlt6 .left-box .multi-para-hilt{padding-left:0px}
         .skn-mlt6 .left-box .lang-sec.infobarsec .heading,.skn-mlt6 .left-box .skli-sec .heading{margin-left:-0px}
-        .skn-mlt6 .inner-rating{background-color:#3c5769}
         .skn-mlt6 .right-box .lang-sec .paragraph,.skn-mlt6 .right-box  .skli-sec .paragraph{padding-bottom:10px}
-		
+
 
         /*Infographic Tiles*/
 		.skn-mlt6 .left-box .lang-sec.infotilesec .paragraph,.skn-mlt6 .left-box .skli-sec .paragraph{width:148px}
@@ -312,8 +257,8 @@ export default function TemplateMlt6() {
 		.skn-mlt6 .left-box .lang-sec .paragraph.nativeLangPara{width:313px!important;max-width:313px}
 
         /*Rectangular Rating Blocks*/
-        .skn-mlt6 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#3c5769}
-		
+        .skn-mlt6 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:${colorHex}}
+
 		/*Fixes for builder*/
 		.skn-mlt6 .left-box .lang-sec .doc-item .title-edit,.skn-mlt6 .left-box .skli-sec .doc-item .title-edit{margin-left:-0px}
         .skn-mlt6  .left-box .data-LNGG .sortable-item,.skn-mlt6  .left-box .skli-sec .sortable-item{display:inline-block;vertical-align:top}
@@ -321,306 +266,146 @@ export default function TemplateMlt6() {
         .skn-mlt6 .left-box .sortable-item.active-drag .lang-sec .sortable-item{display:inline-block}
         .skn-mlt6 .left-box .active .lang-sec.infobarsec .heading .rename-section.text-rename,.skn-mlt6 .left-box .active .skli-sec.infobarsec .heading .rename-section.text-rename{margin-left:-0px}
 
-        /* Fix for MBR */        
+        /* Fix for MBR */
         .skn-mlt6.MBR .left-box .lang-sec .doc-item .title-edit,.skn-mlt6.MBR .left-box .skli-sec .doc-item .title-edit{width:368px}
 
         /*HILT multi para - For PDF*/
         .skn-mlt6.for-pdf .right-box .multi-para-hilt .pdfparawrapper .paragraph{margin-bottom:20px}
 
         /*Fixes for builder for skill*/
-        .skn-mlt6 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:15px}	
-        .skn-mlt6 .right-box .skli-sec .sortable-item:last-child .paragraph .singlecolumn .field:last-child,.skn-mlt6 .left-box .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mlt6 .left-box .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}	
+        .skn-mlt6 .skli-sec .sortable-item .paragraph:last-child .singlecolumn .field:last-child{min-height:15px}
+        .skn-mlt6 .right-box .skli-sec .sortable-item:last-child .paragraph .singlecolumn .field:last-child,.skn-mlt6 .left-box .skli-sec .sortable-item:nth-last-child(1) .paragraph .singlecolumn .field:last-child,.skn-mlt6 .left-box .skli-sec .sortable-item:nth-last-child(2) .paragraph .singlecolumn .field:last-child{min-height:0}
         .skn-mlt6 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mlt6 .left-box .lang-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph, .skn-mlt6 .left-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph, .skn-mlt6 .left-box  .skli-sec .sortableInner > .sortable-item:nth-last-child(2) .paragraph{padding-bottom:0}
 	   .skn-mlt6 .right-box .lang-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph,.skn-mlt6 .right-box .skli-sec .sortableInner > .sortable-item:nth-last-child(1) .paragraph{padding-bottom:0}
-	   
+
        /*POC Multi Experience Para*/
        .skn-mlt6 .groupChildPara.paragraph .singlecolumn .companyloc{display:none}
 
         /*Pagination Parameters*/
         .skn-mlt6{data-ptbm:18px;data-pgsz:595px}
 		.skn-mlt6.for-paginated-pdf.pdf-pass-2{data-rectleft:369}
+        .skn-mlt6:after{content:'';background:#f5f5f5;position:absolute;right:0;top:0;height:100%;z-index:-1}
     `}</style>
-      <div className="svg-skin "><div data-testid="embd-98t1CZ7" className="" tabIndex={0}><div></div><div data-testid="embd-95CA90b" className="document doc-root doc-finalize fontsize fontface vmargins hmargins  pagesize skn-mlt6 MLT6 MUK             pgsz-a4 hyphen-normal texp-rectangle" docskinwidth="559" ><div data-testid="embd-92LqKqF0" id="CONTAINER_PARENT_0" className="top-section"><div data-testid="embd-92PDkR60" id="CONTAINER_0" className=""><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="21" className="sortable-item section-container SortableItem-sibling  data-NAME"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-NAME" id="SECTION_NAME1a1a32ad-f01c-4377-b2f6-1a65f9bf6cb8" className="section notdraggable firstsection SECTION_NAME" data-section-cd="NAME"><div data-testid="embd-88uQIHR-NAME" className="doc-item"><div data-testid="embd-88aw0Ce-NAME" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-44bc0bd4-6d0c-480d-8f32-8d70df1621d0" id="PARAGRAPH_NAME_44bc0bd4-6d0c-480d-8f32-8d70df1621d0" className="paragraph PARAGRAPH_NAME firstparagraph"><div data-testid="embd-78blCsH">
-                        
+      <div className="svg-skin "><div data-testid="embd-98t1CZ7" className="" tabIndex={0}><div></div><div data-testid="embd-95CA90b" className="document doc-root doc-finalize fontsize fontface vmargins hmargins pagesize skn-mlt6 MLT6 MUK pgsz-a4 hyphen-normal texp-rectangle" docskinwidth="559" ><div data-testid="embd-92LqKqF0" id="CONTAINER_PARENT_0" className="top-section"><div data-testid="embd-92PDkR60" id="CONTAINER_0" className=""><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="21" className="sortable-item section-container SortableItem-sibling data-NAME"><div data-testid="embd-88MByq6-NAME" id="SECTION_NAME1a1a32ad-f01c-4377-b2f6-1a65f9bf6cb8" className="section notdraggable firstsection SECTION_NAME" data-section-cd="NAME"><div data-testid="embd-88uQIHR-NAME" className="doc-item"><div data-testid="embd-88aw0Ce-NAME" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-44bc0bd4-6d0c-480d-8f32-8d70df1621d0" id="PARAGRAPH_NAME_44bc0bd4-6d0c-480d-8f32-8d70df1621d0" className="paragraph PARAGRAPH_NAME firstparagraph"><div data-testid="embd-78blCsH">
+
                         <div className="monogram show-monogram" dependency="FNAM|LNAM" data-uppercase="true">
                             <svg width="40px" height="40px" viewBox="0 0 40 40" className="processlogopdf svg-default">
                                 <rect x="0" y="0" width="40" height="40" stroke="#ffffff" fill="none" strokeWidth="1"></rect>
-                                <text id="SUBSTR_FALN" textAnchor="middle" x="20" y="26" fill="#ffffff" fontSize="19">DW</text>
+                                <text id="SUBSTR_FALN" textAnchor="middle" x="20" y="26" fill="#ffffff" fontSize="19">{initials}</text>
                             </svg>
-
-                            {/* Monogram: Shape 1 */}
-                            <svg className="mono-icon mono-svg-1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 36 36">
-                            <rect x="1" y="1" fill="none" stroke="#FFFFFF" width="34" height="34"></rect>
-                            <text id="SUBSTR_FALN" x="53%" y="52%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Playfair Display" fontSize="11.67px" line-height="15.55px" letter-spacing="1.94px">DW</text>
-                            </svg>
-
-                            {/* Monogram: Shape 2 */}
-                            <svg className="mono-icon mono-svg-2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="72.92px" height="35px" viewBox="0 0 73 36">
-                                <path fill="none" stroke="#FFFFFF" d="M72.5,17.9c0,4.5-3.8,8.8-10.4,11.9c-6.5,3.1-15.6,5.1-25.6,5.1c-10,0-19-1.9-25.6-5.1
-                                C4.4,26.6,0.5,22.4,0.5,17.9S4.4,9.1,10.9,5.9c6.5-3.1,15.6-5.1,25.6-5.1c10,0,19,1.9,25.6,5.1C68.6,9.1,72.5,13.3,72.5,17.9z"></path>
-                                <text id="SUBSTR_FALN" x="50%" y="52%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Stint Ultra Expanded" fontSize="17.5px" line-height="19.96px" letter-spacing="2.92px">DW</text>
-                            </svg>
-
-                            {/* Monogram: Shape 3  */}
-                            <svg className="mono-icon mono-svg-3" xmlns="http://www.w3.org/2000/svg" width="43px" height="35px" viewBox="0 0 43 35">
-                            <path fill="none" stroke="#FFFFFF" strokeLinecap="round" d="M28.5,3.7c-3.8,0.7-8.2,2.3-12.4,4.8c-10.7,6.2-17,15.4-14,20.5c0.6,1,1.5,1.8,2.6,2.3 M38.9,4.6
-                                c0.9,0.5,1.6,1.2,2.1,2c3,5.2-3.3,14.3-14,20.5c-4.3,2.5-8.6,4.1-12.4,4.8"></path>
-                            <path fill="#FFFFFF" d="M9.5,28.7l-0.3,0.9c0,0.1-0.1,0.2-0.1,0.3c-0.1,0.2-0.2,0.4-0.4,0.6c-0.1,0.2-0.3,0.3-0.5,0.5
-                                c-0.2,0.1-0.4,0.3-0.6,0.4c-0.1,0-0.2,0.1-0.3,0.1l-0.9,0.3l0.9,0.3c0.1,0,0.2,0.1,0.3,0.1c0.2,0.1,0.4,0.2,0.6,0.4
-                                c0.2,0.1,0.3,0.3,0.5,0.5c0.1,0.2,0.3,0.4,0.4,0.6c0,0.1,0.1,0.2,0.1,0.3L9.5,35l0.3-0.9c0-0.1,0.1-0.2,0.1-0.3
-                                c0.1-0.2,0.2-0.4,0.4-0.6c0.1-0.2,0.3-0.3,0.5-0.5c0.2-0.1,0.4-0.3,0.6-0.4c0.1,0,0.2-0.1,0.3-0.1l0.9-0.3l-0.9-0.3
-                                c-0.1,0-0.2-0.1-0.3-0.1c-0.2-0.1-0.4-0.2-0.6-0.4c-0.2-0.1-0.3-0.3-0.5-0.5c-0.1-0.2-0.3-0.4-0.4-0.6c0-0.1-0.1-0.2-0.1-0.3
-                                L9.5,28.7z"></path>
-                            <path fill="#FFFFFF" d="M33.8,0l-0.4,1.1c0,0.1-0.1,0.2-0.2,0.3c-0.1,0.2-0.3,0.4-0.4,0.6c-0.2,0.2-0.4,0.4-0.6,0.6
-                                c-0.2,0.2-0.4,0.3-0.6,0.4c-0.1,0.1-0.2,0.1-0.3,0.2l-1.1,0.4L31.3,4c0.1,0,0.2,0.1,0.3,0.2c0.2,0.1,0.4,0.3,0.6,0.4
-                                c0.2,0.2,0.4,0.4,0.6,0.6c0.2,0.2,0.3,0.4,0.4,0.6c0.1,0.1,0.1,0.2,0.2,0.3l0.4,1.1l0.4-1.1c0-0.1,0.1-0.2,0.2-0.3
-                                c0.1-0.2,0.3-0.4,0.4-0.6c0.2-0.2,0.4-0.4,0.6-0.6c0.2-0.2,0.4-0.3,0.6-0.4C36.1,4.1,36.2,4,36.4,4l1.1-0.4l-1.1-0.4
-                                c-0.1,0-0.2-0.1-0.3-0.2c-0.2-0.1-0.4-0.3-0.6-0.4c-0.2-0.2-0.4-0.4-0.6-0.6c-0.2-0.2-0.3-0.4-0.4-0.6c-0.1-0.1-0.1-0.2-0.2-0.3
-                                L33.8,0z"></path>
-                            <text id="SUBSTR_FALN" x="54%" y="52%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Roboto Mono" fontSize="10.77px" letter-spacing="1.79px" line-height="14.2px">DW</text>
-                            </svg>
-
-                            {/* Monogram: Shape 4  */}
-                            <svg className="mono-icon mono-svg-4" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40.41px" height="35px" viewBox="0 0 41 36">
-                            <line dependency="FNAM+LNAM" fill="none" stroke="#FFFFFF" x1="20.9" y1="10.4" x2="20.9" y2="25.2"></line>
-                            <path fill="none" stroke="#FFFFFF" d="M1.7,19.4c-0.5-0.9-0.5-2.1,0-3l8.1-14c0.5-0.9,1.5-1.5,2.6-1.5h16.2c1.1,0,2.1,0.6,2.6,1.5l8.1,14
-                                c0.5,0.9,0.5,2.1,0,3l-8.1,14c-0.5,0.9-1.5,1.5-2.6,1.5H12.4c-1.1,0-2.1-0.6-2.6-1.5L1.7,19.4z"></path>
-                            <g>
-                                <text id="SUBSTR_FNAM" x="38%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Barlow Condensed" fontSize="10.5px" line-height="12.6px" letter-spacing="1.75px">D</text>
-                                <text id="SUBSTR_LNAM" x="68%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Barlow Condensed" fontSize="10.5px" line-height="12.6px" letter-spacing="1.75px">W</text>
-                                <text id="SUBSTR_FOLN" x="50%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Barlow Condensed" fontSize="10.5px" line-height="12.6px" letter-spacing="1.75px"></text>
-                            </g>
-                            </svg>
-
-                           {/* Monogram: Shape 5 */}
-                            <svg className="mono-icon mono-svg-5" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35px" height="35px" viewBox="0 0 35 36">
-                            <circle fill="none" stroke="#FFFFFF" cx="17.5" cy="17.7" r="17"></circle>
-                            <line dependency="FNAM+LNAM" fill="none" stroke="#FFFFFF" x1="18" y1="9.4" x2="18" y2="25.9"></line>
-                            <text id="SUBSTR_FNAM" x="34%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Roboto Mono" fontSize="11.67px" line-height="15.39px" letter-spacing="1.94px">D</text>
-                            <text id="SUBSTR_LNAM" x="72%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Roboto Mono" fontSize="11.67px" line-height="15.39px" letter-spacing="1.94px">W</text>
-                            <text id="SUBSTR_FOLN" x="50%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Roboto Mono" fontSize="11.67px" line-height="15.39px" letter-spacing="1.94px"></text>
-                            </svg>
-
-                            {/* Monogram: Shape 6 */}
-                            <svg className="mono-icon mono-svg-6" xmlns="http://www.w3.org/2000/svg" width="33.49px" height="35px" viewBox="0 0 35 37">
-
-                            <path fill="#FFFFFF" d="M30.7,23.8l-0.4,1c0,0.1-0.1,0.2-0.1,0.3c-0.1,0.2-0.2,0.4-0.4,0.6c-0.2,0.2-0.3,0.4-0.5,0.5
-                                c-0.2,0.2-0.4,0.3-0.6,0.4c-0.1,0.1-0.2,0.1-0.3,0.1l-1,0.4l1,0.4c0.1,0,0.2,0.1,0.3,0.1c0.2,0.1,0.4,0.2,0.6,0.4
-                                c0.2,0.2,0.4,0.3,0.5,0.5c0.2,0.2,0.3,0.4,0.4,0.6c0.1,0.1,0.1,0.2,0.1,0.3l0.4,1l0.4-1c0-0.1,0.1-0.2,0.1-0.3
-                                c0.1-0.2,0.2-0.4,0.4-0.6c0.2-0.2,0.3-0.4,0.5-0.5c0.2-0.2,0.4-0.3,0.6-0.4c0.1-0.1,0.2-0.1,0.3-0.1l1-0.4l-1-0.4
-                                c-0.1,0-0.2-0.1-0.3-0.1c-0.2-0.1-0.4-0.2-0.6-0.4c-0.2-0.2-0.4-0.3-0.5-0.5c-0.2-0.2-0.3-0.4-0.4-0.6c-0.1-0.1-0.1-0.2-0.1-0.3
-                                L30.7,23.8z"></path>
-                            <path fill="#FFFFFF" d="M4,4.6L3.8,5.3c0,0.1-0.1,0.2-0.1,0.2C3.6,5.7,3.5,5.8,3.4,5.9C3.3,6.1,3.2,6.2,3,6.3C2.9,6.4,2.8,6.5,2.6,6.5
-                                c-0.1,0-0.1,0.1-0.2,0.1L1.7,6.9l0.7,0.3c0.1,0,0.2,0.1,0.2,0.1C2.8,7.3,2.9,7.4,3,7.5c0.1,0.1,0.3,0.2,0.4,0.4
-                                C3.5,8,3.6,8.1,3.7,8.3c0,0.1,0.1,0.1,0.1,0.2L4,9.2l0.3-0.7c0-0.1,0.1-0.2,0.1-0.2C4.4,8.1,4.5,8,4.6,7.9C4.7,7.7,4.8,7.6,5,7.5
-                                c0.1-0.1,0.3-0.2,0.4-0.3c0.1,0,0.1-0.1,0.2-0.1l0.7-0.3L5.6,6.6c-0.1,0-0.2-0.1-0.2-0.1C5.2,6.5,5.1,6.4,5,6.3
-                                C4.8,6.2,4.7,6.1,4.6,5.9C4.5,5.8,4.4,5.7,4.4,5.5c0-0.1-0.1-0.1-0.1-0.2L4,4.6z"></path>
-                            <path fill="none" stroke="#FFFFFF" strokeLinecap="round" strokeLinejoin="round" d="M6.3,4.4C8.9,2.3,12.2,1,15.8,1c8.3,0,15,6.7,15,15v10 M2,9.9c-0.8,1.9-1.3,3.9-1.3,6.1v20h30v-2.8"></path>
-                            <text id="SUBSTR_FALN" x="48%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="#FFFFFF" fontFamily="Barlow Condensed" fontSize="12px" line-height="14.4px" letter-spacing="2">DW</text>
-                            </svg>
-                            
-                            {/* Monogram: Shape 7 */}
-                            <svg className="mono-icon mono-fill-icon mono-svg-7" xmlns="http://www.w3.org/2000/svg" width="36px" height="35px" viewBox="0 0 36 36">
-                                <rect fill="#FFFFFF" x="0.5" y="1" width="35" height="35"></rect>
-                                <text id="SUBSTR_FALN" x="53%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#3C5769" fontFamily="Playfair Display" fontSize="11.67px" line-height="15.55px" letter-spacing="1.94px">DW</text>
-                            </svg>
-                            {/* Monogram: Shape 8 */}
-                            <svg className="mono-icon mono-fill-icon mono-svg-8" xmlns="http://www.w3.org/2000/svg" width="73px" height="35px" viewBox="0 0 73 36">
-                                <ellipse fill="#FFFFFF" cx="36.5" cy="18" rx="36.5" ry="17.5"></ellipse>
-                                <text id="SUBSTR_FALN" fontFamily="Stint Ultra Expanded" fontSize="17.5px" line-height="19.96px" letter-spacing="2.92px" dominantBaseline="middle" textAnchor="middle" x="50%" y="56%">DW</text>
-                            </svg>
-
-                            {/* Monogram: Shape 9 */}
-                            <svg className="mono-icon mono-fill-icon mono-svg-9" xmlns="http://www.w3.org/2000/svg" width="41px" height="35px" viewBox="0 0 41 37">
-                            <path fill="#FFFFFF" d="M25.9,28.1c-4.6,2.7-9.3,4.3-13.4,5c-0.8,0.1-1.5,0.2-2.3,0.3c0,0,0,0,0.1,0c0.1,0,0.2-0.1,0.3-0.1l0.9-0.3
-                                l-0.9-0.3c-0.1,0-0.2-0.1-0.3-0.1c-0.2-0.1-0.4-0.2-0.6-0.4c-0.2-0.1-0.3-0.3-0.5-0.5C9.2,31.4,9,31.2,8.8,31c0-0.1-0.1-0.2-0.1-0.3
-                                l-0.3-1l-0.3,0.9c0,0.1-0.1,0.2-0.1,0.3c-0.1,0.2-0.2,0.4-0.4,0.6c-0.1,0.2-0.3,0.3-0.5,0.5c-0.2,0.1-0.4,0.3-0.6,0.4
-                                c-0.1,0-0.2,0.1-0.3,0.1l-0.9,0.3l0.9,0.3c0.1,0,0.2,0.1,0.3,0.1c0,0,0,0,0,0c-0.8-0.1-1.5-0.3-2.2-0.6c-1.5-0.6-2.6-1.4-3.3-2.6
-                                c-3-5.2,3.3-14.4,14-20.5c4.5-2.6,9-4.2,13-4.9c0.6-0.1,1.2-0.2,1.8-0.2l-0.8,0.3L30.2,5c0.1,0,0.2,0.1,0.3,0.2
-                                c0.2,0.1,0.4,0.3,0.6,0.4c0.2,0.2,0.4,0.4,0.6,0.6s0.3,0.4,0.4,0.6c0.1,0.1,0.1,0.2,0.2,0.3l0.4,1.1l0.4-1.1c0-0.1,0.1-0.2,0.2-0.3
-                                c0.1-0.2,0.3-0.4,0.4-0.6C34,6,34.2,5.8,34.3,5.6c0.2-0.2,0.4-0.3,0.6-0.4C35,5.1,35.2,5,35.3,5L36,4.8c0.4,0.1,0.8,0.3,1.2,0.5
-                                c1.2,0.5,2.1,1.3,2.7,2.4C42.9,12.7,36.6,21.9,25.9,28.1z"></path>
-                            <text id="SUBSTR_FALN" x="54%" y="52%" dominantBaseline="middle" textAnchor="middle" fill="#3c5769" fontFamily="Roboto Mono" fontSize="10.77px" line-height="14.2px" letter-spacing="1.79px">DW</text>
-                            <path fill="#FFFFFF" d="M11.9,32L11,31.7c0,0,0,0-0.1,0c-0.1,0-0.1-0.1-0.2-0.1c-0.1-0.1-0.2-0.1-0.2-0.2s-0.1-0.1-0.2-0.2
-                                c0,0,0,0,0-0.1c-0.1,0-0.1-0.1-0.2-0.2c-0.1-0.1-0.2-0.2-0.2-0.3c0,0,0-0.1-0.1-0.1c0-0.1,0-0.1-0.1-0.2c0,0,0,0,0,0l-0.3-1
-                                c-0.1-0.4-0.5-0.7-0.9-0.7h0c-0.4,0-0.8,0.3-1,0.7l-0.3,0.9c0,0,0,0,0,0.1c0,0.1-0.1,0.1-0.1,0.2C7,30.7,7,30.7,6.9,30.8
-                                S6.8,30.9,6.8,31c0,0,0,0-0.1,0c0,0.1-0.1,0.1-0.2,0.2c-0.1,0.1-0.2,0.1-0.3,0.2c0,0-0.1,0-0.1,0.1c-0.1,0-0.1,0-0.2,0.1
-                                c0,0,0,0-0.1,0L5,31.8c-0.4,0.1-0.6,0.4-0.7,0.8c0,0,0,0.1,0,0.2c0,0.4,0.3,0.8,0.7,1L5.9,34c0,0,0,0,0.1,0c0.1,0,0.1,0,0.2,0.1
-                                c0.1,0.1,0.2,0.1,0.2,0.2c0.1,0,0.1,0.1,0.2,0.1c0,0,0,0,0,0.1c0,0.1,0.1,0.1,0.2,0.2C6.9,34.8,7,34.9,7,35c0,0,0,0.1,0.1,0.1
-                                c0,0.1,0,0.1,0.1,0.2c0,0,0,0,0,0l0.3,1C7.6,36.7,8,37,8.4,37c0,0,0,0,0,0c0.4,0,0.8-0.3,1-0.7l0.3-0.9c0,0,0,0,0-0.1
-                                c0-0.1,0.1-0.1,0.1-0.2c0-0.1,0.1-0.2,0.2-0.2c0-0.1,0.1-0.1,0.1-0.2c0,0,0,0,0.1-0.1c0,0,0.1-0.1,0.2-0.1c0.1-0.1,0.2-0.2,0.3-0.2
-                                c0,0,0.1,0,0.1-0.1c0.1,0,0.1,0,0.2-0.1c0,0,0,0,0.1,0l0.9-0.3c0.3-0.1,0.6-0.4,0.7-0.8c0-0.1,0-0.1,0-0.2
-                                C12.5,32.5,12.3,32.1,11.9,32z M9.8,33.7c-0.2,0.2-0.4,0.3-0.5,0.5C9,34.4,9,34.6,8.8,34.8c0,0.1-0.1,0.2-0.1,0.3L8.5,36l-0.3-1
-                                c0-0.1-0.1-0.2-0.1-0.3c-0.1-0.2-0.3-0.4-0.4-0.6c-0.2-0.2-0.3-0.4-0.5-0.5c-0.2-0.2-0.4-0.3-0.6-0.4c0,0,0,0,0,0
-                                c-0.1,0-0.2-0.1-0.3-0.1l-0.9-0.3l0.9-0.3c0.1,0,0.2-0.1,0.3-0.1C6.8,32.3,7,32.1,7.2,32c0.2-0.2,0.4-0.3,0.5-0.5
-                                C7.8,31.3,8,31.1,8,30.9c0-0.1,0.1-0.2,0.1-0.3l0.3-0.9l0.3,1c0,0.1,0.1,0.2,0.1,0.3c0.1,0.2,0.3,0.4,0.4,0.6
-                                c0.2,0.2,0.3,0.4,0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.4c0.1,0,0.2,0.1,0.3,0.1l0.9,0.3l-0.9,0.3c-0.1,0-0.2,0.1-0.3,0.1c0,0,0,0-0.1,0
-                                C10.1,33.5,9.9,33.6,9.8,33.7z"></path>
-                            <path fill="#FFFFFF" d="M36.8,3.7l-1-0.4c-0.1-0.1-0.1-0.1-0.2-0.2c0,0-0.1-0.1-0.2-0.1c-0.1-0.1-0.2-0.1-0.3-0.2l-0.3-0.3l-0.2-0.2
-                                c-0.1-0.1-0.1-0.2-0.2-0.3c0-0.1-0.1-0.1-0.1-0.2c0,0-0.1-0.1-0.1-0.2l-0.5-1C33.5,0.2,33.1,0,32.8,0h0c-0.4,0-0.8,0.3-0.9,0.7
-                                l-0.4,1c-0.1,0.1-0.1,0.1-0.2,0.2c0,0-0.1,0.1-0.1,0.1C31.1,2.2,31,2.3,31,2.4l-0.5,0.5C30.4,3,30.3,3,30.1,3.1
-                                c-0.1,0-0.1,0.1-0.2,0.1c0,0-0.1,0-0.2,0.1l-1,0.4c-0.4,0.1-0.6,0.5-0.7,0.9v0c0,0.4,0.3,0.8,0.7,0.9l1,0.4C29.9,6,30,6,30.1,6.1
-                                c0.1,0,0.1,0.1,0.2,0.1c0.1,0.1,0.2,0.1,0.3,0.2L31,6.9c0.1,0.1,0.1,0.2,0.2,0.3c0,0.1,0.1,0.1,0.1,0.2c0,0.1,0,0.1,0.1,0.2l0.3,1
-                                c0.1,0.4,0.5,0.7,0.9,0.7s0.8-0.3,0.9-0.7l0.4-1c0.1-0.1,0.1-0.1,0.2-0.2c0,0,0.1-0.1,0.1-0.2c0.1-0.1,0.1-0.2,0.2-0.3l0.5-0.5
-                                c0.1-0.1,0.2-0.1,0.3-0.2c0.1,0,0.1-0.1,0.2-0.1c0,0,0.1,0,0.1,0l1.1-0.4c0.2-0.1,0.3-0.2,0.5-0.3c0.1-0.2,0.2-0.4,0.2-0.6
-                                C37.5,4.2,37.2,3.8,36.8,3.7z M35.3,5C35.2,5,35,5.1,35,5.2c-0.2,0.1-0.4,0.2-0.6,0.4C34.2,5.8,34,6,33.8,6.2
-                                c-0.1,0.2-0.3,0.4-0.4,0.6c-0.1,0.1-0.2,0.2-0.2,0.3l-0.4,1.1l-0.4-1.1c-0.1-0.1-0.1-0.2-0.2-0.3C32,6.6,32,6.4,31.8,6.2
-                                s-0.4-0.4-0.6-0.6c-0.2-0.1-0.4-0.3-0.6-0.4C30.5,5.1,30.3,5,30.2,5l-1.1-0.4l0.8-0.3l0.3-0.1c0.1-0.1,0.2-0.1,0.3-0.2
-                                c0.2-0.1,0.4-0.2,0.6-0.4L31.8,3c0.1-0.2,0.3-0.4,0.4-0.6c0.1-0.1,0.2-0.2,0.2-0.3L32.8,1l0.5,1.1c0.1,0.1,0.1,0.2,0.2,0.3
-                                c0.1,0.2,0.2,0.4,0.4,0.6c0.2,0.2,0.4,0.4,0.6,0.6C34.7,3.7,34.8,3.9,35,4c0.1,0.1,0.2,0.2,0.3,0.2l1.1,0.4L36,4.8L35.3,5z"></path>
-                            </svg>
-
-                            {/* Monogram: Shape 10 */}
-                            <svg className="mono-icon mono-fill-icon mono-svg-10" xmlns="http://www.w3.org/2000/svg" width="40.41px" height="35px" viewBox="0 0 41 36">
-                                <path fill="#FFFFFF" d="M1.3,19.6c-0.6-1.1-0.6-2.4,0-3.5l8.1-14c0.6-1.1,1.8-1.8,3-1.8h16.2c1.3,0,2.4,0.7,3,1.8l8.1,14 c0.6,1.1,0.6,2.4,0,3.5l-8.1,14c-0.6,1.1-1.8,1.8-3,1.8H12.4c-1.3,0-2.4-0.7-3-1.8L1.3,19.6z"></path>
-                                <line dependency="FNAM+LNAM" fill="none" stroke="#3c5769" x1="20.9" y1="10.4" x2="20.9" y2="25.2"></line>
-                                <g>
-                                    <text id="SUBSTR_FNAM" x="38%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#3c5769" fontFamily="Barlow Condensed" fontSize="10.5px" line-height="12.6px" letter-spacing="1.75px">D</text>
-                                <text id="SUBSTR_LNAM" x="68%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#3c5769" fontFamily="Barlow Condensed
-                                " fontSize="10.5px" line-height="12.6px" letter-spacing="1.75px">W</text>
-                                <text id="SUBSTR_FOLN" x="50%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#3c5769" fontFamily="Barlow Condensed
-                                " fontSize="10.5px" line-height="12.6px" letter-spacing="1.75px"></text>
-                                </g>
-                                
-                            </svg>
-
-                            {/* Monogram: Shape 11 */}
-                            <svg className="mono-icon mono-fill-icon mono-svg-11" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 35 36">
-                                <circle fill="#FFFFFF" cx="17.5" cy="17.7" r="17.5"></circle>
-                                <line dependency="FNAM+LNAM" fill="none" stroke="#3c5769" x1="18" y1="9.4" x2="18" y2="25.9"></line>
-                                <text id="SUBSTR_FNAM" x="34%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#3c5769" fontFamily="Roboto Mono" fontSize="11.67px" line-height="15.39px" letter-spacing="1.94px">D</text>
-                                <text id="SUBSTR_LNAM" x="72%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#3c5769" fontFamily="Roboto Mono" fontSize="11.67px" line-height="15.39px" letter-spacing="1.94px">W</text>
-                                <text id="SUBSTR_FOLN" x="50%" y="53%" dominantBaseline="middle" textAnchor="middle" fill="#3c5769" fontFamily="Roboto Mono" fontSize="11.67px" line-height="15.39px" letter-spacing="1.94px"></text>
-                            </svg>                            
-                            {/* Monogram: Shape 12 */}
-                            <svg className="mono-icon mono-fill-icon mono-svg-12" xmlns="http://www.w3.org/2000/svg" width="33.49px" height="35px" viewBox="0 0 34.5 35">
-                                <g>
-                                    <g>
-                                        <path fill="#FFFFFF" d="M30.1,15v7.8l0,0l-0.4,1c0,0.1-0.1,0.2-0.1,0.3c-0.1,0.2-0.2,0.4-0.4,0.6c-0.2,0.2-0.3,0.4-0.5,0.5
-                                            c-0.2,0.2-0.4,0.3-0.6,0.4c-0.1,0.1-0.2,0.1-0.3,0.1l-1,0.4l1,0.4c0.1,0,0.2,0.1,0.3,0.1c0.2,0.1,0.4,0.2,0.6,0.4
-                                            c0.2,0.2,0.4,0.3,0.5,0.5c0.2,0.2,0.3,0.4,0.4,0.6c0.1,0.1,0.1,0.2,0.1,0.3l0.4,1l0,0V35h-30V15c0-2.7,0.7-5.2,1.9-7.4
-                                            c0.1-0.2,0.2-0.3,0.3-0.5C2.4,7,2.5,6.9,2.6,6.7c0,0,0.1,0.1,0.1,0.2C2.8,7,2.9,7.1,3,7.3C3,7.4,3,7.4,3,7.5l0.2,0.7l0.3-0.7
-                                            c0-0.1,0.1-0.2,0.1-0.2C3.7,7.1,3.8,7,3.9,6.9C4,6.7,4.1,6.6,4.3,6.5c0.1-0.1,0.3-0.2,0.4-0.3c0.1,0,0.1-0.1,0.2-0.1l0.7-0.2
-                                            L4.9,5.6c-0.1,0-0.1-0.1-0.2-0.1C4.5,5.5,4.4,5.4,4.3,5.3C4.1,5.2,4,5.1,3.9,4.9C4,4.8,4.2,4.7,4.3,4.6c0.1-0.1,0.2-0.2,0.4-0.4
-                                            C7.3,1.6,11,0,15.1,0C23.3,0,30.1,6.7,30.1,15z"></path>
-                                        <g>
-                                            <path fill="#FFFFFF" d="M33.7,25.8l-1-0.4c-0.1,0-0.2-0.1-0.3-0.1c-0.2-0.1-0.4-0.2-0.5-0.4c-0.2-0.1-0.3-0.3-0.5-0.5
-                                                c-0.1-0.2-0.2-0.3-0.3-0.5c0-0.1-0.1-0.2-0.1-0.3l-0.4-1c-0.1-0.2-0.2-0.3-0.5-0.3c0,0,0,0,0,0c-0.2,0-0.4,0.1-0.5,0.3l-0.4,1
-                                                c0,0.1-0.1,0.2-0.1,0.3c-0.1,0.2-0.2,0.4-0.3,0.5c-0.1,0.2-0.3,0.3-0.5,0.5c-0.2,0.1-0.4,0.2-0.5,0.4c-0.1,0-0.2,0.1-0.3,0.1
-                                                l-1,0.4c-0.2,0.1-0.3,0.3-0.3,0.5s0.1,0.4,0.3,0.5l1,0.4c0.1,0,0.2,0.1,0.3,0.1c0.2,0.1,0.4,0.2,0.5,0.4c0.2,0.1,0.3,0.3,0.5,0.5
-                                                c0.1,0.2,0.2,0.3,0.3,0.5c0,0.1,0.1,0.2,0.1,0.3l0.4,1c0.1,0.2,0.3,0.3,0.5,0.3c0,0,0,0,0,0c0.2,0,0.4-0.1,0.5-0.3l0.4-1
-                                                c0-0.1,0.1-0.2,0.1-0.3c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.3,0.5-0.5c0.2-0.1,0.4-0.2,0.5-0.4c0.1,0,0.2-0.1,0.3-0.1l1-0.4
-                                                c0.2-0.1,0.3-0.3,0.3-0.5S33.9,25.9,33.7,25.8z M32.5,26.7c-0.1,0-0.2,0.1-0.3,0.1c-0.2,0.1-0.4,0.2-0.6,0.4
-                                                c-0.2,0.2-0.4,0.3-0.5,0.5c-0.1,0.2-0.3,0.4-0.4,0.6c-0.1,0.1-0.1,0.2-0.2,0.3l-0.4,1l0,0l-0.4-1c0-0.1-0.1-0.2-0.1-0.3
-                                                c-0.1-0.2-0.2-0.4-0.4-0.6c-0.2-0.2-0.3-0.4-0.5-0.5c-0.2-0.2-0.4-0.3-0.6-0.4c-0.1-0.1-0.2-0.1-0.3-0.1l-1-0.4l1-0.4
-                                                c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.4-0.2,0.6-0.4c0.2-0.2,0.4-0.3,0.5-0.5c0.2-0.2,0.3-0.4,0.4-0.6c0.1-0.1,0.1-0.2,0.1-0.3l0.4-1
-                                                l0,0l0.4,1c0,0.1,0.1,0.2,0.2,0.3c0.1,0.2,0.2,0.4,0.4,0.6c0.2,0.2,0.4,0.4,0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.4
-                                                c0.1,0.1,0.2,0.1,0.3,0.1l1,0.4L32.5,26.7z"></path>
-                                            <path fill="#FFFFFF" d="M33.9,25.4l-1-0.4c-0.1,0-0.2-0.1-0.2-0.1c-0.2-0.1-0.3-0.2-0.5-0.3c-0.1-0.1-0.3-0.2-0.4-0.4
-                                                c-0.1-0.1-0.2-0.3-0.3-0.5c0-0.1-0.1-0.2-0.1-0.2l-0.4-1c-0.1-0.4-0.5-0.6-0.9-0.7c0,0,0,0,0,0c-0.4,0-0.8,0.3-0.9,0.7l-0.4,1
-                                                c0,0.1-0.1,0.2-0.1,0.2c-0.1,0.2-0.2,0.3-0.3,0.5c-0.1,0.1-0.2,0.3-0.4,0.4c-0.1,0.1-0.3,0.2-0.5,0.3c-0.1,0-0.2,0.1-0.2,0.1
-                                                l-1,0.4c-0.4,0.2-0.7,0.5-0.7,0.9s0.3,0.8,0.7,0.9l1,0.4c0.1,0,0.2,0.1,0.2,0.1c0.2,0.1,0.3,0.2,0.5,0.3c0.1,0.1,0.3,0.2,0.4,0.4
-                                                c0.1,0.1,0.2,0.3,0.3,0.5c0,0.1,0.1,0.2,0.1,0.2l0.4,1c0.1,0.4,0.5,0.7,0.9,0.7c0,0,0,0,0,0c0.4,0,0.8-0.3,0.9-0.7l0.4-1
-                                                c0-0.1,0.1-0.2,0.1-0.2c0.1-0.2,0.2-0.3,0.3-0.5c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.3-0.2,0.5-0.3c0.1,0,0.2-0.1,0.2-0.1l1-0.4
-                                                c0.4-0.2,0.6-0.5,0.6-0.9S34.3,25.5,33.9,25.4z M33.5,26.3l-1,0.4c-0.1,0-0.2,0.1-0.3,0.1c-0.2,0.1-0.4,0.2-0.6,0.4
-                                                c-0.2,0.2-0.4,0.3-0.5,0.5c-0.1,0.2-0.3,0.4-0.4,0.6c-0.1,0.1-0.1,0.2-0.2,0.3l-0.4,1l0,0l-0.4-1c0-0.1-0.1-0.2-0.1-0.3
-                                                c-0.1-0.2-0.2-0.4-0.4-0.6c-0.2-0.2-0.3-0.4-0.5-0.5c-0.2-0.2-0.4-0.3-0.6-0.4c-0.1-0.1-0.2-0.1-0.3-0.1l-1-0.4l1-0.4
-                                                c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.4-0.2,0.6-0.4c0.2-0.2,0.4-0.3,0.5-0.5c0.2-0.2,0.3-0.4,0.4-0.6c0.1-0.1,0.1-0.2,0.1-0.3l0.4-1
-                                                l0,0l0.4,1c0,0.1,0.1,0.2,0.2,0.3c0.1,0.2,0.2,0.4,0.4,0.6c0.2,0.2,0.4,0.4,0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.4
-                                                c0.1,0.1,0.2,0.1,0.3,0.1L33.5,26.3z"></path>
-                                        </g>
-                                        <g>
-                                            <path fill="#FFFFFF" d="M5.8,5.4L5.1,5.2C5,5.1,5,5.1,4.9,5.1C4.8,5,4.7,5,4.6,4.9C4.5,4.8,4.4,4.7,4.3,4.6c0,0,0,0,0,0
-                                                C4.2,4.5,4.1,4.4,4.1,4.3c0-0.1,0-0.1-0.1-0.2L3.8,3.4C3.7,3.2,3.5,3.1,3.3,3.1S2.9,3.2,2.8,3.4L2.6,4.1c0,0.1-0.1,0.1-0.1,0.2
-                                                C2.5,4.4,2.4,4.5,2.3,4.6C2.2,4.7,2.1,4.8,2,4.9C1.9,5,1.8,5,1.7,5.1c-0.1,0-0.1,0-0.2,0.1L0.8,5.4C0.6,5.5,0.5,5.7,0.5,5.9
-                                                c0,0.2,0.1,0.4,0.3,0.5l0.7,0.2c0.1,0,0.1,0,0.2,0.1C1.8,6.8,1.9,6.8,2,6.9C2.1,7,2.2,7.1,2.3,7.2c0,0,0,0,0,0
-                                                c0.1,0.1,0.2,0.2,0.2,0.3c0,0.1,0,0.1,0.1,0.2l0.3,0.7c0.1,0.2,0.3,0.3,0.5,0.3s0.4-0.1,0.5-0.3L4,7.7c0-0.1,0.1-0.1,0.1-0.2
-                                                c0.1-0.1,0.1-0.2,0.2-0.3C4.4,7.1,4.5,7,4.6,6.9c0.1-0.1,0.2-0.1,0.3-0.2c0,0,0.1-0.1,0.2-0.1l0.7-0.2C6,6.3,6.1,6.1,6.1,5.9
-                                                C6.1,5.7,6,5.5,5.8,5.4z M4.9,6.1c-0.1,0-0.1,0.1-0.2,0.1C4.5,6.3,4.4,6.4,4.3,6.5C4.1,6.6,4,6.7,3.9,6.9C3.8,7,3.7,7.1,3.7,7.3
-                                                c0,0.1-0.1,0.2-0.1,0.2L3.3,8.2L3,7.5C3,7.4,3,7.4,3,7.3C2.9,7.1,2.8,7,2.7,6.9c0-0.1-0.1-0.1-0.1-0.2C2.5,6.6,2.4,6.6,2.3,6.5
-                                                C2.2,6.4,2.1,6.3,1.9,6.2c-0.1,0-0.1-0.1-0.2-0.1L1,5.9l0.7-0.2c0.1,0,0.1-0.1,0.2-0.1c0.1-0.1,0.3-0.2,0.4-0.3
-                                                c0.1-0.1,0.2-0.2,0.4-0.4C2.8,4.8,2.9,4.7,3,4.5C3,4.4,3,4.4,3,4.3l0.2-0.7l0.3,0.7c0,0.1,0.1,0.2,0.1,0.2
-                                                c0.1,0.1,0.2,0.3,0.3,0.4l0,0C4,5.1,4.1,5.2,4.3,5.3c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0,0.1,0.1,0.2,0.1l0.7,0.2L4.9,6.1z"></path>
-                                            <path fill="#FFFFFF" d="M6,5L5.3,4.7c-0.1,0-0.1,0-0.1-0.1C5.1,4.6,5,4.6,4.9,4.5C4.8,4.4,4.8,4.4,4.7,4.3c0,0-0.1-0.1-0.1-0.1
-                                                c0,0-0.1-0.1-0.1-0.1c0,0,0-0.1,0-0.1L4.2,3.2C4.1,2.9,3.7,2.6,3.3,2.6c-0.4,0-0.8,0.3-0.9,0.7L2.1,3.9c0,0,0,0.1,0,0.1
-                                                C2,4.1,2,4.2,1.9,4.3C1.8,4.4,1.8,4.4,1.7,4.5C1.6,4.6,1.5,4.6,1.5,4.6c0,0-0.1,0-0.1,0.1L0.7,5C0.3,5.1,0,5.5,0,5.9
-                                                c0,0.4,0.3,0.8,0.7,0.9l0.7,0.2c0.1,0,0.1,0,0.1,0.1c0.1,0,0.2,0.1,0.2,0.2c0.1,0.1,0.1,0.1,0.2,0.2c0,0,0.1,0.1,0.1,0.1
-                                                c0,0,0,0.1,0.1,0.1c0,0,0,0.1,0,0.1l0.3,0.7c0.1,0.4,0.5,0.7,0.9,0.7c0.4,0,0.8-0.3,0.9-0.7l0.3-0.7c0,0,0-0.1,0-0.1
-                                                c0-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.1-0.1,0.2-0.2C5,7.2,5.1,7.2,5.1,7.1c0,0,0.1,0,0.1-0.1L6,6.8c0.4-0.1,0.6-0.5,0.6-0.9
-                                                C6.6,5.5,6.3,5.1,6,5z M3,7.5C3,7.4,3,7.4,3,7.3C2.9,7.1,2.8,7,2.7,6.9c0-0.1-0.1-0.1-0.1-0.2C2.5,6.6,2.4,6.6,2.3,6.5
-                                                C2.2,6.4,2.1,6.3,1.9,6.2c-0.1,0-0.1-0.1-0.2-0.1L1,5.9l0.7-0.2c0.1,0,0.1-0.1,0.2-0.1c0.1-0.1,0.3-0.2,0.4-0.3
-                                                c0.1-0.1,0.2-0.2,0.4-0.4C2.8,4.8,2.9,4.7,3,4.5C3,4.4,3,4.4,3,4.3l0.2-0.7l0.3,0.7c0,0.1,0.1,0.2,0.1,0.2
-                                                c0.1,0.1,0.2,0.3,0.3,0.4l0,0C4,5.1,4.1,5.2,4.3,5.3c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0,0.1,0.1,0.2,0.1l0.7,0.2L4.9,6.1
-                                                c-0.1,0-0.1,0.1-0.2,0.1C4.5,6.3,4.4,6.4,4.3,6.5C4.1,6.6,4,6.7,3.9,6.9C3.8,7,3.7,7.1,3.7,7.3c0,0.1-0.1,0.2-0.1,0.2L3.3,8.2
-                                                L3,7.5z"></path>
-                                        </g>
-                                    </g>
-                                    <text id="SUBSTR_FALN" x="48%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="#3C5769" fontFamily="Barlow Condensed" fontSize="12px" letter-spacing="2px" line-height="14.4px">DW</text>
-                                </g>
-                            </svg>
-
                         </div>
                         <div className="name">
-                            <span id="FIELD_FNAM" dependency="FNAM">Dom</span>
-                            <span id="FIELD_LNAM" dependency="LNAM">Webster</span>
+                            <span id="FIELD_FNAM" dependency="FNAM">{data.first_name}</span>
+                            {data.first_name && data.last_name && ' '}
+                            <span id="FIELD_LNAM" dependency="LNAM">{data.last_name}</span>
                         </div>
-                        
-                    </div></div></div></div></div></div></div></div></div><div data-testid="embd-92LqKqF1" id="CONTAINER_PARENT_1" className="parentContainer"><div data-testid="embd-92PDkR61" id="CONTAINER_1" className="left-box last-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling  data-SUMM"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMMaae374b0-0228-4808-a3fe-b04cc0c571fb" className="section SECTION_SUMM has-title" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_SUMM">PROFESSIONAL SUMMARY<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename PROFESSIONAL SUMMARY " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-SUMM" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6669442-f38f-e0e2-fad7-6104f95f3e6d" id="PARAGRAPH_SUMM_f6669442-f38f-e0e2-fad7-6104f95f3e6d" className="paragraph PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn" id="FIELD_FRFM"><p>Motivated Care Assistant with 10 years of experience in the Care industry. Offering expertise in person-centred care, implementation and monitoring of individual care plans and management of resident assessments and files. Energetic self-starter and team builder able to navigate high-stress situations. Well-versed in monitoring clients with developmental disabilities and adhering to patient care plans.</p></div>
-                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling  data-EXPR"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR313e1c77-349e-497b-bdb6-f0271f1e85bf" className="section SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EXPR">Work history<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Work history " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EXPR" className=""><div data-testid="embd-87S8HNi313e1c77-349e-497b-bdb6-f0271f1e85bf" id="CONTAINER_313e1c77-349e-497b-bdb6-f0271f1e85bf" className="sortableInner"><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="22" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-998e66f0-eaa8-4a72-b41c-7158c85a1d86" id="PARAGRAPH_EXPR_998e66f0-eaa8-4a72-b41c-7158c85a1d86" className="paragraph PARAGRAPH_EXPR firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <span className="paddedline" dependency="COMP|JTIT">
-                                <span className="companyname txt-bold" id="FIELD_COMP">Private Care Home</span><span dependency="COMP+JTIT" className="hyphen"></span><span className="jobtitle txt-bold" id="FIELD_JTIT">Senior Care Assistant</span>
-                            </span>
-                            <span className="paddedline" dependency="JCIT|JSTA|JCNT|JCTR|JLOC">
-                                <span className="joblocation jobcity" id="FIELD_JCIT">Edinburgh</span><span className="joblocation jobstate" id="FIELD_JSTA"></span><span className="joblocation jobcountry" id="FIELD_JCNT"></span><span className="joblocation" id="FIELD_JLOC"></span>                                
-                                <span id="FIELD_JCTR"></span>
-                            </span>
-                            <span className="paddedline txtItl" dependency="JSTD|EDDT|TEXP">
-                                <span className="jobdates" id="FIELD_JSTD" format="%m/%Y">07/2014</span><span dependency="JSTD+EDDT" className="hyphen"></span><span className="jobdates" id="FIELD_EDDT" format="%m/%Y">Current</span>
-                                <span className="totl-expr" id="FIELD_TEXP"></span>
-                            </span>
-                            <span className="jobline" id="FIELD_JDES"><ul><li>Met with patients and families to discuss care and plan of action htmlFor future.</li>
-  <li>Implemented new team onboarding programme, reducing training time from four weeks to two.</li>
-  <li>Administered all necessary medications as directed by care plan.</li></ul></span>
-                        </div>
-                    </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="22" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" className="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <span className="paddedline" dependency="COMP|JTIT">
-                                <span className="companyname txt-bold" id="FIELD_COMP">Ideal Care Homes</span><span dependency="COMP+JTIT" className="hyphen"></span><span className="jobtitle txt-bold" id="FIELD_JTIT">Care Assistant</span>
-                            </span>
-                            <span className="paddedline" dependency="JCIT|JSTA|JCNT|JCTR|JLOC">
-                                <span className="joblocation jobcity" id="FIELD_JCIT">Edinburgh</span><span className="joblocation jobstate" id="FIELD_JSTA"></span><span className="joblocation jobcountry" id="FIELD_JCNT"></span><span className="joblocation" id="FIELD_JLOC"></span>                                
-                                <span id="FIELD_JCTR"></span>
-                            </span>
-                            <span className="paddedline txtItl" dependency="JSTD|EDDT|TEXP">
-                                <span className="jobdates" id="FIELD_JSTD" format="%m/%Y">09/2010</span><span dependency="JSTD+EDDT" className="hyphen"></span><span className="jobdates" id="FIELD_EDDT" format="%m/%Y">06/2014</span>
-                                <span className="totl-expr" id="FIELD_TEXP"></span>
-                            </span>
-                            <span className="jobline" id="FIELD_JDES"><ul><li>Charted daily information such as mood changes, mobility activity, eating percentages and daily inputs and outputs.</li>
-  <li>Developed strong and trusting rapport with each client to facilitate best care possible.</li>
-  <li>Worked to improve patient outlook and daily living through compassionate care.</li></ul></span>
-                        </div>
-                    </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="22" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" className="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <span className="paddedline" dependency="COMP|JTIT">
-                                <span className="companyname txt-bold" id="FIELD_COMP">Four Seasons Health Care</span><span dependency="COMP+JTIT" className="hyphen"></span><span className="jobtitle txt-bold" id="FIELD_JTIT">Care Assistant</span>
-                            </span>
-                            <span className="paddedline" dependency="JCIT|JSTA|JCNT|JCTR|JLOC">
-                                <span className="joblocation jobcity" id="FIELD_JCIT">Edinburgh</span><span className="joblocation jobstate" id="FIELD_JSTA"></span><span className="joblocation jobcountry" id="FIELD_JCNT"></span><span className="joblocation" id="FIELD_JLOC"></span>                                
-                                <span id="FIELD_JCTR"></span>
-                            </span>
-                            <span className="paddedline txtItl" dependency="JSTD|EDDT|TEXP">
-                                <span className="jobdates" id="FIELD_JSTD" format="%m/%Y">11/2008</span><span dependency="JSTD+EDDT" className="hyphen"></span><span className="jobdates" id="FIELD_EDDT" format="%m/%Y">08/2010</span>
-                                <span className="totl-expr" id="FIELD_TEXP"></span>
-                            </span>
-                            <span className="jobline" id="FIELD_JDES"><ul><li>Maintained confidentiality and compliance standards at all times.</li>
-  <li>Maintained clean and well-organised environment to promote client happiness and safety.</li>
-  <li>Assisted disabled individuals to foster independence while still closely monitoring safety.</li>
-  <li>Supervised frequent activities such as medication and personal hygiene to provide safe living environment htmlFor patients.</li></ul></span>
-                        </div>
-                    </div></div></div></div></div></div></div></div></div><div data-testid="embd-92PDkR62" id="CONTAINER_2" className="right-box last-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling  data-CNTC"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-CNTC" id="SECTION_CNTCd3d40c22-1b29-401e-a809-9cb7e72d6fdc" className="section SECTION_CNTC notdraggable" data-section-cd="CNTC"><div data-testid="embd-88uQIHR-CNTC" className="doc-item"><div data-testid="embd-88aw0Ce-CNTC" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-3912838f-29f6-467c-8297-bf45ee1ff720" id="PARAGRAPH_CNTC_3912838f-29f6-467c-8297-bf45ee1ff720" className="paragraph PARAGRAPH_CNTC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
+
+                    </div></div></div></div></div></div></div></div></div>
+
+{/* Main Content Container */}
+<div data-testid="embd-92LqKqF1" id="CONTAINER_PARENT_1" className="parentContainer">
+
+{/* Left Box - Summary and Experience */}
+<div data-testid="embd-92PDkR61" id="CONTAINER_1" className="left-box last-box">
+
+{/* Professional Summary Section */}
+{data.summary && (
+<div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling data-SUMM"><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMMaae374b0-0228-4808-a3fe-b04cc0c571fb" className="section SECTION_SUMM has-title" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_SUMM">{t.summary || 'PROFESSIONAL SUMMARY'}</div></div><div data-testid="embd-88aw0Ce-SUMM" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6669442-f38f-e0e2-fad7-6104f95f3e6d" id="PARAGRAPH_SUMM_f6669442-f38f-e0e2-fad7-6104f95f3e6d" className="paragraph PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
+                        <div className="singlecolumn" id="FIELD_FRFM"><p>{data.summary}</p></div>
+                    </div></div></div></div></div></div></div>
+)}
+
+{/* Work Experience Section */}
+{data.experiences && data.experiences.length > 0 && (
+<div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling data-EXPR"><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR313e1c77-349e-497b-bdb6-f0271f1e85bf" className="section SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EXPR">{t.experience || 'WORK HISTORY'}</div></div><div data-testid="embd-88aw0Ce-EXPR" className=""><div data-testid="embd-87S8HNi313e1c77-349e-497b-bdb6-f0271f1e85bf" id="CONTAINER_313e1c77-349e-497b-bdb6-f0271f1e85bf" className="sortableInner">
+  {data.experiences.map((exp, index) => (
+    <div key={exp.id || index} data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling">
+      <div data-testid={`embd-79HRa2m-${exp.id}`} id={`PARAGRAPH_EXPR_${exp.id}`} className={`paragraph PARAGRAPH_EXPR ${index === 0 ? 'firstparagraph' : ''}`}>
+        <div data-testid="embd-78FzR29" className="clearfix doc-item">
+          <div className="singlecolumn">
+            {(exp.company || exp.job_title) && (
+              <span className="paddedline" dependency="COMP|JTIT">
+                {exp.company && <span className="companyname txt-bold" id="FIELD_COMP">{exp.company}</span>}
+                {exp.company && exp.job_title && <span dependency="COMP+JTIT" className="hyphen"></span>}
+                {exp.job_title && <span className="jobtitle txt-bold" id="FIELD_JTIT">{exp.job_title}</span>}
+              </span>
+            )}
+            {exp.location && (
+              <span className="paddedline" dependency="JCIT|JSTA|JCNT|JCTR|JLOC">
+                <span className="joblocation jobcity" id="FIELD_JCIT">{exp.location}</span>
+              </span>
+            )}
+            {(exp.start_date || exp.end_date || exp.currently_working) && (
+              <span className="paddedline txtItl" dependency="JSTD|EDDT|TEXP">
+                {exp.start_date && <span className="jobdates" id="FIELD_JSTD">{formatDate(exp.start_date, language)}</span>}
+                {exp.start_date && (exp.end_date || exp.currently_working) && <span dependency="JSTD+EDDT" className="hyphen"></span>}
+                <span className="jobdates" id="FIELD_EDDT">{exp.currently_working ? (t.present || 'Current') : (exp.end_date ? formatDate(exp.end_date, language) : '')}</span>
+              </span>
+            )}
+            {exp.description && (
+              <span className="jobline" id="FIELD_JDES">
+                <ul>
+                  {exp.description.split('\n').filter(line => line.trim()).map((line, i) => (
+                    <li key={i}>{line.trim()}</li>
+                  ))}
+                </ul>
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div></div></div></div></div>
+)}
+
+{/* Languages Section */}
+{data.languages && data.languages.length > 0 && (
+<div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling data-LNGG">
+  <div data-testid="embd-88MByq6-LNGG" id="SECTION_LNGG88bc36a1-247b-b72f-7918-a79948b8fc80" className="section lang-sec infobarsec hide-colon SECTION_LNGG has-title data-LNGG" data-section-cd="LNGG">
+    <div data-testid="embd-88uQIHR-LNGG" className="doc-item">
+      <div data-testid="embd-88ciQTv" className="heading">
+        <div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_LNGG">{t.languages || 'LANGUAGES'}</div>
+      </div>
+      <div data-testid="embd-88aw0Ce-LNGG" className="">
+        <div data-testid="embd-87S8HNi88bc36a1-247b-b72f-7918-a79948b8fc80" id="CONTAINER_88bc36a1-247b-b72f-7918-a79948b8fc80" className="sortableInner">
+          {data.languages.map((lang, index) => (
+            <div key={lang.id || index} data-testid="embd-87je894-LNGG" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling data-LNGG">
+              <div data-testid={`embd-79HRa2m-${lang.id}`} id={`PARAGRAPH_LNGG_${lang.id}`} className={`paragraph PARAGRAPH_LNGG ${index === 0 ? 'firstparagraph' : ''} ${index % 2 === 0 ? 'para_odd' : 'para_even'}`}>
+                <div data-testid="embd-78FzR29" className="clearfix doc-item">
+                  <div className="singlecolumn infobarpara">
+                    <div className="field">
+                      <span id="FIELD_FRFM">{lang.name}</span>
+                      <span className="colon"><span className="beforecolonspace"> </span><span dependency="FRFM">: </span></span>
+                      <span className="flt-right" id="FIELD_RATG"></span>
+                    </div>
+                    <div className="rating-bar" dependency="RATV">
+                      <div className="inner-rating" id="FIELD_RATV" style={{ width: getLevelWidth(lang.level) }}></div>
+                    </div>
+                    <div className="field field-ratt">
+                      <span id="FIELD_RATT">{getProficiencyLabel(lang.proficiency)}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+)}
+
+</div>
+
+{/* Right Box - Contact, Skills, Education, Languages */}
+<div data-testid="embd-92PDkR62" id="CONTAINER_2" className="right-box last-box">
+
+{/* Contact Section */}
+<div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling data-CNTC"><div data-testid="embd-88MByq6-CNTC" id="SECTION_CNTCd3d40c22-1b29-401e-a809-9cb7e72d6fdc" className="section SECTION_CNTC notdraggable" data-section-cd="CNTC"><div data-testid="embd-88uQIHR-CNTC" className="doc-item"><div data-testid="embd-88aw0Ce-CNTC" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-3912838f-29f6-467c-8297-bf45ee1ff720" id="PARAGRAPH_CNTC_3912838f-29f6-467c-8297-bf45ee1ff720" className="paragraph PARAGRAPH_CNTC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
                         <div className="address">
+                            {data.email && (
                             <div className="iconRow" dependency="EMAI">
                                 <div className="iconSvg">
                                     <svg width="11px" height="8px" viewBox="0 0 11 8">
@@ -629,9 +414,11 @@ export default function TemplateMlt6() {
                                     </svg>
                                 </div>
                                 <div className="icoTxt">
-                                    <span id="FIELD_EMAI">dom.webster@example.co.uk</span>
+                                    <span id="FIELD_EMAI">{data.email}</span>
                                 </div>
                             </div>
+                            )}
+                            {data.phone && (
                             <div className="iconRow" dependency="HPHN|CPHN">
                                 <div className="iconSvg">
                                     <svg width="10px" height="12px" viewBox="0 0 10 12">
@@ -639,10 +426,11 @@ export default function TemplateMlt6() {
                                     </svg>
                                 </div>
                                 <div className="icoTxt">
-                                    <span id="FIELD_HPHN">07912 345 678</span>
-                                    <span id="FIELD_CPHN"></span>
+                                    <span id="FIELD_HPHN">{data.phone}</span>
                                 </div>
                             </div>
+                            )}
+                            {(data.street_address || data.city || data.postcode) && (
                             <div className="iconRow" dependency="ADDR|STRT|CITY|STAT|ZIPC">
                                 <div className="iconSvg">
                                     <svg width="9px" height="11px" viewBox="0 0 9 11">
@@ -650,99 +438,132 @@ export default function TemplateMlt6() {
                                     </svg>
                                 </div>
                                 <div className="icoTxt adrsDetails zipsuffix">
-                                    <span id="FIELD_STRT">46 Roman Rd</span><span dependency="STRT+CITY|STAT">, </span>
-                                    <span id="FIELD_CITY">Leeds</span>
-                                    <span id="FIELD_STAT"></span>
-                                    <span id="FIELD_ZIPC">LS2 3ZR</span>
-                                    <span id="FIELD_ADDR"></span>
+                                    {data.street_address && <><span id="FIELD_STRT">{data.street_address}</span><span dependency="STRT+CITY|STAT">, </span></>}
+                                    {data.city && <span id="FIELD_CITY">{data.city}</span>}
+                                    {data.postcode && <> <span id="FIELD_ZIPC">{data.postcode}</span></>}
                                 </div>
-                                
                             </div>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-							
-							
-                            
-                            
-                        </div>
-                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling  data-HILT"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-HILT" id="SECTION_HILT66551e16-9025-4c6a-88fd-21c891f7b2b4" className="section SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_HILT">SKILLS<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename SKILLS " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-HILT" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6d39a0e-45b4-431c-82b8-567b069b1da4" id="PARAGRAPH_HILT_f6d39a0e-45b4-431c-82b8-567b069b1da4" className="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn maincolumn">
-						    <div className="dflt-view">
-                                <span className="paddedline" id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
-  <li>Attention to detail</li>
-  <li>Community activities</li>
-  <li>Medication administration</li>
-  <li>Care plan management</li></ul></span>
-                                <span className="paddedline" id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
-  <li>Client safety and First Aid</li>
-  <li>Compassionate client care</li>
-  <li>Behaviour redirection</li></ul></span>
-							</div>
-                            <div className="multi-para-opt">
-                                <div id="FIELD_PTTL" className="txt-bold"></div>
-                                    <div className="multi-para-content">
-                                        <div id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
-  <li>Attention to detail</li>
-  <li>Community activities</li>
-  <li>Medication administration</li>
-  <li>Care plan management</li></ul></div>
-                                        <div id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
-  <li>Client safety and First Aid</li>
-  <li>Compassionate client care</li>
-  <li>Behaviour redirection</li></ul></div>
+                            )}
+
+                            {data.nationality && (
+                            <div className="iconRow" dependency="NTLY">
+                                <div className="iconSvg">
+                                    <svg width="11px" height="11px" viewBox="0 0 11 11">
+                                        <path d="M7.46421778,3.37164485 C7.14258061,1.39080783 6.38395618,-9.9475983e-14 5.50112193,-9.9475983e-14 C4.61828767,-9.9475983e-14 3.85966325,1.39080783 3.53802608,3.37164485 L7.46421778,3.37164485 Z M10.5741209,3.37164485 C9.93970626,1.86548694 8.65538875,0.700938555 7.06938475,0.230700155 C7.61060948,0.980443165 7.9832823,2.10948756 8.17847846,3.37164485 L10.5741209,3.37164485 Z M2.8237654,3.37164485 C3.01675204,2.10948756 3.38940319,0.980443165 3.93064958,0.230700155 C2.34685511,0.700938555 1.06030641,1.86548694 0.428123003,3.37164485 L2.8237654,3.37164485 Z M7.5551548,6.9207447 C7.60174973,6.46601628 7.62837231,5.9935467 7.62837231,5.50110476 C7.62837231,5.00866283 7.60174973,4.53619324 7.5551548,4.08146482 L3.44485787,4.08146482 C3.3982846,4.53619324 3.37166202,5.00866283 3.37166202,5.50110476 C3.37166202,5.9935467 3.3982846,6.46601628 3.44485787,6.9207447 L7.5551548,6.9207447 Z M10.8092401,6.9207447 C10.9312404,6.46601628 11.0000172,5.9935467 11.0000172,5.50110476 C11.0000172,5.00866283 10.9312404,4.53619324 10.8114712,4.08146482 L8.26720595,4.08146482 C8.31377922,4.54728418 8.3404018,5.02419447 8.3404018,5.50110476 C8.3404018,5.97801505 8.31377922,6.45492534 8.26720595,6.9207447 L10.8092401,6.9207447 Z M2.73282838,6.9207447 C2.68846463,6.45492534 2.66184205,5.97801505 2.66184205,5.50110476 C2.66184205,5.02419447 2.68846463,4.54728418 2.7350379,4.08146482 L0.190772618,4.08146482 C0.0710034954,4.53619324 1.71660968e-05,5.00866283 1.71660968e-05,5.50110476 C1.71660968e-05,5.9935467 0.0710034954,6.46601628 0.190772618,6.9207447 L2.73282838,6.9207447 Z M5.50112193,11.0022095 C6.38395618,11.0022095 7.14258061,9.61140169 7.46421778,7.63056467 L3.53802608,7.63056467 C3.85966325,9.61140169 4.61828767,11.0022095 5.50112193,11.0022095 Z M7.07159428,10.7715094 C8.65538875,10.301271 9.94193744,9.13672258 10.5763304,7.63056467 L8.18068798,7.63056467 C7.98549182,8.89272197 7.61284067,10.0217664 7.07159428,10.7715094 Z M3.9328591,10.7715094 C3.39163437,10.0217664 3.01896156,8.89272197 2.8237654,7.63056467 L0.428123003,7.63056467 C1.0625376,9.13672258 2.34685511,10.301271 3.9328591,10.7715094 Z" id="nation" fill="#000000" fillRule="nonzero"></path>
+                                    </svg>
+                                </div>
+                                <div className="icoTxt">
+                                    <span id="FIELD_NTLY">{data.nationality}</span>
+                                </div>
+                            </div>
+                            )}
+
+                            {data.driving_license && (
+                            <div className="iconRow" dependency="DRIV">
+                                <div className="iconSvg">
+                                    <svg width="11px" height="9px" viewBox="0 0 11 9">
+                                        <path d="M2.06244241,8.25001388 C2.44207028,8.25001388 2.74994357,7.94214059 2.74994357,7.56251273 L2.74994357,6.87501157 L8.24995283,6.87501157 L8.24995283,7.56251273 C8.24995283,7.94214059 8.55782612,8.25001388 8.93745398,8.25001388 L9.62495514,8.25001388 C10.004583,8.25001388 10.3124563,7.94214059 10.3124563,7.56251273 L10.3124563,6.4008439 C10.5238595,6.15914428 10.6562069,5.84655029 10.6562069,5.5 L10.6562069,4.46875752 C10.6562069,4.05583301 10.4703583,3.689528 10.1820392,3.43750578 L10.6132381,3.43750578 C10.7316121,3.43750578 10.8347331,3.35693924 10.863309,3.24221584 L10.9922155,2.72658998 C11.0328345,2.56394627 10.9097187,2.40625405 10.7419347,2.40625405 L9.4556605,2.40625405 L9.09816745,1.51251094 C8.73077143,0.593611762 7.85400184,1.02140518e-13 6.86420831,1.02140518e-13 L4.13568809,1.02140518e-13 C3.14612534,1.02140518e-13 2.26912497,0.593611762 1.90151914,1.51251094 L1.54402609,2.40625405 L0.257961686,2.40625405 C0.090177666,2.40625405 -0.0329380807,2.56394627 0.00789069282,2.72658998 L0.13679716,3.24221584 C0.165373105,3.35693924 0.268494082,3.43750578 0.386868152,3.43750578 L0.818066998,3.43750578 C0.52953807,3.689528 0.343689521,4.05583301 0.343689521,4.46875752 L0.343689521,5.5 C0.343689521,5.84634048 0.476036851,6.15893447 0.6874401,6.4008439 L0.6874401,7.56251273 C0.6874401,7.94214059 0.99531339,8.25001388 1.37494126,8.25001388 L2.06244241,8.25001388 Z M8.24994357,3.09375521 L2.74994357,3.09375521 L3.17812117,2.02318532 C3.33474337,1.63174522 3.71395162,1.37500231 4.13568809,1.37500231 L6.86420831,1.37500231 C7.28594478,1.37500231 7.66515303,1.63174522 7.82177523,2.02318532 L8.24994357,3.09375521 Z M2.06244241,5.49570818 C1.64993752,5.49570818 1.37494126,5.22157213 1.37494126,4.81036805 C1.37494126,4.39914299 1.64993752,4.12500694 2.06244241,4.12500694 C2.4749473,4.12500694 3.09369415,4.74182355 3.09369415,5.15302762 C3.09369415,5.56425268 2.4749473,5.49570818 2.06244241,5.49570818 Z M7.90620225,5.15302762 C7.90620225,4.74182355 8.52494909,4.12500694 8.93745398,4.12500694 C9.34995887,4.12500694 9.62495514,4.39914299 9.62495514,4.81036805 C9.62495514,5.22157213 9.34995887,5.49570818 8.93745398,5.49570818 C8.52494909,5.49570818 7.90620225,5.56425268 7.90620225,5.15302762 Z" id="vehicle" fill="#000000" fillRule="nonzero"></path>
+                                    </svg>
+                                </div>
+                                <div className="icoTxt">
+                                    <span id="FIELD_DRIV">{data.driving_license}</span>
+                                </div>
+                            </div>
+                            )}
+
+                            {data.website && (
+                            <div className="iconRow" dependency="WEB1">
+                                <div className="iconSvg">
+                                    <svg width="11px" height="12px" viewBox="0 0 11 12">
+                                        <path d="M4.86605535,7.84926914 L5.31838084,7.39690168 C5.49778783,7.21751567 5.57820732,6.98357953 5.56971009,6.75654608 C5.56605942,6.66110433 5.49919355,6.53977224 5.42045253,6.48572565 C5.35788773,6.44263105 5.27780394,6.3809894 5.19828663,6.30161896 C4.595151,5.69848333 4.59261232,4.71953925 5.19828663,4.11386494 L6.64203979,2.67032158 C7.24872118,2.06364019 8.23832352,2.06729085 8.84043109,2.68129455 C9.43662207,3.28929773 9.41773933,4.26971047 8.81561078,4.87183902 L8.53444681,5.15300299 C8.44097726,5.24645156 8.41049213,5.38482007 8.45316711,5.50988673 C8.57915694,5.87929603 8.64742853,6.26181834 8.66135979,6.64257826 C8.6722908,6.94134514 9.036329,7.08183271 9.24775273,6.87042997 L10.04494,6.07324273 C11.3183498,4.8001056 11.3183498,2.72814472 10.0449609,1.4549866 C8.77178185,0.181765545 6.70007274,0.181597699 5.42668384,1.4549866 L3.98293067,2.89873977 C3.98035003,2.90129943 3.97755958,2.90411086 3.97520973,2.90667052 C2.716948,4.17193985 2.69930313,6.23204656 3.98293067,7.51701688 C4.09563964,7.62970486 4.29315308,7.79522255 4.42382162,7.88644715 C4.5613509,7.98245539 4.74745077,7.96785273 4.86605535,7.84926914 Z M5.57331879,10.5450527 L7.02479289,9.09336882 L7.02479289,9.09336882 C8.28307561,7.82809949 8.3006995,5.76799278 7.01707195,4.48302246 C6.90436299,4.37033448 6.70684955,4.20481679 6.57616002,4.1135712 C6.43863074,4.01756297 6.25255185,4.03214464 6.1339263,4.15074922 L5.6816008,4.60311668 C5.50219381,4.78250269 5.42177432,5.01643883 5.43027156,5.24347228 C5.43392222,5.33891403 5.50078809,5.46024611 5.57952911,5.51429271 C5.64209391,5.55738731 5.7221777,5.61902896 5.80169501,5.6983994 C6.40483064,6.30153503 6.40736932,7.28047911 5.80169501,7.88615342 L4.35794185,9.32969678 C3.75123948,9.93637817 2.76163714,9.9327275 2.15955055,9.31872381 C1.56335957,8.71072063 1.58226329,7.73030789 2.18437086,7.12817934 L2.46553483,6.84701537 C2.55900438,6.7535668 2.58948952,6.61519829 2.54681453,6.49011064 C2.4208247,6.12072233 2.35255312,5.73820002 2.33862185,5.3574401 C2.32771182,5.05867322 1.96365264,4.91816467 1.75222891,5.12958839 L0.955041679,5.92677563 C-0.318347226,7.19993374 -0.318347226,9.27189462 0.955041679,10.5450527 C2.22822078,11.8182738 4.29992988,11.8184416 5.57331879,10.5450527 Z" id="link" fill="#000000" fillRule="nonzero"></path>
+                                    </svg>
+                                </div>
+                                <div className="icoTxt">
+                                    <span id="FIELD_WEB1">{data.website}</span>
+                                </div>
+                            </div>
+                            )}
+
+                            {data.linkedin && (
+                            <div dependency="SOCL" className="social-link">
+                                <div id="CATEGORY_SOCIAL_SOCL" className="iconRow">
+                                    <div className="iconSvg social">
+                                        <span id="DOCDATAICON_SOCL"><svg xmlns="http://www.w3.org/2000/svg" className="linkedin" version="1.1" viewBox="0 0 30 30">
+                                            <path className="svg-inricon fillwht" d="M10.7,8.6c0,1.2-1,2.1-2,2.1s-2.1-1-2.1-2.1,1-2.1,2.1-2.1,2,1,2,2.1ZM10.3,12.1h-3.4v11.3h3.5v-11.3s-.1,0,0,0ZM16,12.1h-3.4v11.3h3.4v-5.9c0-1.6.7-2.5,2.1-2.5s1.9,1,1.9,2.5v5.9h3.5v-7.1c0-3-1.7-4.5-4.1-4.5s-3.4,1.9-3.4,1.9v-1.7h0Z"></path>
+                                        </svg></span>
                                     </div>
+                                    <div className="icoTxt">
+                                        <span className="field" id="FIELD_SOCL">{data.linkedin}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            )}
+
+                        </div>
+                    </div></div></div></div></div></div></div>
+
+{/* Skills Section */}
+{data.skills && data.skills.length > 0 && (
+<div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling data-HILT"><div data-testid="embd-88MByq6-HILT" id="SECTION_HILT66551e16-9025-4c6a-88fd-21c891f7b2b4" className="section SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_HILT">{t.skills || 'SKILLS'}</div></div><div data-testid="embd-88aw0Ce-HILT" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6d39a0e-45b4-431c-82b8-567b069b1da4" id="PARAGRAPH_HILT_f6d39a0e-45b4-431c-82b8-567b069b1da4" className="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
+                        <div className="singlecolumn maincolumn">
+                            <div className="dflt-view">
+                                <span className="paddedline" id="FIELD_SKC1">
+                                  <ul>
+                                    {data.skills.map((skill, i) => (
+                                      <li key={skill.id || i}>{skill.name}</li>
+                                    ))}
+                                  </ul>
+                                </span>
                             </div>
                         </div>
-                    </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling  data-EDUC"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUCfd38dd6c-e289-4f1b-96e2-457086a24cc8" className="section SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EDUC">EDUCATION<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename EDUCATION " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EDUC" className=""><div data-testid="embd-87S8HNifd38dd6c-e289-4f1b-96e2-457086a24cc8" id="CONTAINER_fd38dd6c-e289-4f1b-96e2-457086a24cc8" className="sortableInner"><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="22" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <div className="paddedline" dependency="GRYR|GRED|GRST|GRIP">
-                                <span className="xslt_static_change displayNoneThisField">Expected in </span>
-								<span id="FIELD_GRYR" format="%m/%Y">2013</span>
-								<span className="jobdates" id="FIELD_GRST" format="%m/%Y"></span><span className="jobdates" id="FIELD_GRED" format="%m/%Y"></span>
-								
-								<span id="FIELD_GRIP"></span>
-                            </div>
-                            <div className="paddedline" dependency="SCHO">
-                                <span className="companyname txt-bold" id="FIELD_SCHO">Edinburgh College</span>
-                            </div>
-                            <div className="paddedline" dependency="SCIT|SSTA|SCNT">
-                                <span className="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span className="joblocation jobstate" id="FIELD_SSTA"></span><span className="joblocation jobcountry" id="FIELD_SCNT"></span>
-                            </div>
-                            <div className="paddedline" dependency="DGRE|STUY|GRPA|GRHN">
-                                <span className="degree" id="FIELD_DGRE">NVQ Level 3</span><span dependency="DGRE+STUY"><span className="beforecolonspace"> </span><span>: </span></span><span className="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="DGRE|STUY"></span><span id="FIELD_GRHN"></span>
-								
-                            </div>
-                            
-                            <span id="FIELD_FRFM"></span>
-                        </div>
-                    </div></div></div><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="22" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                        <div className="singlecolumn">
-                            <div className="paddedline" dependency="GRYR|GRED|GRST|GRIP">
-                                <span className="xslt_static_change displayNoneThisField">Expected in </span>
-								<span id="FIELD_GRYR" format="%m/%Y">2008</span>
-								<span className="jobdates" id="FIELD_GRST" format="%m/%Y"></span><span className="jobdates" id="FIELD_GRED" format="%m/%Y"></span>
-								
-								<span id="FIELD_GRIP"></span>
-                            </div>
-                            <div className="paddedline" dependency="SCHO">
-                                <span className="companyname txt-bold" id="FIELD_SCHO">Edinburgh College</span>
-                            </div>
-                            <div className="paddedline" dependency="SCIT|SSTA|SCNT">
-                                <span className="joblocation jobcity" id="FIELD_SCIT">Edinburgh</span><span className="joblocation jobstate" id="FIELD_SSTA"></span><span className="joblocation jobcountry" id="FIELD_SCNT"></span>
-                            </div>
-                            <div className="paddedline" dependency="DGRE|STUY|GRPA|GRHN">
-                                <span className="degree" id="FIELD_DGRE">NVQ Level 2</span><span dependency="DGRE+STUY"><span className="beforecolonspace"> </span><span>: </span></span><span className="programline" id="FIELD_STUY">Health And Social Care</span><span dependency="DGRE|STUY"></span><span id="FIELD_GRHN"></span>
-								
-                            </div>
-                            
-                            <span id="FIELD_FRFM"></span>
-                        </div>
-                    </div></div></div></div></div></div></div></div></div></div><div data-testid="embd-92LqKqF2" id="CONTAINER_PARENT_2"><div data-testid="embd-92PDkR63" id="CONTAINER_3" className=""></div></div></div><div></div></div></div>
+                    </div></div></div></div></div></div></div>
+)}
+
+{/* Education Section */}
+{data.educations && data.educations.length > 0 && (
+<div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="22" className="sortable-item section-container SortableItem-sibling data-EDUC"><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUCfd38dd6c-e289-4f1b-96e2-457086a24cc8" className="section SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EDUC">{t.education || 'EDUCATION'}</div></div><div data-testid="embd-88aw0Ce-EDUC" className=""><div data-testid="embd-87S8HNifd38dd6c-e289-4f1b-96e2-457086a24cc8" id="CONTAINER_fd38dd6c-e289-4f1b-96e2-457086a24cc8" className="sortableInner">
+  {data.educations.map((edu, index) => (
+    <div key={edu.id || index} data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="22" className="sortable-item paragraph-container SortableItem-sibling">
+      <div data-testid={`embd-79HRa2m-${edu.id}`} id={`PARAGRAPH_EDUC_${edu.id}`} className={`paragraph PARAGRAPH_EDUC ${index === 0 ? 'firstparagraph' : ''}`}>
+        <div data-testid="embd-78FzR29" className="clearfix doc-item">
+          <div className="singlecolumn">
+            {(edu.start_date || edu.end_date) && (
+              <div className="paddedline" dependency="GRYR|GRED|GRST|GRIP">
+                {edu.start_date && <span className="jobdates" id="FIELD_GRST">{formatDate(edu.start_date, language)}</span>}
+                {edu.start_date && edu.end_date && <span className="hyphen"></span>}
+                {edu.end_date && <span className="jobdates" id="FIELD_GRED">{formatDate(edu.end_date, language)}</span>}
+              </div>
+            )}
+            {edu.institution && (
+              <div className="paddedline" dependency="SCHO">
+                <span className="companyname txt-bold" id="FIELD_SCHO">{edu.institution}</span>
+              </div>
+            )}
+            {edu.location && (
+              <div className="paddedline" dependency="SCIT|SSTA|SCNT">
+                <span className="joblocation jobcity" id="FIELD_SCIT">{edu.location}</span>
+              </div>
+            )}
+            {(edu.degree || edu.field_of_study) && (
+              <div className="paddedline" dependency="DGRE|STUY|GRPA|GRHN">
+                {edu.degree && <span className="degree" id="FIELD_DGRE">{edu.degree}</span>}
+                {edu.degree && edu.field_of_study && <span dependency="DGRE+STUY"><span className="beforecolonspace"> </span><span>: </span></span>}
+                {edu.field_of_study && <span className="programline" id="FIELD_STUY">{edu.field_of_study}</span>}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div></div></div></div></div>
+)}
+
+</div>
+
+</div>
+
+<div data-testid="embd-92LqKqF2" id="CONTAINER_PARENT_2"><div data-testid="embd-92PDkR63" id="CONTAINER_3" className=""></div></div></div><div></div></div></div>
     </>
   );
 }

@@ -47,12 +47,15 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .left-box .section, .right-box .section { border-color: ${c} !important; }
   `,
 
-  // MLI3: accent on right-box overlay, sectiontitle border, totl-expr
+  // MLI3: accent on right-box overlay, sectiontitle border, totl-expr, innerRating
   mli3: (c) => `
     ${commonOverrides(c)}
+    .middlesection .left-box:before { background: ${c} !important; }
     .middlesection .right-box:before { background: ${c} !important; }
     .totl-expr:before { background-color: ${c} !important; }
     .sectiontitle { border-bottom-color: ${c} !important; }
+    .bottomsection { background: ${c} !important; }
+    .innerRating { background-color: ${c} !important; }
   `,
 
   // MLI4: topsection background + left/right-box :before overlays + sidebar
@@ -192,20 +195,50 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .name { border-top-color: ${c} !important; }
   `,
 
-  // MCA2: minimal — inner-rating + totl-expr + sliced tiles
-  mca2: (c) => commonOverrides(c),
+  // MCA2: name + sectiontitle + inner-rating + totl-expr
+  mca2: (c) => `
+    ${commonOverrides(c)}
+    .skn-mca2 .name { color: ${c} !important; }
+    .skn-mca2 .sectiontitle { color: ${c} !important; }
+    .skn-mca2 .lang-sec.infobarsec .inner-rating { background-color: ${c} !important; }
+    .skn-mca2 .skli-sec.infobarsec .inner-rating { background-color: ${c} !important; }
+  `,
 
   // MTA2: minimal
   mta2: (c) => commonOverrides(c),
 
-  // MTA3: minimal
-  mta3: (c) => commonOverrides(c),
+  // MTA3: name + sectiontitle + prflSection border + inner-rating + totl-expr
+  mta3: (c) => `
+    ${commonOverrides(c)}
+    .skn-mta3 .name { color: ${c} !important; }
+    .skn-mta3 .sectiontitle { color: ${c} !important; }
+    .skn-mta3 .prflSection, .skn-mta3 .prflWrapper { border-color: ${c} !important; }
+    .skn-mta3 .inner-rating { background-color: ${c} !important; }
+    .skn-mta3 .totl-expr { background-color: ${c} !important; }
+  `,
 
-  // SLI1: inner-rating uses accent
-  sli1: (c) => commonOverrides(c),
+  // SLI1: SECTION_NAME/CNTC bg + section border + heading color + inner-rating + totl-expr
+  sli1: (c) => `
+    ${commonOverrides(c)}
+    .skn-sli1 .SECTION_NAME, .skn-sli1 .SECTION_CNTC { background: ${c} !important; border-color: ${c} !important; }
+    .skn-sli1 .section { border-color: ${c} !important; }
+    .skn-sli1 .heading { color: ${c} !important; }
+    .skn-sli1 .totl-expr { background-color: ${c} !important; }
+    .skn-sli1 .lang-sec.infobarsec .inner-rating, .skn-sli1 .skli-sec.infobarsec .inner-rating { background-color: ${c} !important; }
+    .skn-sli1 .sliced-rect .sliced-rect-tile.ratvfill { background-color: ${c} !important; }
+    .skn-sli1.MUK .sortable-item.name-contact + div .sortable-item:first-child .section { border-color: ${c} !important; }
+  `,
 
-  // CBA1: inner-rating
-  cba1: (c) => commonOverrides(c),
+  // CBA1: name + sectiontitle + borders + inner-rating + totl-expr
+  cba1: (c) => `
+    ${commonOverrides(c)}
+    .skn-cba1 .name { color: ${c} !important; }
+    .skn-cba1 .sectiontitle { color: ${c} !important; }
+    .skn-cba1 .lowerborder { border-color: ${c} !important; }
+    .skn-cba1 .lowerborder2 { border-color: ${c} !important; }
+    .skn-cba1 .inner-rating { background-color: ${c} !important; }
+    .skn-cba1 .totl-expr { background-color: ${c} !important; }
+  `,
 
   // CBA2: name + sectiontitle + borders + inner-rating
   cba2: (c) => `
@@ -217,10 +250,12 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .heading:before { border-color: ${c} !important; }
   `,
 
-  // CNA1: border-top on name + inner-rating + totl-expr
+  // CNA1: border-top on name + name color + sectiontitle + inner-rating + totl-expr
   cna1: (c) => `
     ${commonOverrides(c)}
-    .name { border-top-color: ${c} !important; }
+    .skn-cna1 .name { border-top-color: ${c} !important; color: ${c} !important; }
+    .skn-cna1 .sectiontitle { color: ${c} !important; }
+    .skn-cna1 .inner-rating { background-color: ${c} !important; }
   `,
 
   // HRA1: name + sectiontitle + borders + inner-rating + totl-expr
@@ -241,7 +276,9 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
   // LCA1: border-bottom accent + inner-rating + totl-expr
   lca1: (c) => `
     ${commonOverrides(c)}
-    .address:last-child { border-bottom-color: ${c} !important; }
+    .skn-lca1 .address:last-child { border-bottom-color: ${c} !important; }
+    .skn-lca1 .inner-rating { background-color: ${c} !important; }
+    .skn-lca1 .totl-expr { background-color: ${c} !important; }
   `,
 
   // PCA1: lowerborder + thinbottomborder + lgtBg:before + inner-rating + totl-expr
@@ -252,8 +289,13 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .lgtBg:before { background-color: ${c} !important; }
   `,
 
-  // SMA1: inner-rating
-  sma1: (c) => commonOverrides(c),
+  // SMA1: name + sectiontitle + inner-rating
+  sma1: (c) => `
+    ${commonOverrides(c)}
+    .skn-sma1 .name { color: ${c} !important; }
+    .skn-sma1 .sectiontitle { color: ${c} !important; }
+    .skn-sma1 .inner-rating { background-color: ${c} !important; }
+  `,
 
   // SMA2: heading background + inner-rating + totl-expr
   sma2: (c) => `
@@ -281,8 +323,13 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .dynamicIcon svg * { stroke: ${c} !important; }
   `,
 
-  // UPA1: inner-rating + totl-expr
-  upa1: (c) => commonOverrides(c),
+  // UPA1: lName color + sectiontitle border + inner-rating + totl-expr
+  upa1: (c) => `
+    ${commonOverrides(c)}
+    .skn-upa1 .name span.lName { color: ${c} !important; }
+    .skn-upa1 .heading.bottomborder { border-bottom-color: ${c} !important; }
+    .skn-upa1 .totl-expr { background-color: ${c} !important; }
+  `,
 
   // UPA2: inner-rating + totl-expr
   upa2: (c) => commonOverrides(c),

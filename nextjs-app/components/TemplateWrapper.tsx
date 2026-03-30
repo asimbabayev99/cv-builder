@@ -177,22 +177,33 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .skn-mlu7 .totl-expr { background-color: ${c} !important; }
   `,
 
-  // MLV4: sectiontitle bg + inner-rating + sliced tiles
+  // MLV4: name + jobtitle + school + photo + svg + sectiontitle bg + inner-rating + sliced tiles
   mlv4: (c) => `
     ${commonOverrides(c)}
-    .sectiontitle { background: ${c} !important; }
+    .skn-mlv4 .sectiontitle { background: ${c} !important; }
+    .skn-mlv4 .name { color: ${c} !important; }
+    .skn-mlv4 .jobtitle { color: ${c} !important; }
+    .skn-mlv4 .school { color: ${c} !important; }
+    .skn-mlv4 .prfl-pic .field { background-color: ${c} !important; }
+    .skn-mlv4 .monogram .svg-box { background-color: ${c} !important; }
+    .skn-mlv4 .color-svg { fill: ${c} !important; }
+    .skn-mlv4 .sliced-rect-tile.ratvfill { background-color: ${c} !important; }
   `,
 
-  // MNA4: sectiontitle + inner-rating + totl-expr
+  // MNA4: name + monogram + sectiontitle + inner-rating + totl-expr
   mna4: (c) => `
     ${commonOverrides(c)}
-    .sectiontitle { color: ${c} !important; }
+    .skn-mna4 .name { color: ${c} !important; }
+    .skn-mna4 .sectiontitle { color: ${c} !important; }
+    .skn-mna4 .monogram svg rect { stroke: ${c} !important; }
+    .skn-mna4 .monogram svg text { fill: ${c} !important; }
   `,
 
-  // MPA5: border-top on name + inner-rating + totl-expr
+  // MPA5: border-top on name + name color + smryWrap border + inner-rating + totl-expr
   mpa5: (c) => `
     ${commonOverrides(c)}
-    .name { border-top-color: ${c} !important; }
+    .skn-mpa5 .name { border-top-color: ${c} !important; color: ${c} !important; }
+    .skn-mpa5 .smryWrap { border-top-color: ${c} !important; border-bottom-color: ${c} !important; }
   `,
 
   // MCA2: name + sectiontitle + inner-rating + totl-expr
@@ -281,9 +292,12 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .skn-lca1 .totl-expr { background-color: ${c} !important; }
   `,
 
-  // PCA1: lowerborder + thinbottomborder + lgtBg:before + inner-rating + totl-expr
+  // PCA1: name background + address color + lowerborder + thinbottomborder + lgtBg:before + inner-rating + totl-expr
   pca1: (c) => `
     ${commonOverrides(c)}
+    .name { background-color: ${c} !important; }
+    .resumeTitle { background-color: ${c} !important; }
+    .address { color: ${c} !important; }
     .lowerborder { border-bottom-color: ${c} !important; }
     .thinbottomborder { border-bottom-color: ${c} !important; }
     .lgtBg:before { background-color: ${c} !important; }
@@ -331,8 +345,12 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .skn-upa1 .totl-expr { background-color: ${c} !important; }
   `,
 
-  // UPA2: inner-rating + totl-expr
-  upa2: (c) => commonOverrides(c),
+  // UPA2: lName color + heading border + inner-rating + totl-expr
+  upa2: (c) => `
+    ${commonOverrides(c)}
+    .skn-upa2 .name span.lName { color: ${c} !important; }
+    .skn-upa2 .heading.bottomborder { border-bottom-color: ${c} !important; }
+  `,
 
   // ATA1: name + sectiontitle + inner-rating + totl-expr
   ata1: (c) => `

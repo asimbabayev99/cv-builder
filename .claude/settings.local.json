@@ -75,7 +75,8 @@
       "Bash(grep:*)",
       "Bash(./env/bin/python:*)",
       "Bash(xargs ls:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git stash:*)"
     ]
   }
 }

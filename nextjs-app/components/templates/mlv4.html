@@ -1,0 +1,592 @@
+<div data-testid="embd-98t1CZ7" class="" tabindex=""><div><style type="text/css" id="static">
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800');
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" off}
+
+        /*START content disc style for LI*/
+        .skn-mlv4 ul,.skn-mlv4 li{list-style:none;margin:0 0 0 5px;padding:0}
+        .skn-mlv4 p{margin:0 0 5px 0}
+        .skn-mlv4 ul li{position:relative;margin:0 0 5px 0px;padding-left:10px}
+        .skn-mlv4 .experience ul li,.skn-mlv4 .experience p{position:relative;margin:0 0 10px 0px}
+        .skn-mlv4 li::before {content:"•";display:inline-block;width:2px;left:-3px;position:absolute;color:#5F5F5F}
+        .skn-mlv4 .skill ul li:last-child{margin-bottom:0}
+        .skn-mlv4 .skill .paddedline:first-child{margin-bottom:10px}
+        /*END content disc style for LI*/
+
+        .skn-mlv4 .paddedline{display:block}
+        .skn-mlv4 .txt-bold{font-weight:bold}
+        .skn-mlv4 .displayNoneThisField{display:none}
+        .skn-mlv4 .flt-right{float:right}
+        .skn-mlv4 .brk-all{word-break:break-all}             
+        .skn-mlv4 .sptr{padding:0 5px}
+        .skn-mlv4 .pb-5{padding-bottom:5px}
+       
+        /*Document TOP section*/
+        .skn-mlv4 .top-section{display:flex}
+        .skn-mlv4{color:#5D5D5D;line-height:12px;font-variant-ligatures:none;word-wrap:break-word;position:relative;min-height:792px;box-sizing:border-box}
+        .skn-mlv4 .name-sec{flex-grow:1;position:relative;margin-bottom:0}   
+        .skn-mlv4 .name span{display:block}   
+        .skn-mlv4 .name{text-transform:uppercase;word-break:break-word;color:#F98C79;font-weight:bold;text-align:left;font-family:'Montserrat';}
+        .skn-mlv4 .name-wrap{text-transform:uppercase;color:#fff;font-weight:500;font-family:'Montserrat';}
+        .skn-mlv4 .prof-title{letter-spacing:0.81px;text-transform:uppercase;color:#5F5F5F;text-align:left;font-weight:800;font-family:'Montserrat'}
+        
+        /*PICT section*/
+        .skn-mlv4 .prfl-pic .field,.skn-mlv4 .monogram{border-radius:50%;box-sizing:border-box}  
+        .skn-mlv4 .monogram .svg-box{background:#F98C79;display:flex;justify-content:center;align-items:center;border-radius:50%;box-sizing:border-box}
+        .skn-mlv4 .monogram svg{width:inherit;height:inherit}
+        .skn-mlv4 .monogram svg text{text-transform:uppercase;fill:#000}
+        .skn-mlv4 .pcpf-fnln .prfl-pic,.skn-mlv4 .monogram{display:none}
+        .skn-mlv4 .pcpf-fnln .monogram{display:block}  
+        .skn-mlv4 .prfl-pic img{width:100%;height:100%;border-radius:50%;object-fit:cover}        
+        .skn-mlv4 .pict-sec{order:0;position:relative;z-index:1;}
+
+        /*Photo Layout styles*/
+        .skn-mlv4.pict-pcsh-square .paragraph .prfl-pic img{border-radius:unset;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-bottomleft .paragraph .prfl-pic img{border-radius:50%;border-bottom-left-radius:8px;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-bottomright .paragraph .prfl-pic img{border-radius:50%;border-bottom-right-radius:8px;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-radius .paragraph .prfl-pic img{border-radius:10px;box-sizing:border-box}
+        .skn-mlv4.pict-pcsh-rectangle .paragraph .prfl-pic .field img{border-radius:unset;}
+        .skn-mlv4.pict-pcsh-rectangle .paragraph .prfl-pic{display:block;width:fit-content;margin:auto}
+        
+        /*Document Bottom section*/
+        .skn-mlv4{flex-wrap:wrap;justify-content:space-between;position:relative}
+        .skn-mlv4 .left-box::before,.skn-mlv4 .section.experience:before{content:"";position: absolute;width:1px;top:0;height:100%;background:#707070;right:0}        
+        .skn-mlv4.doc-pcpf-none .left-box::before,.skn-mlv4.pict-pcpf-none .left-box::before{width:1px}
+        .skn-mlv4 .section.experience{position:relative}
+        .skn-mlv4 .right-box,.skn-mlv4 .left-box{box-sizing:border-box}   
+        .skn-mlv4 .left-box{position:relative}  
+
+        /*Personal details section*/
+        .skn-mlv4 .details-wrap{margin-bottom:10px} 
+        .skn-mlv4 .details-wrap:last-child{margin-bottom:0}
+        /*Heading*/
+        .skn-mlv4 .sectiontitle{letter-spacing:0.81px;text-transform:uppercase;background:#747674;color:#fff;font-weight:800;font-family:'Montserrat'}
+       
+        /*Address section*/
+        .skn-mlv4 .social a{color:#5F5F5F;text-decoration:none}
+		.skn-mlv4 .address{word-break:break-all;word-break:break-word;color:#5F5F5F} /* break-all for Firefox */        
+        .skn-mlv4 .address div:last-child{padding-bottom:0}
+         .skn-mlv4 .iconRow{display:table;table-layout:fixed;width:100%;padding-bottom:5px;word-wrap:break-word}
+        .skn-mlv4 .iconRow:last-child{padding-bottom:0}
+        .skn-mlv4 .iconSvg{width:8px;height:8px;display:table-cell;vertical-align:middle}
+        .skn-mlv4 .iconSvg svg{vertical-align:middle;fill:#fff;width:8px;height:8px}
+        .skn-mlv4 .icoTxt{display:table-cell;padding-left:11px}
+		.skn-mlv4 .social svg{transform:scale(1.8);fill: #5F5F5F}
+        .skn-mlv4 .iconRow.phone .iconSvg svg{transform: scale(1.4)} 
+        .skn-mlv4 .iconRow.svg-avai .iconSvg svg{margin-bottom:3px}
+        .skn-mlv4 .iconRow.phone .iconSvg svg{margin-bottom:2px}
+        .skn-mlv4 .cntc-section .iconRow.social svg > path,.skn-mlv4 .cntc-section .iconRow.social svg rect,.skn-mlv4 .cntc-section .iconRow.social  svg .t1{fill:transparent} 
+       .skn-mlv4 .iconRow.social svg path.svg-inricon {fill: #5F5F5F}   
+
+       
+        /*Job Title Varient*/
+        .skn-mlv4 .job-date{text-align:right;width:43%}
+        .skn-mlv4 .job-details{width:57%}
+        .skn-mlv4 .job-position{display:flex;justify-content:space-between;flex-wrap:wrap}
+        .skn-mlv4 .school, .skn-mlv4 .study, .skn-mlv4 .job-position,.skn-mlv4 .school-place,.skn-mlv4 .school-date{text-transform:uppercase;font-family:'Arial';letter-spacing:0.04px;color:#5F5F5F}
+
+        /*Skill section 2 column*/
+        .skn-mlv4 .right-box .skill{display:table;width:100%;table-layout:fixed}
+        .skn-mlv4 .right-box .skill .paddedline{display:table-cell;width:50%}
+        
+        .skn-mlv4 .cmnsize{display:block}
+        .skn-mlv4 .jobtitle,.skn-mlv4 .degree{text-transform:uppercase;font-weight:600;font-family:'Montserrat'}
+
+        /*MFR address order code*/
+        .skn-mlv4 .zipprefix,.skn-mlv4.MFR .zipsuffix{display:none!important}
+        .skn-mlv4 .zipsuffix,.skn-mlv4.MFR .zipprefix{display:block!important}        
+        
+        /*PICT variations*/
+        .skn-mlv4.pict-pcpf-none .pict-sec{display:none}
+        .skn-mlv4.pict-pcpf-fnln .prfl-pic,.skn-mlv4 .monogram{display:none}
+        .skn-mlv4.pict-pcpf-fnln .monogram{display:block;background:#fff}  
+
+        /*For Extra Space Before Colon*/
+        .skn-mlv4 .beforecolonspace{display:none !important}
+        .skn-mlv4.show-colon-space .beforecolonspace{display:inline !important}
+       
+       /*New logic for infographic*/
+       .skn-mlv4 .lang-sec .singlecolumn,.skn-mlv4 .skli-sec .singlecolumn{display:none}
+        .skn-mlv4 .lang-sec.infobarsec .infobarpara,.skn-mlv4 .skli-sec.infobarsec .infobarpara,.skn-mlv4 .lang-sec.infotilesec .infotilepara,.skn-mlv4 .skli-sec.infotilesec .infotilepara{display:block}
+        /*Infographic*/
+        .skn-mlv4 .right-box .lang-sec,.skn-mlv4 .right-box .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mlv4 .right-box .lang-sec .heading,.skn-mlv4 .right-box .skli-sec .heading{width:100%;flex-grow:1}
+        .skn-mlv4 .right-box .lang-sec .paragraph.nativeLangPara{width:100%;max-width:100%}
+        .skn-mlv4 .right-box .lang-sec .paragraph, .skn-mlv4 .right-box .skli-sec .paragraph{width:46.7%}
+        .skn-mlv4 .lang-sec .field *,.skn-mlv4 .skli-sec .field *,.skn-mlv4 .lang-sec .nativeLangPara .field{display:inline}
+        .skn-mlv4 .lang-sec.infotilesec .nativeLangPara .field, .skn-mlv4 .lang-sec.infotilesec .field *, .skn-mlv4 .skli-sec .field *{display: inline}
+        .skn-mlv4 .lang-sec .paragraph,.skn-mlv4 .skli-sec .paragraph{vertical-align:top;padding-bottom:10px;margin-top:0}
+        .skn-mlv4 .lang-sec.section .singlecolumn,.skn-mlv4 .skli-sec.section .singlecolumn{margin-left:0;padding-left:0;position:relative}
+        .skn-mlv4 .lang-sec > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .lang-sec > .paragraph:nth-last-child(2),.skn-mlv4 .right-box .skli-sec > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-mlv4 .left-box .lang-sec > .paragraph:nth-last-child(1),.skn-mlv4 .left-box .skli-sec > .paragraph:nth-last-child(1){padding-bottom:0}
+        .skn-mlv4 .left-box .lang-sec .paragraph.nativeLangPara{width:100%;max-width:100%}
+        .skn-mlv4 .right-box .lang-sec.infobarsec .inner-rating,.skn-mlv4 .skli-sec.infobarsec .inner-rating{position:relative}
+        .skn-mlv4 .lang-sec.infobarsec .rating-bar,.skn-mlv4 .skli-sec.infobarsec .rating-bar{background:#D8D8D8;width:100%;clear:both;margin-top:3px;margin-bottom:3px;position:relative;page-break-inside:avoid;border-radius:5px}
+        .skn-mlv4 .lang-sec.infobarsec .inner-rating,.skn-mlv4 .skli-sec.infobarsec .inner-rating{background-color:#000000;height:4px;position:relative;width:60%;border-radius:5px}
+        .skn-mlv4 .left-box .lang-sec .paragraph,.skn-mlv4 .left-box .skli-sec .paragraph{display:block;margin-right:0;width:100%;max-width:100%;margin-top:0}
+        /*Infographic Tiles*/
+        .skn-mlv4 .lang-sec.infotilesec .sliced-rect,.skn-mlv4 .skli-sec .sliced-rect{height:4px;width:100%;line-height:0px;margin-top:3px;margin-bottom:3px;clear:both}
+        .skn-mlv4 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mlv4 .skli-sec .sliced-rect .sliced-rect-tile{height:100%;background-color:#D8D8D8;float:left;margin-right:3px;border-radius:5px}
+        .skn-mlv4 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mlv4 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
+
+        /*Rectangular Rating Blocks*/
+        .skn-mlv4 .sliced-rect .sliced-rect-tile.ratvfill{background-color:#000000}
+        .skn-mlv4 .hide-bar .rating-bar,.skn-mlv4 .hide-bar .sliced-rect,.skn-mlv4 .hide-only-bar .rating-bar,.skn-mlv4 .hide-colon .colon{display:none!important}
+        .skn-mlv4 .hide-bar .field-ratt{display:none}
+        .skn-mlv4 .right-box .lang-sec.infotilesec .paragraph.firstparagraph,.skn-mlv4 .right-box .lang-sec.infotilesec .paragraph.firstparagraph + .paragraph,.skn-mlv4 .right-box .skli-sec .paragraph.firstparagraph,.skn-mlv4 .right-box .skli-sec .paragraph.firstparagraph + .paragraph{margin-top:0}
+
+        /* Change colon to dash functionality*/
+        .skn-mlv4 .lang-sec .colon,.skn-mlv4 .skli-sec .colon{display:none}
+        .skn-mlv4 .lang-sec .nativeLangPara .field:first-child .colon,.skn-mlv4 .skli-sec .nativeLangPara .field:first-child .colon{padding-left:2px;display:inline-block}
+
+        /* Style for Signature */
+        .skn-mlv4 .disclaim .singlecolumn,.skn-mlv4 .disclaim .singlecolumn li,.skn-mlv4 .disclaim .singlecolumn p,.skn-mlv4 .disclaim .singlecolumn span{font-size:8px;color:#686868;line-height:10px;}
+        .skn-mlv4 .field_sign{font-size:7px;color:#8a8a8a}
+        .skn-mlv4 .txtleft + .field_sign{text-align:left}
+        .skn-mlv4 .txtcenter + .field_sign{text-align:center}
+        .skn-mlv4 .txtright + .field_sign{text-align:right}
+        .skn-mlv4 .signPic img{max-width:100%}
+        .skn-mlv4 .disp-blk{display:block}   
+        .skn-mlv4 .sign-container-data:empty{display:none}
+
+        .skn-mlv4 .right-box .experience .paragraph:before{content:"";position:absolute;top:6px;left:-37px;width:12px;height:12px;border-radius:50%;background:#fff;border:1px solid #707070;box-sizing:content-box}
+        .skn-mlv4 .right-box .experience .paragraph{position: relative;}
+        
+        /* Text alignment bullet */
+        .skn-mlv4 .ttc-align-left ul{text-align:left}
+        .skn-mlv4 .ttc-align-right ul{text-align:right}
+        .skn-mlv4 .ttc-align-center ul{text-align:center}
+        .skn-mlv4 .ttc-align-justify ul{text-align:justify}
+        .skn-mlv4 .ttc-align-right li:before,.skn-mlv4 .ttc-align-center li:before{position:relative;left:-10px}
+
+        .skn-mlv4 .label-cntc.txt-bold{display:none}
+
+         /* Duration tag */
+        .skn-mlv4 .totl-expr{display:inline-block;float:right; padding:0 5px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap;margin-left:5px}
+        .skn-mlv4.texp-curved .totl-expr{border-radius:10px}
+        .skn-mlv4 .dflex{display:flex;justify-content:space-between}
+        .skn-mlv4 .left-box .totl-expr{display:none}
+
+         /*Hyphen Handling*/
+        .skn-mlv4 .hyphen:before{content:' - '}
+        .skn-mlv4.hyphen-en-dash .hyphen:before{content:' – '}
+
+        
+        /*For Iron PDF*/
+        .skn-mlv4.for-iron-pdf{margin-top:-30px}
+        .skn-mlv4.for-iron-pdf .left-box::before,.skn-mlv4.for-iron-pdf .section.experience:before{content:none!important}
+        
+        .skn-mlv4.for-iron-pdf.texp-curved .right-box .dflex,.skn-mlv4.for-iron-pdf.texp-rectangle .right-box .dflex{display:block}
+        .skn-mlv4.for-iron-pdf.texp-curved .right-box .experience .dflex > span:first-child,.skn-mlv4.for-iron-pdf.texp-rectangle .right-box .experience .dflex > span:first-child{display:inline-block;width:72%}
+        .skn-mlv4.for-iron-pdf.texp-curved .right-box .experience .dflex > span:last-child,.skn-mlv4.for-iron-pdf.texp-rectangle .right-box .experience .dflex > span:last-child{display:inline-block;width:28%;float:right}
+        /* .skn-mlv4.for-iron-pdf .right-box .experience .paragraph{page-break-inside: avoid!important} */
+
+    </style><style type="text/css" id="dynamic" data-time="Mon Mar 30 2026 16:59:13 GMT+0400 (Azerbaijan Standard Time)">
+        
+        /* General classes */
+        .skn-mlv4,.skn-mlv4 table{line-height:12px}
+        .skn-mlv4{padding:30px 30px 13px 30px}
+        .skn-mlv4.pagesize{width:595px}
+        .skn-mlv4.fontsize{font-size:10px}
+        .skn-mlv4.fontface{font-family:Arial}
+        
+        .skn-mlv4 .mb-10{margin-bottom:10px;font-weight:600}
+        .skn-mlv4 .fielditem{padding-bottom:5px}
+        .skn-mlv4 .home-phone{padding-bottom:0;margin-bottom:0}
+
+        /* Top Section */
+        .skn-mlv4 .top-section{margin-bottom:20px}
+        .skn-mlv4 .name{font-size:41.00px;line-height:40px;padding-bottom:5px;color:#166C60}
+        .skn-mlv4 .prof-title{font-size:11px;line-height:13px;padding-bottom:10px}
+        .skn-mlv4.pict-pcsh-rectangle .paragraph .prfl-pic .field{width:116px}
+
+        /*Change Name Font Size Logic*/
+        .skn-mlv4.update-font-size .name{font-size:30px;line-height:31px}           
+
+        /*Not common Infographic*/
+        .skn-mlv4 .lang-sec.infobarsec .paragraph .lang-scale span,.skn-mlv4 .lang-sec.infotilesec .paragraph .lang-scale span,.skn-mlv4 .skli-sec .paragraph .lang-scale span{font-size:8px!important;line-height:8px;text-transform:capitalize}
+        .skn-mlv4 .lang-sec.infobarsec .paragraph.nativeLangPara .lang-scale span,.skn-mlv4 .lang-sec.infotilesec .paragraph.nativeLangPara .lang-scale span{font-size:9px!important;line-height:10px}
+        .skn-mlv4 .lang-sec.infobarsec .paragraph *,.skn-mlv4 .lang-sec.infotilesec .paragraph *,.skn-mlv4 .skli-sec .paragraph *{font-size:9px;text-transform:uppercase;line-height:10px}
+        .skn-mlv4 .lang-sec .inner-rating,.skn-mlv4 .skli-sec .inner-rating{background:#166C60}
+        /* Address + Cntc Section */
+        .skn-mlv4 .cntc-section{line-height:14px}
+        .skn-mlv4 .fielditem:last-child .sptr{display:none}
+        .skn-mlv4 .address .fieldgroup span *{font-size:10px}
+        .skn-mlv4 .address .fieldgroup{font-size:0}
+
+        /* Heading */
+        .skn-mlv4 .heading{margin-bottom:10px}        
+        .skn-mlv4 .sectiontitle{font-size:11px;line-height:13px;padding:7px 10px}
+       
+        /* Common section */
+        .skn-mlv4 .paragraph{margin-top:10px}
+        .skn-mlv4 .firstparagraph{margin-top:0!important}
+        .skn-mlv4 .right-box .singlecolumn,.skn-mlv4 .right-box .maincolumn{margin-left:0px}
+        .skn-mlv4 .section{margin-bottom:20px}        
+        .skn-mlv4 .left-box::before{top:186px;height:calc(100% - 186px)}
+        .skn-mlv4.doc-pcpf-none .left-box::before,.skn-mlv4.pict-pcpf-none .left-box::before{top:0;height:100%}
+        .skn-mlv4 .right-box{padding-left:30px;width:343px}
+        .skn-mlv4 .left-box{padding-right:30px;width:calc(100% - 343px)}
+        .skn-mlv4 .totl-expr{background-color:#166C60;font-size:8px;line-height:12px}
+        
+        /* Skill */
+        .skn-mlv4 .right-box .skill .paddedline:last-child{padding-left:10px}
+        .skn-mlv4 .skill ul li{margin-bottom:10px;line-height:13px}
+       
+        /* Skin specific css */
+        .skn-mlv4 .skli-sec .lang-space,.skn-mlv4 .lang-sec .lang-space{margin-bottom:5px} /*Extra lang css*/
+        .skn-mlv4 .jd-font{font-size:9px}
+        .skn-mlv4 .right-box .experience .paragraph:before{top:6px;left:-37px;width:12px;height:12px}
+        .skn-mlv4 .fielditem-adif{margin-top:3px;text-transform:capitalize}
+        .skn-mlv4 .fielditem-adif span{text-transform:capitalize!important} /*To override uppercase and to save some css */
+        /*PICT and SVG section */
+        .skn-mlv4 .prfl-pic .field,.skn-mlv4 .monogram{width:146px;height:146px;background-color:#166C60}
+        .skn-mlv4 .monogram .svg-box{width:146px;height:146px;background-color:#166C60}
+        .skn-mlv4 .monogram svg text{font-size:60px;line-height:40px;fill:#166C60}     
+        .skn-mlv4 .initial-name span{font-size:60px;line-height:40px}
+        .skn-mlv4 .pict-sec{padding-right:93px;margin-bottom:40px}
+        .skn-mlv4 .color-svg{fill:#166C60!important} 
+         /*Infographic*/
+        .skn-mlv4 .right-box .lang-sec,.skn-mlv4 .right-box .skli-sec{padding-left:0px}
+        .skn-mlv4 .right-box .lang-sec .heading,.skn-mlv4 .right-box .skli-sec .heading{margin-left:-0px}
+        .skn-mlv4 .lang-sec.infobarsec .inner-rating,.skn-mlv4 .skli-sec.infobarsec .inner-rating{background-color:#166C60}
+        .skn-mlv4 .left-box .lang-sec .paragraph,.skn-mlv4 .left-box .skli-sec .paragraph{padding-bottom:10px}
+
+        /*Fixes for builer*/
+        .skn-mlv4 .right-box .sortable-item:first-child .section,.skn-mlv4 .left-box .sortable-item:first-child .section{padding-top:0}
+        .skn-mlv4 .left-box .skli-sec .sortableInner .sortable-item .paragraph,.skn-mlv4 .left-box .lang-sec .sortableInner .sortable-item + .sortable-item .paragraph,.skn-mlv4 .left-box .lang-sec .sortableInner .sortable-item .paragraph{max-width:100%;vertical-align:top;display:block;margin-right:0}
+        .skn-mlv4.sortable-drag-item{padding:0}
+        .skn-mlv4 .lang-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .lang-sec .sortableInner > .paragraph:nth-last-child(2),.skn-mlv4 .right-box .skli-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mlv4 .right-box .skli-sec .sortableInner > .paragraph:nth-last-child(2){padding-bottom:0}
+        .skn-mlv4 .left-box .lang-sec .sortableInner > .paragraph:nth-last-child(1),.skn-mlv4 .left-box .skli-sec .sortableInner > .paragraph:nth-last-child(1){padding-bottom:0}
+        .skn-mlv4 .data-NAME + .section-container:not(.data-SUMM){margin-top:20px}
+        .skn-mlv4 .section.experience:before,.experiment-finalize-page .skn-mlv4 .data-EXPR .section.experience:before{left:-31px}
+        .skn-mlv4 .data-EXPR .section.experience:before{left:-38px}
+        .skn-mlv4 .right-box .lang-sec .sortable-item{display:inline-block}
+         .skn-mlv4 .right-box .lang-sec .sortable-item .paragraph,.skn-mlv4 .right-box .skli-sec .sortable-item .paragraph{width:145px} 
+         .skn-mlv4 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
+        .skn-mlv4 .data-LNGG .doc-item,.skn-mlv4 .data-SKLI .doc-item,.skn-mlv4 .left-box .data-LNGG .sortable-item,.skn-mlv4 .left-box .data-SKLI .sortable-item,.skn-mlv4 .lang-sec .doc-item,.skn-mlv4 .skli-sec .doc-item{width:100%}
+        .skn-mlv4 .data-LNGG .sortableInner,.skn-mlv4 .data-SKLI .sortableInner,.skn-mlv4 .SECTION_LNGG .sortableInner,.skn-mlv4 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mlv4 .data-LNGG .sortable-item,.skn-mlv4 .data-SKLI .sortable-item{width:46.7%}
+        .skn-mlv4 .data-LNGG .sortable-item .paragraph,.skn-mlv4 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
+        /*Rectangular Rating Blocks*/ 
+        .skn-mlv4 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#166C60}
+
+        /* Top SVG */
+        .skn-mlv4 .top-circle{position:absolute;top:-30px;left:-148px;fill:#166C60;width:205px;height:127px}
+        .skn-mlv4 .top-circle-small{position:absolute;top:-30px;left:87px;fill:#166C60;width:72px;height:38px}
+        
+        /* Skin Fixes */
+        .skn-mlv4 .name-sec{margin-bottom:0}   
+        .skn-mlv4 .name-sec + .section:not(.summary){margin-top:20px}
+        .skn-mlv4 .name-sec{min-height:60px}
+        /*Job Title Varient*/
+        .skn-mlv4 .job-details{font-size:{$JTFS}px}
+        .skn-mlv4 .school, .skn-mlv4 .study, .skn-mlv4 .job-position,.skn-mlv4 .school-place,.skn-mlv4 .school-date{padding-bottom:5px;font-size:9px}
+        .skn-mlv4 .jobtitle,.skn-mlv4 .degree{font-size:12px;color:#166C60;padding-bottom:3px;line-height:14px}
+        /* .skn-mlv4 .degree{font-size:9px;padding-bottom:5px} */
+        .skn-mlv4 .status{font-size:9px}
+
+        @-moz-document url-prefix() {
+   .page-wrap div:not(.modal-content) .resume-preview .skn-mlv4 .left-box::before,.page-wrap div:not(.modal-content) .resume-preview .skn-mlv4 .section.experience::before {width:2px}
+   .page-wrap div:not(.modal-content) .resume-preview .skn-mlv4 .section.experience::before, .page-wrap div:not(.modal-content) .resume-preview .experiment-finalize-page .skn-mlv4 .data-EXPR .section.experience::before {left:-32px}}
+
+    </style></div><div data-testid="embd-95CA90b" class="document doc-root doc-finalize fontsize fontface vmargins hmargins pgsz-a4 pagesize skn-mlv4 MLV4 MUK sdcl-166C60 hyphen-normal texp-none pict-pcpf-purl " docskinwidth="595" data-color="#166C60"><div data-testid="embd-92LqKqF0" id="CONTAINER_PARENT_0" class="top-section"><div data-testid="embd-92PDkR60" id="CONTAINER_0" class="left-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-PICT"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"></div><div data-testid="embd-88MByq6-PICT" id="SECTION_PICTe3a3ea48-0d61-41d1-9591-d90bca842448" class="section notdraggable pict-sec SECTION_PICT firstsection" data-section-cd="PICT"><div data-testid="embd-88uQIHR-PICT" class="doc-item"><div data-testid="embd-88aw0Ce-PICT" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-43c27525-427a-ca93-5292-7aa0bbe2dc8c" id="PARAGRAPH_PICT_43c27525-427a-ca93-5292-7aa0bbe2dc8c" class="paragraph PARAGRAPH_PICT firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="prfl-pic">
+                            <div class="field" id="FIELD_PURL"><img data-testid="{`embd-78pIea6`}" class="chk" src="https://assets-iso.myperfectcv.co.uk/photos/p/az/88/88adbff9-2a4e-43e6-a998-e4d643318565.jpeg?uid=7e62efa3-4952-47fd-859f-8a2488fd18b9&amp;0.11861918390852233" alt="Smiley face"> <a data-testid="{`embd-781qcXk`}" href="javascript:;" class="ds-btn ds-btn-primary ds-btn-sm btn btn-primary btn-prfl-edit photo-added" title="Edit Photo">Edit Photo</a></div>
+                        </div>
+                                            
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-PICT" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-CNTC"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button></div><div data-testid="embd-88MByq6-CNTC" id="SECTION_CNTC2fbb78f4-ebf2-42e5-946e-f5288299d832" class="section cntc-section notdraggable SECTION_CNTC" data-section-cd="CNTC"><div data-testid="embd-88uQIHR-CNTC" class="doc-item"><div data-testid="embd-88aw0Ce-CNTC" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-4252f687-b759-48ab-916c-0887e91df3ff" id="PARAGRAPH_CNTC_4252f687-b759-48ab-916c-0887e91df3ff" class="paragraph paragraph-fieldgroup PARAGRAPH_CNTC firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="address fieldgroup fieldgroup-0">
+                             <div class="iconRow phone mb-10" dependency="HPHN|CPHN">
+                                <div class="iconSvg">
+                                    <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.98438 7.04688L7.60938 8.625C7.5625 8.85938 7.375 9.01562 7.14062 9.01562C3.20312 9 0 5.79688 0 1.85938C0 1.625 0.140625 1.4375 0.375 1.39062L1.95312 1.01562C2.17188 0.96875 2.40625 1.09375 2.5 1.29688L3.23438 3C3.3125 3.20312 3.26562 3.4375 3.09375 3.5625L2.25 4.25C2.78125 5.32812 3.65625 6.20312 4.75 6.73438L5.4375 5.89062C5.5625 5.73438 5.79688 5.67188 6 5.75L7.70312 6.48438C7.90625 6.59375 8.03125 6.82812 7.98438 7.04688Z" fill="#5F5F5F"></path>
+                                        </svg>
+                                </div>
+                                <div class="icoTxt">
+                                    <span class="paddedline" dependency="HPHN">
+                                        <span id="FIELD_HPHN" class="fielditem fielditem-hphn">+994552221611</span>
+                                    </span>
+                                    
+                                </div>
+                            </div> 
+                            
+                            <div class="iconRow mb-10" dependency="EMAI">
+                                <div class="iconSvg">
+                                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 4.5C4.25 4.5 4.51562 4.42188 4.73438 4.25L8 1.71875V5.25C8 5.67188 7.65625 6 7.25 6H0.75C0.328125 6 0 5.67188 0 5.25V1.71875L3.25 4.25C3.46875 4.42188 3.73438 4.5 4 4.5ZM0.25 1.28125C0.09375 1.15625 0 0.953125 0 0.75C0 0.34375 0.328125 0 0.75 0H7.25C7.65625 0 8 0.34375 8 0.75C8 0.953125 7.89062 1.15625 7.73438 1.28125L4.42188 3.85938C4.17188 4.04688 3.8125 4.04688 3.5625 3.85938L0.25 1.28125Z" fill="#5F5F5F"></path>
+                                        </svg>
+                                </div>
+                                <div class="icoTxt">
+                                    <span id="FIELD_EMAI" class="fielditem fielditem-emai">ruslan.babayev.93@bk.ru</span> 
+                                </div>
+                            </div>
+                            <div class="iconRow mb-10" dependency="ADDR">
+                                <div class="iconSvg">
+                                    <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 2.25C5 3.5 3.98438 4.5 2.75 4.5C1.5 4.5 0.5 3.5 0.5 2.25C0.5 1.01562 1.5 0 2.75 0C3.98438 0 5 1.01562 5 2.25ZM3 1C3 0.875 2.875 0.75 2.75 0.75C1.90625 0.75 1.25 1.42188 1.25 2.25C1.25 2.39062 1.35938 2.5 1.5 2.5C1.625 2.5 1.75 2.39062 1.75 2.25C1.75 1.70312 2.1875 1.25 2.75 1.25C2.875 1.25 3 1.14062 3 1ZM2.25 7.5V4.96875C2.40625 4.98438 2.57812 5 2.75 5C2.90625 5 3.07812 4.98438 3.25 4.96875V7.5C3.25 7.78125 3.01562 8 2.75 8C2.46875 8 2.25 7.78125 2.25 7.5Z" fill="#5F5F5F"></path>
+                                        </svg>
+                                </div>
+                                <div class="icoTxt fielditem fielditem-addr">
+                                    <span id="FIELD_ADDR">Baku Azerbaijan</span>
+                                </div>
+                            </div>
+                            
+                            <div dependency="WEB1" class="iconRow">
+                                <div class="iconSvg">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 4C5.5 4.35938 5.46875 4.6875 5.4375 5H2.54688C2.51562 4.6875 2.48438 4.35938 2.48438 4C2.48438 3.65625 2.51562 3.32812 2.54688 3H5.4375C5.46875 3.32812 5.5 3.65625 5.5 4ZM7.85938 3C7.95312 3.32812 8 3.65625 8 4C8 4.35938 7.95312 4.6875 7.85938 5H5.9375C5.96875 4.6875 6 4.34375 6 4C6 3.65625 5.96875 3.32812 5.9375 3H7.85938ZM7.70312 2.5H5.875C5.71875 1.51562 5.40625 0.671875 5.01562 0.140625C6.23438 0.46875 7.23438 1.34375 7.70312 2.5ZM5.375 2.5H2.60938C2.70312 1.9375 2.85938 1.4375 3.03125 1.03125C3.20312 0.65625 3.375 0.390625 3.5625 0.21875C3.73438 0.0625 3.875 0 4 0C4.10938 0 4.25 0.0625 4.42188 0.21875C4.60938 0.390625 4.78125 0.65625 4.95312 1.03125C5.125 1.4375 5.28125 1.9375 5.375 2.5ZM0.28125 2.5C0.75 1.34375 1.75 0.46875 2.96875 0.140625C2.57812 0.671875 2.26562 1.51562 2.10938 2.5H0.28125ZM2.04688 3C2.01562 3.32812 1.98438 3.65625 1.98438 4C1.98438 4.34375 2.01562 4.6875 2.04688 5H0.125C0.03125 4.6875 0 4.35938 0 4C0 3.65625 0.03125 3.32812 0.125 3H2.04688ZM3.03125 6.98438C2.85938 6.57812 2.70312 6.07812 2.60938 5.5H5.375C5.28125 6.07812 5.125 6.57812 4.95312 6.98438C4.78125 7.35938 4.60938 7.625 4.42188 7.79688C4.25 7.95312 4.10938 8 3.98438 8C3.875 8 3.73438 7.95312 3.5625 7.79688C3.375 7.625 3.20312 7.35938 3.03125 6.98438ZM2.96875 7.875C1.75 7.54688 0.75 6.67188 0.28125 5.5H2.10938C2.26562 6.5 2.57812 7.34375 2.96875 7.875ZM5.01562 7.875C5.40625 7.34375 5.71875 6.5 5.875 5.5H7.70312C7.23438 6.67188 6.23438 7.54688 5.01562 7.875Z" fill="#5F5F5F"></path>
+                                        </svg>
+                                </div>
+                                <div class="icoTxt brk-all fielditem fielditem-web1">
+                                    <span class="space-left" id="FIELD_WEB1">https://babaiev.az</span>
+                                </div>
+                            </div> 
+                            <div dependency="DRIV" class="iconRow">
+                                <div class="iconSvg">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.609375 3.07812L1.15625 1.51562C1.375 0.90625 1.9375 0.5 2.57812 0.5H5.40625C6.04688 0.5 6.60938 0.90625 6.82812 1.51562L7.375 3.07812C7.73438 3.23438 8 3.59375 8 4V7C8 7.28125 7.76562 7.5 7.5 7.5H7C6.71875 7.5 6.5 7.28125 6.5 7V6.25H1.5V7C1.5 7.28125 1.26562 7.5 1 7.5H0.5C0.21875 7.5 0 7.28125 0 7V4C0 3.59375 0.25 3.23438 0.609375 3.07812ZM1.70312 3H6.28125L5.875 1.84375C5.8125 1.64062 5.625 1.5 5.40625 1.5H2.57812C2.35938 1.5 2.17188 1.64062 2.10938 1.84375L1.70312 3ZM1.5 4C1.21875 4 1 4.23438 1 4.5C1 4.78125 1.21875 5 1.5 5C1.76562 5 2 4.78125 2 4.5C2 4.23438 1.76562 4 1.5 4ZM6.5 5C6.76562 5 7 4.78125 7 4.5C7 4.23438 6.76562 4 6.5 4C6.21875 4 6 4.23438 6 4.5C6 4.78125 6.21875 5 6.5 5Z" fill="#5F5F5F"></path>
+                                        </svg>
+                                </div>
+                                <div class="icoTxt fielditem fielditem-driv">
+                                    <span id="FIELD_DRIV">B, B1, C, C1</span>
+                                </div>
+                            </div>
+                                
+                           <div dependency="NTLY" class="iconRow">
+                              <div class="iconSvg">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M1 7.75V0.5C1 0.234375 0.765625 0 0.5 0C0.21875 0 0 0.234375 0 0.5V7.75C0 7.89062 0.109375 8 0.25 8H0.75C0.875 8 1 7.89062 1 7.75ZM7.4375 0C7.73438 0 8 0.1875 8 0.484375V5.20312C8 5.39062 7.875 5.5625 7.65625 5.64062C6.98438 5.90625 6.42188 6 5.92188 6C4.76562 6 3.96875 5.51562 2.8125 5.51562C2.42188 5.51562 2 5.57812 1.5 5.73438V0.25C2.04688 0.078125 2.5 0.015625 2.89062 0.015625C3.96875 0.015625 4.51562 0.515625 5.45312 0.515625C5.89062 0.515625 6.42188 0.40625 7.125 0.078125C7.23438 0.03125 7.32812 0 7.4375 0Z" fill="#5F5F5F"></path>
+                                       </svg>
+                              </div>
+                              <div class="icoTxt fielditem fielditem-ntly">
+                                    <span id="FIELD_NTLY">Azerbaijani</span>
+                              </div>
+                           </div>  
+                            
+                           
+                              
+                                                         
+                                  
+                                   
+                                
+                                                                                                                           
+                        <div class="social iconRow" dependency="SOCL" id="CATEGORY_SOCIAL_SOCL">
+                                    <div class="iconSvg">
+                                        <span id="DOCDATAICON_SOCL"><svg xmlns="http://www.w3.org/2000/svg" class="linkedin" version="1.1" viewBox="0 0 30 30">
+	<path class="svg-circlebg" fill="transparent" stroke="transparent" d="M29.9,15h0c0,8.2-6.7,14.9-14.9,14.9h0C6.8,29.9.1,23.2.1,15H.1C.1,6.8,6.8.1,15,.1h0c8.2,0,14.9,6.7,14.9,14.9Z"></path>
+	<rect class="svg-sqrbg" fill="transparent" stroke="transparent" x=".1" y=".1" width="29.8" height="29.8"></rect>
+	<path class="svg-sqrbdr" fill="transparent" stroke="transparent" d="M28.7,1.3v27.4H1.3V1.3h27.4M29.9.1H.1v29.8h29.8V.1h0Z"></path>
+	<path class="svg-circlebdr" fill="transparent" stroke="transparent" d="M15,1.3c7.5,0,13.7,6.1,13.7,13.7s-6.1,13.7-13.7,13.7S1.3,22.5,1.3,15,7.5,1.3,15,1.3M15,.1h0C6.8.1.1,6.8.1,15H.1c0,8.2,6.7,14.9,14.9,14.9h0c8.2,0,14.9-6.7,14.9-14.9h0C29.9,6.8,23.2.1,15,.1h0Z"></path>
+	<path class="svg-inricon fillwht" d="M10.7,8.6c0,1.2-1,2.1-2,2.1s-2.1-1-2.1-2.1,1-2.1,2.1-2.1,2,1,2,2.1ZM10.3,12.1h-3.4v11.3h3.5v-11.3s-.1,0,0,0ZM16,12.1h-3.4v11.3h3.4v-5.9c0-1.6.7-2.5,2.1-2.5s1.9,1,1.9,2.5v5.9h3.5v-7.1c0-3-1.7-4.5-4.1-4.5s-3.4,1.9-3.4,1.9v-1.7h0Z"></path>
+	<path fill="transparent" stroke="transparent" class="radius-stroke" d="M25.8,1c1.7,0,3.1,1.4,3.1,3.1v21.7c0,1.7-1.4,3.1-3.1,3.1H4.1c-1.7,0-3.1-1.4-3.1-3.1V4.1c0-1.7,1.4-3.1,3.1-3.1h21.7M25.9,0h-.1.1ZM25.8,0H4.1C1.8,0,0,1.8,0,4.1v21.7c0,2.3,1.8,4.1,4.1,4.1h21.7c2.3,0,4.1-1.8,4.1-4.1V4.1C29.9,1.8,28.1,0,25.8,0h0Z"></path>
+	<path fill="transparent" stroke="transparent" class="square-fill svg-inriconobj fillwht" d="M0,0v30h30V0H0ZM10.4,23.5h-3.5v-11.3h3.5v11.3ZM8.6,10.8c-1.2,0-2.1-1-2.1-2.1s1-2.1,2.1-2.1,2,1,2,2.1-1,2.1-2,2.1ZM23.5,23.5h-3.5v-5.9c0-1.6-.6-2.5-1.9-2.5s-2.1,1-2.1,2.5v5.9h-3.4v-11.3h3.4v1.7s1-1.9,3.4-1.9,4.1,1.5,4.1,4.5v7.1h0Z"></path>
+	<path fill="transparent" stroke="transparent" class="svg-radius-fill-inriconobj fillwht" d="M27.4,0H2.6C1.2,0,0,1.1,0,2.6v24.8c0,1.4,1.2,2.6,2.6,2.6h24.8c1.4,0,2.6-1.2,2.6-2.6V2.6C30,1.1,28.9,0,27.4,0ZM10.4,23.4h-3.5v-11.3h3.5v11.3ZM8.7,10.7c-1,0-2.1-1-2.1-2.1s1-2.1,2.1-2.1,2,1,2,2.1-1,2.1-2,2.1ZM23.5,23.4h-3.5v-5.9c0-1.5-.5-2.5-1.9-2.5s-2.1.9-2.1,2.5v5.9h-3.4v-11.3h3.4v1.6s1-1.9,3.4-1.9,4.1,1.5,4.1,4.5v7.1Z"></path>
+	<path fill="transparent" stroke="transparent" class="svg-circle-fill-inriconobj fillwht" d="M15,0C6.7,0,0,6.7,0,15s6.7,15,15,15,15-6.7,15-15S23.3,0,15,0ZM10.8,22.8h-3.2v-10.4h3.2v10.4ZM9.2,11.1c-1.1,0-1.9-.9-1.9-1.9s.9-1.9,1.9-1.9,1.9.9,1.9,1.9-.9,1.9-1.9,1.9ZM22.8,22.8h-3.2v-5.5c0-1.5-.6-2.3-1.8-2.3s-1.9.9-1.9,2.3v5.5h-3.1v-10.4h3.1v1.6s.9-1.8,3.1-1.8,3.8,1.4,3.8,4.1v6.5Z"></path>
+</svg></span>
+                                    </div>
+                                    <div class="icoTxt fielditem fielditem-socl">
+                                        <span id="FIELD_SOCL">linkedin.com/in/ruslan-babayev</span> 
+                                    </div>
+                                </div></div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-CNTC" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-ALNK"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button><button data-testid="embd-95yoOpF" class="btn  btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i data-testid="embd-95XB6Jt" class="icon-delete" title="Delete"></i></button><button data-testid="embd-95RfIpl" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i data-testid="embd-95AV7X0" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-88MByq6-ALNK" id="SECTION_ALNKd728b5c5-bbd0-f9a9-5388-3aff4b1db4be" class="section SECTION_ALNK has-title" data-section-cd="ALNK"><div data-testid="embd-88uQIHR-ALNK" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_ALNK">Websites, portfolios, profiles<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Websites, portfolios, profiles " class="ds-link ds-link-default rename-section text-rename">Rename</span></div></div><div data-testid="embd-88aw0Ce-ALNK" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-69319eda-6e85-55fe-cf96-63f27d0ff873" id="PARAGRAPH_ALNK_69319eda-6e85-55fe-cf96-63f27d0ff873" class="paragraph PARAGRAPH_ALNK firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+							<ul>
+								<li dependency="LNK1"><span id="FIELD_LNK1">https://google.com</span></li>
+                                <li dependency="LNK2"><span id="FIELD_LNK2">https://www.1688imex.az</span></li>
+                                
+							</ul>
+						</div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-ALNK" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-HILT"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button><button data-testid="embd-95yoOpF" class="btn  btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i data-testid="embd-95XB6Jt" class="icon-delete" title="Delete"></i></button><button data-testid="embd-95RfIpl" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -270px;"><i data-testid="embd-95AV7X0" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-88MByq6-HILT" id="SECTION_HILTcc63cc33-55ad-41df-9964-9251f5e6b92a" class="section SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_HILT">Skills<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Skills " class="ds-link ds-link-default rename-section text-rename">Rename</span></div></div><div data-testid="embd-88aw0Ce-HILT" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-7d35e022-b340-459c-bf4b-c4a453b43b15" id="PARAGRAPH_HILT_7d35e022-b340-459c-bf4b-c4a453b43b15" class="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                            <div class="skill">
+                                <span class="paddedline" id="FIELD_SKC1"><ul><li>Customer service</li>
+<li>Credit management</li>
+<li>Team leadership</li></ul></span>
+                                <span class="paddedline" id="FIELD_SKC2"><ul><li>Sales and marketing</li>
+<li>Communication skills</li></ul></span>
+							</div>                            
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-HILT" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-EDUC"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button><button data-testid="embd-95yoOpF" class="btn  btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i data-testid="embd-95XB6Jt" class="icon-delete" title="Delete"></i></button><button data-testid="embd-95RfIpl" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i data-testid="embd-95AV7X0" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUC48453b0f-a378-4aaf-bfd2-743d308508d0" class="section edu-sec SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_EDUC">Education<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Education " class="ds-link ds-link-default rename-section text-rename">Rename</span></div></div><div data-testid="embd-88aw0Ce-EDUC" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-c9c48a5f-6964-437f-b936-f14e14261582" id="PARAGRAPH_EDUC_c9c48a5f-6964-437f-b936-f14e14261582" class="paragraph PARAGRAPH_EDUC firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                             <span class="paddedline" dependency="DGRE|STUY|GRPA|GRHN">
+                                
+                                <span class="paddedline study" dependency="STUY|GRPA">
+                                <span id="FIELD_STUY">Philology</span>
+                                <span id="FIELD_GRPA"></span>
+                                </span>
+                               
+                            </span>
+                            <span class="paddedline school" dependency="SCHO">
+                                <span id="FIELD_SCHO">Baku Slavic University</span>
+                            </span>
+                            <span class="paddedline school-place" dependency="SCIT|SSTA|SCNT">
+                                <span id="FIELD_SCIT">Baku/Azerbaijan</span>
+                                <span id="FIELD_SSTA"></span><span class="joblocation jobcountry" id="FIELD_SCNT"></span></span>
+                            <span class="disp-blk school-date" dependency="GRYR|GRST|GRED|GRIP|GRHN">
+                                <span class="xslt_static_change displayNoneThisField">Expected in </span>
+                                <span id="FIELD_GRYR" format="%b %Y"></span>
+                                <span id="FIELD_GRST" format="%b %Y">Sep 2011</span><span class="hyphen" dependency="GRST+GRED"></span><span id="FIELD_GRED" format="%b %Y">Jul 2015</span>
+                                <span dependency="GRED|GRST"></span>
+                                <span id="FIELD_GRIP"></span><span dependency="GRYR|GRST|GRED|GRIP"></span><span id="FIELD_GRHN"></span>
+                            </span>
+                           
+                            
+                            <span id="FIELD_FRFM"></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-EDUC" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div></div><div data-testid="embd-92PDkR61" id="CONTAINER_1" class="right-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-NAME"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button></div><div data-testid="embd-88MByq6-NAME" id="SECTION_NAME5a299f96-bb8e-4b36-adf8-7a04d93df9a6" class="section notdraggable name-sec SECTION_NAME firstsection" data-section-cd="NAME"><div data-testid="embd-88uQIHR-NAME" class="doc-item"><div data-testid="embd-88aw0Ce-NAME" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-da337ce1-d789-4332-9f52-50b9c0cce5cc" id="PARAGRAPH_NAME_da337ce1-d789-4332-9f52-50b9c0cce5cc" class="paragraph PARAGRAPH_NAME firstparagraph"><div data-testid="embd-78blCsH">
+                        <div class="name">
+                            <span id="FIELD_FNAM">Ruslan</span>
+                            <span id="FIELD_LNAM">Babayev</span>
+                        </div>
+                        <svg class="top-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="205px" height="127px" viewBox="0 0 205 127" version="1.1">
+                            <title>Ellipse 390</title>
+                            <g id="Page-11---Final---1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.189506993">
+                                <g class="color-svg" id="Artboard-–-65" transform="translate(-121.000000, 0.000000)" fill="#F98C79" fill-rule="nonzero">
+                                    <circle id="Ellipse-390" cx="223.5" cy="24.5" r="102.5"></circle>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg class="top-circle-small" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72px" height="38px" viewBox="0 0 72 38" version="1.1">
+                            <title>Ellipse 381</title>
+                            <g id="Page-11---Final---1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.0615025014">
+                                <g class="color-svg" id="Artboard-–-65" transform="translate(-360.000000, 0.000000)" fill="#F98C79" fill-rule="nonzero">
+                                    <circle id="Ellipse-381" cx="396" cy="2" r="36"></circle>
+                                </g>
+                            </g>
+                        </svg>
+						
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-NAME" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-SUMM"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button></div><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMM4ca90c3f-92be-4d02-a839-c0544f41f0ae" class="section summary notdraggable SECTION_SUMM" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" class="doc-item"><div data-testid="embd-88aw0Ce-SUMM" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-af46981f-e079-43e4-9db4-cb366140fcaf" id="PARAGRAPH_SUMM_af46981f-e079-43e4-9db4-cb366140fcaf" class="paragraph cmnsize PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn" id="FIELD_FRFM"><p>Results-driven professional with a background in banking and managerial roles. Proven track record in customer service and credit management. Seeking a challenging position to utilize my skills and contribute to organizational success.</p></div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-SUMM" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-EXPR"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button><button data-testid="embd-95yoOpF" class="btn  btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i data-testid="embd-95XB6Jt" class="icon-delete" title="Delete"></i></button></div><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR9a5eef33-1cf7-4172-8699-810b9909b314" class="section notdraggable experience SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_EXPR">Work history<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Work history " class="ds-link ds-link-default rename-section text-rename">Rename</span></div></div><div data-testid="embd-88aw0Ce-EXPR" class=""><div data-testid="embd-87S8HNi9a5eef33-1cf7-4172-8699-810b9909b314" id="CONTAINER_9a5eef33-1cf7-4172-8699-810b9909b314" class="sortableInner"><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="296" class="sortable-item paragraph-container SortableItem-sibling"><div class="document-tool para-tool" style="right: -34px;"><button data-testid="embd-872FtFm-EXPR" class="btn btn-icon-tertiary btn-icon-edit" title="Edit"><i data-testid="embd-87FZ04E" class="icon-edit"></i></button><button data-testid="embd-87ftrVd-EXPR" type="button" class="btn btn-icon-tertiary btn-icon-delete " title="Delete"><i data-testid="embd-87vMz4i" class="icon-delete" title="Delete"></i></button><button data-testid="embd-87FtdXV-EXPR" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i data-testid="embd-87uRdcA-EXPR" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-79HRa2m-b9263247-ff5d-88b4-2cfe-78d3cb4112ca" id="PARAGRAPH_EXPR_b9263247-ff5d-88b4-2cfe-78d3cb4112ca" class="paragraph PARAGRAPH_EXPR firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <div class="paddedline" dependency="JTIT|COMP|JCIT|JSTA|JCNT|JCTR|JLOC|JSTD|EDDT"> 
+                                <span class="dflex">
+                                    <span>
+                                        <span class="jobtitle txt-bold disp-blk" id="FIELD_JTIT">Private driver</span>                                    
+                                    </span>
+                                    
+                                </span>                               
+                                <div class="job-position">
+                                    <div class="job-details">
+                                        <span id="FIELD_COMP">-</span>
+                                    <span dependency="COMP"><span dependency="JCIT|JSTA|JCNT"> | </span></span><span id="FIELD_JCIT">Baku</span><span dependency="JCIT+JSTA|JCNT">, </span><span id="FIELD_JSTA">Azerbaijan</span><span id="FIELD_JCNT"></span><span dependency="COMP|JCIT|JSTA|JCNT"></span><span id="FIELD_JLOC"></span><span id="FIELD_JCTR"></span>
+                                    </div>
+                                   <div class="job-date"><span class="" id="FIELD_JSTD" format="%b %Y">Jun 2023</span><span class="hyphen" dependency="JSTD+EDDT"></span><span id="FIELD_EDDT" format="%b %Y">Dec 2024</span></div>
+                                </div>
+                            </div>
+                            <span id="FIELD_JDES"><ul>
+  <li>Provided reliable and punctual transportation services</li>
+</ul></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><button data-testid="embd-87enKtK-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="296" class="sortable-item paragraph-container SortableItem-sibling"><div class="document-tool para-tool" style="right: -34px;"><button data-testid="embd-872FtFm-EXPR" class="btn btn-icon-tertiary btn-icon-edit" title="Edit"><i data-testid="embd-87FZ04E" class="icon-edit"></i></button><button data-testid="embd-87ftrVd-EXPR" type="button" class="btn btn-icon-tertiary btn-icon-delete " title="Delete"><i data-testid="embd-87vMz4i" class="icon-delete" title="Delete"></i></button><button data-testid="embd-87FtdXV-EXPR" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i data-testid="embd-87uRdcA-EXPR" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-79HRa2m-9ac49d87-8227-4c0f-ac76-94077eb1571d" id="PARAGRAPH_EXPR_9ac49d87-8227-4c0f-ac76-94077eb1571d" class="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <div class="paddedline" dependency="JTIT|COMP|JCIT|JSTA|JCNT|JCTR|JLOC|JSTD|EDDT"> 
+                                <span class="dflex">
+                                    <span>
+                                        <span class="jobtitle txt-bold disp-blk" id="FIELD_JTIT">Manager</span>                                    
+                                    </span>
+                                    
+                                </span>                               
+                                <div class="job-position">
+                                    <div class="job-details">
+                                        <span id="FIELD_COMP">Fizza Cargo</span>
+                                    <span dependency="COMP"><span dependency="JCIT|JSTA|JCNT"> | </span></span><span id="FIELD_JCIT">Baku</span><span dependency="JCIT+JSTA|JCNT">, </span><span id="FIELD_JSTA">Azerbaijan</span><span id="FIELD_JCNT"></span><span dependency="COMP|JCIT|JSTA|JCNT"></span><span id="FIELD_JLOC"></span><span id="FIELD_JCTR"></span>
+                                    </div>
+                                   <div class="job-date"><span class="" id="FIELD_JSTD" format="%b %Y">Dec 2019</span><span class="hyphen" dependency="JSTD+EDDT"></span><span id="FIELD_EDDT" format="%b %Y">Dec 2021</span></div>
+                                </div>
+                            </div>
+                            <span id="FIELD_JDES"><ul>
+  <li>Oversaw day-to-day operations and managed a team</li>
+  <li>Managed staffing schedules for high numbers of employees, delivering operational efficiency whilst remaining under budget.</li>
+  <li>Created and led successful business culture focused on performance.</li>
+</ul></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><button data-testid="embd-87enKtK-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="296" class="sortable-item paragraph-container SortableItem-sibling"><div class="document-tool para-tool" style="right: -34px;"><button data-testid="embd-872FtFm-EXPR" class="btn btn-icon-tertiary btn-icon-edit" title="Edit"><i data-testid="embd-87FZ04E" class="icon-edit"></i></button><button data-testid="embd-87ftrVd-EXPR" type="button" class="btn btn-icon-tertiary btn-icon-delete " title="Delete"><i data-testid="embd-87vMz4i" class="icon-delete" title="Delete"></i></button><button data-testid="embd-87FtdXV-EXPR" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i data-testid="embd-87uRdcA-EXPR" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-79HRa2m-21a51aa8-96ce-4942-bdf6-e6ccad136051" id="PARAGRAPH_EXPR_21a51aa8-96ce-4942-bdf6-e6ccad136051" class="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn">
+                            <div class="paddedline" dependency="JTIT|COMP|JCIT|JSTA|JCNT|JCTR|JLOC|JSTD|EDDT"> 
+                                <span class="dflex">
+                                    <span>
+                                        <span class="jobtitle txt-bold disp-blk" id="FIELD_JTIT">Credit Officer</span>                                    
+                                    </span>
+                                    
+                                </span>                               
+                                <div class="job-position">
+                                    <div class="job-details">
+                                        <span id="FIELD_COMP">Molbulak</span>
+                                    <span dependency="COMP"><span dependency="JCIT|JSTA|JCNT"> | </span></span><span id="FIELD_JCIT">Baku</span><span dependency="JCIT+JSTA|JCNT">, </span><span id="FIELD_JSTA">Azerbaijan</span><span id="FIELD_JCNT"></span><span dependency="COMP|JCIT|JSTA|JCNT"></span><span id="FIELD_JLOC"></span><span id="FIELD_JCTR"></span>
+                                    </div>
+                                   <div class="job-date"><span class="" id="FIELD_JSTD" format="%b %Y">Jun 2018</span><span class="hyphen" dependency="JSTD+EDDT"></span><span id="FIELD_EDDT" format="%b %Y">Nov 2019</span></div>
+                                </div>
+                            </div>
+                            <span id="FIELD_JDES"><ul>
+  <li>Analyzed customer history and financial reports to assess risk and creditworthiness.</li>
+  <li>Reviewed and approved credit trading terms on customer contracts.</li>
+  <li>Provider excellent customer service and resolved inquiries.</li>
+</ul></span>
+                        </div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><button data-testid="embd-87enKtK-EXPR" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button></div></div></div></div><div data-testid="embd-88hIkvj-EXPR" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-LNGG"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button><button data-testid="embd-95yoOpF" class="btn  btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i data-testid="embd-95XB6Jt" class="icon-delete" title="Delete"></i></button><button data-testid="embd-95RfIpl" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -423px;"><i data-testid="embd-95AV7X0" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-88MByq6-LNGG" id="SECTION_LNGG88bc36a1-247b-b72f-7918-a79948b8fc80" class="section lang-sec infobarsec hide-colon SECTION_LNGG has-title data-LNGG" data-section-cd="LNGG"><div data-testid="embd-88uQIHR-LNGG" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_LNGG">Languages<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Languages " class="ds-link ds-link-default rename-section text-rename">Rename</span></div></div><div data-testid="embd-88aw0Ce-LNGG" class=""><div data-testid="embd-87S8HNi88bc36a1-247b-b72f-7918-a79948b8fc80" id="CONTAINER_88bc36a1-247b-b72f-7918-a79948b8fc80" class="sortableInner"><div data-testid="embd-87je894-LNGG" data-react-beautiful-dnd-draggable="296" class="sortable-item paragraph-container SortableItem-sibling"><div class="document-tool para-tool" style="right: -34px;"><button data-testid="embd-872FtFm-LNGG" class="btn btn-icon-tertiary btn-icon-edit" title="Edit"><i data-testid="embd-87FZ04E" class="icon-edit"></i></button><button data-testid="embd-87ftrVd-LNGG" type="button" class="btn btn-icon-tertiary btn-icon-delete " title="Delete"><i data-testid="embd-87vMz4i" class="icon-delete" title="Delete"></i></button><button data-testid="embd-87FtdXV-LNGG" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -255px;"><i data-testid="embd-87uRdcA-LNGG" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-79HRa2m-931b4b5b-29de-16a4-34d8-082c8aec6360" id="PARAGRAPH_LNGG_931b4b5b-29de-16a4-34d8-082c8aec6360" class="paragraph paragraph-fieldgroup PARAGRAPH_LNGG firstparagraph para_odd"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn infobarpara">
+                     <div class="fieldgroup-0">
+                        <div class="field fielditem-frfm lang-space">
+                           <span class="inner-wrapper"><span id="FIELD_FRFM">Azerbaijani</span><span class="colon hyphen" dependency="FRFM"><span class="beforecolonspace">
+                           </span></span></span>
+                           <span class="flt-right" id="FIELD_RATG"></span>
+                        </div>
+                        <div class="rating-bar fielditem-ratv" dependency="RATV">
+                           <div class="inner-rating" id="FIELD_RATV" type="width" style="width: 100%;"></div>
+                        </div>
+                        <div class="field field-ratt fielditem-ratt lang-scale">
+                           <span id="FIELD_RATT" class="small-size">Native</span><span class="beforecolonspace">
+                           </span><span class="colon small-size hyphen" dependency="RATT"></span>
+                        </div>
+                        
+                        
+                     </div>
+                        </div>
+                        
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><button data-testid="embd-87enKtK-LNGG" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button></div><div data-testid="embd-87je894-LNGG" data-react-beautiful-dnd-draggable="296" class="sortable-item paragraph-container SortableItem-sibling"><div class="document-tool para-tool" style="right: -34px;"><button data-testid="embd-872FtFm-LNGG" class="btn btn-icon-tertiary btn-icon-edit" title="Edit"><i data-testid="embd-87FZ04E" class="icon-edit"></i></button><button data-testid="embd-87ftrVd-LNGG" type="button" class="btn btn-icon-tertiary btn-icon-delete " title="Delete"><i data-testid="embd-87vMz4i" class="icon-delete" title="Delete"></i></button><button data-testid="embd-87FtdXV-LNGG" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -255px;"><i data-testid="embd-87uRdcA-LNGG" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-79HRa2m-199b5028-dbee-6e64-aa06-a3116072f426" id="PARAGRAPH_LNGG_199b5028-dbee-6e64-aa06-a3116072f426" class="paragraph paragraph-fieldgroup PARAGRAPH_LNGG para_even"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn infobarpara">
+                     <div class="fieldgroup-0">
+                        <div class="field fielditem-frfm lang-space">
+                           <span class="inner-wrapper"><span id="FIELD_FRFM">Russian</span><span class="colon hyphen" dependency="FRFM"><span class="beforecolonspace">
+                           </span></span></span>
+                           <span class="flt-right" id="FIELD_RATG"></span>
+                        </div>
+                        <div class="rating-bar fielditem-ratv" dependency="RATV">
+                           <div class="inner-rating" id="FIELD_RATV" type="width" style="width: 100%;"></div>
+                        </div>
+                        <div class="field field-ratt fielditem-ratt lang-scale">
+                           <span id="FIELD_RATT" class="small-size">Native</span><span class="beforecolonspace">
+                           </span><span class="colon small-size hyphen" dependency="RATT"></span>
+                        </div>
+                        
+                        
+                     </div>
+                        </div>
+                        
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><button data-testid="embd-87enKtK-LNGG" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button></div><div data-testid="embd-87je894-LNGG" data-react-beautiful-dnd-draggable="296" class="sortable-item paragraph-container SortableItem-sibling"><div class="document-tool para-tool" style="right: -34px;"><button data-testid="embd-872FtFm-LNGG" class="btn btn-icon-tertiary btn-icon-edit" title="Edit"><i data-testid="embd-87FZ04E" class="icon-edit"></i></button><button data-testid="embd-87ftrVd-LNGG" type="button" class="btn btn-icon-tertiary btn-icon-delete " title="Delete"><i data-testid="embd-87vMz4i" class="icon-delete" title="Delete"></i></button><button data-testid="embd-87FtdXV-LNGG" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -255px;"><i data-testid="embd-87uRdcA-LNGG" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-79HRa2m-f54c9e40-8196-12d4-f8a8-c2b5735e7685" id="PARAGRAPH_LNGG_f54c9e40-8196-12d4-f8a8-c2b5735e7685" class="paragraph paragraph-fieldgroup PARAGRAPH_LNGG para_odd"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn infobarpara">
+                     <div class="fieldgroup-0">
+                        <div class="field fielditem-frfm lang-space">
+                           <span class="inner-wrapper"><span id="FIELD_FRFM">English</span><span class="colon hyphen" dependency="FRFM"><span class="beforecolonspace">
+                           </span></span></span>
+                           <span class="flt-right" id="FIELD_RATG"></span>
+                        </div>
+                        <div class="rating-bar fielditem-ratv" dependency="RATV">
+                           <div class="inner-rating" id="FIELD_RATV" type="width" style="width: 50%;"></div>
+                        </div>
+                        <div class="field field-ratt fielditem-ratt lang-scale">
+                           <span id="FIELD_RATT" class="small-size">Intermediate</span><span class="beforecolonspace">
+                           </span><span class="colon small-size hyphen" dependency="RATT"></span>
+                        </div>
+                        
+                        
+                     </div>
+                        </div>
+                        
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div><button data-testid="embd-87enKtK-LNGG" type="button" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" class="btn-icon-tertiary btn-icon-move d-none"></button></div></div></div></div><div data-testid="embd-88hIkvj-LNGG" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-AFIL"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button><button data-testid="embd-95yoOpF" class="btn  btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i data-testid="embd-95XB6Jt" class="icon-delete" title="Delete"></i></button><button data-testid="embd-95RfIpl" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i data-testid="embd-95AV7X0" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-88MByq6-AFIL" id="SECTION_AFILc4878a84-8438-d3e2-3a21-cd3cda279abf" class="section SECTION_AFIL has-title" data-section-cd="AFIL"><div data-testid="embd-88uQIHR-AFIL" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_AFIL">Hobbies and interests<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Hobbies and interests " class="ds-link ds-link-default rename-section text-rename">Rename</span></div></div><div data-testid="embd-88aw0Ce-AFIL" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-f1f9b918-b74a-6d32-66ae-7db08549a958" id="PARAGRAPH_AFIL_f1f9b918-b74a-6d32-66ae-7db08549a958" class="paragraph PARAGRAPH_AFIL firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn" id="FIELD_FRFM"><ul><li>Swimming</li><li>Reading</li><li>Gaming</li></ul></div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-AFIL" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="296" class="sortable-item section-container SortableItem-sibling data-CUST"><div data-testid="embd-94w3bZE" class="document-tool sec-tool" id="editIcons" style="right: -34px;"><button data-testid="embd-94kKK27" class="btn btn-icon-tertiary btn-icon-edit" type="button" title="Edit"><i data-testid="embd-94vxTqX" class="icon-edit"></i></button><button data-testid="embd-95yoOpF" class="btn  btn-icon-tertiary btn-icon-delete" type="button" title="Delete"><i data-testid="embd-95XB6Jt" class="icon-delete" title="Delete"></i></button><button data-testid="embd-95RfIpl" type="button" class="btn-icon-tertiary btn-icon-move" style="right: -114px;"><i data-testid="embd-95AV7X0" class="icon-move" tabindex="0" data-react-beautiful-dnd-drag-handle="296" aria-roledescription="Draggable item. Press space bar to lift" draggable="false" title="Move"></i></button></div><div data-testid="embd-88MByq6-CUST" id="SECTION_CUST45ddb504-009c-97d5-c82e-10504a968759" class="section SECTION_CUST has-title" data-section-cd="CUST"><div data-testid="embd-88uQIHR-CUST" class="doc-item"><div data-testid="embd-88ciQTv" class="heading"><div data-testid="embd-88NTvWF" class="sectiontitle" id="SECTIONNAME_CUST">Military<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Military " class="ds-link ds-link-default rename-section text-rename">Rename</span></div></div><div data-testid="embd-88aw0Ce-CUST" class=""><div data-testid="embd-654vWVD6" class=""><div data-testid="embd-79HRa2m-49f90a9c-7c07-1ba4-e4ac-22a3ae8907eb" id="PARAGRAPH_CUST_49f90a9c-7c07-1ba4-e4ac-22a3ae8907eb" class="paragraph cmnsize PARAGRAPH_CUST firstparagraph"><div data-testid="embd-78FzR29" class="clearfix doc-item">
+                        <div class="singlecolumn" id="FIELD_FRFM"><p>Daxili Qosunlar - 2021/04</p></div>
+                    </div><div class="doc-overlay para-overlay" style="left:-34px; right: -34px;"><span data-testid="embd-79u4pC0" class="badge badge-primary badge-edit"></span><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-88hIkvj-CUST" class="doc-overlay section-overlay" style="left:-34px; right: -34px;"><span>&nbsp;</span></div></div></div></div></div><div data-testid="embd-92LqKqF1" id="CONTAINER_PARENT_1" class="sign-container-parent"><div data-testid="embd-92PDkR62" id="CONTAINER_2" class="sign-container-data"></div></div></div><div></div></div

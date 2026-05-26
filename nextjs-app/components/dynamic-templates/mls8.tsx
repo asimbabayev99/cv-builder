@@ -4,7 +4,7 @@ import { formatDate, isRTL } from '@/lib/translations';
 export default function DynamicMls8({ data, translations, language = 'en', colorHex = '#9B3016' }: DynamicTemplateProps) {
   const rtl = isRTL(language);
   const fullName = [data.first_name, data.last_name].filter(Boolean).join(' ');
-  const hasContact = data.email || data.phone || data.city || data.country;
+  const hasContact = data.email || data.phone || data.city || data.country || data.website || data.driving_license || data.nationality || data.linkedin;
   const initials = data.first_name && data.last_name
     ? `${data.first_name[0]}|${data.last_name[0]}`.toUpperCase()
     : (data.first_name?.[0] || data.last_name?.[0] || '').toUpperCase();
@@ -407,6 +407,10 @@ export default function DynamicMls8({ data, translations, language = 'en', color
                     {data.country && <span>{data.country}</span>}
                   </div>
                 )}
+                {data.website && <div className="icon-row">{data.website}</div>}
+                {data.driving_license && <div className="icon-row">{data.driving_license}</div>}
+                {data.nationality && <div className="icon-row">{data.nationality}</div>}
+                {data.linkedin && <div className="icon-row">{data.linkedin}</div>}
               </div>
             )}
 
@@ -419,8 +423,12 @@ export default function DynamicMls8({ data, translations, language = 'en', color
                 {data.educations.map((edu, index) => (
                   <div key={edu.id || index} className={`paragraph ${index === 0 ? 'firstparagraph' : ''}`}>
                     <div className="singlecolumn">
-                      {edu.end_date && (
-                        <span className="paddedline edu-year">{formatDate(edu.end_date, language)}</span>
+                      {(edu.start_date || edu.end_date) && (
+                        <span className="paddedline edu-year">
+                          {edu.start_date && formatDate(edu.start_date, language)}
+                          {edu.start_date && (edu.end_date || edu.currently_studying) && ' - '}
+                          {edu.currently_studying ? translations.present : edu.end_date && formatDate(edu.end_date, language)}
+                        </span>
                       )}
                       {(edu.degree || edu.field_of_study) && (
                         <span className="paddedline edu-degree">
@@ -430,9 +438,11 @@ export default function DynamicMls8({ data, translations, language = 'en', color
                           )}
                         </span>
                       )}
-                      {edu.institution && (
+                      {(edu.institution || edu.location) && (
                         <span className="paddedline">
                           <span className="txtBold">{edu.institution}</span>
+                          {edu.institution && edu.location && ' - '}
+                          {edu.location && <span>{edu.location}</span>}
                         </span>
                       )}
                     </div>
@@ -441,24 +451,6 @@ export default function DynamicMls8({ data, translations, language = 'en', color
               </div>
             )}
 
-            {/* Languages Section (Left) */}
-            {data.languages && data.languages.length > 0 && (
-              <div className="section lang-sec">
-                <div className="heading">
-                  <div className="sectiontitle">{translations.languages}</div>
-                </div>
-                {data.languages.map((lang, index) => (
-                  <div key={lang.id || index} className={`paragraph ${index === 0 ? 'firstparagraph' : ''}`}>
-                    <div>{lang.name}</div>
-                    {lang.level && (
-                      <div className="rating-bar">
-                        <div className="inner-rating" style={{ width: `${(lang.level / 5) * 100}%` }} />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
 
           {/* Right Column */}
@@ -545,6 +537,29 @@ export default function DynamicMls8({ data, translations, language = 'en', color
                     </div>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* Languages Section */}
+            {data.languages && data.languages.length > 0 && (
+              <div className="section lang-sec">
+                <div className="heading">
+                  <div className="sectiontitle">{translations.languages}</div>
+                </div>
+                {data.languages.map((lang, index) => {
+                  const proficiencyText = lang.proficiency ? (translations[lang.proficiency as keyof typeof translations] || lang.proficiency) : '';
+                  return (
+                    <div key={lang.id || index} className={`paragraph ${index === 0 ? 'firstparagraph' : ''}`}>
+                      <div className="txtBold">{lang.name}</div>
+                      {lang.level && (
+                        <div className="rating-bar">
+                          <div className="inner-rating" style={{ width: `${(lang.level / 5) * 100}%` }} />
+                        </div>
+                      )}
+                      {proficiencyText && <div>{proficiencyText}</div>}
+                    </div>
+                  );
+                })}
               </div>
             )}
 

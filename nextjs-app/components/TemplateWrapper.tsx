@@ -100,10 +100,13 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .skn-mli6.pict-pcsh-radius .paragraph .pictPic img { border-color: ${c} !important; }
   `,
 
-  // MLA3: gradient background via :before + totl-expr
+  // MLA3: solid background via :before + inner-rating + totl-expr
   mla3: (c) => `
     ${commonOverrides(c)}
     .skn-mla3:before { background: ${c} !important; }
+    .skn-mla3 .lang-sec .inner-rating { background-color: ${c} !important; }
+    .skn-mla3 .lang-sec.infobarsec .inner-rating { background-color: ${c} !important; }
+    .skn-mla3 .totl-expr { background-color: ${c} !important; }
   `,
 
   // MLA7: accent on firstsection :before/:after + sectiontitle + inner-rating
@@ -127,14 +130,28 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .lang-sec.infobarsec .inner-rating { background-color: ${c} !important; }
   `,
 
-  // MLS8: sectiontitle color + inner-rating + totl-expr
+  // MLS8: name + sectiontitle + inner-rating + totl-expr + prfl-pic + monogram backgrounds
   mls8: (c) => `
     ${commonOverrides(c)}
-    .sectiontitle { color: ${c} !important; }
+    .skn-mls8 .name { color: ${c} !important; }
+    .skn-mls8 .sectiontitle { color: ${c} !important; }
+    .skn-mls8 .inner-rating { background-color: ${c} !important; }
+    .skn-mls8 .totl-expr { background-color: ${c} !important; }
+    .skn-mls8 .top-section .prfl-pic { background-color: ${c} !important; }
+    .skn-mls8 .top-section .monogram-wrap { background-color: ${c} !important; }
+    .skn-mls8 .name-wrap { background: ${c} !important; }
+    .skn-mls8 .sliced-rect-tile.ratvfill { background-color: ${c} !important; }
   `,
 
-  // MLS9: minimal
-  mls9: (c) => commonOverrides(c),
+  // MLS9: top section decorations (rating bars stay black)
+  mls9: (c) => `
+    ${commonOverrides(c)}
+    .skn-mls9 .topsection::before { background: ${c} !important; }
+    .skn-mls9 .topsection .left-box::before { background: linear-gradient(to right, ${c} 10px, #fff 10px) !important; background-size: 28px !important; }
+    .skn-mls9 .topsection .left-box::after { background: ${c} !important; }
+    .skn-mls9 .totl-expr { background-color: ${c} !important; }
+    .skn-mls9 .inner-rating { background-color: #000 !important; }
+  `,
 
   // MLT6: top-section bg + inner-rating + sliced tiles + monogram
   mlt6: (c) => `
@@ -215,8 +232,20 @@ const TEMPLATE_COLOR_OVERRIDES: Record<string, (c: string) => string> = {
     .skn-mca2 .skli-sec.infobarsec .inner-rating { background-color: ${c} !important; }
   `,
 
-  // MTA2: minimal
-  mta2: (c) => commonOverrides(c),
+  // MTA2: name + address + sectiontitle + jobtitle + jobdates + degree + programline + inner-rating
+  mta2: (c) => `
+    ${commonOverrides(c)}
+    .skn-mta2 .name { color: ${c} !important; }
+    .skn-mta2 .address { color: ${c} !important; }
+    .skn-mta2 .address2 { color: ${c} !important; }
+    .skn-mta2 .heading { color: ${c} !important; }
+    .skn-mta2 .sectiontitle { color: ${c} !important; }
+    .skn-mta2 .jobtitle { color: ${c} !important; }
+    .skn-mta2 .jobdates { color: ${c} !important; }
+    .skn-mta2 .degree { color: ${c} !important; }
+    .skn-mta2 .programline { color: ${c} !important; }
+    .skn-mta2 .inner-rating { background-color: ${c} !important; }
+  `,
 
   // MTA3: name + sectiontitle + prflSection border + inner-rating + totl-expr
   mta3: (c) => `

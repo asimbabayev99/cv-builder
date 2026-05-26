@@ -1,368 +1,411 @@
 /* eslint-disable */
 // @ts-nocheck
-export default function TemplateMla3() {
+import type { DynamicTemplateProps } from "@/types/resume";
+import { sampleData } from "./sampleData";
+import { translations } from "@/lib/translations";
+
+const defaultTranslations = translations.en;
+
+// Format date as "MM/YYYY"
+function formatDate(dateStr: string | undefined): string {
+  if (!dateStr) return '';
+  try {
+    const date = new Date(dateStr);
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${month}/${year}`;
+  } catch {
+    return dateStr;
+  }
+}
+
+export default function TemplateMla3({
+  data = sampleData,
+  translations: t = defaultTranslations,
+  colorHex = "#DF7866",
+}: Partial<DynamicTemplateProps> = {}) {
+  const skills = data.skills || [];
+  const midpoint = Math.ceil(skills.length / 2);
+  const skillsColumn1 = skills.slice(0, midpoint);
+  const skillsColumn2 = skills.slice(midpoint);
+
+  const fullName = [data.first_name, data.last_name].filter(Boolean).join(' ');
+  const initials = [data.first_name?.[0], data.last_name?.[0]].filter(Boolean).join('');
+
   return (
     <>
       <style>{`
-    @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700');
-    @import url('https://fonts.googleapis.com/css2?family=Unica+One');
-    html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
-    body{background:#FFF;text-align:left}
-    .skn-mla3 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%;table-layout:fixed}
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700');
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One');
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+        body{background:#FFF;text-align:left}
+        .skn-mla3 table{border-collapse:collapse;border-spacing:0;font-size:inherit;color:inherit;width:100%;table-layout:fixed}
 
-    /*START Image treatment for LI*/
-    .skn-mla3 ul,.skn-mla3 li{margin:0 0 0 2px;padding:0;list-style:none}
-    .skn-mla3 li::before {content:"•";display:inline-block;width:4px;left:-3px;position:absolute}
-	  .skn-mla3 ul{position:relative}
-    .skn-mla3 ul li{margin:0 0 0 8px}
-    .skn-mla3 ul li:last-child{padding-bottom:0}
-    /*END Image treatment for LI*/
-    
-    .skn-mla3 .flt-right{float:right}
-    .skn-mla3 span.paddedline{display:block}
-    .skn-mla3 span.dates-wrapper{display:block;float:left;text-align:left}
-    .skn-mla3 .txt-bold{font-weight:bold}
-    .skn-mla3 .dspl-inblk{display:inline-block}
-    .skn-mla3 .no-pind,.skn-mla3 .sum-sec .singlecolumn,.skn-mla3 .obj-sec .singlecolumn{margin-left:0}
-            
+        .skn-mla3 ul,.skn-mla3 li{margin:0 0 0 2px;padding:0;list-style:none}
+        .skn-mla3 li::before{content:"•";display:inline-block;width:4px;left:-3px;position:absolute}
+        .skn-mla3 ul{position:relative}
+        .skn-mla3 ul li{margin:0 0 0 8px}
+        .skn-mla3 ul li:last-child{padding-bottom:0}
 
-    .skn-mla3{word-wrap:break-word;color:#000;position:relative}
-    .skn-mla3:before{content:"";height:100%;position:absolute;left:0;top:0;background:linear-gradient(180deg, #DF7866 0%, #F7BFB5 100%);background-size:cover}
-    .skn-mla3 .name{word-wrap:break-word;text-transform:uppercase;font-family:'Unica One', regular}
-    .skn-mla3 .prof-title{letter-spacing:1px;padding-left:2px}
-    .skn-mla3 .sectiontitle{letter-spacing:-.47px}
-    .skn-mla3 .paragraph{clear:both}
-    .skn-mla3 .heading{clear:both;text-transform:uppercase;font-family:"Unica One"}
-    .skn-mla3 .address{word-wrap:break-word;position:relative;top:2px}
-    .skn-mla3 .monogram .initial-name span{text-transform:uppercase;font-family:"Unica One"}
-    .skn-mla3 .svg-box{position:relative}
-    .skn-mla3 .table-wrapper{width:100%;margin-top:0}
-    .skn-mla3 table.twocol td{width:50%}
-    .skn-mla3 table.skills th,.skn-mla3 table.skills td{width:20%;text-align:center}
-    .skn-mla3 table.skills th{text-decoration:underline}
-    .skn-mla3 table.skills .skillname,.skn-mla3 table.skills .skillrating{text-align:left;width:35%}
-    .skn-mla3 table.skills .skillrating{width:20%}
-    .skn-mla3 table.skills .skillyears,.skn-mla3 table.skills .skilllast{width:19%}
-    .skn-mla3 table.skills .pad1{width:5%}
-    .skn-mla3 table.skills .pad2,.skn-mla3 table.skills .pad3{width:1%}
-    .skn-mla3 .resume-title,.skn-mla3 .exec-rsmtitle{font-weight:bold;text-align:left}
-    .skn-mla3 .educ-sec .company-detail{margin-top:3px}
-    .skn-mla3 .firstsection,.skn-mla3 .section.name-sec,.skn-mla3 .section.pict-sec,.skn-mla3 .cntc-section,.skn-mla3 .firstparagraph,.skn-mla3 .address{margin-top:0!important}
-    .skn-mla3 .disclaim .singlecolumn,.skn-mla3 .pict-sec + .name-sec,.skn-mla3 .hilt-sec ul,.skn-mla3 .accm-sec ul,.skn-mla3 .adn-link  ul{margin-left:0}
-    .skn-mla3 .pict-div img{width:100%;height:100%;border-radius:50%;object-fit:cover;position:relative}    
-    .skn-mla3 .pict-sec,.skn-mla3 .name-sec{display:inline-block}    
-    .skn-mla3 .monogram .svg-box{display:flex;justify-content:center;align-items:center;border-radius:50%;box-sizing:border-box;border:1px solid #D8D8D8;}
-    .skn-mla3 .top-box{display:flex;justify-content:left}
-    .skn-mla3 .fielditem:last-child .sptr{display:none}
-    .skn-mla3 .cntc-section li:before{display:none}
-    .skn-mla3 .cntc-section{word-break:break-word}
+        .skn-mla3 .flt-right{float:right}
+        .skn-mla3 span.paddedline{display:block}
+        .skn-mla3 span.dates-wrapper{display:block;float:left;text-align:left}
+        .skn-mla3 .txt-bold{font-weight:bold}
+        .skn-mla3 .dspl-inblk{display:inline-block}
+        .skn-mla3 .no-pind,.skn-mla3 .sum-sec .singlecolumn,.skn-mla3 .obj-sec .singlecolumn{margin-left:0}
 
-    /*Personal details section*/
-    .skn-mla3 .pdet-sec .singlecolumn{display:flex;justify-content:space-between;flex-wrap:wrap}
-    .skn-mla3 .details-wrap{width:49%;margin-bottom:5px}
-    .skn-mla3 .details-wrap:nth-last-child(1),.skn-mla3 .details-wrap:nth-last-child(2){margin-bottom:0}
+        .skn-mla3{word-wrap:break-word;color:#000;position:relative}
+        .skn-mla3:before{content:"";height:100%;position:absolute;left:0;top:0;background:${colorHex};width:39px}
+        .skn-mla3 .name{word-wrap:break-word;text-transform:uppercase;font-family:'Unica One', regular}
+        .skn-mla3 .prof-title{letter-spacing:1px;padding-left:2px}
+        .skn-mla3 .sectiontitle{letter-spacing:-.47px}
+        .skn-mla3 .paragraph{clear:both}
+        .skn-mla3 .heading{clear:both;text-transform:uppercase;font-family:"Unica One"}
+        .skn-mla3 .address{word-wrap:break-word;position:relative;top:2px}
+        .skn-mla3 .table-wrapper{width:100%;margin-top:0}
+        .skn-mla3 table.twocol td{width:50%}
+        .skn-mla3 .resume-title,.skn-mla3 .exec-rsmtitle{font-weight:bold;text-align:left}
+        .skn-mla3 .educ-sec .company-detail{margin-top:3px}
+        .skn-mla3 .firstsection,.skn-mla3 .section.name-sec,.skn-mla3 .section.pict-sec,.skn-mla3 .cntc-section,.skn-mla3 .firstparagraph,.skn-mla3 .address{margin-top:0!important}
+        .skn-mla3 .disclaim .singlecolumn,.skn-mla3 .pict-sec + .name-sec,.skn-mla3 .hilt-sec ul,.skn-mla3 .accm-sec ul,.skn-mla3 .adn-link ul{margin-left:0}
+        .skn-mla3 .pict-sec,.skn-mla3 .name-sec{display:inline-block}
+        .skn-mla3 .top-box{display:flex;justify-content:left}
+        .skn-mla3 .fielditem:last-child .sptr{display:none}
+        .skn-mla3 .cntc-section li:before{display:none}
+        .skn-mla3 .cntc-section{word-break:break-word}
 
-    /*PICT/Monogram/NoPICT support*/
-    .skn-mla3 .pict-div,.skn-mla3 .monogram,.skn-mla3.pict-pcpf-none .pict-div,.skn-mla3.pict-pcpf-none .monogram{display:none}
-    .skn-mla3.pict-pcpf-purl .pict-div,.skn-mla3.pict-pcpf-fnln .monogram{display:block}
+        /* Language section */
+        .skn-mla3 .lang-sec,.skn-mla3 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
+        .skn-mla3 .lang-sec .heading,.skn-mla3 .skli-sec .heading{width:100%;flex-grow:1}
+        .skn-mla3 .lang-sec .paragraph.nativeLangPara{width:100%;max-width:100%}
+        .skn-mla3 .lang-sec .paragraph,.skn-mla3 .skli-sec .paragraph{width:43.7%;max-width:43.7%}
+        .skn-mla3 .lang-sec.infobarsec .field *,.skn-mla3 .lang-sec.infobarsec .nativeLangPara .field{display:inline}
+        .skn-mla3 .lang-sec.infobarsec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
+        .skn-mla3 .lang-sec.infobarsec .singlecolumn{margin-left:0!important;padding-left:0;position:relative}
+        .skn-mla3 .lang-sec.infobarsec .inner-rating{position:relative}
+        .skn-mla3 .lang-sec.infobarsec .rating-bar,.skn-mla3 .skli-sec.infobarsec .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;margin-bottom:3px}
+        .skn-mla3 .lang-sec.infobarsec .inner-rating,.skn-mla3 .skli-sec.infobarsec .inner-rating{background-color:${colorHex};height:4px;width:60%}
+        .skn-mla3 .lang-sec.infobarsec .paragraph:before{display:none}
+        .skn-mla3 .lang-sec.infobarsec > .paragraph:nth-last-child(1),.skn-mla3 .lang-sec.infobarsec > .paragraph:nth-last-child(2){padding-bottom:0!important}
 
-    /*PICT variations*/
-    .skn-mla3.pict-pcpf-none .topsection .right-box{display:none}
-    .skn-mla3.pict-pcpf-fnln .prfl-pic,.skn-mla3 .monogram{display:none}
-    .skn-mla3.pict-pcpf-fnln .monogram{display:block}
+        /* Duration tag */
+        .skn-mla3 .totl-expr{display:inline-block;float:right;padding:0 5px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap;margin-left:5px;background-color:${colorHex};font-size:8px;line-height:14px;border-radius:10px}
+        .skn-mla3 .dflex{display:flex;justify-content:space-between}
 
-    /*MFR address order code*/
-    .skn-mla3 .zipprefix,.skn-mla3.MFR .zipsuffix{display:none!important}
-    .skn-mla3 .zipsuffix,.skn-mla3.MFR .zipprefix{display:block!important}   
-
-    /*New logic for infographic*/
-    .skn-mla3 .lang-sec .singlecolumn,.skn-mla3 .skli-sec .singlecolumn{display:none}
-    .skn-mla3 .lang-sec.infobarsec .infobarpara,.skn-mla3 .lang-sec.infotilesec .infotilepara,.skn-mla3 .skli-sec.infobarsec .infobarpara,.skn-mla3 .skli-sec.infotilesec .infotilepara{display:block !important}
-	  
-	  /*Infographic*/
-    .skn-mla3 .lang-sec,.skn-mla3 .skli-sec{display:flex;flex-wrap:wrap;justify-content:space-between}
-    .skn-mla3 .lang-sec .heading,.skn-mla3 .skli-sec .heading{width:100%;flex-grow:1}
-    .skn-mla3 .lang-sec .paragraph.nativeLangPara{width:100%;max-width:100%}
-    .skn-mla3 .lang-sec .paragraph, .skn-mla3 .skli-sec .paragraph{width:43.7%;max-width:43.7%}
-    .skn-mla3 .lang-sec.infobarsec .field *,.skn-mla3 .lang-sec.infobarsec .nativeLangPara .field{display:inline} 
-    .skn-mla3 .lang-sec.infobarsec .paragraph{vertical-align:top;padding-bottom:5px;margin-top:0}
-    .skn-mla3 .lang-sec.infobarsec .singlecolumn{margin-left:0!important;padding-left:0;position:relative}
-    .skn-mla3 .lang-sec.infobarsec .inner-rating{position:relative}
-    .skn-mla3 .lang-sec.infobarsec .rating-bar,.skn-mla3 .skli-sec.infobarsec .rating-bar{background:#d5d6d6;width:100%;clear:both;margin-top:3px;margin-bottom:3px}
-    .skn-mla3 .lang-sec.infobarsec .inner-rating,.skn-mla3 .skli-sec.infobarsec .inner-rating{background-color:#000;height:4px;width:60%}
-    .skn-mla3 .lang-sec.infobarsec .paragraph:before{display:none}
-	  .skn-mla3 .lang-sec.infobarsec > .paragraph:nth-last-child(1),.skn-mla3 .lang-sec.infobarsec > .paragraph:nth-last-child(2){padding-bottom:0!important}
-	
-    /*Infographic Tiles*/
-    .skn-mla3 .lang-sec.infotilesec .paragraph,.skn-mla3 .skli-sec .paragraph{vertical-align:top;padding-bottom:5px!important;margin-top:0}
-    .skn-mla3 .lang-sec.infotilesec > .paragraph:nth-last-child(1),.skn-mla3 .lang-sec.infotilesec > .paragraph:nth-last-child(2),.skn-mla3 .skli-sec > .paragraph:nth-last-child(1),.skn-mla3 .skli-sec > .paragraph:nth-last-child(2){padding-bottom:0!important}
-    .skn-mla3 .lang-sec.infotilesec .field *,.skn-mla3 .skli-sec .field *,.skn-mla3 .lang-sec.infotilesec .nativeLangPara .field{display:inline}
-    .skn-mla3 .lang-sec.infotilesec .singlecolumn,.skn-mla3 .skli-sec .singlecolumn{margin-left:0!important}
-    .skn-mla3 .lang-sec.infotilesec .sliced-rect,.skn-mla3 .skli-sec .sliced-rect{height:6px;width:100%;margin-top:3px;margin-bottom:3px;line-height:0px;clear:both}
-    .skn-mla3 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile,.skn-mla3 .skli-sec .sliced-rect .sliced-rect-tile{height:100%;background-color:#d5d6d6;float:left;margin-right:3px}
-    .skn-mla3 .lang-sec.infotilesec .sliced-rect .sliced-rect-tile:last-child,.skn-mla3 .skli-sec .sliced-rect .sliced-rect-tile:last-child{margin-right:0}
-    
-    /*Infographic Languages Ordering(fieldgroup) Support*/
-    .skn-mla3 .lang-sec.infobarsec .colon,.skn-mla3 .lang-sec.infotilesec .colon{display:none}
-    .skn-mla3 .lang-sec.infobarsec .field:first-child .colon,.skn-mla3 .lang-sec.infotilesec .field:first-child .colon{display:inline}
-
-    /*Rectangular Rating Blocks*/
-    .skn-mla3 .paragraph .sliced-rect .sliced-rect-tile.ratvfill{background-color:#000}
-    .skn-mla3 .hide-bar .rating-bar,.skn-mla3 .hide-bar .sliced-rect,.skn-mla3 .hide-only-bar .rating-bar,.skn-mla3 .hide-colon .colon,.skn-mla3 .hide-bar .field-ratt{display:none!important}
-    .skn-mla3 .displayNoneThisField{display:none}
-
-      /* Text alignment bullet */
-    .skn-mla3 .ttc-align-left ul{text-align:left}
-    .skn-mla3 .ttc-align-right ul{text-align:right}
-    .skn-mla3 .ttc-align-center ul{text-align:center}
-    .skn-mla3 .ttc-align-justify ul{text-align:justify}
-    .skn-mla3 .ttc-align-right li:before,.skn-mla3 .ttc-align-center li:before{position:relative;left:-8px}
-
-    .skn-mla3 .label-cntc.txt-bold{display:none}
-
-    /*Photo Layout styles*/
-    .skn-mla3.pict-pcsh-rectangle .paragraph .pict-div img{border-radius:unset;border:1px solid #373737;box-sizing:border-box}
-    .skn-mla3.pict-pcsh-square .paragraph .pict-div img{border-radius:unset;border:1px solid #373737;box-sizing:border-box}
-    .skn-mla3.pict-pcsh-bottomleft .paragraph .pict-div img{border-radius:50%;border-bottom-left-radius:8px;border:1px solid #373737;box-sizing:border-box}
-    .skn-mla3.pict-pcsh-bottomright .paragraph .pict-div img{border-radius:50%;border-bottom-right-radius:8px;border:1px solid #373737;box-sizing:border-box}
-    .skn-mla3.pict-pcsh-radius .paragraph .pict-div img{border-radius:10px;border:1px solid #373737;box-sizing:border-box}
-   
-    /* Duration tag */
-    .skn-mla3 .totl-expr{display:inline-block;float:right; padding:0 5px;color:#fff;font-weight:700;vertical-align:top;text-wrap:nowrap;margin-left:5px}
-    .skn-mla3.texp-curved .totl-expr{border-radius:10px}
-    .skn-mla3 .dflex{display:flex;justify-content:space-between}
-   
-
-    .skn-mla3,.skn-mla3 table{line-height:14px}
-    .skn-mla3.pagesize{width:525px}
-    .skn-mla3.fontsize,.skn-mla3 .lang-sec.infobarsec .paragraph *,.skn-mla3 .lang-sec.infotilesec .paragraph *,.skn-mla3 .skli-sec .paragraph *{font-size:10px}
-    .skn-mla3.fontface{font-family:PT Sans}
-    .skn-mla3:before{width:39px}
-    .skn-mla3.vmargins{padding-top:30px;padding-bottom:30px}
-    .skn-mla3.hmargins{padding-left:35px;padding-right:35px}
-    .skn-mla3 .section{margin-top:20px;margin-left:39px}
-    .skn-mla3 .heading{margin-bottom:10px}
-    .skn-mla3 .paragraph{margin-top:10px}
-    .skn-mla3 .singlecolumn{margin-left:99px}
-    .skn-mla3 span.dates-wrapper{width:99px;font-size:8px;line-height:10px;padding-right:25px;box-sizing:border-box}
-    .skn-mla3 .sectiontitle{font-size:14px;line-height:17px}
-    .skn-mla3 .name{font-size:34px;line-height:40px}
-    .skn-mla3 .cntc-section{padding-top:10px;margin-top:5px !important;border-top:2px solid #D8D8D8}
-    .skn-mla3 .address{font-size:9px;line-height:11px}
-    .skn-mla3 table.skills td{padding-top:5px}
-    .skn-mla3 .resume-title{font-size:12px;line-height:20px}
-	  .skn-mla3 .prof-title{font-size:10px;line-height:13px}
-    .skn-mla3 .exec-rsmtitle{font-size:11px;line-height:14px}
-    .skn-mla3 span.compdes-cwrap{margin-bottom:5px}
-    .skn-mla3 .twocol_1{padding-right:12px}
-    .skn-mla3 .twocol_2{padding-left:12px}
-    .skn-mla3 .company-detail,.skn-mla3 .expr-sec ul,.skn-mla3 .educ-sec ul{margin-top:5px}
-    .skn-mla3 .paddedline{line-height:13px}
-    .skn-mla3 li{padding-bottom:5px}
-    .skn-mla3 .sptr{padding-left:5px;padding-right:5px}
-    .skn-mla3 .disclaim,.skn-mla3 .sign{margin-top:30px}
-    .skn-mla3 .disclaim{font-size:9px;color:#686868}
-    .skn-mla3 .disclaim + .sign,.skn-mla3 .sign + .disclaim{margin-top:10px}
-    .skn-mla3 .field_sign{font-size:7px;color:#8a8a8a}
-    .skn-mla3 .pict-div .field,.skn-mla3 .monogram,.skn-mla3 .monogram .svg-box{width:48px;height:48px;margin-right:15px}
-    .skn-mla3 .monogram .initial-name span{font-size:27px;line-height:32px}
-    .skn-mla3 .pict-sec + .name-sec{width:calc(100% - 102px)}    
-    .skn-mla3 .name-sec{width:calc(100% - 39px)}    
-    .skn-mla3 .small-size{font-size:8px!important;line-height:10px}
-    .skn-mla3 .nativeLangPara .small-size{font-size:10px !important;line-height:14px}
-    .skn-mla3 .address .fieldgroup .fielditem{line-height:16px}
-    .skn-mla3.pict-pcsh-rectangle .pict-div .field,.skn-mla3.pict-pcsh-rectangle .monogram,.skn-mla3.pict-pcsh-rectangle .monogram .svg-box,.skn-mla3.pict-pcsh-rectangle .paragraph .pict-div img{width:38px}
-    .skn-mla3 .totl-expr{background-color:#F7BFB5;font-size:8px;line-height:14px}
-
-    /*Infographic*/
-    .skn-mla3 .lang-sec,.skn-mla3 .skli-sec,.skn-mla3 .lang-sec.infobarsec{padding-left:0px}
-    
-    /*Infographic Skills*/
-    .skn-mla3 .lang-sec.infobarsec .heading,.skn-mla3 .lang-sec.infotilesec .heading,.skn-mla3 .skli-sec .heading{margin-left:0px}
-
-    /*Finalize Fixes*/
-	  .skn-mla3 .skli-sec .sortableInner .sortable-item .paragraph,.skn-mla3 .lang-sec .sortableInner .sortable-item + .sortable-item .paragraph{vertical-align:top}
-    .skn-mla3 .lang-sec .sortableInner .sortable-item{display:inline-block;vertical-align:top}
-    .skn-mla3 .data-NAME{width:100%}
-    .skn-mla3 .data-PICT + .data-NAME{width:calc(100% - 102px)}    
-    .skn-mla3 .sortable-item.data-PICT + .sortable-item .name-sec{margin-left:0;width:100%;max-width:100%}
-    .skn-mla3 .sortable-item .lang-sec.infotilesec .paragraph,.skn-mla3 .sortable-item .skli-sec .paragraph{width:209px}
-    .skn-mla3 .data-LNGG .sortable-item.native-lang{width:100%;max-width:100%}
-    .skn-mla3 .data-LNGG .doc-item,.skn-mla3 .data-SKLI .doc-item,.skn-mla3 .lang-sec .doc-item,.skn-mla3 .skli-sec .doc-item{width:100%}
-    .skn-mla3 .data-LNGG .sortableInner,.skn-mla3 .data-SKLI .sortableInner,.skn-mla3 .SECTION_LNGG .sortableInner,.skn-mla3 .SECTION-SKLI .sortableInner{display:flex;flex-wrap:wrap;justify-content:space-between}
-    .skn-mla3 .data-LNGG .sortable-item,.skn-mla3 .data-SKLI .sortable-item{width:43.7%}
-    .skn-mla3 .data-LNGG .sortable-item .paragraph,.skn-mla3 .data-SKLI .sortable-item .paragraph{width:100%;max-width:100%}
-    .skn-mla3:before{background:#F7BFB5}
-	
-	 /*PDF Flex Handling Code - Personal Information*/
-		.skn-mla3.for-pdf .pdet-sec .singlecolumn{display:block}
-		.skn-mla3.for-pdf .pdfpdwrapper{display:block}
-		.skn-mla3.for-pdf .pdfpdwrapper:after{content:'';clear:both;display:table}
-		.skn-mla3.for-pdf .pdfpdwrapper .details-wrap:first-child{float:left;padding-right:5px}
-		.skn-mla3.for-pdf .pdfpdwrapper .details-wrap:nth-child(2){float:right}
-		.skn-mla3.for-pdf .pdfpdwrapper .details-wrap{width:191px!important;padding-bottom:5px!important}
-
-    /*Infographic Containers*/
-    .skn-mla3.for-pdf .lang-sec,.skn-mla3.for-pdf .skli-sec{display:block}
-    .skn-mla3.for-pdf .pdfinfwrapper .paragraph{clear: none!important;}
-    .skn-mla3.for-pdf .pdfinfwrapper:after{content:'';clear:both;display:table}
-    .skn-mla3.for-pdf .pdfinfwrapper .paragraph:first-child{float:left}
-    .skn-mla3.for-pdf .pdfinfwrapper .paragraph:nth-child(2){float:right}
-    .skn-mla3.for-pdf .pdfinfwrapper:last-child .paragraph{margin-bottom:0}
-
-    /*For PDF TEXP Handling*/
-    .document.for-pdf.texp-curved .expr-sec .paragraph .singlecolumn .paddedline .dflex,.document.for-pdf.texp-rectangle .expr-sec .paragraph .singlecolumn .paddedline .dflex{display:block;}
-    .document.for-pdf.texp-curved .expr-sec .paragraph .singlecolumn .paddedline .dflex > span:first-child,.document.for-pdf.texp-rectangle .expr-sec .paragraph .singlecolumn .paddedline .dflex > span:first-child{display:inline-block;width:65%;}
-    .document.for-pdf.texp-curved .expr-sec .paragraph .singlecolumn .paddedline .dflex > span:last-child,.document.for-pdf.texp-rectangle .expr-sec .paragraph .singlecolumn .paddedline .dflex > span:last-child{display:inline-block;width:35%;float:right;}
-  `}</style>
-      <div className="svg-skin "><div data-testid="embd-98t1CZ7" className="" tabIndex={0}><div></div><div data-testid="embd-95CA90b" className="document doc-root doc-finalize fontsize fontface vmargins hmargins pgsz-a4 pagesize skn-mla3 MLA3 MUK sdcl-F7BFB5 texp-none pict-pcpf-none " docskinwidth="525" ><div data-testid="embd-92LqKqF0" id="CONTAINER_PARENT_0"><div data-testid="embd-92PDkR60" id="CONTAINER_0" className="top-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="50" className="sortable-item section-container SortableItem-sibling  data-PICT"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-PICT" id="SECTION_PICTa2e3abc4-fc5a-4d5c-80fb-ac187cd5be60" className="section notdraggable pict-sec pcpf-purl SECTION_PICT firstsection" data-section-cd="PICT"><div data-testid="embd-88uQIHR-PICT" className="doc-item"><div data-testid="embd-88aw0Ce-PICT" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-389ae0dd-26d7-4892-a4b9-d1e4f0b10399" id="PARAGRAPH_PICT_389ae0dd-26d7-4892-a4b9-d1e4f0b10399" className="paragraph PARAGRAPH_PICT firstparagraph placeholder-text"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-            <div className="pict-div">
-                <div className="field" id="FIELD_PURL"><img data-testid="embd-78pIea6" className="chk" src="https://assets.myperfectcv.co.uk/blobimages/muk/builder/images/sampleSkinImageCircle.png" alt="Smiley face" /> </div>
-            </div>
-            
-        </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="50" className="sortable-item section-container SortableItem-sibling  data-NAME"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-NAME" id="SECTION_NAME1a1a32ad-f01c-4377-b2f6-1a65f9bf6cb8" className="section name-sec notdraggable SECTION_NAME firstsection" data-section-cd="NAME"><div data-testid="embd-88uQIHR-NAME" className="doc-item"><div data-testid="embd-88aw0Ce-NAME" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-44bc0bd4-6d0c-480d-8f32-8d70df1621d0" id="PARAGRAPH_NAME_44bc0bd4-6d0c-480d-8f32-8d70df1621d0" className="paragraph PARAGRAPH_NAME firstparagraph"><div data-testid="embd-78blCsH">
-                
-                <div className="name">
-                  <span className="field fName" id="FIELD_FNAM">Dom</span><span dependency="FNAM+LNAM"> </span> <span className="field" id="FIELD_LNAM">Webster</span>
+        .skn-mla3,.skn-mla3 table{line-height:14px}
+        .skn-mla3.pagesize{width:525px}
+        .skn-mla3.fontsize,.skn-mla3 .lang-sec.infobarsec .paragraph *,.skn-mla3 .lang-sec.infotilesec .paragraph *,.skn-mla3 .skli-sec .paragraph *{font-size:10px}
+        .skn-mla3.fontface{font-family:PT Sans}
+        .skn-mla3.vmargins{padding-top:30px;padding-bottom:30px}
+        .skn-mla3.hmargins{padding-left:35px;padding-right:35px}
+        .skn-mla3 .section{margin-top:20px;margin-left:39px}
+        .skn-mla3 .heading{margin-bottom:10px}
+        .skn-mla3 .paragraph{margin-top:10px}
+        .skn-mla3 .singlecolumn{margin-left:99px}
+        .skn-mla3 span.dates-wrapper{width:99px;font-size:8px;line-height:10px;padding-right:25px;box-sizing:border-box}
+        .skn-mla3 .sectiontitle{font-size:14px;line-height:17px}
+        .skn-mla3 .name{font-size:34px;line-height:40px}
+        .skn-mla3 .cntc-section{padding-top:10px;margin-top:5px!important;border-top:2px solid #D8D8D8}
+        .skn-mla3 .address{font-size:9px;line-height:11px}
+        .skn-mla3 table.skills td{padding-top:5px}
+        .skn-mla3 .resume-title{font-size:12px;line-height:20px}
+        .skn-mla3 .prof-title{font-size:10px;line-height:13px}
+        .skn-mla3 .exec-rsmtitle{font-size:11px;line-height:14px}
+        .skn-mla3 span.compdes-cwrap{margin-bottom:5px}
+        .skn-mla3 .twocol_1{padding-right:12px}
+        .skn-mla3 .twocol_2{padding-left:12px}
+        .skn-mla3 .company-detail,.skn-mla3 .expr-sec ul,.skn-mla3 .educ-sec ul{margin-top:5px}
+        .skn-mla3 .paddedline{line-height:13px}
+        .skn-mla3 li{padding-bottom:5px}
+        .skn-mla3 .sptr{padding-left:5px;padding-right:5px}
+        .skn-mla3 .name-sec{width:calc(100% - 39px)}
+        .skn-mla3 .small-size{font-size:8px!important;line-height:10px}
+        .skn-mla3 .nativeLangPara .small-size{font-size:10px!important;line-height:14px}
+        .skn-mla3 .address .fieldgroup .fielditem{line-height:16px}
+        .skn-mla3 .lang-sec,.skn-mla3 .skli-sec,.skn-mla3 .lang-sec.infobarsec{padding-left:0px}
+        .skn-mla3 .lang-sec.infobarsec .heading,.skn-mla3 .lang-sec.infotilesec .heading,.skn-mla3 .skli-sec .heading{margin-left:0px}
+        .skn-mla3 .add-field{margin-top:3px}
+      `}</style>
+      <div className="svg-skin">
+        <div className="document doc-root fontsize fontface vmargins hmargins pagesize skn-mla3">
+          {/* Top Section - Name */}
+          <div id="CONTAINER_0" className="top-box">
+            {/* Name Section */}
+            <div className="sortable-item section-container data-NAME">
+              <div className="section name-sec firstsection">
+                <div className="paragraph firstparagraph">
+                  {fullName && (
+                    <div className="name">
+                      {data.first_name && <span className="field fName">{data.first_name}</span>}
+                      {data.first_name && data.last_name && ' '}
+                      {data.last_name && <span className="field">{data.last_name}</span>}
+                    </div>
+                  )}
                 </div>
-              </div></div></div></div></div></div></div></div></div><div data-testid="embd-92LqKqF1" id="CONTAINER_PARENT_1"><div data-testid="embd-92PDkR61" id="CONTAINER_1" className="left-box"><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="51" className="sortable-item section-container SortableItem-sibling  data-CNTC"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-CNTC" id="SECTION_CNTCd3d40c22-1b29-401e-a809-9cb7e72d6fdc" className="section notdraggable cntc-section SECTION_CNTC" data-section-cd="CNTC"><div data-testid="embd-88uQIHR-CNTC" className="doc-item"><div data-testid="embd-88aw0Ce-CNTC" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-3912838f-29f6-467c-8297-bf45ee1ff720" id="PARAGRAPH_CNTC_3912838f-29f6-467c-8297-bf45ee1ff720" className="paragraph paragraph-fieldgroup PARAGRAPH_CNTC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
+              </div>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div id="CONTAINER_1" className="left-box">
+            {/* Contact Section */}
+            <div className="section cntc-section">
+              <div className="paragraph firstparagraph">
+                <div className="clearfix doc-item">
                   <div className="address">
                     <div className="fieldgroup fieldgroup-0">
-                      <span className="fielditem fielditem-addr" dependency="ADDR"><span id="FIELD_ADDR">46 Roman Rd, Leeds LS2 3ZR</span><span dependency="ADDR" className="sptr">|</span></span><span className="fielditem fielditem-remw"><span id="FIELD_REMW"></span></span><span dependency="HPHN|CPHN" className="fielditem fielditem-cphn"><span id="FIELD_HPHN">07912 345 678</span><span dependency="HPHN|CPHN" className="sptr">|</span></span><span className="fielditem fielditem-emai"><span id="FIELD_EMAI">dom.webster@example.co.uk</span><span dependency="EMAI" className="sptr">|</span></span>
+                      {(data.street_address || data.city || data.postcode) && (
+                        <>
+                          <span className="fielditem fielditem-addr">
+                            <span>{[data.street_address, data.city, data.postcode].filter(Boolean).join(', ')}</span>
+                            <span className="sptr">|</span>
+                          </span>
+                        </>
+                      )}
+                      {data.phone && (
+                        <span className="fielditem fielditem-cphn">
+                          <span>{data.phone}</span>
+                          <span className="sptr">|</span>
+                        </span>
+                      )}
+                      {data.email && (
+                        <span className="fielditem fielditem-emai">
+                          <span>{data.email}</span>
+                        </span>
+                      )}
                     </div>
                     <div className="add-field">
                       <div className="fieldgroup fieldgroup-1">
-                        
+                        {data.driving_license && (
+                          <span className="dspl-inblk fielditem fielditem-driv">
+                            <span className="txt-bold label-cntc">Permit: </span>
+                            <span className="space-left">{data.driving_license}</span>
+                            <span className="sptr">|</span>
+                          </span>
+                        )}
+                        {data.nationality && (
+                          <span className="dspl-inblk fielditem fielditem-ntly">
+                            <span className="txt-bold label-cntc">Nationality: </span>
+                            <span className="space-left">{data.nationality}</span>
+                            <span className="sptr">|</span>
+                          </span>
+                        )}
+                        {data.website && (
+                          <span className="dspl-inblk fielditem fielditem-web1">
+                            <span className="txt-bold label-cntc">Web: </span>
+                            <span className="space-left">{data.website}</span>
+                            <span className="sptr">|</span>
+                          </span>
+                        )}
+                        {data.linkedin && (
+                          <span className="dspl-inblk social fielditem">
+                            <span className="txt-bold label-cntc">LinkedIn: </span>
+                            <span className="space-left">{data.linkedin}</span>
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
-                </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="51" className="sortable-item section-container SortableItem-sibling  data-SUMM"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-SUMM" id="SECTION_SUMMaae374b0-0228-4808-a3fe-b04cc0c571fb" className="section sum-sec SECTION_SUMM has-title" data-section-cd="SUMM"><div data-testid="embd-88uQIHR-SUMM" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_SUMM">PROFESSIONAL SUMMARY<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename PROFESSIONAL SUMMARY " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-SUMM" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6669442-f38f-e0e2-fad7-6104f95f3e6d" id="PARAGRAPH_SUMM_f6669442-f38f-e0e2-fad7-6104f95f3e6d" className="paragraph PARAGRAPH_SUMM firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                  <div className="singlecolumn no-pind" id="FIELD_FRFM"><p>Motivated Care Assistant with 10 years of experience in the Care industry. Offering expertise in person-centred care, implementation and monitoring of individual care plans and management of resident assessments and files. Energetic self-starter and team builder able to navigate high-stress situations. Well-versed in monitoring clients with developmental disabilities and adhering to patient care plans.</p></div>
-                </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="51" className="sortable-item section-container SortableItem-sibling  data-EXPR"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-EXPR" id="SECTION_EXPR313e1c77-349e-497b-bdb6-f0271f1e85bf" className="section expr-sec SECTION_EXPR multi-para has-title" data-section-cd="EXPR"><div data-testid="embd-88uQIHR-EXPR" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EXPR">Work history<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename Work history " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EXPR" className=""><div data-testid="embd-87S8HNi313e1c77-349e-497b-bdb6-f0271f1e85bf" id="CONTAINER_313e1c77-349e-497b-bdb6-f0271f1e85bf" className="sortableInner"><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="51" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="51" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-998e66f0-eaa8-4a72-b41c-7158c85a1d86" id="PARAGRAPH_EXPR_998e66f0-eaa8-4a72-b41c-7158c85a1d86" className="paragraph PARAGRAPH_EXPR firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                  <span className="dates-wrapper txt-bold" dependency="JSTD|EDDT">
-                    <span id="FIELD_JSTD" format="%m/%Y">07/2014</span>
-                    <span dependency="JSTD+EDDT"> - </span>
-                    <span id="FIELD_EDDT" format="%m/%Y">Current</span>
-                  </span>
-                  <div className="singlecolumn">
-                    <span className="paddedline" dependency="JTIT|TEXP">
-                      <span className="dflex">
-                            <span>
-                              <span id="FIELD_JTIT">Senior Care Assistant</span>
-                            </span>
-                            
+                </div>
+              </div>
+            </div>
+
+            {/* Summary Section */}
+            {data.summary && (
+              <div className="section sum-sec">
+                <div className="heading">
+                  <div className="sectiontitle">{t.professional_summary?.toUpperCase()}</div>
+                </div>
+                <div className="paragraph firstparagraph">
+                  <div className="clearfix doc-item">
+                    <div className="singlecolumn no-pind">
+                      <p>{data.summary}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Work Experience Section */}
+            {data.experiences && data.experiences.length > 0 && (
+              <div className="section expr-sec">
+                <div className="heading">
+                  <div className="sectiontitle">{t.work_history?.toUpperCase()}</div>
+                </div>
+                {data.experiences.map((exp, index) => (
+                  <div key={exp.id || index} className={`paragraph ${index === 0 ? 'firstparagraph' : ''}`}>
+                    <div className="clearfix doc-item">
+                      {(exp.start_date || exp.end_date) && (
+                        <span className="dates-wrapper txt-bold">
+                          {exp.start_date && formatDate(exp.start_date)}
+                          {exp.start_date && (exp.end_date || exp.currently_working) && ' - '}
+                          {exp.currently_working ? t.present : exp.end_date && formatDate(exp.end_date)}
                         </span>
-                    </span>
-                    <span className="paddedline company-detail" dependency="COMP|JSTA|JCIT|JCNT|JCTR|JLOC">
-                      <span className="companyname txt-bold" id="FIELD_COMP">Private Care Home</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT"> - </span></span>
-                      <span id="FIELD_JCIT">Edinburgh</span>
-                      <span id="FIELD_JSTA"></span>
-                      <span className="jobcountry" id="FIELD_JCNT"></span>
-                      <span dependency="COMP|JCIT|JSTA|JCNT"></span>
-                      <span id="FIELD_JLOC"></span><span id="FIELD_JCTR"></span>
-                    </span>
-                    <span className="paddedline">
-                      <span id="FIELD_JDES"><ul><li>Met with patients and families to discuss care and plan of action htmlFor future.</li>
-  <li>Implemented new team onboarding programme, reducing training time from four weeks to two.</li>
-  <li>Administered all necessary medications as directed by care plan.</li></ul></span>
-                    </span>
-                  </div>
-                </div></div></div><div data-testid="embd-87je894-EXPR" data-react-beautiful-dnd-draggable="51" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EXPR" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="51" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-5c57d155-aa5a-4a63-87f2-90490c80548b" id="PARAGRAPH_EXPR_5c57d155-aa5a-4a63-87f2-90490c80548b" className="paragraph PARAGRAPH_EXPR"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                  <span className="dates-wrapper txt-bold" dependency="JSTD|EDDT">
-                    <span id="FIELD_JSTD" format="%m/%Y">09/2010</span>
-                    <span dependency="JSTD+EDDT"> - </span>
-                    <span id="FIELD_EDDT" format="%m/%Y">06/2014</span>
-                  </span>
-                  <div className="singlecolumn">
-                    <span className="paddedline" dependency="JTIT|TEXP">
-                      <span className="dflex">
-                            <span>
-                              <span id="FIELD_JTIT">Care Assistant</span>
+                      )}
+                      <div className="singlecolumn">
+                        {exp.job_title && (
+                          <span className="paddedline">
+                            <span className="dflex">
+                              <span>{exp.job_title}</span>
                             </span>
-                            
+                          </span>
+                        )}
+                        {(exp.company || exp.location) && (
+                          <span className="paddedline company-detail">
+                            {exp.company && <span className="companyname txt-bold">{exp.company}</span>}
+                            {exp.company && exp.location && ' - '}
+                            {exp.location && <span>{exp.location}</span>}
+                          </span>
+                        )}
+                        {exp.description && (
+                          <span className="paddedline">
+                            <ul>
+                              {exp.description.split('\n').filter(Boolean).map((line, i) => (
+                                <li key={i}>{line.replace(/^[-•]\s*/, '')}</li>
+                              ))}
+                            </ul>
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Skills Section */}
+            {skills.length > 0 && (
+              <div className="section hilt-sec">
+                <div className="heading">
+                  <div className="sectiontitle">{t.skills?.toUpperCase()}</div>
+                </div>
+                <div className="paragraph firstparagraph">
+                  <div className="clearfix doc-item">
+                    <div className="singlecolumn">
+                      <table className="twocol">
+                        <tbody>
+                          <tr>
+                            <td className="twocol_1">
+                              <ul>
+                                {skillsColumn1.map((skill, index) => (
+                                  <li key={skill.id || index}>{skill.name}</li>
+                                ))}
+                              </ul>
+                            </td>
+                            <td className="twocol_2">
+                              <ul>
+                                {skillsColumn2.map((skill, index) => (
+                                  <li key={skill.id || index}>{skill.name}</li>
+                                ))}
+                              </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Languages Section */}
+            {data.languages && data.languages.length > 0 && (
+              <div className="section lang-sec">
+                <div className="heading">
+                  <div className="sectiontitle">{t.languages?.toUpperCase()}</div>
+                </div>
+                {data.languages.map((lang, index) => {
+                  const proficiencyText = lang.proficiency ? (t[lang.proficiency as keyof typeof t] || lang.proficiency) : '';
+                  const ratingWidth = lang.level ? (lang.level / 5) * 100 : 60;
+                  return (
+                    <div key={lang.id || index} className={`paragraph ${index === 0 ? 'firstparagraph' : ''}`}>
+                      <div className="clearfix doc-item">
+                        <div className="singlecolumn">
+                          <div className="field fielditem-frfm">
+                            <span className="txt-bold">{lang.name}</span>
+                          </div>
+                          {lang.level && (
+                            <div className="rating-bar">
+                              <div className="inner-rating" style={{ width: `${ratingWidth}%` }} />
+                            </div>
+                          )}
+                          {proficiencyText && (
+                            <div className="field field-ratt small-size">
+                              <span className="small-size">{proficiencyText}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
+            {/* Education Section */}
+            {data.educations && data.educations.length > 0 && (
+              <div className="section educ-sec">
+                <div className="heading">
+                  <div className="sectiontitle">{t.education?.toUpperCase()}</div>
+                </div>
+                {data.educations.map((edu, index) => (
+                  <div key={edu.id || index} className={`paragraph ${index === 0 ? 'firstparagraph' : ''}`}>
+                    <div className="clearfix doc-item">
+                      {(edu.start_date || edu.end_date) && (
+                        <span className="dates-wrapper txt-bold">
+                          {edu.start_date && formatDate(edu.start_date)}
+                          {edu.start_date && (edu.end_date || edu.currently_studying) && ' - '}
+                          {edu.currently_studying ? t.present : edu.end_date && formatDate(edu.end_date)}
                         </span>
-                    </span>
-                    <span className="paddedline company-detail" dependency="COMP|JSTA|JCIT|JCNT|JCTR|JLOC">
-                      <span className="companyname txt-bold" id="FIELD_COMP">Ideal Care Homes</span><span dependency="COMP"><span dependency="JCIT|JSTA|JCNT"> - </span></span>
-                      <span id="FIELD_JCIT">Edinburgh</span>
-                      <span id="FIELD_JSTA"></span>
-                      <span className="jobcountry" id="FIELD_JCNT"></span>
-                      <span dependency="COMP|JCIT|JSTA|JCNT"></span>
-                      <span id="FIELD_JLOC"></span><span id="FIELD_JCTR"></span>
-                    </span>
-                    <span className="paddedline">
-                      <span id="FIELD_JDES"><ul><li>Charted daily information such as mood changes, mobility activity, eating percentages and daily inputs and outputs.</li>
-  <li>Developed strong and trusting rapport with each client to facilitate best care possible.</li>
-  <li>Worked to improve patient outlook and daily living through compassionate care.</li></ul></span>
-                    </span>
+                      )}
+                      <div className="singlecolumn">
+                        {(edu.degree || edu.field_of_study) && (
+                          <span className="paddedline">
+                            {edu.degree && <span className="degree txt-bold">{edu.degree}</span>}
+                            {edu.degree && edu.field_of_study && <span className="txt-bold">: </span>}
+                            {edu.field_of_study && <span>{edu.field_of_study}</span>}
+                          </span>
+                        )}
+                        {(edu.institution || edu.location) && (
+                          <span className="paddedline company-detail">
+                            {edu.institution && <span className="companyname txt-bold">{edu.institution}</span>}
+                            {edu.institution && edu.location && ' - '}
+                            {edu.location && <span>{edu.location}</span>}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div></div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="51" className="sortable-item section-container SortableItem-sibling  data-HILT"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-HILT" id="SECTION_HILT66551e16-9025-4c6a-88fd-21c891f7b2b4" className="section hilt-sec SECTION_HILT has-title" data-section-cd="HILT"><div data-testid="embd-88uQIHR-HILT" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_HILT">SKILLS<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename SKILLS " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-HILT" className=""><div data-testid="embd-654vWVD6" className=""><div data-testid="embd-79HRa2m-f6d39a0e-45b4-431c-82b8-567b069b1da4" id="PARAGRAPH_HILT_f6d39a0e-45b4-431c-82b8-567b069b1da4" className="paragraph PARAGRAPH_HILT firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                  <div className="singlecolumn">
-                    <table className="twocol">
-                      <tbody><tr>
-                        <td className="twocol_1" id="FIELD_SKC1"><ul><li>Strong verbal communication</li>
-  <li>Attention to detail</li>
-  <li>Community activities</li>
-  <li>Medication administration</li>
-  <li>Care plan management</li></ul></td>
-                        <td className="twocol_2" id="FIELD_SKC2"><ul><li>Risk management processes and analysis</li>
-  <li>Client safety and First Aid</li>
-  <li>Compassionate client care</li>
-  <li>Behaviour redirection</li></ul></td>
-                      </tr>
-                    </tbody></table>
+                ))}
+              </div>
+            )}
+
+            {/* Certificates Section */}
+            {data.certificates && data.certificates.length > 0 && (
+              <div className="section cert-sec">
+                <div className="heading">
+                  <div className="sectiontitle">{t.certificates?.toUpperCase()}</div>
+                </div>
+                {data.certificates.map((cert, index) => (
+                  <div key={cert.id || index} className={`paragraph ${index === 0 ? 'firstparagraph' : ''}`}>
+                    <div className="clearfix doc-item">
+                      {cert.issue_date && (
+                        <span className="dates-wrapper txt-bold">
+                          {formatDate(cert.issue_date)}
+                        </span>
+                      )}
+                      <div className="singlecolumn">
+                        <span className="paddedline txt-bold">{cert.name}</span>
+                        {cert.organization && <span className="paddedline">{cert.organization}</span>}
+                      </div>
+                    </div>
                   </div>
-                </div></div></div></div></div></div></div><div data-testid="embd-94h2gQ2" data-react-beautiful-dnd-draggable="51" className="sortable-item section-container SortableItem-sibling  data-EDUC"><div data-testid="embd-94w3bZE" className="document-tool sec-tool" id="editIcons" style={{ right: '-2px' }}></div><div data-testid="embd-88MByq6-EDUC" id="SECTION_EDUCfd38dd6c-e289-4f1b-96e2-457086a24cc8" className="section educ-sec SECTION_EDUC multi-para has-title" data-section-cd="EDUC"><div data-testid="embd-88uQIHR-EDUC" className="doc-item"><div data-testid="embd-88ciQTv" className="heading"><div data-testid="embd-88NTvWF" className="sectiontitle" id="SECTIONNAME_EDUC">EDUCATION<span data-testid="embd-88kl0Xw-text_1tUe18" title="Rename EDUCATION " className="ds-link ds-link-default rename-section text-rename"></span></div></div><div data-testid="embd-88aw0Ce-EDUC" className=""><div data-testid="embd-87S8HNifd38dd6c-e289-4f1b-96e2-457086a24cc8" id="CONTAINER_fd38dd6c-e289-4f1b-96e2-457086a24cc8" className="sortableInner"><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="51" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="51" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC firstparagraph"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                  <span className="dates-wrapper txt-bold">
-                      <span className="xslt_static_change displayNoneThisField">Expected in </span><span id="FIELD_GRYR" format="%m/%Y">2013</span>
-                      <span id="FIELD_GRST" format="%m/%Y"></span><span id="FIELD_GRED" format="%m/%Y"></span>
-                      
-                      <span id="FIELD_GRIP"></span>
-                  </span>
-                  <div className="singlecolumn">
-                    <span className="paddedline" dependency="GRYR|STUY|DGRE">
-                      <span className="degree txt-bold" id="FIELD_DGRE">NVQ Level 3</span><span dependency="DGRE+STUY" className="txt-bold">: </span>
-                      <span id="FIELD_STUY">Health And Social Care</span><span dependency="STUY"></span><span id="FIELD_GRHN"></span>
-                    </span>
-                    <span className="paddedline company-detail" dependency="SCIT|SCHO|SSTA|SCNT">
-                      <span className="companyname txt-bold" dependency="SCHO" id="FIELD_SCHO">Edinburgh College</span>
-                      <span dependency="SCHO+SCIT|SSTA"> - </span>
-                      <span id="FIELD_SCIT">Edinburgh</span><span dependency="SCIT"></span>
-                      <span id="FIELD_SSTA"></span>
-                      <span id="FIELD_SCNT"></span>
-                    </span>
-                    
-                    
-                    <span>
-                      <span id="FIELD_FRFM"></span>
-                    </span>
-                  </div>
-                </div></div></div><div data-testid="embd-87je894-EDUC" data-react-beautiful-dnd-draggable="51" className="sortable-item paragraph-container SortableItem-sibling"><button data-testid="embd-87gfxIF-EDUC" type="button" tabIndex={0} data-react-beautiful-dnd-drag-handle="51" aria-roledescription="Draggable item. Press space bar to lift" draggable={false} className="btn-icon-tertiary btn-icon-move d-none"></button><div data-testid="embd-79HRa2m-e0037f47-0bb8-4767-a441-48042b09746f" id="PARAGRAPH_EDUC_e0037f47-0bb8-4767-a441-48042b09746f" className="paragraph PARAGRAPH_EDUC"><div data-testid="embd-78FzR29" className="clearfix doc-item">
-                  <span className="dates-wrapper txt-bold">
-                      <span className="xslt_static_change displayNoneThisField">Expected in </span><span id="FIELD_GRYR" format="%m/%Y">2008</span>
-                      <span id="FIELD_GRST" format="%m/%Y"></span><span id="FIELD_GRED" format="%m/%Y"></span>
-                      
-                      <span id="FIELD_GRIP"></span>
-                  </span>
-                  <div className="singlecolumn">
-                    <span className="paddedline" dependency="GRYR|STUY|DGRE">
-                      <span className="degree txt-bold" id="FIELD_DGRE">NVQ Level 2</span><span dependency="DGRE+STUY" className="txt-bold">: </span>
-                      <span id="FIELD_STUY">Health And Social Care</span><span dependency="STUY"></span><span id="FIELD_GRHN"></span>
-                    </span>
-                    <span className="paddedline company-detail" dependency="SCIT|SCHO|SSTA|SCNT">
-                      <span className="companyname txt-bold" dependency="SCHO" id="FIELD_SCHO">Edinburgh College</span>
-                      <span dependency="SCHO+SCIT|SSTA"> - </span>
-                      <span id="FIELD_SCIT">Edinburgh</span><span dependency="SCIT"></span>
-                      <span id="FIELD_SSTA"></span>
-                      <span id="FIELD_SCNT"></span>
-                    </span>
-                    
-                    
-                    <span>
-                      <span id="FIELD_FRFM"></span>
-                    </span>
-                  </div>
-                </div></div></div></div></div></div></div></div></div></div></div><div></div></div></div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </>
   );
 }

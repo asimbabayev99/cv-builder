@@ -7,8 +7,6 @@ export default function DynamicMla3({ data, translations, language = 'en', color
   const initials = [data.first_name?.[0], data.last_name?.[0]].filter(Boolean).join('');
   const addressPart = [data.city, data.country].filter(Boolean).join(', ');
 
-  // Create gradient colors from the main color
-  const gradientEnd = colorHex + '80'; // Add transparency for lighter shade
 
   return (
     <>
@@ -43,7 +41,7 @@ export default function DynamicMla3({ data, translations, language = 'en', color
 
         .dyn-mla3 .sidebar {
           width: 200px;
-          background: linear-gradient(180deg, ${colorHex} 0%, ${gradientEnd} 100%);
+          background: ${colorHex};
           color: #fff;
           padding: 30px 20px;
           flex-shrink: 0;
@@ -228,20 +226,37 @@ export default function DynamicMla3({ data, translations, language = 'en', color
           margin-bottom: 5px;
         }
 
+        .dyn-mla3 ul, .dyn-mla3 li {
+          margin: 0 0 0 2px;
+          padding: 0;
+          list-style: none;
+        }
+
+        .dyn-mla3 li::before {
+          content: "•";
+          display: inline-block;
+          width: 4px;
+          left: -3px;
+          position: absolute;
+        }
+
         .dyn-mla3 ul {
-          margin-left: 15px;
+          position: relative;
           margin-top: 5px;
         }
 
         .dyn-mla3.rtl ul {
-          margin-left: 0;
-          margin-right: 15px;
+          direction: rtl;
         }
 
         .dyn-mla3 ul li {
-          list-style-type: disc;
-          margin-bottom: 2px;
+          margin: 0 0 0 8px;
+          padding-bottom: 5px;
           color: #444;
+        }
+
+        .dyn-mla3 ul li:last-child {
+          padding-bottom: 0;
         }
 
         .dyn-mla3 .summary-text {
@@ -256,13 +271,6 @@ export default function DynamicMla3({ data, translations, language = 'en', color
           <div className="sidebar">
             {/* Profile Section */}
             <div className="profile-section">
-              {data.photo_url ? (
-                <div className="profile-pic">
-                  <img src={data.photo_url} alt={fullName || 'Profile'} />
-                </div>
-              ) : initials && (
-                <div className="monogram">{initials}</div>
-              )}
               {fullName && <div className="sidebar-name">{fullName}</div>}
               {data.professional_title && (
                 <div className="sidebar-title">{data.professional_title}</div>
@@ -304,6 +312,50 @@ export default function DynamicMla3({ data, translations, language = 'en', color
                       </svg>
                     </div>
                     <span>{data.email}</span>
+                  </div>
+                )}
+
+                {data.website && (
+                  <div className="contact-item">
+                    <div className="contact-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                      </svg>
+                    </div>
+                    <span style={{ wordBreak: 'break-all' }}>{data.website}</span>
+                  </div>
+                )}
+
+                {data.driving_license && (
+                  <div className="contact-item">
+                    <div className="contact-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                      </svg>
+                    </div>
+                    <span>{data.driving_license}</span>
+                  </div>
+                )}
+
+                {data.nationality && (
+                  <div className="contact-item">
+                    <div className="contact-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/>
+                      </svg>
+                    </div>
+                    <span>{data.nationality}</span>
+                  </div>
+                )}
+
+                {data.linkedin && (
+                  <div className="contact-item">
+                    <div className="contact-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                      </svg>
+                    </div>
+                    <span style={{ wordBreak: 'break-all' }}>{data.linkedin}</span>
                   </div>
                 )}
               </div>

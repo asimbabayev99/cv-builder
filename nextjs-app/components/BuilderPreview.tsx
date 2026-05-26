@@ -27,6 +27,9 @@ import DynamicLca1 from './dynamic-templates/lca1';
 import DynamicMca2 from './dynamic-templates/mca2';
 import DynamicPca1 from './dynamic-templates/pca1';
 import DynamicMla3 from './dynamic-templates/mla3';
+import DynamicMta2 from './dynamic-templates/mta2';
+import DynamicMls8 from './dynamic-templates/mls8';
+import DynamicMls9 from './dynamic-templates/mls9';
 
 const A4_WIDTH = 595;
 const A4_HEIGHT = 842;
@@ -56,6 +59,9 @@ const DYNAMIC_TEMPLATES: Record<string, React.ComponentType<{
   sma1: DynamicSma1,
   sma2: DynamicSma2,
   mla3: DynamicMla3,
+  mta2: DynamicMta2,
+  mls8: DynamicMls8,
+  mls9: DynamicMls9,
 };
 
 // Default colors per template
@@ -78,6 +84,9 @@ const DEFAULT_COLORS: Record<string, string> = {
   mca2: '#000000',
   pca1: '#1A4771',
   mla3: '#DF7866',
+  mta2: '#000000',
+  mls8: '#9B3016',
+  mls9: '#102A73',
 };
 
 interface BuilderPreviewProps {
